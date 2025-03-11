@@ -1,0 +1,39 @@
+{
+  "total_foods": 20,
+  "success_rate": 85.0,
+  "average_response_time": 1.4621948214138256,
+  "source_distribution": {
+    "usda": 17,
+    "edamam": 0,
+    "none": 3,
+    "error": 0
+  },
+  "foods_by_source": {
+    "usda": [
+      "apple",
+      "banana",
+      "chicken breast",
+      "salmon",
+      "olive oil",
+      "pasta barilla",
+      "parmigiano reggiano",
+      "prosciutto di parma",
+      "mozzarella di bufala",
+      "tiramisu",
+      "chicken cacciatore",
+      "risotto",
+      "lasagna",
+      "pizza margherita",
+      "gelato",
+      "pastiera napoletana",
+      "cantucci toscani"
+    ],
+    "edamam": [],
+    "none": [
+      "culurgiones",
+      "seadas sarde",
+      "casoncelli bergamaschi"
+    ],
+    "error": []
+  }
+}

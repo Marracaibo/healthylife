@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4caf50">
+  <title>HealthyLife - Modalità Offline</title>
+  <link rel="shortcut icon" href="/icons/icon-192x192.png" type="image/png">
+  <style>
+    :root {
+      --primary-color: #4caf50;
+      --primary-dark: #388e3c;
+      --background-color: #f5f5f5;
+      --card-background: #ffffff;
+      --text-color: #333333;
+      --text-secondary: #666666;
+      --border-radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-hover: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+      height: 40px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    main {
+      flex: 1;
+      padding: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .message-card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 24px;
+      color: var(--primary-color);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: var(--text-secondary);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .btn-outlined {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+    
+    .btn-outlined:hover {
+      background-color: rgba(76, 175, 80, 0.1);
+    }
+
+    .btn-icon {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .offline-data-section {
+      margin-top: 32px;
+    }
+
+    .data-card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .data-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .data-card h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .data-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .message-card {
+        padding: 24px;
+      }
+      .icon {
+        width: 80px;
+        height: 80px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/assets/images/logo.svg" alt="HealthyLife Logo" class="logo">
+    <h1>HealthyLife</h1>
+  </header>
+
+  <main>
+    <div class="message-card">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"/>
+      </svg>
+      
+      <h2>Sei in modalità offline</h2>
+      <p>La connessione Internet non è attualmente disponibile, ma puoi comunque accedere ai tuoi dati salvati in precedenza.</p>
+      <p>Alcune funzionalità potrebbero essere limitate fino a quando la connessione non verrà ripristinata.</p>
+      
+      <div class="buttons">
+        <a href="/" class="btn" id="retry-button">
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+          </svg>
+          Riprova connessione
+        </a>
+        <button class="btn btn-outlined" id="show-offline-data-button">
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+          </svg>
+          Mostra dati disponibili
+        </button>
+      </div>
+    </div>
+
+    <div class="offline-data-section hidden" id="offline-data-section">
+      <h2>Dati disponibili offline</h2>
+      <p>Questi dati sono stati salvati sul tuo dispositivo e possono essere visualizzati anche senza connessione:</p>
+      
+      <div class="data-card" id="workout-data-card">
+        <h3>
+          <svg class="data-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+          </svg>
+          Allenamenti
+        </h3>
+        <p id="workout-data-message">Verifica in corso...</p>
+      </div>
+      
+      <div class="data-card" id="meal-data-card">
+        <h3>
+          <svg class="data-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+          </svg>
+          Pasti e Nutrizione
+        </h3>
+        <p id="meal-data-message">Verifica in corso...</p>
+      </div>
+      
+      <div class="data-card" id="progress-data-card">
+        <h3>
+          <svg class="data-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+          </svg>
+          Progressi
+        </h3>
+        <p id="progress-data-message">Verifica in corso...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HealthyLife App - Versione offline
+  </footer>
+
+  <script>
+    // Verifica la presenza di dati in IndexedDB e mostra le informazioni appropriate
+    document.addEventListener('DOMContentLoaded', function() {
+      const showOfflineDataButton = document.getElementById('show-offline-data-button');
+      const offlineDataSection = document.getElementById('offline-data-section');
+      const retryButton = document.getElementById('retry-button');
+
+      // Gestisce il pulsante "Mostra dati disponibili"
+      showOfflineDataButton.addEventListener('click', function() {
+        offlineDataSection.classList.toggle('hidden');
+        if (!offlineDataSection.classList.contains('hidden')) {
+          this.textContent = 'Nascondi dati';
+          checkOfflineData();
+        } else {
+          this.innerHTML = '<svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg> Mostra dati disponibili';
+        }
+      });
+
+      // Gestisce il pulsante "Riprova connessione"
+      retryButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/';
+      });
+
+      // Verifica periodicamente lo stato della connessione
+      window.addEventListener('online', function() {
+        window.location.reload();
+      });
+
+      // Funzione per verificare i dati disponibili offline
+      function checkOfflineData() {
+        // Elementi del DOM per i messaggi
+        const workoutDataMessage = document.getElementById('workout-data-message');
+        const mealDataMessage = document.getElementById('meal-data-message');
+        const progressDataMessage = document.getElementById('progress-data-message');
+
+        // Verifica se IndexedDB è supportato
+        if (!('indexedDB' in window)) {
+          workoutDataMessage.textContent = 'Il tuo browser non supporta l\'archiviazione offline.';
+          mealDataMessage.textContent = 'Il tuo browser non supporta l\'archiviazione offline.';
+          progressDataMessage.textContent = 'Il tuo browser non supporta l\'archiviazione offline.';
+          return;
+        }
+
+        // Apre il database
+        const dbRequest = indexedDB.open('healthyLifeOfflineDB', 1);
+
+        dbRequest.onerror = function() {
+          workoutDataMessage.textContent = 'Errore nell\'accesso ai dati offline.';
+          mealDataMessage.textContent = 'Errore nell\'accesso ai dati offline.';
+          progressDataMessage.textContent = 'Errore nell\'accesso ai dati offline.';
+        };
+
+        dbRequest.onsuccess = function() {
+          const db = dbRequest.result;
+          
+          // Verifica i dati degli allenamenti
+          if (db.objectStoreNames.contains('workouts')) {
+            const workoutTransaction = db.transaction(['workouts'], 'readonly');
+            const workoutStore = workoutTransaction.objectStore('workouts');
+            const workoutCountRequest = workoutStore.count();
+            
+            workoutCountRequest.onsuccess = function() {
+              const count = workoutCountRequest.result;
+              if (count > 0) {
+                workoutDataMessage.textContent = `${count} allenament${count === 1 ? 'o' : 'i'} disponibil${count === 1 ? 'e' : 'i'} offline.`;
+              } else {
+                workoutDataMessage.textContent = 'Nessun allenamento disponibile offline.';
+              }
+            };
+          } else {
+            workoutDataMessage.textContent = 'Nessun allenamento disponibile offline.';
+          }
+          
+          // Verifica i dati dei pasti
+          if (db.objectStoreNames.contains('meals')) {
+            const mealTransaction = db.transaction(['meals'], 'readonly');
+            const mealStore = mealTransaction.objectStore('meals');
+            const mealCountRequest = mealStore.count();
+            
+            mealCountRequest.onsuccess = function() {
+              const count = mealCountRequest.result;
+              if (count > 0) {
+                mealDataMessage.textContent = `${count} past${count === 1 ? 'o' : 'i'} disponibil${count === 1 ? 'e' : 'i'} offline.`;
+              } else {
+                mealDataMessage.textContent = 'Nessun dato nutrizionale disponibile offline.';
+              }
+            };
+          } else {
+            mealDataMessage.textContent = 'Nessun dato nutrizionale disponibile offline.';
+          }
+          
+          // Verifica i dati dei progressi
+          if (db.objectStoreNames.contains('progress')) {
+            const progressTransaction = db.transaction(['progress'], 'readonly');
+            const progressStore = progressTransaction.objectStore('progress');
+            const progressCountRequest = progressStore.count();
+            
+            progressCountRequest.onsuccess = function() {
+              const count = progressCountRequest.result;
+              if (count > 0) {
+                progressDataMessage.textContent = `${count} registrazion${count === 1 ? 'e' : 'i'} di progressi disponibil${count === 1 ? 'e' : 'i'} offline.`;
+              } else {
+                progressDataMessage.textContent = 'Nessun dato sui progressi disponibile offline.';
+              }
+            };
+          } else {
+            progressDataMessage.textContent = 'Nessun dato sui progressi disponibile offline.';
+          }
+        };
+      }
+    });
+  </script>
+</body>
+</html>

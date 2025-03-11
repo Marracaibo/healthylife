@@ -1,0 +1,81 @@
+{
+  "query": "bread",
+  "timestamp": "2025-03-08T11:26:26.678367",
+  "results": [
+    {
+      "food_id": "789456",
+      "food_name": "Apple",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {
+        "calories": "52",
+        "fat": "0.17",
+        "carbs": "13.81",
+        "protein": "0.26"
+      },
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "789457",
+      "food_name": "Orange Juice",
+      "brand": "Tropicana",
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {
+        "calories": "45",
+        "fat": "0.10",
+        "carbs": "10.40",
+        "protein": "0.70"
+      },
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "789458",
+      "food_name": "Mixed Nuts",
+      "brand": "Noberasco",
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {
+        "calories": "607",
+        "fat": "52.50",
+        "carbs": "21.00",
+        "protein": "19.50"
+      },
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "789459",
+      "food_name": "Chocolate Bar",
+      "brand": "Lindt",
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {
+        "calories": "545",
+        "fat": "31.00",
+        "carbs": "61.00",
+        "protein": "5.50"
+      },
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "789460",
+      "food_name": "Yogurt, Plain",
+      "brand": "Muller",
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {
+        "calories": "59",
+        "fat": "0.20",
+        "carbs": "3.60",
+        "protein": "10.20"
+      },
+      "source": "fatsecret"
+    }
+  ]
+}

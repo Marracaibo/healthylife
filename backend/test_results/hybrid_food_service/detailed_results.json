@@ -1,0 +1,3459 @@
+[
+  {
+    "food": "apple",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.5710492134094238,
+    "details": {
+      "query": "apple",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.5691344738006592,
+      "results": [
+        {
+          "id": 454004,
+          "name": "APPLE",
+          "description": "CRISP APPLE.",
+          "brand": "",
+          "calories": 52.0,
+          "source": "usda"
+        },
+        {
+          "id": 2117388,
+          "name": "APPLE",
+          "description": "FILTERED WATER, APPLE JUICE CONCENTRATE, ASCORBIC ACID (VITAMIN C).",
+          "brand": "BEST CHOICE",
+          "calories": 46.0,
+          "source": "usda"
+        },
+        {
+          "id": 2124902,
+          "name": "APPLE",
+          "description": "",
+          "brand": "PINK LADY",
+          "calories": 54.0,
+          "source": "usda"
+        },
+        {
+          "id": 2709294,
+          "name": "Apple, candied",
+          "description": "",
+          "brand": "",
+          "calories": 134,
+          "source": "usda"
+        },
+        {
+          "id": 2709215,
+          "name": "Apple, raw",
+          "description": "",
+          "brand": "",
+          "calories": 61,
+          "source": "usda"
+        },
+        {
+          "id": 2709196,
+          "name": "Apple, dried",
+          "description": "",
+          "brand": "",
+          "calories": 243,
+          "source": "usda"
+        },
+        {
+          "id": 2708023,
+          "name": "Crisp, apple",
+          "description": "",
+          "brand": "",
+          "calories": 215,
+          "source": "usda"
+        },
+        {
+          "id": 2709220,
+          "name": "Apple, baked",
+          "description": "",
+          "brand": "",
+          "calories": 113,
+          "source": "usda"
+        },
+        {
+          "id": 2709319,
+          "name": "Apple cider",
+          "description": "",
+          "brand": "",
+          "calories": 46,
+          "source": "usda"
+        },
+        {
+          "id": 2708019,
+          "name": "Cobbler, apple",
+          "description": "",
+          "brand": "",
+          "calories": 217,
+          "source": "usda"
+        },
+        {
+          "id": 174988,
+          "name": "Croissants, apple",
+          "description": "",
+          "brand": "",
+          "calories": 254,
+          "source": "usda"
+        },
+        {
+          "id": 2707995,
+          "name": "Pie, apple",
+          "description": "",
+          "brand": "",
+          "calories": 296,
+          "source": "usda"
+        },
+        {
+          "id": 2708039,
+          "name": "Strudel, apple",
+          "description": "",
+          "brand": "",
+          "calories": 281,
+          "source": "usda"
+        },
+        {
+          "id": 175032,
+          "name": "Strudel, apple",
+          "description": "",
+          "brand": "",
+          "calories": 274,
+          "source": "usda"
+        },
+        {
+          "id": 2709219,
+          "name": "Apple pie filling",
+          "description": "",
+          "brand": "",
+          "calories": 100,
+          "source": "usda"
+        },
+        {
+          "id": 2709320,
+          "name": "Apple juice, 100%",
+          "description": "",
+          "brand": "",
+          "calories": 48,
+          "source": "usda"
+        },
+        {
+          "id": 2709293,
+          "name": "Apple salad with dressing",
+          "description": "",
+          "brand": "",
+          "calories": 180,
+          "source": "usda"
+        },
+        {
+          "id": 170959,
+          "name": "Babyfood, juice, apple",
+          "description": "",
+          "brand": "",
+          "calories": 47.0,
+          "source": "usda"
+        },
+        {
+          "id": 2707855,
+          "name": "Cake or cupcake, apple",
+          "description": "",
+          "brand": "",
+          "calories": 376,
+          "source": "usda"
+        },
+        {
+          "id": 168816,
+          "name": "Fruit butters, apple",
+          "description": "",
+          "brand": "",
+          "calories": 173,
+          "source": "usda"
+        },
+        {
+          "id": 168171,
+          "name": "Rose-apples, raw",
+          "description": "",
+          "brand": "",
+          "calories": 25.0,
+          "source": "usda"
+        },
+        {
+          "id": 2709374,
+          "name": "Baby Toddler juice, apple",
+          "description": "",
+          "brand": "",
+          "calories": 47,
+          "source": "usda"
+        },
+        {
+          "id": 2709662,
+          "name": "Carrots, raw, salad with apples",
+          "description": "",
+          "brand": "",
+          "calories": 181,
+          "source": "usda"
+        },
+        {
+          "id": 2707996,
+          "name": "Pie, apple, fast food",
+          "description": "",
+          "brand": "",
+          "calories": 316,
+          "source": "usda"
+        },
+        {
+          "id": 2709321,
+          "name": "Apple juice, 100%, with calcium added",
+          "description": "",
+          "brand": "",
+          "calories": 48,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "banana",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.7765686511993408,
+    "details": {
+      "query": "banana",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.774946928024292,
+      "results": [
+        {
+          "id": 2012128,
+          "name": "BANANA",
+          "description": "PEANUTS (AS DEFATTED PEANUT FLOUR, PEANUT BUTTER AND NATURAL PEANUT OILS), PURE WATER, TAPIOCA SYRUP, RICE SYRUP, VEGETABLE GLYCERINE, CANE SUGAR, BANANA, NATURAL COLORS AND FLAVORS, SALT, CALCIUM CARBONATE, LECITHIN, TOCOPHEROL (VITAMIN E), SODIUM ASCORBATE (VITAMIN C).",
+          "brand": "BETTER'N PEANUT BUTTER",
+          "calories": 312,
+          "source": "usda"
+        },
+        {
+          "id": 2011468,
+          "name": "BANANA",
+          "description": "BANANA, SULFUR DIOXIDE (AS A PRESERVATIVE). ",
+          "brand": "NUTTY & FRUITY",
+          "calories": 336,
+          "source": "usda"
+        },
+        {
+          "id": 173945,
+          "name": "Bananas, dehydrated, or banana powder",
+          "description": "",
+          "brand": "",
+          "calories": 346,
+          "source": "usda"
+        },
+        {
+          "id": 2709225,
+          "name": "Banana, baked",
+          "description": "",
+          "brand": "",
+          "calories": 161,
+          "source": "usda"
+        },
+        {
+          "id": 2709224,
+          "name": "Banana, raw",
+          "description": "",
+          "brand": "",
+          "calories": 97,
+          "source": "usda"
+        },
+        {
+          "id": 2709200,
+          "name": "Banana chips",
+          "description": "",
+          "brand": "",
+          "calories": 519,
+          "source": "usda"
+        },
+        {
+          "id": 2709342,
+          "name": "Banana nectar",
+          "description": "",
+          "brand": "",
+          "calories": 74,
+          "source": "usda"
+        },
+        {
+          "id": 2705697,
+          "name": "Banana pudding",
+          "description": "",
+          "brand": "",
+          "calories": 160,
+          "source": "usda"
+        },
+        {
+          "id": 2705660,
+          "name": "Banana split",
+          "description": "",
+          "brand": "",
+          "calories": 199,
+          "source": "usda"
+        },
+        {
+          "id": 173944,
+          "name": "Bananas, raw",
+          "description": "",
+          "brand": "",
+          "calories": 89.0,
+          "source": "usda"
+        },
+        {
+          "id": 1105073,
+          "name": "Bananas, overripe, raw",
+          "description": "",
+          "brand": "",
+          "calories": 85.0,
+          "source": "usda"
+        },
+        {
+          "id": 2707856,
+          "name": "Cake or cupcake, banana",
+          "description": "",
+          "brand": "",
+          "calories": 379,
+          "source": "usda"
+        },
+        {
+          "id": 167629,
+          "name": "Melon, banana (Navajo)",
+          "description": "",
+          "brand": "",
+          "calories": 21.0,
+          "source": "usda"
+        },
+        {
+          "id": 169394,
+          "name": "Pepper, banana, raw",
+          "description": "",
+          "brand": "",
+          "calories": 27.0,
+          "source": "usda"
+        },
+        {
+          "id": 2709802,
+          "name": "Peppers, banana, raw",
+          "description": "",
+          "brand": "",
+          "calories": 27,
+          "source": "usda"
+        },
+        {
+          "id": 2708004,
+          "name": "Pie, banana cream",
+          "description": "",
+          "brand": "",
+          "calories": 284,
+          "source": "usda"
+        },
+        {
+          "id": 168849,
+          "name": "Snacks, banana chips",
+          "description": "",
+          "brand": "",
+          "calories": 519,
+          "source": "usda"
+        },
+        {
+          "id": 171351,
+          "name": "Babyfood, apple-banana juice",
+          "description": "",
+          "brand": "",
+          "calories": 51.0,
+          "source": "usda"
+        },
+        {
+          "id": 167732,
+          "name": "Babyfood, banana no tapioca, strained",
+          "description": "",
+          "brand": "",
+          "calories": 91.0,
+          "source": "usda"
+        },
+        {
+          "id": 170962,
+          "name": "Babyfood, juice, orange and banana",
+          "description": "",
+          "brand": "",
+          "calories": 50.0,
+          "source": "usda"
+        },
+        {
+          "id": 2709365,
+          "name": "Baby Toddler bananas, Stage 1",
+          "description": "",
+          "brand": "",
+          "calories": 91,
+          "source": "usda"
+        },
+        {
+          "id": 2709366,
+          "name": "Baby Toddler bananas, Stage 2",
+          "description": "",
+          "brand": "",
+          "calories": 91,
+          "source": "usda"
+        },
+        {
+          "id": 167733,
+          "name": "Babyfood, banana apple dessert, strained",
+          "description": "",
+          "brand": "",
+          "calories": 68.0,
+          "source": "usda"
+        },
+        {
+          "id": 170999,
+          "name": "Babyfood, banana with mixed berries, strained",
+          "description": "",
+          "brand": "",
+          "calories": 92.0,
+          "source": "usda"
+        },
+        {
+          "id": 170965,
+          "name": "Babyfood, cereal, mixed, with bananas, dry",
+          "description": "",
+          "brand": "",
+          "calories": 391,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "chicken breast",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.5019445419311523,
+    "details": {
+      "query": "chicken breast",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.4997236728668213,
+      "results": [
+        {
+          "id": 2187885,
+          "name": "CHICKEN BREAST",
+          "description": "BONELESS SKINLESS CHICKEN BREAST (CONTAINS WATER, SALT, SODIUM PHOSPHATES), CHERRYWOOD SMOKED HAM (CONTAINS UP TO 4% OF A SOLUTION OF WATER, SALT, TURBINADO SUGAR, BAKING SODA, NATURAL FLAVOR, LACTIC ACID STARTER CULTURE [NOT FROM MILK]), RICOTTA CHEESE (PASTEURIZED MILK, PASTEURIZED WHEY, PASTEURIZED CREAM, VINEGAR, SALT, STABILIZER [MODIFIED FOOD STARCH, GUAR GUM, CARRAGEENAN], POTASSIUM SORBATE TO PROTECT FLAVOR), MILD CHEDDAR CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES, ANNATTO), SHARP CHEDDAR CHEESE (CULTURED PASTEURIZED MILK, SALT, ENZYMES, ANNATTO COLOR, POTATO STARCH AND POWDERED CELLULOSE [ANTICAKING], NATAMYCIN [MOLD INHIBITOR]), MOZZARELLA CHEESE (MILK, CHEESE CULTURES, SALT, ENZYMES, POWDERED CELLULOSE [ANTICAKING], NATAMYCIN [TO PROTECT FLAVOR]), PARMESAN CHEESE (PART-SKIMMED PASTEURIZED COW'S MILK, CHEESE CULTURES, SALT, ENZYMES, RICE FLOUR AND POWDERED CELLULOSE ADDED TO PREVENT CAKING), PARSLEY, SALT, THYME, BLACK PEPPER.",
+          "brand": "GIANT EAGLE",
+          "calories": 165,
+          "source": "usda"
+        },
+        {
+          "id": 2092152,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST WITH RIB MEAT, WATER, CONTAINS 2% OR LESS OF: VINEGAR, MODIFIED FOOD STARCH, SALT, CARRAGEENAN, MALTODEXTRIN, SODIUM PHOSPHATES, ONION POWDER, YEAST EXTRACT, GARLIC POWDER, DRIED CHICKEN SKIN, DRIED CHICKEN, CHICKEN BROTH, SPICES EXTRACTIVES.",
+          "brand": "TYSON",
+          "calories": 143,
+          "source": "usda"
+        },
+        {
+          "id": 2125872,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST MEAT, WATER, SEASONING (SUGAR, PEA STARCH, RICE STARCH, MALTODEXTRIN, YEAST EXTRACT, SODIUM CITRATE, CITRIC ACID, CANOLA OIL, REFINED SOYBEAN OIL, SALT, MEDIUM CHAIN TRIGLYCERIDES, ORANGE JUICE, SOLIDS, NATURAL FLAVORS), CONTAINS 2% OR LESS SALT, DEXTROSE, VINEGAR, SODIUM PHOSPHATE.",
+          "brand": "JENNIE-O",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2055943,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST WITH RIB MEAT, WATER, MODIFIED FOOD STARCH, SALT, SODIUM PHOSPHATE.",
+          "brand": "BUTTERFIELD FARMS",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2096160,
+          "name": "CHICKEN BREAST",
+          "description": "BONELESS SKINLESS CHICKEN BREAST WITH RIB MEAT, BROCCOLI (BROCCOLI FLORETS, OLIVE OIL, CANOLA OIL, SALT, BLACK PEPPER), POTATOES (RED POTATOES, CANOLA OIL, EXTRA VIRGIN OLIVE OIL, SALT, BLACK PEPPER), SOUTHWEST MARINADE (WATER, CANOLA OIL, SALT, CHILI BLEND [CHILI PEPPERS, DISTILLED VINEGAR, GARLIC, SALT], MINCED GARLIC [CONTAINS WATER AND CITRIC ACID], SPICES, FLAVORINGS, DEHYDRATED BELL PEPPERS. CONTAINS 2% OR LESS OF EACH OF THE FOLLOWING: VINEGAR, DEHYDRATED ONION, YEAST EXTRACT, DEHYDRATED CILANTRO, XANTHAN GUM, LEMON JUICE CONCENTRATE, LIME JUICE CONCENTRATE, LACTIC ACID, SUNFLOWER OIL, CALCIUM LACTATE, AND NATURAL SMOKE FLAVOR).",
+          "brand": "H-E-B",
+          "calories": 96.0,
+          "source": "usda"
+        },
+        {
+          "id": 2066523,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST, *SOLUTION: (WATER, SALTED BOURBON, HONEY, SALT, ONION, CONTAINS 2% OR LESS OF GRANULATED ONION, GRANULATED GARLIC, BLACK PEPPER, BUTTER FLAVOR (WHEY SOLIDS, ENZYME MODIFIED BUTTER, MALTODEXTRIN, SALT, DEHYDRATED BUTTER, GUAR GUM, ANNATTO AND TURMERIC (FOR COLOR)), CARRAGEENAN (CARRAGEENAN, XANTHAN GUM), SODIUM ACETATE, SODIUM DIACETATE).",
+          "brand": "EDDY FOODS",
+          "calories": 116,
+          "source": "usda"
+        },
+        {
+          "id": 1648039,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST, WATER, CULTURED DEXTROSE*, CONTAINS LESS THAN 2% OF POTATO STARCH, SEA SALT, VINEGAR*, CULTURED CELERY JUICE*.",
+          "brand": "OSCAR MAYER",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2620738,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST, WATER, CONTAINS LESS THAN 2% OF SEA SALT, DRIED VINEGAR, POTATO STARCH.",
+          "brand": "SHOPRITE",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 1935739,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST, CHICKEN BROTH, CONTAINS 2% OR LESS: SALT, CARRAGEENAN, DRIED VINEGAR, SUGAR, CULTURED CELERY JUICE POWDER, BROWN SUGAR, YEAST EXTRACT, NATURAL FLAVORS.",
+          "brand": "HILLSHIRE FARM",
+          "calories": 92.0,
+          "source": "usda"
+        },
+        {
+          "id": 2279206,
+          "name": "CHICKEN BREAST",
+          "description": "CHICKEN BREAST MEAT, WATER, MODIFIED FOOD STARCH, SALT, SODIUM PHOSPHATE.",
+          "brand": "FAREWAY",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2705964,
+          "name": "Chicken breast, rotisserie, skin not eaten",
+          "description": "",
+          "brand": "",
+          "calories": 144,
+          "source": "usda"
+        },
+        {
+          "id": 171515,
+          "name": "Chicken breast tenders, breaded, uncooked",
+          "description": "",
+          "brand": "",
+          "calories": 263,
+          "source": "usda"
+        },
+        {
+          "id": 174608,
+          "name": "Chicken breast, roll, oven-roasted",
+          "description": "",
+          "brand": "",
+          "calories": 134,
+          "source": "usda"
+        },
+        {
+          "id": 2705963,
+          "name": "Chicken breast, rotisserie, skin eaten",
+          "description": "",
+          "brand": "",
+          "calories": 175,
+          "source": "usda"
+        },
+        {
+          "id": 2705971,
+          "name": "Chicken breast, sauteed, skin eaten",
+          "description": "",
+          "brand": "",
+          "calories": 206,
+          "source": "usda"
+        },
+        {
+          "id": 2705972,
+          "name": "Chicken breast, sauteed, skin not eaten",
+          "description": "",
+          "brand": "",
+          "calories": 176,
+          "source": "usda"
+        },
+        {
+          "id": 2705965,
+          "name": "Chicken breast, stewed, skin eaten",
+          "description": "",
+          "brand": "",
+          "calories": 181,
+          "source": "usda"
+        },
+        {
+          "id": 2705966,
+          "name": "Chicken breast, stewed, skin not eaten",
+          "description": "",
+          "brand": "",
+          "calories": 149,
+          "source": "usda"
+        },
+        {
+          "id": 2646170,
+          "name": "Chicken, breast, boneless, skinless, raw",
+          "description": "",
+          "brand": "",
+          "calories": 0,
+          "source": "usda"
+        },
+        {
+          "id": 171514,
+          "name": "Chicken breast tenders, breaded, cooked, microwaved",
+          "description": "",
+          "brand": "",
+          "calories": 252,
+          "source": "usda"
+        },
+        {
+          "id": 2705969,
+          "name": "Chicken breast, grilled with sauce, skin eaten",
+          "description": "",
+          "brand": "",
+          "calories": 202,
+          "source": "usda"
+        },
+        {
+          "id": 2705970,
+          "name": "Chicken breast, grilled with sauce, skin not eaten",
+          "description": "",
+          "brand": "",
+          "calories": 178,
+          "source": "usda"
+        },
+        {
+          "id": 172945,
+          "name": "Oscar Mayer, Chicken Breast (honey glazed)",
+          "description": "",
+          "brand": "",
+          "calories": 109,
+          "source": "usda"
+        },
+        {
+          "id": 2705980,
+          "name": "Chicken breast, baked, coated, skin / coating eaten",
+          "description": "",
+          "brand": "",
+          "calories": 207,
+          "source": "usda"
+        },
+        {
+          "id": 2705981,
+          "name": "Chicken breast, baked, coated, skin / coating not eaten",
+          "description": "",
+          "brand": "",
+          "calories": 176,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "salmon",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.6155564785003662,
+    "details": {
+      "query": "salmon",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.613257884979248,
+      "results": [
+        {
+          "id": 2016166,
+          "name": "SALMON",
+          "description": "SALMON, WATER, VEGETABLE OIL (CANOLA, COTTONSEED, AND/OR SOYBEAN), CONTAINS 2% OR LESS OF: TOMATO PASTE, RICE STARCH, CITRIC ACID, SALT, DEHYDRATED GARLIC, DEHYDRATED ONION, SPICES, LIME OIL;, NATURAL FLAVORS, SOY LECITHIN, SODIUM TRIPOLYPHOSPHATE (TO RETAIN MOISTURE).",
+          "brand": "SEA CUISINE",
+          "calories": 139,
+          "source": "usda"
+        },
+        {
+          "id": 1028841,
+          "name": "SALMON",
+          "description": "FARM RAISED FISH (SALMON).",
+          "brand": "",
+          "calories": 232,
+          "source": "usda"
+        },
+        {
+          "id": 2470000,
+          "name": "SALMON",
+          "description": "SALMON, ASTAXANTHIN (FOR COLOR) FROM PANAFERD*, SALT, WHITE PEPPER",
+          "brand": "BLUE CIRCLE",
+          "calories": 207,
+          "source": "usda"
+        },
+        {
+          "id": 1895461,
+          "name": "SALMON",
+          "description": "ATLANTIC SALMON (COLOR ADDED), SPICES (DEHYDRATED VEGETABLES {ONION, BELL PEPPER, CELERY}, SALT, MALTODEXTRIN, SPICES, DEHYDRATED GARLIC, FULLY REFINED SOYBEAN OIL, SPICE EXTRACTIVES {INCLUDING PAPRIKA [COLOR], GARLIC AND ONION}, PARSLEY FLAKES, WITH NO MORE THAN 2% CALCIUM STEARATE AS ANTICAKING AGENT.",
+          "brand": "SANTA MONICA SEAFOOD",
+          "calories": 209,
+          "source": "usda"
+        },
+        {
+          "id": 2706850,
+          "name": "Lomi salmon",
+          "description": "",
+          "brand": "",
+          "calories": 60,
+          "source": "usda"
+        },
+        {
+          "id": 2706826,
+          "name": "Salmon salad",
+          "description": "",
+          "brand": "",
+          "calories": 213,
+          "source": "usda"
+        },
+        {
+          "id": 172343,
+          "name": "Fish oil, salmon",
+          "description": "",
+          "brand": "",
+          "calories": 902,
+          "source": "usda"
+        },
+        {
+          "id": 2706291,
+          "name": "Fish, salmon, canned",
+          "description": "",
+          "brand": "",
+          "calories": 136,
+          "source": "usda"
+        },
+        {
+          "id": 2706289,
+          "name": "Fish, salmon, fried",
+          "description": "",
+          "brand": "",
+          "calories": 307,
+          "source": "usda"
+        },
+        {
+          "id": 2706287,
+          "name": "Fish, salmon, grilled",
+          "description": "",
+          "brand": "",
+          "calories": 259,
+          "source": "usda"
+        },
+        {
+          "id": 2706285,
+          "name": "Fish, salmon, NFS",
+          "description": "",
+          "brand": "",
+          "calories": 274,
+          "source": "usda"
+        },
+        {
+          "id": 2706284,
+          "name": "Fish, salmon, raw",
+          "description": "",
+          "brand": "",
+          "calories": 188,
+          "source": "usda"
+        },
+        {
+          "id": 2706292,
+          "name": "Fish, salmon, smoked",
+          "description": "",
+          "brand": "",
+          "calories": 117,
+          "source": "usda"
+        },
+        {
+          "id": 2706290,
+          "name": "Fish, salmon, steamed",
+          "description": "",
+          "brand": "",
+          "calories": 237,
+          "source": "usda"
+        },
+        {
+          "id": 2707023,
+          "name": "Salmon cake sandwich",
+          "description": "",
+          "brand": "",
+          "calories": 279,
+          "source": "usda"
+        },
+        {
+          "id": 2708963,
+          "name": "Sushi roll, salmon",
+          "description": "",
+          "brand": "",
+          "calories": 103,
+          "source": "usda"
+        },
+        {
+          "id": 2708969,
+          "name": "Sushi, topped with salmon",
+          "description": "",
+          "brand": "",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2706552,
+          "name": "Fish, salmon cake or patty",
+          "description": "",
+          "brand": "",
+          "calories": 285,
+          "source": "usda"
+        },
+        {
+          "id": 2706286,
+          "name": "Fish, salmon, baked or broiled",
+          "description": "",
+          "brand": "",
+          "calories": 274,
+          "source": "usda"
+        },
+        {
+          "id": 173688,
+          "name": "Fish, salmon, chinook, raw",
+          "description": "",
+          "brand": "",
+          "calories": 179,
+          "source": "usda"
+        },
+        {
+          "id": 173687,
+          "name": "Fish, salmon, chinook, smoked",
+          "description": "",
+          "brand": "",
+          "calories": 117,
+          "source": "usda"
+        },
+        {
+          "id": 173689,
+          "name": "Fish, salmon, chum, raw",
+          "description": "",
+          "brand": "",
+          "calories": 120,
+          "source": "usda"
+        },
+        {
+          "id": 175138,
+          "name": "Fish, salmon, pink, raw",
+          "description": "",
+          "brand": "",
+          "calories": 127,
+          "source": "usda"
+        },
+        {
+          "id": 173691,
+          "name": "Fish, salmon, sockeye, raw",
+          "description": "",
+          "brand": "",
+          "calories": 131,
+          "source": "usda"
+        },
+        {
+          "id": 2706578,
+          "name": "Stewed salmon, Puerto Rican style",
+          "description": "",
+          "brand": "",
+          "calories": 146,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "olive oil",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.1610524654388428,
+    "details": {
+      "query": "olive oil",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.1590209007263184,
+      "results": [
+        {
+          "id": 2710186,
+          "name": "Olive oil",
+          "description": "",
+          "brand": "",
+          "calories": 900,
+          "source": "usda"
+        },
+        {
+          "id": 1905976,
+          "name": "OLIVE OIL",
+          "description": "REFINED OLIVE OIL AND EXTRA VIRGIN OLIVE OIL.",
+          "brand": "GOYA",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2073857,
+          "name": "OLIVE OIL",
+          "description": "WATER, SOYBEAN OIL, OLIVE OIL, WHOLE EGGS AND EGG YOLKS, MODIFIED POTATO STARCH, DISTILLED VINEGAR, SUGAR, SALT, LEMON JUICE CONCENTRATE, NATURAL FLAVOR, CALCIUM DISODIUM EDTA (TO PROTECT FLAVOR).",
+          "brand": "KROGER",
+          "calories": 429,
+          "source": "usda"
+        },
+        {
+          "id": 2055340,
+          "name": "OLIVE OIL",
+          "description": "EXTRA VIRGIN OLIVE OIL.",
+          "brand": "OLIVARI",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 493787,
+          "name": "OLIVE OIL",
+          "description": "LIGHT OLIVE OIL. ",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 496830,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 500853,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 1908628,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL.",
+          "brand": "AHOLD",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2290656,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL, PROPELLANT.",
+          "brand": "GEFEN",
+          "calories": 0.0,
+          "source": "usda"
+        },
+        {
+          "id": 2375518,
+          "name": "OLIVE OIL",
+          "description": "EXTRA VIRGIN OLIVE OIL AND REFINED OLIVE OIL.",
+          "brand": "NUTRIOLI'",
+          "calories": 867,
+          "source": "usda"
+        },
+        {
+          "id": 2102340,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL.",
+          "brand": "BIG Y",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 1582039,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "POMPEIAN",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 1582077,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "POMPEIAN",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 577489,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2085103,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL - COMPOSED OF REFINED OLIVE OILS AND VIRGIN OLIVE OILS.",
+          "brand": "BERTOLLI",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2040111,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL COMPOSED OF REFINED OLIVE OILS AND VIRGIN OLIVE OILS.",
+          "brand": "FILIPPO BERIO",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2084071,
+          "name": "OLIVE OIL",
+          "description": "REFINED OLIVE OIL, VIRGIN OLIVE OIL.",
+          "brand": "PRICE FIRST",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2084295,
+          "name": "OLIVE OIL",
+          "description": "REFINED OLIVE OIL, VIRGIN OLIVE OIL.",
+          "brand": "MARKET PANTRY",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2084572,
+          "name": "OLIVE OIL",
+          "description": "EXTRA VIRGIN OLIVE OIL.",
+          "brand": "NAPOLEON",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 1664567,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "STUTZ",
+          "calories": 857,
+          "source": "usda"
+        },
+        {
+          "id": 2282486,
+          "name": "OLIVE OIL",
+          "description": "EXTRA VIRGIN OLIVE OIL, NATURAL EXTRACT OF GARLIC.",
+          "brand": "TWISTED GARLIC",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 413450,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 414159,
+          "name": "OLIVE OIL",
+          "description": "",
+          "brand": "",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2054201,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL.",
+          "brand": "BIG Y",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2404869,
+          "name": "OLIVE OIL",
+          "description": "OLIVE OIL.",
+          "brand": "SHOPRITE",
+          "calories": 800,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "pasta barilla",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 2.1524696350097656,
+    "details": {
+      "query": "pasta barilla",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 2.149235725402832,
+      "results": [
+        {
+          "id": 2016665,
+          "name": "ACADEMIA BARILLA, FARFALLE BARILLA PASTA",
+          "description": "SEMOLINA (WHEAT), DURUM WHEAT FLOUR, NIACIN, IRON (FERROUS LACTATE), THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID.",
+          "brand": "ACADEMIA BARILLA",
+          "calories": 357,
+          "source": "usda"
+        },
+        {
+          "id": 2019806,
+          "name": "BARILLA, PASTA, ROTINI",
+          "description": "WHOLE GRAIN DURUM WHEAT FLOUR.",
+          "brand": "BARILLA",
+          "calories": 321,
+          "source": "usda"
+        },
+        {
+          "id": 2634359,
+          "name": "BARILLA, ORGANIC, PENNE PASTA",
+          "description": "ORGANIC SEMOLINA (WHEAT), ORGANIC DURUM WHEAT FLOUR. VITAMINS/MINERALS: VITAMIN B3 (NIACIN), IRON (FERROUS SULFATE), VITAMIN B1 (THIAMINE MONONITRATE), VITAMIN B2 (RIBOFLAVIN), FOLIC ACID.",
+          "brand": "BARILLA",
+          "calories": 357,
+          "source": "usda"
+        },
+        {
+          "id": 2634360,
+          "name": "BARILLA, ORGANIC, SPAGHETTI PASTA",
+          "description": "ORGANIC SEMOLINA (WHEAT), ORGANIC DURUM WHEAT FLOUR. VITAMINS/MINERALS: VITAMIN B3 (NIACIN), IRON (FERROUS SULFATE), VITAMIN B1 (THIAMINE MONONITRATE), VITAMIN B2 (RIBOFLAVIN), FOLIC ACID.",
+          "brand": "BARILLA",
+          "calories": 357,
+          "source": "usda"
+        },
+        {
+          "id": 2019807,
+          "name": "BARILLA, WHOLE WHEAT PASTA",
+          "description": "WHOLE GRAIN DURUM WHEAT FLOUR.",
+          "brand": "BARILLA",
+          "calories": 321,
+          "source": "usda"
+        },
+        {
+          "id": 2708357,
+          "name": "Pasta, cooked",
+          "description": "",
+          "brand": "",
+          "calories": 157,
+          "source": "usda"
+        },
+        {
+          "id": 2708930,
+          "name": "Flavored pasta",
+          "description": "",
+          "brand": "",
+          "calories": 87,
+          "source": "usda"
+        },
+        {
+          "id": 2708351,
+          "name": "Pasta, vegetable, cooked",
+          "description": "",
+          "brand": "",
+          "calories": 128,
+          "source": "usda"
+        },
+        {
+          "id": 2708359,
+          "name": "Pasta, gluten free",
+          "description": "",
+          "brand": "",
+          "calories": 179,
+          "source": "usda"
+        },
+        {
+          "id": 2012410,
+          "name": "BARILLA, WHOLE GRAIN PASTA, ANGEL HAIR",
+          "description": "WHOLE GRAIN DURUM WHEAT FLOUR, SEMOLINA (WHEAT), DURUM WHEAT FLOUR, OAT FIBER. ",
+          "brand": "BARILLA",
+          "calories": 357,
+          "source": "usda"
+        },
+        {
+          "id": 2708828,
+          "name": "Pasta with sauce, NFS",
+          "description": "",
+          "brand": "",
+          "calories": 125,
+          "source": "usda"
+        },
+        {
+          "id": 169736,
+          "name": "Pasta, dry, enriched",
+          "description": "",
+          "brand": "",
+          "calories": 371,
+          "source": "usda"
+        },
+        {
+          "id": 168927,
+          "name": "Pasta, dry, unenriched",
+          "description": "",
+          "brand": "",
+          "calories": 371,
+          "source": "usda"
+        },
+        {
+          "id": 2706593,
+          "name": "Stew, beef, with pasta",
+          "description": "",
+          "brand": "",
+          "calories": 132,
+          "source": "usda"
+        },
+        {
+          "id": 2706677,
+          "name": "Stew, chicken, with pasta",
+          "description": "",
+          "brand": "",
+          "calories": 108,
+          "source": "usda"
+        },
+        {
+          "id": 2706520,
+          "name": "Stew, pork, with pasta",
+          "description": "",
+          "brand": "",
+          "calories": 133,
+          "source": "usda"
+        },
+        {
+          "id": 2710136,
+          "name": "Toddler meal, pasta",
+          "description": "",
+          "brand": "",
+          "calories": 101,
+          "source": "usda"
+        },
+        {
+          "id": 2708358,
+          "name": "Pasta, whole grain, cooked",
+          "description": "",
+          "brand": "",
+          "calories": 148,
+          "source": "usda"
+        },
+        {
+          "id": 2708827,
+          "name": "Pasta with vegetables, no sauce or dressing",
+          "description": "",
+          "brand": "",
+          "calories": 144,
+          "source": "usda"
+        },
+        {
+          "id": 2708855,
+          "name": "Pasta with cream sauce, restaurant",
+          "description": "",
+          "brand": "",
+          "calories": 204,
+          "source": "usda"
+        },
+        {
+          "id": 172266,
+          "name": "Babyfood, dinner, pasta with vegetables",
+          "description": "",
+          "brand": "",
+          "calories": 60.0,
+          "source": "usda"
+        },
+        {
+          "id": 2709082,
+          "name": "Flavored rice and pasta mixture",
+          "description": "",
+          "brand": "",
+          "calories": 118,
+          "source": "usda"
+        },
+        {
+          "id": 2708947,
+          "name": "Macaroni or pasta salad with cheese",
+          "description": "",
+          "brand": "",
+          "calories": 246,
+          "source": "usda"
+        },
+        {
+          "id": 2708946,
+          "name": "Macaroni or pasta salad with chicken",
+          "description": "",
+          "brand": "",
+          "calories": 213,
+          "source": "usda"
+        },
+        {
+          "id": 2708941,
+          "name": "Macaroni or pasta salad with egg",
+          "description": "",
+          "brand": "",
+          "calories": 215,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "parmigiano reggiano",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.1665534973144531,
+    "details": {
+      "query": "parmigiano reggiano",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.164170265197754,
+      "results": [
+        {
+          "id": 2021131,
+          "name": "PARMIGIANO REGGIANO",
+          "description": "PART - SKIM MILK, SALT, RENNET.",
+          "brand": "LE DELIZIE DEL FARNESE SEMPRE BONI",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2011246,
+          "name": "PARMIGIANO REGGIANO",
+          "description": "RAW COW'S MILK, SALT, ANIMAL RENNET.",
+          "brand": "AMBROSI",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2093293,
+          "name": "PARMIGIANO REGGIANO",
+          "description": "COW'S MILK, SALT, RENNET.",
+          "brand": "DIETZ & WATSON",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 719340,
+          "name": "PARMIGIANO REGGIANO",
+          "description": "MILK, SALT, RENNET.",
+          "brand": "",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2659290,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "UNPASTEURIZED COW'S MILK, SALT, RENNET.",
+          "brand": "GOOD & GATHER",
+          "calories": 429,
+          "source": "usda"
+        },
+        {
+          "id": 2061824,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "COW'S MILK, RENNET, SALT.",
+          "brand": "AGRIFORM",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2544534,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "COW'S MILK, SALT, RENNET.",
+          "brand": "FOOD LION",
+          "calories": 400,
+          "source": "usda"
+        },
+        {
+          "id": 2427681,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "ORGANIC MILK, SALT, RENNET.",
+          "brand": "SIMPLE TRUTH",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2219383,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "CULTURED PART-SKIM MILK, SALT, ENZYMES.",
+          "brand": "STELLA",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 1126075,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "RAW COW'S MILK, SALT, RENNET.",
+          "brand": "",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2554632,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "RAW COW'S MILK, SALT, RENNET.",
+          "brand": "AMBROSI",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2400937,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO REGGIANO",
+          "description": "MILK, SALT, RENNET.",
+          "brand": "BELGIOIOSO",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2389415,
+          "name": "PARMIGIANO REGGIANO MARINARA, PARMIGIANO REGGIANO",
+          "description": "ITALIAN PLUM TOMATOES FROM ITALY'S SAN MARZANO REGION, EXTRA VIRGIN OLIVE OIL, CREAM, FRESH ONIONS, IMPORTED PARMIGIANO REGGIANO CHEESE (PART-SKIMMED MILK, SALT, RENNET), PARMESAN CHEESE (PART-SKIMMED MILK, CHEESE CULTURES, SALT, ENZYMES), SEA SALT, FRESH GARLIC, SPICES, FRESH BASIL, BLACK PEPPER, XANTHAN GUM, CITRIC ACID.",
+          "brand": "MEZZETTA",
+          "calories": 128,
+          "source": "usda"
+        },
+        {
+          "id": 2140656,
+          "name": "PARMIGIANO REGGIANO RAVIOLI, PARMIGIANO REGGIANO",
+          "description": "FILLING: CREAM, RICOTTA CHEESE (CULTURED MILK WHEY, SALT, ACIDITY REGULATOR [CITRIC ACID]), PARMIGIANO REGGIANO CHEESE (CULTURED MILK, SALT, ENZYMES), WATER, BREAD CRUMBS (WHEAT FLOUR, SALT, YEAST), WHEY POWDER, BUTTER, CORN FLOUR, SALT. PASTA: WHEAT FLOUR, PASTEURIZED EGG, DURUM WHEAT SEMOLINA.",
+          "brand": "GUSTARE VITA",
+          "calories": 293,
+          "source": "usda"
+        },
+        {
+          "id": 2551529,
+          "name": "PARMIGIANO-REGGIANO CHEESE, PARMIGIANO-REGGIANO",
+          "description": "PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES.",
+          "brand": "PUBLIX",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2658763,
+          "name": "TORTELLONI WITH PARMIGIANO REGGIANO, PARMIGIANO REGGIANO",
+          "description": "PASTA: WHEAT FLOUR, PASTEURIZED EGG, DURUM WHEAT SEMOLINA. FILLING: RICOTTA CHEESE (CULTURED MILK WHEY, CREAM, SALT, ACIDITY REGULATOR [CITRIC ACID, LACTIC ACID]), WATER, PARMIGIANO REGGIANO PDO CHEESE (CULTURED MILK, SALT, ENZYMES), RICE FLOUR, POTATO FLAKES, VEGETABLE OIL (SUNFLOWER OIL AND/OR RAPESEED OIL AND/OR CORN OIL AND/OR SOYBEAN OIL), WHEY POWDER, BUTTER, CORN FLOUR, WHEAT FIBER, SALT, SOYBEANS.",
+          "brand": "SIGNATURE RESERVE",
+          "calories": 300,
+          "source": "usda"
+        },
+        {
+          "id": 2069139,
+          "name": "ALFREDO SAUCE WITH PARMIGIANO REGGIANO, PARMIGIANO REGGIANO",
+          "description": "HEAVY CREAM (CREAM), WATER, PARMIGIANO REGGIANO CHEESE (COW'S MILK, RENNET, SALT), PECORINO ROMANO CHEESE (PASTEURIZED CULTURED SHEEP'S MILK, RENNET, SALT), ONIONS, 2% OR LESS OF BLACK PEPPER, CORNSTARCH, GARLIC, NATURAL FLAVORS, SALT, YEAST EXTRACT.",
+          "brand": "GIOVANNI RANA",
+          "calories": 300,
+          "source": "usda"
+        },
+        {
+          "id": 2510679,
+          "name": "PARMIGIANO REGGIANO SHREDDED CHEESE, PARMIGIANO REGGIANO",
+          "description": "COW'S MILK,SALT, RENNET.",
+          "brand": "AMBROSI",
+          "calories": 400,
+          "source": "usda"
+        },
+        {
+          "id": 2399507,
+          "name": "PARMIGIANO REGGIANO SHREDDED CHEESE, PARMIGIANO REGGIANO",
+          "description": "PART-SKIMMED COW'S MILK, CHEESE CULTURES, SALT, RENNET.",
+          "brand": "MEMBER'S MARK",
+          "calories": 393,
+          "source": "usda"
+        },
+        {
+          "id": 2399382,
+          "name": "PARMIGIANO REGGIANO CHEESE, PARMIGIANO",
+          "description": "PARMIGIANO REGGIANO CHEESE - PART-SKIMMED RAW COW'S MILK, SALT, RENNET. PEPPERONI - PORK, SEA SALT, CONTAINS LESS THAN 2% OF THE FOLLOWING: TURBINADO SUGAR, NATURAL FLAVORING, WINE, GARLIC, SWEET PAPRIKA, LACTIC ACID STARTER CULTURE. CASTELVETRANO OLIVES - OLIVES (PITTED), WATER, SALT, CITRIC ACID, ASCORBIC ACID, LACTIC ACID.",
+          "brand": "MURRAY'S",
+          "calories": 282,
+          "source": "usda"
+        },
+        {
+          "id": 2418567,
+          "name": "ITALIAN PARMIGIANO REGGIANO CHEESE, ITALIAN PARMIGIANO REGGIANO",
+          "description": "COWS MILK, SALT, RENNET.",
+          "brand": "SE GROCERS",
+          "calories": 429,
+          "source": "usda"
+        },
+        {
+          "id": 2388785,
+          "name": "PARMIGIANO REGGIANO AND TRUFFLE MEZZELUNE, PARMIGIANO REGGIANO AND TRUFFLE",
+          "description": "FILLING (CREAM, RICOTTA CHEESE [WHEY, CREAM, SALT, CITRIC ACID {ACIDITY REGULATOR}], PARMIGIANO REGGIANO PDO CHEESE [CULTURED MILK, SALT, ANIMAL RENNET, WATER, BREAD CRUMBS [WHEAT FLOUR, SALT, YEAST], WHEY POWDER, BUTTER, CORN FLOUR, SALT, NATURAL FLAVOR, SUMMER TRUFFLE PIECES), PASTA (WHEAT FLOUR, PASTEURIZED EGGS, DURUM WHEAT SEMOLINA).",
+          "brand": "WEGMANS",
+          "calories": 273,
+          "source": "usda"
+        },
+        {
+          "id": 2411106,
+          "name": "PARMIGIANO REGGIANO FILLED PASTA GIRASOLI, PARMIGIANO REGGIANO",
+          "description": "FILLING: CREAM, RICOTTA CHEESE (CULTURED MILK WHEY, CREAM, SALT, CITRIC ACID (ACIDITY REGULATOR]), PARMIGIANO REGGIANO PDO CHEESE (MILK, SALT, ENZYMES), WATER, BREADCRUMBS (WHEAT FLOUR, YEAST, SALT), WHEY POWDER, BUTTER, CORN FLOUR, SALT, PASTA: WHEAT FLOUR, PASTEURIZED LIQUID WHOLE EGG, DURUM WHEAT SEMOLINA.",
+          "brand": "HEM IS FARES",
+          "calories": 293,
+          "source": "usda"
+        },
+        {
+          "id": 2418599,
+          "name": "PARMIGIANO REGGIANO FRESHLY GRATED CHEESE, PARMIGIANO REGGIANO",
+          "description": "COW'S MILK, SALT, RENNET, CELLULOSE TO PREVENT CAKING, NATAMYCIN TO PROTECT FLAVOR.",
+          "brand": "AMBRIOLA",
+          "calories": 400,
+          "source": "usda"
+        },
+        {
+          "id": 2552456,
+          "name": "PARMIGIANO REGGIANO FRESHLY GRATED CHEESE, PARMIGIANO REGGIANO",
+          "description": "COW'S MILK, SALT, RENNET, CELLULOSE TO PREVENT CAKING, NATAMYCIN TO PROTECT FLAVOR.",
+          "brand": "AURICCHIO",
+          "calories": 400,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "prosciutto di parma",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.2572693824768066,
+    "details": {
+      "query": "prosciutto di parma",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.2548425197601318,
+      "results": [
+        {
+          "id": 2432743,
+          "name": "PROSCIUTTO DI PARMA",
+          "description": "ITALIAN PORK LEG, SEA SALT",
+          "brand": "PARMA",
+          "calories": 200,
+          "source": "usda"
+        },
+        {
+          "id": 2178146,
+          "name": "PROSCIUTTO DI PARMA",
+          "description": "PORK, SALT.",
+          "brand": "BOAR'S HEAD",
+          "calories": 242,
+          "source": "usda"
+        },
+        {
+          "id": 1930232,
+          "name": "PROSCIUTTO DI PARMA",
+          "description": "PORK, SALT",
+          "brand": "PRIMA DELLA",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 2667471,
+          "name": "DI PARMA PROSCIUTTO",
+          "description": "PORK, SALT",
+          "brand": "BOAR'S HEAD",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 2060186,
+          "name": "PROSCIUTTO DI PARMA HAM",
+          "description": "PORK, SALT.",
+          "brand": "COLUMBUS",
+          "calories": 286,
+          "source": "usda"
+        },
+        {
+          "id": 2667470,
+          "name": "PROSCIUTTO DI PARMA HAM",
+          "description": "PORK, SALT",
+          "brand": "BOAR'S HEAD",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 2615166,
+          "name": "ALL NATURAL PROSCIUTTO DI PARMA",
+          "description": "PORK, SALT",
+          "brand": "CITTERIO ",
+          "calories": 214,
+          "source": "usda"
+        },
+        {
+          "id": 2565772,
+          "name": "BRUNCKHORST'S BOAR'S HEAD PROSCIUTTO DI PARMA, 8 COUNT, 3 OZ",
+          "description": "PORK, SALT",
+          "brand": "BOAR'S HEAD",
+          "calories": 242,
+          "source": "usda"
+        },
+        {
+          "id": 2705879,
+          "name": "Ham, prosciutto",
+          "description": "",
+          "brand": "",
+          "calories": 195,
+          "source": "usda"
+        },
+        {
+          "id": 2418325,
+          "name": "PROSCIUTTO DI SAN DANIELE",
+          "description": "ITALIAN PORK LEG, SEA SALT",
+          "brand": "PRINCIPE",
+          "calories": 250,
+          "source": "usda"
+        },
+        {
+          "id": 2607333,
+          "name": "VERONI SALAME DI PARMA, 4 OZ",
+          "description": "PORK, SEA SALT, DEXTROSE, SODIUM ASCORBATE, SODIUM NITRITE, POTASSIUM NITRATE, LACTIC ACID STARTER CULTURE, GARLIC POWDER, SPICES",
+          "brand": "VERONI",
+          "calories": 321,
+          "source": "usda"
+        },
+        {
+          "id": 2061449,
+          "name": "PRINCIPE, PROSCIUTTO DI SAN DANIELE",
+          "description": "ITALIAN PORK LEG, SEA SALT.",
+          "brand": "PRINCIPE",
+          "calories": 250,
+          "source": "usda"
+        },
+        {
+          "id": 2052709,
+          "name": "PRINCIPE, PROSCIUTTO DI SAN DANIELE",
+          "description": "ITALIAN PORK LEG, SEA SALT.",
+          "brand": "PRINCIPE",
+          "calories": 250,
+          "source": "usda"
+        },
+        {
+          "id": 2153779,
+          "name": "PARMA SAUCE FOR PIZZA, PARMA",
+          "description": "TOMATO PUREE, CHOPPED TOMATOES, CARROT, PARMIGIANO REGGIANO P.D.O. CHEESE, EXTRA VIRGIN OLIVE OIL, SHALLOT, MEDITERRANEAN SEA SALT, NATURAL FLAVOR, BLACK PEPPER",
+          "brand": "MUTTI PARMA",
+          "calories": 56.0,
+          "source": "usda"
+        },
+        {
+          "id": 741288,
+          "name": "PARMA HAM",
+          "description": "PORK, SALT.",
+          "brand": "",
+          "calories": 250,
+          "source": "usda"
+        },
+        {
+          "id": 1868770,
+          "name": "PARMA HAM",
+          "description": "PORK, SALT.",
+          "brand": "BUSSETO FOODS",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 2484148,
+          "name": "PARMA HAM",
+          "description": "PORK MEAT, SALT",
+          "brand": "VIA AEMILIA",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 2678599,
+          "name": "PARMA ROSA SAUCE MIX, PARMA ROSA",
+          "description": "TOMATO POWDER, PARMESAN AND ROMANO CHEESES (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), WHEY PROTEIN CONCENTRATE, CORNSTARCH, WHEAT FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID), MALTODEXTRIN, SALT, HYDROLYZED CORN PROTEIN, HIGH OLEIC SUNFLOWER OIL, SUGAR, SPICES, GARLIC POWDER, WHEY, PARSLEY, NATURAL FLAVOR, PAPRIKA OLEORESIN AND ANNATTO EXTRACT (FOR COLOR), SOY LECITHIN.",
+          "brand": "KNORR",
+          "calories": 375,
+          "source": "usda"
+        },
+        {
+          "id": 2463950,
+          "name": "PARMA ROASTEP GARLIC FLAVORED RICE, PARMA ROASTEP GARLIC",
+          "description": "WATER, PARBOILED LONG GRAIN BROWN RICE, SEASONING {WHEY, SALT, GARLIC POWDER. PARMESAN CHEESE [(MILK, SALT, CULTURES, ENZYMES), DISODIUM PHOSPHATE], BUTTERMILK, NATURAL FLAVORS, YEAST EXTRACT, PARSLEY, DISODIUM INOSINATE AND DISODIUM GUANYLATE, SUGAR, LACTIC ACID, OLEORESIN PAPRIKA}, RICE BRAN OIL",
+          "brand": "RICELAND",
+          "calories": 108,
+          "source": "usda"
+        },
+        {
+          "id": 2156184,
+          "name": "PROSCIUTTO CREMINELLI, PROSCIUTTO",
+          "description": "MADE WITH PORK AND SEA SALT",
+          "brand": "CREMINELLI FINE MEATS",
+          "calories": 679,
+          "source": "usda"
+        },
+        {
+          "id": 2544548,
+          "name": "PROSCIUTTO HAM, PROSCIUTTO",
+          "description": "PORK, SALT.",
+          "brand": "METROPOLITAN MARKET",
+          "calories": 250,
+          "source": "usda"
+        },
+        {
+          "id": 1897279,
+          "name": "HORMEL, CHICKEN PARMA ROSA",
+          "description": "PARMA ROSA SAUCE (WATER, DRIED TOMATO, PARMESAN CHEESE [PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES], MODIFIED CORN STARCH, NATURAL FLAVOR, SALT, NONFAT DRY MILK, PARTIALLY HYDROGENATED SOYBEAN OIL, SUGAR, MALTODEXTRIN, YEAST EXTRACT, FLAVOR [MALTODEXTRIN, MODIFIED CORN STARCH, FLAVOR], DRIED GARLIC, LACTOSE, SPICES, SODIUM CASEINATE, OLIVE OIL, CITRIC ACID, ANNATTO EXTRACT [COLOR], PAPRIKA EXTRACT [COLOR], DRIED PARSLEY, XANTHAN GUM), ROASTED CHICKEN STRIPS: (BONELESS CHICKEN BREAST WITH RIB MEAT, WATER, CONTAINS 2% OR LESS OF POTATO STARCH, CHICKEN, SEA SALT, CHICKEN BROTH, EVAPORATED CANE SYRUP, GARLIC POWDER, ONION POWDER, GUM ARABIC, NATURAL FLAVOR [CONTAINS NATURAL SMOKE FLAVOR AND EXTRACT OF ROSEMARY], SUNFLOWER OIL, NATURAL FLAVORING, CITRIC ACID).",
+          "brand": "HORMEL",
+          "calories": 95.0,
+          "source": "usda"
+        },
+        {
+          "id": 2484174,
+          "name": "PROSCIUTTO",
+          "description": "PORK, SALT.",
+          "brand": "PRIMO TAGLIO",
+          "calories": 214,
+          "source": "usda"
+        },
+        {
+          "id": 2495531,
+          "name": "PROSCIUTTO",
+          "description": "PORK, SEA SALT.",
+          "brand": "NATURALISSIMA",
+          "calories": 286,
+          "source": "usda"
+        },
+        {
+          "id": 2094851,
+          "name": "PROSCIUTTO",
+          "description": "PORK, SALT.",
+          "brand": "DEL DUCA",
+          "calories": 214,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "mozzarella di bufala",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 2.0178945064544678,
+    "details": {
+      "query": "mozzarella di bufala",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 2.01363205909729,
+      "results": [
+        {
+          "id": 1884913,
+          "name": "MOZZARELLA DI BUFALA CAMPANA DOP CHEESE",
+          "description": "PASTEURIZED BUFFALO MILK, NATURAL WHEY, ANIMAL RENNET AND SALT.",
+          "brand": "IL VILLAGGIO",
+          "calories": 317,
+          "source": "usda"
+        },
+        {
+          "id": 2181782,
+          "name": "OVOLINE DI BUFALA, OVOLINE",
+          "description": "PASTEURIZED BUFFALO MILK, LACTIC CULTURES, ENZYMES, RENNET, SALT.",
+          "brand": "CALABRO",
+          "calories": 267,
+          "source": "usda"
+        },
+        {
+          "id": 1890006,
+          "name": "FINEST BUFALA MOZZARELLA CHEESE",
+          "description": "WHOLE PASTEURIZED BUFALA MILK, CALCIUM CHLORIDE, SALT, FERMENTED LACTICS, RENNET.",
+          "brand": "DECA & OTTO",
+          "calories": 233,
+          "source": "usda"
+        },
+        {
+          "id": 1851990,
+          "name": "DECA & OTTO, FINEST BUFALA MOZZARELLA CHEESE",
+          "description": "WHOLE PASTEURIZED BUFALA MILK, CALCIUM CHLORIDE, SALT, FERMENTED LACTICS, RENNET.",
+          "brand": "DECA & OTTO",
+          "calories": 233,
+          "source": "usda"
+        },
+        {
+          "id": 169011,
+          "name": "APPLEBEE'S, mozzarella sticks",
+          "description": "",
+          "brand": "",
+          "calories": 316,
+          "source": "usda"
+        },
+        {
+          "id": 172198,
+          "name": "Cheese substitute, mozzarella",
+          "description": "",
+          "brand": "",
+          "calories": 248,
+          "source": "usda"
+        },
+        {
+          "id": 2705722,
+          "name": "Cheese, Mozzarella, NFS",
+          "description": "",
+          "brand": "",
+          "calories": 296,
+          "source": "usda"
+        },
+        {
+          "id": 169051,
+          "name": "Cheese, mozzarella, nonfat",
+          "description": "",
+          "brand": "",
+          "calories": 141,
+          "source": "usda"
+        },
+        {
+          "id": 167735,
+          "name": "Cheese, mozzarella, low sodium",
+          "description": "",
+          "brand": "",
+          "calories": 280,
+          "source": "usda"
+        },
+        {
+          "id": 2705723,
+          "name": "Cheese, Mozzarella, part skim",
+          "description": "",
+          "brand": "",
+          "calories": 296,
+          "source": "usda"
+        },
+        {
+          "id": 2705724,
+          "name": "Cheese, Mozzarella, reduced sodium",
+          "description": "",
+          "brand": "",
+          "calories": 280,
+          "source": "usda"
+        },
+        {
+          "id": 170845,
+          "name": "Cheese, mozzarella, whole milk",
+          "description": "",
+          "brand": "",
+          "calories": 299,
+          "source": "usda"
+        },
+        {
+          "id": 168076,
+          "name": "DENNY'S, mozzarella cheese sticks",
+          "description": "",
+          "brand": "",
+          "calories": 324,
+          "source": "usda"
+        },
+        {
+          "id": 172109,
+          "name": "Lean Pockets, Meatballs & Mozzarella",
+          "description": "",
+          "brand": "",
+          "calories": 240,
+          "source": "usda"
+        },
+        {
+          "id": 169834,
+          "name": "T.G.I. FRIDAY'S, fried mozzarella",
+          "description": "",
+          "brand": "",
+          "calories": 333,
+          "source": "usda"
+        },
+        {
+          "id": 2705817,
+          "name": "Mozzarella sticks, breaded, baked, or fried",
+          "description": "",
+          "brand": "",
+          "calories": 325,
+          "source": "usda"
+        },
+        {
+          "id": 2705725,
+          "name": "Cheese, Mozzarella, nonfat or fat free",
+          "description": "",
+          "brand": "",
+          "calories": 141,
+          "source": "usda"
+        },
+        {
+          "id": 170847,
+          "name": "Cheese, mozzarella, part skim milk",
+          "description": "",
+          "brand": "",
+          "calories": 254,
+          "source": "usda"
+        },
+        {
+          "id": 329370,
+          "name": "Cheese, mozzarella, low moisture, part-skim",
+          "description": "",
+          "brand": "",
+          "calories": 298,
+          "source": "usda"
+        },
+        {
+          "id": 171244,
+          "name": "Cheese, mozzarella, low moisture, part-skim",
+          "description": "",
+          "brand": "",
+          "calories": 295,
+          "source": "usda"
+        },
+        {
+          "id": 170846,
+          "name": "Cheese, mozzarella, whole milk, low moisture",
+          "description": "",
+          "brand": "",
+          "calories": 318,
+          "source": "usda"
+        },
+        {
+          "id": 169015,
+          "name": "Restaurant, family style, fried mozzarella sticks",
+          "description": "",
+          "brand": "",
+          "calories": 325,
+          "source": "usda"
+        },
+        {
+          "id": 170900,
+          "name": "Cheese, mozzarella, low moisture, part-skim, shredded",
+          "description": "",
+          "brand": "",
+          "calories": 304,
+          "source": "usda"
+        },
+        {
+          "id": 172107,
+          "name": "HOT POCKETS, meatballs & mozzarella stuffed sandwich, frozen",
+          "description": "",
+          "brand": "",
+          "calories": 252,
+          "source": "usda"
+        },
+        {
+          "id": 2705818,
+          "name": "Mozzarella cheese, tomato, and basil, with oil and vinegar dressing",
+          "description": "",
+          "brand": "",
+          "calories": 139,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "tiramisu",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.306981086730957,
+    "details": {
+      "query": "tiramisu",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.3030107021331787,
+      "results": [
+        {
+          "id": 2705702,
+          "name": "Tiramisu",
+          "description": "",
+          "brand": "",
+          "calories": 353,
+          "source": "usda"
+        },
+        {
+          "id": 2677409,
+          "name": "TIRAMISU",
+          "description": "CREAM, MILK, WATER, SUGAR, LADYFINGERS (WHEAT FLOUR, SUGAR, EGG, LEAVENING AGENTS [DISODIUM DIPHOSPHATE, SODIUM CARBONATE, AMMONIUM CARBONATE], GLUCOSE SYRUP, ARTIFICIAL FLAVOR, SALT), EGG YOLK, RICE STARCH, COCOA POWDER, GELATIN, ESPRESSO POWDER, CITRIC ACID.",
+          "brand": "ARCHER FARMS",
+          "calories": 235,
+          "source": "usda"
+        },
+        {
+          "id": 1946131,
+          "name": "TIRAMISU",
+          "description": "NONFAT MILK, CORN SYRUP, LADY FINGER (WHEAT FLOUR, EGG, SUGAR, WHEY PROTEIN CONCENTRATE, LEAVENINGS (DISODIUM DIPHOSPHATE, BAKING SODA)), WATER, COCONUT OIL, SUGAR, MASCARPONE CHEESE (CREAM, LACTIC ACID), WHEY PROTEIN CONCENTRATE, ETHYL ALCOHOL, EGG YOLK, MARSALA WINE, INSTANT COFFEE, TAPIOCA STARCH, COCOA, DEXTROSE, CARRAGEENAN, LOCUST BEAN GUM, XANTHAN GUM, LACTIC ACID ESTERS OF MONO- AND DIGLYCERIDES OF FATTY ACIDS, COFFEE EXTRACT, WHEAT STARCH, COCOA BUTTER, ARTIFICIAL FLAVORINGS.",
+          "brand": "SOLO ITALIA",
+          "calories": 288,
+          "source": "usda"
+        },
+        {
+          "id": 2095088,
+          "name": "TIRAMISU",
+          "description": "ALMOND MILK* (WATER, ALMONDS*), COCONUT MILK* (WATER, SHREDDED COCONUT*,), ALMONDS FLOUR*, DATES*, COCONUT OIL*, CASHEWS*, COCONUT NECTAR*, DATE SYRUP*, VANILLA EXTRACT*, CACAO POWDER*, SUNFLOWER LECITHIN, IRISH MOSS, ESPRESSO, HIMALAYAN PINK SALT.",
+          "brand": "URBAN REMEDY",
+          "calories": 313,
+          "source": "usda"
+        },
+        {
+          "id": 1891654,
+          "name": "TIRAMISU",
+          "description": "REHYDRATED SKIMMED MILK, SUGAR, REFINED VEGETABLE OIL (COCONUT), COFFEE SYRUP 4% (SUGAR, GLUCOSE SYRUP, WATER, COFFEE POWDER 3.25%, MODIFIED STARCH, VEGETABLE OIL, CONCENTRATED MILK, FLAVORS, AGAR AGAR), DEXTROSE, EGGNOG 2% (MARSALA WINE 39%, SUGAR, EGG YOLK 20%, ALCOHOL, CONCENTRATED MILK, FLAVORS, MODIFIED STARCH), GLUCOSE SYRUP, COCOA POWDER 1%, MILK PROTEINS, MONO AND DIGLYCERIDES OF FATTY ACIDS, CAROB SEED FLOUR, GUAR GUM, CARRAGEENAN, FLAVORS, TURMERIC COLORING.",
+          "brand": "ITAL GELATO",
+          "calories": 209,
+          "source": "usda"
+        },
+        {
+          "id": 2504731,
+          "name": "TIRAMISU",
+          "description": "WATER, TIRAMISU SYRUP (WATER, HIGH FRUCTOSE CORN SYRUP, NATURAL AND ARTIFICIAL FLAVOR, CARAMEL COLOR, POTASSIUM SORBATE PRESERVATIVE, SULFITING AGENTS PRESERVATIVE), SUGAR, HEAVY CREAM (CREAM, MILK, MONO- AND DIGLYCERIDES, POLYSORBATE 80, CARRAGEENAN), CREAM CHEESE (MILK, CREAM, CHEESE CULTURE, SALT, CAROB BEAN GUM), ENRICHED BLEACHED WHEAT FLOUR (FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), EGGS, VANILLA ARTIFICIALLY FLAVORED FILLING (SUGAR, MODIFIED FOOD STARCH, FILLING BASE [PARTIALLY HYDROGENATED VEGETABLE OILS {COCONUT, PALM KERNEL, PALM, SOYBEAN}, CORN SYRUP SOLIDS, SUGAR, PROPYLENE GLYCOL MONOSTEARATE, SODIUM CASEINATE, ACETYLATED MONOGLYCERIDES, MONO- AND DIGLYCERIDES], DEXTROSE, NONFAT MILK, SALT, SODIUM ACID PYROPHOSPHATE, YELLOW 5, YELLOW 6, TITANIUM DIOXIDE COLOR, ARTIFICIAL FLAVOR), CONTAINS LESS THAN 2% OF THE FOLLOWING: MASCARPONE CHEESE (PASTEURIZED MILK, PASTEURIZED CREAM, CITRIC ACID), MODIFIED FOOD STARCH, BAKING SODA, SALT, SOYBEAN OIL, WHEAT GLUTEN, EMULSIFIER BLEND (MALTODEXTRIN, MONOGLYCERIDES, PROPYLENE GLYCOL MONO- AND DIESTERS OF FATS AND FATTY ACIDS, SODIUM CASEINATE, SODIUM STEARATE, DATEM), LEAVENING (SODIUM ALUMINUM PHOSPHATE, ALUMINUM SULFATE), COCOA PROCESSED WITH ALKALI, SOY LECITHIN, SODIUM CASEINATE, SODIUM STEAROYL LACTYLATE, MONOCALCIUM PHOSPHATE, XANTHAN GUM.",
+          "brand": "DAILY CHEF",
+          "calories": 235,
+          "source": "usda"
+        },
+        {
+          "id": 1898241,
+          "name": "TIRAMISU",
+          "description": "MASCARPONE CHEESE (PASTEURIZED MILK AND CREAM, CITRIC ACID), CAKE (SUGAR, WHEAT FLOUR, SOYBEAN OIL, MODIFIED FOOD STARCH, DRIED WHEY (MILK), EMULSIFIER BLEND (PROPYLENE GLYCOL MONOESTER, MONO AND DIGLYCERIDES, SOY LECITHIN, CITRIC ACID), LEAVENING (SODIUM ACID PYROPHOSPHATE, SODIUM BICARBONATE), WHEAT GLUTEN, SALT, NATURAL FLAVOR), SUGAR, EGGS, CANOLA OIL, COFFEE, COFFEE BEAN (SEMI-SWEET CHOCOLATE (SUGAR, UNSWEETENED CHOCOLATE, COCOA BUTTER, MILK FAT, SOY LECITHIN, VANILLA), ROASTED WHOLE ESPRESSO BEAN, POWDERED SUGAR, COCOA, DEXTRIN, CONFECTIONER'S GLAZE), COGNAC, COCOA, BROWN SUGAR",
+          "brand": "CHUCKANUT BAY",
+          "calories": 380,
+          "source": "usda"
+        },
+        {
+          "id": 2460091,
+          "name": "TIRAMISU CAKE, TIRAMISU",
+          "description": "WATER, SUGAR, EGGS, HEAVY CREAM (CREAM, MILK, NONFAT MILK, CARRAGEENAN, DEXTROSE), WHEAT FLOUR, ENRICHED FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), CANOLA OIL, COFFEE CONCENTRATE, LOWFAT DRY MILK, LESS THAN 2% OF: FOOD STARCH-MODIFIED, SODIUM ACID PYROPHOSPHATE, BAKING SODA, CORN STARCH, MONOCALCIUM PHOSPHATE, SUGAR, SALT, NATURAL FLAVOR, TETRASODIUM PYROPHOSPHATE, SODIUM ALGINATE, COCOA POWDER, FRUIT JUICE COLOR, XANTHAN GUM, SOY LECITHIN.",
+          "brand": "FRESHNESS GUARANTEED",
+          "calories": 265,
+          "source": "usda"
+        },
+        {
+          "id": 2487047,
+          "name": "TIRAMISU CAKE, TIRAMISU",
+          "description": "WATER, SUGAR, WHIPPING CREAM (CREAM, MILK, CARRAGEENAN), ENRICHED BLEACHED WHEAT FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID), EGG, CANOLA OIL, COFFEE CONCENTRATE (WATER, COFFEE), NONFAT DRY MILK, LESS THAN 2% OF: CORN STARCH, MODIFIED CORN STARCH, CREAM, SALT, GUAR GUM, CAROB BEAN GUM, CHEESE CULTURE, SODIUM ACID PYROPHOSPHATE, BAKING SODA, MONOCALCIUM PHOSPHATE, CALCIUM SULFATE, MODIFIED TAPIOCA STARCH, UNSWEETENED CHOCOLATE, COCOA BUTTER, SOY LECITHIN, NATURAL FLAVOR, TETRASODIUM PYROPHOSPHATE, SODIUM ALGINATE, HIGH FAT COCOA (PROCESSED WITH ALKALI), FRUIT JUICE (FOR COLOR), XANTHAN GUM, CARAMEL COLOR.",
+          "brand": "FRESHNESS GUARANTEED",
+          "calories": 256,
+          "source": "usda"
+        },
+        {
+          "id": 2583268,
+          "name": "TIRAMISU CAKE, TIRAMISU",
+          "description": "VANILLA CAKE (SUGAR, ENRICHED WHEAT FLOUR BLEACHED [FLOUR, NIACIN, IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID], FOOD STARCH-MODIFIED, SOYBEAN OIL, CONTAINS 2% OR LESS OF: DEFATTED SOY FLOUR, EGGS, LEAVENING [BAKING SODA, SODIUM ALUMINUM PHOSPHATE], MONO- AND DIGLYCERIDES, NATURAL AND ARTIFICIAL FLAVOR, PROPYLENE GLYCOL MONO- AND DIESTERS OF FATTY ACIDS, SALT, SODIUM STEAROYL LACTYLATE, VITAL WHEAT GLUTEN, WHEY.), FROSTING (WATER, SUGAR, HYDROGENATED PALM KERNEL OIL, DEXTROSE, SODIUM CASEINATE. CONTAINS LESS THAN 2% OF THE FOLLOWING: CITRIC ACID, POLYSORBATE 80, SALT, XANTHAN GUM, POLYSORBATE 60, CARBOHYDRATE GUM, POLYGLYCEROL ESTERS OF FATTY ACIDS, POTASSIUM SORBATE, MONO AND DIGLYCERIDES), WATER, SOYBEAN OIL, EGGS, SUGAR, CINNAMON, COCOA POWDER, NATURAL AND ARTIFICIAL FLAVORS, FLOUR (BLEACHED WHEAT FLOUR, MALTED BARLEY FLOUR, NIACIN, IRON, POTASSIUM BROMATE, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID)",
+          "brand": "PALERMO DESSERTS",
+          "calories": 488,
+          "source": "usda"
+        },
+        {
+          "id": 2503995,
+          "name": "TIRAMISU CANDY, TIRAMISU",
+          "description": "CHOCOLATE 46%, (SUGAR, COCOA MASS, COCOA BUTTER, VEGETABLE FAT, EMULSIFIERS: SOYA LECITHIN, FLAVOUR), SUGAR, HYDROGENATED VEGETABLE FAT, SKIMMED MILK POWDER, GLUCOSE SYRUP, CREAM, WAFERS (WHEAT FLOUR, VEGETABLE OIL, EMULSIFIER: CARBONATE AND AMMONIUM HYDROGEN CARBONATE), CONDENSED MILK (MILK, SUGAR), ALCOHOL, WHEY POWDER, COFFEE, DRIED EGG YOLK, EMULSIFIERS: SOYA LECITHIN, INVERTASE (ENZYME), FLAVOURS",
+          "brand": "",
+          "calories": 520,
+          "source": "usda"
+        },
+        {
+          "id": 2175958,
+          "name": "TIRAMISU GELATO, TIRAMISU",
+          "description": "PASTEURIZED MILK, SUGAR, COFFEE MARBLING (GLUCOSE SYRUP, SUGAR, WATER, COFFEE POWDER, PECTIN), SUGARED EGG YOLK (EGG YOLK, SUGAR), MASCARPONE CHEESE (MILK CREAM, CITRIC ACID), COCONUT OIL, DEXTROSE, SKIM MILK POWDER, COCOA POWDER (SUGAR, COCOA, COCOA BUTTER, CORN STARCH), COFFEE POWDER, MARSALA WINE, LOCUST BEAN GUM, GUAR GUM, NATURAL FLAVOR.",
+          "brand": "CULINARIA",
+          "calories": 230,
+          "source": "usda"
+        },
+        {
+          "id": 2620371,
+          "name": "TIRAMISU GELATO, TIRAMISU",
+          "description": "REHYDRATED SKIMMED MILK, TIRAMISU PASTE (SUGAR, WATER, GLUCOSE SYRUP, SKIMMED MILK POWDER, MARSALA WINE, NATURAL FLAVOR, PASTEURIZED EGG YOLK POWDER, COFFEE), SUGAR, COCONUT OIL, DEXTROSE, GLUCOSE SYRUP, FRUCTOSE LIQUID SUGAR, EMULSIFIERS: MONO AND DIGLYCERIDES OF FATTY ACIDS, STABILIZERS: CAROB SEED FLOUR, GUAR GUM, NATURAL FLAVOR.",
+          "brand": "SHOPRITE",
+          "calories": 192,
+          "source": "usda"
+        },
+        {
+          "id": 2486540,
+          "name": "TIRAMISU GELATO, TIRAMISU",
+          "description": "MILK, CANE SUGAR, TRUFFLES (SUGAR, COCONUT OIL, SWEETENED CONDENSED MILK [MILK, SUGAR], CORN SYRUP, NONFAT MILK, WHOLE MILK, COCOA [ALKALIZED], CREAM, BUTTER [CREAM, SALT], SEA SALT, SOY LECITHIN, NATURAL FLAVOR), CREAM, COCONUT OIL, CHICORY ROOT EXTRACT, GLUCOSE, DEXTROSE, EGG YOLK, COFFEE, MASCARPONE CHEESE (MILK CITRIC ACID), NATURAL FLAVORS, MARSALA WINE, CAROB GUM. SUNFLOWER LECITHIN, PECTIN.",
+          "brand": "LUNDS & BYERLYS",
+          "calories": 217,
+          "source": "usda"
+        },
+        {
+          "id": 2379572,
+          "name": "TIRAMISU GELATO, TIRAMISU",
+          "description": "REHYDRATED SKIMMED MILK, SUGAR, COFFEE SYRUP (SUGAR, GLUCOSE SYRUP, WATER, COFFEE POWDER, REFINED COCONUT OIL*, MODIFIED STARCH, CONDENSED MILK, NATURAL FLAVOR), VEGETABLE FAT, DEXTROSE, GLUCOSE SYRUP, MARSALA PASTE (MARSALA WINE, SUGAR, EGG YOLK, ALCOHOL, CONDENSED MILK, NATURAL FLAVOR, MODIFIED STARCH), COCOA POWDER, COFFEE POWDER, LACTOSE AND MILK PROTEIN, EMULSIFIER (MONO AND DIGLYCERIDES OF FATTY ACIDS), STABILIZERS (CARRAGEENAN, CAROB SEED FLOUR, GUAR GUM), NATURAL FLAVORINGS.",
+          "brand": "CENTRAL MARKET",
+          "calories": 112,
+          "source": "usda"
+        },
+        {
+          "id": 1889216,
+          "name": "SUPERBO, GELATO, TIRAMISU, TIRAMISU",
+          "description": "MILK, SUGAR, CREAM, NONFAT DRY MILK, DEXTROSE, CONTAINS, 2% OR LESS OF: EGG YOLKS, MARSALA, WINE, COFFEE, SOY LECITHIN, CARRAGEENAN, MONO DIGLYCERIDES, CELLULOSE GUM, CURCUMIN AND PAPRIKA, CARAMEL COLOR, POLYSORBATE 80.",
+          "brand": "SUPERBO",
+          "calories": 152,
+          "source": "usda"
+        },
+        {
+          "id": 2442214,
+          "name": "TALENTI, GELATO, TIRAMISU, TIRAMISU",
+          "description": "MILK, SUGAR, CREAM, EGGS, DEXTROSE, MASCARPONE CHEESE, COFFEE,NATURAL FLAVORS, VANILLA, CAROB GUM, SOYBEAN OIL, BAKING SODA.",
+          "brand": "TALENTI",
+          "calories": 240,
+          "source": "usda"
+        },
+        {
+          "id": 2468549,
+          "name": "TIRAMISU AMORE GELATO, TIRAMISU",
+          "description": "PASTEURIZED MILK, SUGAR, COFFEE SAUCE (GLUCOSE SYRUP, MILK, SUGAR, COFFEE POWDER, PECTIN, CARRAGEENAN, COFFEE), SUGARED EGG YOLK (SUGAR, EGG YOLK), MASCARPONE CHEESE, COCONUT OIL, DEXTROSE, SKIM MILK POWDER, COCOA POWDER (SUGAR, COCOA, COCOA BUTTER, CORN STARCH), COFFEE POWDER, MARSALA WINE, LOCUST BEAN, GUAR GUM, NATURAL FLAVOR.",
+          "brand": "WEGMANS",
+          "calories": 224,
+          "source": "usda"
+        },
+        {
+          "id": 2592822,
+          "name": "TIRAMISU BAR CAKE, TIRAMISU",
+          "description": "CAKE (SUGAR, ENRICHED WHEAT FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), WATER, LIQUID WHOLE EGG, SHORTENING (PALM OIL, SOYBEAN OIL, PROPYLENE GLYCOL MONOESTERS, MONO- AND DIGLYCERIDES, SOYBEAN LECITHIN), SOY OIL/CANOLA OIL, SKIM MILK POWDER. DRIED EGG WHITE, MODIFIED FOOD STARCH, SALT, SOY FIBER, SOY LECITHIN, PROPYLENE GLYCOL MONO FATTY ACID ESTERS, MONO- AND DIGLYCERIDES, SODIUM BICARBONATE, SODIUM ALUMINUM PHOSPHATE, SODIUM STEAROYL-LACTYLATE, SODIUM CARBOXYMETHYL CELLULOSE, XANTHAN GUM, POTASSIUM SORBATE (PRESERVATIVE), FD&C YELLOW #5, FD&C YELLOW #6), MOUSSE FILLING (WATER, SWEETENERS (SUGAR, DEXTROSE, GLUCOSE), MODIFIED PALM KERNEL AND COCONUT OILS, MASCARPONE CHEESE (PASTEURIZED CREAM, BUTTER, SKIM MILK POWDER, SALT, CITRIC ACID, CARRAGEENAN, DISODIUM PHOSPHATE, LOCUST BEAN GUM, MONO & DIGLYCERIDES, SODIUM CITRATE), LIQUID EGG YOLK, RICE EXTRACT, SALT, SODIUM CASEINATE, GELATIN, XANTHAN GUM, GUM ARABIC, MODIFIED CELLULOSE, NATURAL FLAVOR, BETA CAROTENE [COLOR]), COFFEE FLAVORED SYRUP (WATER, SUGAR, POTASSIUM SORBATE (PRESERVATIVE), CITRIC ACID (TO PRESERVE FRESHNESS), NATURAL FLAVOR, CARAMEL COLOR), LADYFINGERS (WHEAT FLOUR, SWEETENERS (SUGAR, GLUCOSE), LIQUID WHOLE EGG, SALT, BAKING POWDER [SODIUM CARBONATE ACID, AMMONIUM CARBONATE ACID], NATURAL FLAVOR), CHOCOLATE DECORATION (COCOA MASS, SUGAR, COCOA BUTTER, SOY LECITHIN, COCOA POWDER, NATURAL VANILLA EXTRACT).",
+          "brand": "MEIJER",
+          "calories": 260,
+          "source": "usda"
+        },
+        {
+          "id": 2185695,
+          "name": "TIRAMISU BAR CAKE, TIRAMISU",
+          "description": "CREAM,SUGAR, WATER, ENRICHED WHEAT FLOUR (WHEAT FLOUR, NIACIN, IRON, THIAMINE MONONITRATE,RIBOFLAVIN, FOLIC ACID), EGGS, CREAM CHEESE (CREAM, MILK, NON FAT MILK, SALT, GUAR GUM, PROPYLENE GLYCOL ALGINATE, CARRAGEENAN, CAROB BEAN GUM, BACTERIAL CULTURE), CANOLA OIL, ESPRESSO, MASCARPONE CREAM CHEESE (CREAM, BUTTER [CREAM, SALT], WHEY, CAROB BEAN GUM, CITRIC ACID), ICING SUGAR (SUGAR, CORN STARCH), FROZEN YOLK MIX (EGG YOLK, SUGAR), NON FAT MILK, BAKING POWDER (SODIUM ACID PYROPHOSPHATE, BAKING SODA, MODIFIED CORN STARCH, MONOCALCIUM PHOSPHATE, CALCIUM SULFATE), NATURAL FLAVOR, MODIFIED CORN STARCH, SALT, SEMI-SWEET CHOCOLATE (SUGAR, CHOCOLATE LIQUOR, COCOA BUTTER, SOY LECITHIN, NATURAL FLAVOR), ALGINATE BLEND (TETRASODIUM DIPHOSPHATE, SODIUM ALGINATE), XANTHAN GUM (STABILIZER).",
+          "brand": "MEIJER",
+          "calories": 321,
+          "source": "usda"
+        },
+        {
+          "id": 2637695,
+          "name": "TIRAMISU DESSERT TOPPING, TIRAMISU",
+          "description": "CANE SUGAR, PEA SYRUP, WATER, SALTED BUTTER (MILK, SALT), COCONUT OIL, NONFAT DRY MILK, CORN STARCH, COFFEE, NATURAL FLAVOR, VANILLA EXTRACT, SUNFLOWER LECITHIN, SEA SALT, SPICE, CARRAGEENAN, VITAMIN E ADDED TO PROTECT FLAVOR.",
+          "brand": "MEIJER",
+          "calories": 343,
+          "source": "usda"
+        },
+        {
+          "id": 2483192,
+          "name": "TIRAMISU GOURMET DESSERTS, TIRAMISU",
+          "description": "MASCARPONE CHEESE (MILK, CREAM, CITRIC ACID), VANILLA WAFER CRUMB (ENRICHED FLOUR [WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID], SUGAR, PALM OIL, DEXTROSE, WHEY, SALT, NATURAL AND ARTIFICIAL FLAVOR, BAKING SODA), HEAVY CREAM, SUGAR, EGG YOLK, HYDROGENATED SOYBEAN OIL, CONTAINS 2% OR LESS OF: INSTANT COFFEE, WATER, SALT, VEGETABLE MONO & DIGLYCERIDES, SOY LECITHIN, CITRIC ACID, ARTIFICIAL FLAVOR, BETA CAROTENE (COLOR), VITAMIN A PALMITATE, PRESERVATIVES (SODIUM BENZOATE, CALCIUM DISODIUM EDTA, POTASSIUM SORBATE, SODIUM BENZOATE), CARAGEENAN, TARA GUM, CALCIUM SULFATE.",
+          "brand": "HARTMAN",
+          "calories": 477,
+          "source": "usda"
+        },
+        {
+          "id": 2632746,
+          "name": "TIRAMISU ITALIAN GELATO, TIRAMISU",
+          "description": "MILK, SUGAR, ESPRESSO COFFEE SWIRL (GLUCOSE SYRUP, CONCENTRATED MILK, SUGAR, COFFEE POWER, PECTIN, CARRAGEENAN, COFFEE OIL), SWEETENED EGG YOLK (EGG YOLK, SUGAR), MASCARPONE CHEESE (CREAM, CITRIC ACID), COCONUT OIL, DEXTROSE, SKIM MILK, COCOA POWDER (SUGAR, COCOA, COCOA BUTTER, CORN STARCH, COFFEE POWDER, MARSALA WINE, CAROB BEAN GUM, GUAR, NATURAL FLAVORS.",
+          "brand": "H-E-B",
+          "calories": 224,
+          "source": "usda"
+        },
+        {
+          "id": 1952779,
+          "name": "TIRAMISU ITALIAN GELATO, TIRAMISU",
+          "description": "REHYDRATED SKIMMED MILK, SUGAR, CREAM, COFFEE SYRUP (GLUCOSE SYRUP, COFFEE, CARAMEL (FOR COLOR), PECTIN AND XANTHAN GUM (THICKENERS), ARTIFICIAL FLAVORING), GLUCOSE SYRUP, DROPS OF SPONGE CAKE WITH COFFEE (WHEAT FLOUR, SUGAR, EGGS, POTATO STARCH, SKIMMED MILK POWDER, MONO- AND DIGLYCERIDES OF FATTY ACIDS (EMULSIFIERS), SORBITOL (STABILIZER), SODIUM BICARBONATE AND DISODIUM DIPHOSPHATE (RAISING AGENTS), ARTIFICIAL FLAVORING, COFFEE POWDER EXTRACT), COCONUT OIL, PASTEURIZED EGG YOLK, MASCARPONE CHEESE, COCOA POWDER, MONO- AND DIGLYCERIDES OF FATTY ACIDS (EMULSIFIERS), SODIUM ALGINATE AND CAROB BEAN GUM (THICKENERS), ARTIFICIAL FLAVORING.",
+          "brand": "RALEY'S",
+          "calories": 210,
+          "source": "usda"
+        },
+        {
+          "id": 2660200,
+          "name": "TIRAMISU JAR CAKE, TIRAMISU",
+          "description": "HEAVY CREAM (CREAM, CARRAGEENAN, MONO- AND DIGLYCERIDES), WATER, SUGAR, CREAM CHEESE (PASTEURIZED MILK AND CREAM, CHEESE CULTURE, SALT, STABILIZERS [CAROB BEAN AND/OR XANTHAN THAN AND/OR GUAR GUMS]), WHOLE EGGS (EGGS, CITRIC ACID), ENRICHED BLEACHED WHEAT FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), SOUR CREAM (CULTURED CREAM, MODIFIED FOOD STARCH, SODIUM PHOSPHATE, GUAR GUM, CARRAGEENAN, LOCUST BEAN GUM, POTASSIUM SORBATE [PRESERVATIVE]), EGG WHITES, SOYBEAN OIL, EGG YOLKS (EGG YOLKS, SUGAR), COFFEE FLAVORED CONFECTIONARY (SUGAR, UNSWEETENED CHOCOLATE, COCOA BUTTER, GROUND COFFEE BEANS, SUNFLOWER LECITHIN, ARTIFICIAL FLAVOR, GUM ARABIC, GLAZING AGENT [VEGETABLE OILS {COCONUT OIL, PALM KERNEL OIL}, SHELLAC], NATURAL FLAVOR), GELATIN, NATURAL AND ARTIFICIAL FLAVORS, WHEY PROTEIN CONCENTRATE, MODIFIED FOOD STARCH, SALT, BAKING POWDER (SODIUM ACID PYROPHOSPHATE, SODIUM BICARBONATE, CORNSTARCH, CALCIUM SULFATE, MONO CALCIUM PHOSPHATE), CREAM, LACTIC ACID, MILK, SODIUM BICARBONATE, COCOA PROCESSED WITH ALKALI, ENZYMES, XANTHAN GUM, CHEESE CULTURE, POTASSIUM SORBATE, [PRESERVATIVE], SOY LECITHIN.",
+          "brand": "ARCHER FARMS",
+          "calories": 272,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "chicken cacciatore",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.4219212532043457,
+    "details": {
+      "query": "chicken cacciatore",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.4180421829223633,
+      "results": [
+        {
+          "id": 2119583,
+          "name": "CHICKEN CACCIATORE",
+          "description": "SEASONING BLEND (ENRICHED WHEAT FLOUR [WHEAT FLOUR, NIACIN, IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID], SALT, CHICKEN BROTH, GARLIC, ONION, SPICES, CHILI PEPPER, PARSLEY), EGG-FREE PASTA NOODLES (SEMOLINA, ENRICHED WITH IRON [FERROUS SULFATE], AND B VITAMINS [NIACIN, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID]), MUSHROOMS, ONION, TOMATOES.",
+          "brand": "CROCK-POT",
+          "calories": 333,
+          "source": "usda"
+        },
+        {
+          "id": 2706421,
+          "name": "Chicken or turkey cacciatore",
+          "description": "",
+          "brand": "",
+          "calories": 174,
+          "source": "usda"
+        },
+        {
+          "id": 1918396,
+          "name": "CACCIATORE SAUCE, CACCIATORE",
+          "description": "PLUM TOMATOES, TOMATO JUICE, FRESH BASIL, RED PEPPERS, MUSHROOMS, MADEIRA WINE, VEGETABLE OIL, GARLIC, CITRIC ACID, HERBS AND SPICES.",
+          "brand": "AVICOLLI'S",
+          "calories": 88.0,
+          "source": "usda"
+        },
+        {
+          "id": 2387144,
+          "name": "VEGETARIAN CACCIATORE SAUCE, VEGETARIAN CACCIATORE",
+          "description": "PLUM TOMATOES, CRUSHED TOMATOES, PURE EXTRA VIRGIN OLIVE OIL, WHITE WINE, MUSHROOMS, GREEN BELL PEPPER, RED BELL PEPPER, ONIONS, GARLIC, BASIL, SEA SALT, PARSLEY, HOT PEPPER FLAKES.",
+          "brand": "TESTA'S",
+          "calories": 56.0,
+          "source": "usda"
+        },
+        {
+          "id": 2068018,
+          "name": "CHICKEN CACCIATORE CLASSIQUE ENTREE BASE",
+          "description": "TOMATOES, CHICKEN STOCK (WATER, CHICKEN DEMI-GLACE [MIREPOIX STOCK (CARROT, CELERY, ONION STOCKS), ROASTED CHICKEN STOCK, DRIED CHICKEN STOCK, MODIFIED FOOD STARCH, WATER GELATIN, SALT, WHITE WINE, CHICKEN FAT], SALT), ONIONS, SHERRY WINE, MUSHROOMS, EXTRA VIRGIN OLIVE OIL, GARLIC, XANTHAN GUM, SEA SALT, PARSLEY, BLACK PEPPER, RED CHILI FLAKE, BASIL, OREGANO.",
+          "brand": "OLIVIER NAPA VALLEY",
+          "calories": 49.0,
+          "source": "usda"
+        },
+        {
+          "id": 2290745,
+          "name": "VICTORIA, CACCIATORE SAUCE FOR CHICKEN AND PORK",
+          "description": "IMPORTED ITALIAN TOMATOES, FRESH ONIONS, FRESH RED BELL PEPPERS, FRESH GREEN BELL PEPPERS, PURE ITALIAN OLIVE OIL, CAPERS, FRESH GARLIC, FRESH BASIL, MIREPOIX BASE: (VEGETABLE PUREES: [CARROT, CELERY, ONION], WATER, SALT, MALTODEXTRIN, ONION POWDER, CANOLA OIL, CORN STARCH, CARROT POWDER, CONTAINS 2% OR LESS OF THE FOLLOWING: EXTRACT OF CARROT, XANTHAN GUM, SPICE EXTRACTS), SEA SALT, ALL NATURAL GLUCONO-DELTA LACTONE (ACIDIFIER), CRUSHED RED PEPPER FLAKES.",
+          "brand": "VICTORIA",
+          "calories": 0,
+          "source": "usda"
+        },
+        {
+          "id": 1983387,
+          "name": "CACCIATORE SAUCE",
+          "description": "TOMATOES, CARROTS, ONIONS, WINE, OIL, GARLIC, DRIED LEMON, SPICES, AND CITRIC ACID.",
+          "brand": "GIA VILLA",
+          "calories": 1380.0,
+          "source": "usda"
+        },
+        {
+          "id": 2019829,
+          "name": "TUSCAN CACCIATORE",
+          "description": "AMARANTH, ENRICHED PASTA (DURUM SEMOLINA FLOUR [WHEAT], NIACIN, FERROUS SULFATE [IRON], THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), BARLEY, NAVY BEANS*, SORGHUM, TOMATO*, CORN STARCH, PAPRIKA, MALTODEXTRIN, SALT, CHICKEN BROTH, MUSHROOMS*, BELL PEPPERS*, CONTAINS LESS THAN 2% OF RED WINE EXTRACT [SULFUR DIOXIDE], MUSHROOM EXTRACT, SUN DRIED TOMATO GRANULES*, YEAST EXTRACT, PARSLEY*, SPICES",
+          "brand": "URBANE GRAIN",
+          "calories": 351,
+          "source": "usda"
+        },
+        {
+          "id": 2706087,
+          "name": "Chicken, chicken roll, roasted",
+          "description": "",
+          "brand": "",
+          "calories": 164,
+          "source": "usda"
+        },
+        {
+          "id": 566365,
+          "name": "CHICKEN BREAST ROAST WITH CACCIATORE COOKING SAUCE",
+          "description": "SEASONED CHICKEN BREAST: CHICKEN BREAST, WATER, CONTAINS 2% OR LESS OF VINEGAR, DEHYDRATED CHICKEN FLAVOR (CHICKEN BROTH, NATURAL FLAVOR), SALT, SUGAR, CULTURED DEXTROSE, SPICES, DEHYDRATED GARLIC, DEHYDRATED ONION, DEHYDRATED RED BELL PEPPER, PAPRIKA. CACCIATORE COOKING SAUCE: TOMATOES (TOMATOES, TOMATO JUICE, CITRIC ACID, CALCIUM CHLORIDE), WATER, RED BELL PEPPERS, TOMATO PASTE, CHICKEN BROTH (CHICKEN FAT, CHICKEN BROTH, NATURAL FLAVOR, SALT, SUGAR, XANTHAN GUM), MODIFIED CORN STARCH, ONIONS, SOYBEAN OIL, CAPERS (CAPERS, WATER, SALT, VINEGAR), CONTAINS 2% OR LESS OF SALT, DRIED GARLIC, YEAST EXTRACT, SUGAR, VINEGAR, SPICES, LACTIC ACID, CITRIC ACID, XANTHAN AND GUAR GUM, SODIUM BENZOATE, POTASSIUM SORBATE.",
+          "brand": "",
+          "calories": 89.0,
+          "source": "usda"
+        },
+        {
+          "id": 2088155,
+          "name": "GIA RUSSA, CACCIATORE SIMMER SAUCE FOR CHICKEN",
+          "description": "IMPORTED ITALIAN PLUM TOMATOES, MUSHROOM, ONION, RED, YELLOW OR GREEN BELL PEPPER (MARKET AVAILABILITY), OLIVE OIL, CHICKEN BASE, SALT AND SPICES, RED WINE (SULFITES), NATURAL RED WINE FLAVORING.",
+          "brand": "GIA RUSSA",
+          "calories": 71.0,
+          "source": "usda"
+        },
+        {
+          "id": 2706443,
+          "name": "Orange chicken",
+          "description": "",
+          "brand": "",
+          "calories": 262,
+          "source": "usda"
+        },
+        {
+          "id": 2706538,
+          "name": "Biryani with chicken",
+          "description": "",
+          "brand": "",
+          "calories": 104,
+          "source": "usda"
+        },
+        {
+          "id": 2707134,
+          "name": "Soup, chicken",
+          "description": "",
+          "brand": "",
+          "calories": 40,
+          "source": "usda"
+        },
+        {
+          "id": 2153234,
+          "name": "BONELESS CHICKEN THIGHS WITH ONIONS, PEPPERS, MUSHROOMS CACCIATORE, CHICKEN",
+          "description": "BONELESS SKINLESS CHICKEN THIGHS, CACCIATORE SAUCE (CRUSHED TOMATO (TOMATOES, SALT, CITRIC ACID), CHOPPED TOMATO (VINE-RIPENED TOMATOES, TOMATO PUREE, SALT, CITRIC ACID), SUNTAN PEPPER, MUSHROOM, ONION, CANOLA OIL, OLIVE OIL, SOY LECITHIN, XANTHAN GUM, GARLIC, BASIL, SEA SALT, BLACK PEPPER, NISIN).",
+          "brand": "MARKET BASKET",
+          "calories": 106,
+          "source": "usda"
+        },
+        {
+          "id": 2706085,
+          "name": "Chicken feet",
+          "description": "",
+          "brand": "",
+          "calories": 215,
+          "source": "usda"
+        },
+        {
+          "id": 2706084,
+          "name": "Chicken skin",
+          "description": "",
+          "brand": "",
+          "calories": 450,
+          "source": "usda"
+        },
+        {
+          "id": 2706081,
+          "name": "Chicken, back",
+          "description": "",
+          "brand": "",
+          "calories": 298,
+          "source": "usda"
+        },
+        {
+          "id": 2706091,
+          "name": "Chicken, ground",
+          "description": "",
+          "brand": "",
+          "calories": 201,
+          "source": "usda"
+        },
+        {
+          "id": 2706083,
+          "name": "Chicken, tail",
+          "description": "",
+          "brand": "",
+          "calories": 454,
+          "source": "usda"
+        },
+        {
+          "id": 2706797,
+          "name": "Almond chicken",
+          "description": "",
+          "brand": "",
+          "calories": 195,
+          "source": "usda"
+        },
+        {
+          "id": 2706434,
+          "name": "Barbecue chicken",
+          "description": "",
+          "brand": "",
+          "calories": 167,
+          "source": "usda"
+        },
+        {
+          "id": 2708745,
+          "name": "Chicken cornbread",
+          "description": "",
+          "brand": "",
+          "calories": 167,
+          "source": "usda"
+        },
+        {
+          "id": 2706437,
+          "name": "Chicken curry",
+          "description": "",
+          "brand": "",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2706445,
+          "name": "Chicken kiev",
+          "description": "",
+          "brand": "",
+          "calories": 280,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "risotto",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.2249879837036133,
+    "details": {
+      "query": "risotto",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.2214293479919434,
+      "results": [
+        {
+          "id": 777970,
+          "name": "RISOTTO",
+          "description": "SUPERFINO RICE, VEGETABLE BROTH (COOKING SALT, POTATO STARCH, YEAST EXTRACTS, POTATO MALTODEXTRINS, DEHYDRATED VEGETABLES (CARROT, ONION, CELERY, PARSLEY), SUNFLOWER OIL, SPICES, VEGETABLE NATURAL FLAVORS, RICE FLOUR), DEHYDRATED SWEET PEPPER (5%).",
+          "brand": "",
+          "calories": 157,
+          "source": "usda"
+        },
+        {
+          "id": 2667760,
+          "name": "RISOTTO CHEESE, RISOTTO",
+          "description": "PARBOILED RICE, PROCESSED CHEESE POWDER (CHEESE [PASTEURIZED MILK, SALT, CHEESE CULTURES, ENZYMES], SODIUM PHOSPHATE), SUNFLOWER OIL POWDER (HIGH OLEIC SUNFLOWER OIL, GLUCOSE SYRUP, MILK PROTEIN), WHEY, POTATO STARCH, SALT, YEAST EXTRACT, ONION, PARSLEY.",
+          "brand": "HANNAFORD",
+          "calories": 375,
+          "source": "usda"
+        },
+        {
+          "id": 2161720,
+          "name": "ASPARAGUS RISOTTO CREAMY CHEESE RISOTTO WITH ASPARAGUS, ASPARAGUS RISOTTO",
+          "description": "PARCOOKED RICE (WATER, RICE, SALT), REHYDRATED WHEY (MILK), ASPARAGUS, CREAM (MILK), ONION, WATER, HARD GRATING CHEESE (PASTEURIZED MILK, SALT, RENNET), SUNFLOWER SEED OIL, WHEAT FLOUR, BUTTER (MILK), EGGS, CELERY, TAPIOCA STARCH, VEGETABLE BROTH (SALT, POTATO FLOUR, YEAST EXTRACT, MALTODEXTRIN OF POTATOES, DEHYDRATED VEGETABLES [ONION, CARROT, CELERY, PARSLEY], SUNFLOWER SEED OIL, SPICES, NATURAL FLAVORS), GARLIC, SALT, NUTMEG, WHITE PEPPER.",
+          "brand": "HEINEN'S",
+          "calories": 107,
+          "source": "usda"
+        },
+        {
+          "id": 2502248,
+          "name": "CHEESE RISOTTO RICE, CHEESE RISOTTO",
+          "description": "WATER, PARBOILED MEDIUM GRAIN RICE, SUNFLOWER OIL; LESS THAN 2% OF: MODIFIED CORN STARCH, WHITE CHEDDAR CHEESE* (MILK, SALT, CHEESE CULTURES, ENZYMES), SALT, COCONUT OIL, CORN SYRUP SOLIDS, RICE STARCH, NATURAL FLAVORS, ONION*, NONFAT MILK*, PALM OIL, PARMESAN CHEESE* (MILK, SALT, CHEESE CULTURES, ENZYMES), AUTOLYZED YEAST, DISODIUM PHOSPHATE, GARLIC*, BLUE CHEESE* (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), LACTIC ACID, SAFFLOWER OIL, WHEY*, DIPOTASSIUM PHOSPHATE, SODIUM CASEINATE, ENZYME MODIFIED BUTTER, CANOLA OIL, SPICE, MONO & DIGLYCERIDES, MALIC ACID, ENRICHMENT (IRON PHOSPHATE, NIACINAMIDE, THIAMINE MONONITRATE, FOLIC ACID), BUTTER*, CITRIC ACID, GUAR GUM, ANNATTO (COLOR), TURMERIC EXTRACT (COLOR).",
+          "brand": "UNCLE BEN'S",
+          "calories": 179,
+          "source": "usda"
+        },
+        {
+          "id": 2025378,
+          "name": "MUSHROOM RISOTTO BOWLS, MUSHROOM RISOTTO",
+          "description": "ORGANIC ARBORIO RICE, ORGANIC MUSHROOMS, FILTERED WATER, ORGANIC PEAS, ORGANIC BUTTER (ORGANIC CREAM, SALT), ORGANIC ONIONS, PARMESAN CHEESE (PASTEURIZED PART-SKIM MILK, CULTURE, SALT, ENZYMES), SEA SALT, BLACK PEPPER.",
+          "brand": "AMY'S",
+          "calories": 86.0,
+          "source": "usda"
+        },
+        {
+          "id": 2025315,
+          "name": "VEGETARIAN RISOTTO",
+          "description": "SHORT GRAIN RICE, RISOTTO BASE: DEHYDRATED VEGETABLES, CARROTS, TOMATOES, RICE FLOUR, MILK POWDER, WHEY, POTATO STARCH, CUMIN, RED PEPPER, MERKEN, BLACK PEPPER, CURRY PROVOLONE CHEESE, SEA SALT, GARLIC POWER, BROWN SUGAR, LEEKS, PARSLEY AND FINE HERBS.",
+          "brand": "DOMO",
+          "calories": 345,
+          "source": "usda"
+        },
+        {
+          "id": 2604752,
+          "name": "ASPARAGUS RISOTTO",
+          "description": "PRECOOKED RICE (WATER, RICE, SALT), SAUCE (WATER, ASPARAGUS, EXTRA VIRGIN OLIVE OIL, GRANA PADANO CHEESE [MILK, SALT, LYSOZYME FROM EGG, ANIMAL RENNET], ONION, WHITE WINE, CORN STARCH, SALT, GARLIC, BLACK PEPPER), PRECOOKED ASPARAGUS",
+          "brand": "MARTHA STEWART KITCHEN",
+          "calories": 109,
+          "source": "usda"
+        },
+        {
+          "id": 2125392,
+          "name": "ASPARAGUS RISOTTO",
+          "description": "WATER, ARBORIO RICE, ASPARAGUS, HEAVY WHIPPING CREAM (CREAM, CARRAGEENAN), YELLOW ONION, UNSALTED BUTTER (PASTEURIZED CREAM, NATURAL FLAVORING), SHREDDED PARMESAN CHEESE (PASTEURIZED PART-SKIM MILK, CHEESE CULTURES, SALT, ENZYMES, POWDERED CELLULOSE [ANTI-CAKING AGENT], NATAMYCIN [A NATURAL MOLD INHIBITOR]), VEGETABLE BASE (VEGETABLE PUREE [ONION, CARROT, CELERY, GARLIC], SALT, CORN SYRUP, CORN STARCH, YEAST EXTRACT, CORN OIL, SUGAR, TOMATO POWDER, NATURAL FLAVOR & WINE).",
+          "brand": "LUNDS & BYERLYS",
+          "calories": 165,
+          "source": "usda"
+        },
+        {
+          "id": 777490,
+          "name": "ASPARAGUS RISOTTO",
+          "description": "SUPERFINO RICE, VEGETABLE BROTH (COOKING SALT, POTATO STARCH, YEAST EXTRACTS, POTATO MALTODEXTRINS, DEHYDRATED VEGETABLES (CARROT, ONION, CELERY, PARSLEY), SUNFLOWER OIL, SPICES, VEGETABLE NATURAL FLAVORS, RICE FLOUR), DEHYDRATED ASPARAGUS (TRUNKS AND FLOUR) (3.5%).",
+          "brand": "",
+          "calories": 173,
+          "source": "usda"
+        },
+        {
+          "id": 893612,
+          "name": "ASPARAGUS RISOTTO",
+          "description": "CARNAROLI RICE, SALT, SOFT WHEAT FLOUR, POTATO STARCH, POTATO FLAKES, PROCESSED CHEESE POWDER (CHEESE [MILK, RENNET, SALT], WHEY POWDER, SODIUM CITRATE), ASPARAGUS POWDER, ASPARAGUS PIECES, YEAST EXTRACT, WHEY POWDER, ONION POWDER (ONION, SULFUR DIOXIDE), NATURAL ASPARAGUS FLAVOR, SPINACH POWDER, MONO- AND DIGLYCERIDES OF FATTY ACIDS.",
+          "brand": "",
+          "calories": 344,
+          "source": "usda"
+        },
+        {
+          "id": 2067834,
+          "name": "BARLEY RISOTTO",
+          "description": "PEARLED BARLEY (BARLEY, MAY CONTAIN TRACE AMOUNTS OF WHEAT), PORTOBELLO MUSHROOMS, SPINACH, PEARL ONIONS, VEGETABLE BASE (VEGETABLES (CARROT, CELERY, ONION), CANE SUGAR, CANOLA OIL, DRIED POTATO, SALT, YEAST EXTRACT, NATURAL FLAVOR), WHITE WINE, HEAVY WHIPPING CREAM (CREAM (MIN. 40% MILKFAT)), SHALLOTS, MUSHROOM POWDER (CHAMPIGNON MUSHROOMS), EXTRA VIRGIN OLIVE OIL, GARLIC, THYME, BLACK PEPPER, BAY LEAVES.",
+          "brand": "CUISINE SOLUTIONS",
+          "calories": 137,
+          "source": "usda"
+        },
+        {
+          "id": 2487942,
+          "name": "FLORENTINE RISOTTO",
+          "description": "ARBORIO RICE, MINCED ONION, DRIED SPINACH, CONTAINS 2% OR LESS OF: CANOLA OIL, BELL PEPPER, GARLIC, SALT, DRIED CHILES, LEMON PEEL, SPICES, NATURAL FLAVOR.",
+          "brand": "NATURE'S PROMISE",
+          "calories": 358,
+          "source": "usda"
+        },
+        {
+          "id": 1858704,
+          "name": "MUSHROOM RISOTTO",
+          "description": "CARNAROLI RICE, PORCINI MUSHROOMS* (BOLETUS EDULIS AND RELATED GROUP), CHAMPIGNON MUSHROOMS*, SHIITAKE MUSHROOMS* (LENTINUS EDODES), PARSLEY*, LEEK*, GARLIC*.",
+          "brand": "AHOLD",
+          "calories": 356,
+          "source": "usda"
+        },
+        {
+          "id": 2076051,
+          "name": "MUSHROOM RISOTTO",
+          "description": "WATER, PARBOILED ITALIAN MEDIUM GRAIN RICE, EXTRA VIRGIN OLIVE OIL, NON-DAIRY CREAMER (SUNFLOWER OIL [WITH NATURAL TOCOPHEROLS], MALTODEXTRIN, MODIFIED CORN STARCH, MONO AND DIGLYCERIDES, TRICALCIUM PHOSPHATE), SALT, MUSHROOMS, NATURAL FLAVOR, CHICKEN BROTH*, SPICES.",
+          "brand": "ARCHER FARMS",
+          "calories": 170,
+          "source": "usda"
+        },
+        {
+          "id": 2067881,
+          "name": "MUSHROOM RISOTTO",
+          "description": "COOKED RICE (WATER, RICE, SALT), MUSHROOMS, REHYDRATED WHEY, WATER, CREAM, SUNFLOWER OIL, WHEAT FLOUR, ONION, PARSLEY, SALT, GARLIC, TAPIOCA STARCH, MUSHROOM EXTRACT, YEAST EXTRACT, SPICES, LEMON JUICE, ONION POWDER.",
+          "brand": "WILD HARVEST",
+          "calories": 131,
+          "source": "usda"
+        },
+        {
+          "id": 2537791,
+          "name": "PARMESAN RISOTTO",
+          "description": "SEASONED ARBORIO RICE (COOKED RICE, ONION SAUCE, SALT), PARMESAN SAUCE (WATER, HEAVY CREAM, PARMESAN CHEESE, ONION SAUCE, STARCH, SALT, VEGETABLE BROTH, PARMESAN CHEESE AROMA), ONION SAUCE (ONION CUBES, WHITE WINE, SUNFLOWER OIL)",
+          "brand": "VIVA LA MAMMA",
+          "calories": 203,
+          "source": "usda"
+        },
+        {
+          "id": 2066591,
+          "name": "PARMESAN RISOTTO",
+          "description": "COOKED RICE (WATER, PARBOILED WHITE RICE), WATER, HEAVY CREAM (CREAM, SODIUM CITRATE, CARRAGEENAN, POLYSORBATE 80), PARMESAN CHEESE (PASTEURIZED PART-SKIM MILK, CHEESE CULTURE, SALT, ENZYMES), ONION, ROASTED VEGETABLE BASE {VEGETABLE BLEND [PUREES {CARROT, CELERY, ONION, SAUTEED ONION, RED BELL PEPPER}, DEHYDRATED {TOMATO, CARROTS, GREEN BELL PEPPER, ONION}, JUICES {ONION, GARLIC, SHALLOT, CARROT}], SUGAR, SALT, YEAST EXTRACT, HYDROLYZED CORN PROTEIN, CONTAINS 2% OR LESS OF THE FOLLOWING: MALTODEXTRIN, CANOLA OIL, NATURAL FLAVOR, DISODIUM INOSINATE, DISODIUM GUANYLATE, MODIFIED FOOD STARCH, SPICE, HYDROLYZED SOY PROTEIN, BURGUNDY WINE SOLIDS), MODIFIED CORN STARCH, BUTTER (SWEET CREAM, SALT), COOKING WINE (SAUTERNE WINE, SALT, SODIUM METABISULFITE AS A PRESERVATIVE), ONION POWDER, SALT, PARMESAN AND ROMANO CHEESE BASE (PARMESAN AND ROMANO CHEESE [MILK, CULTURE, ENZYMES, SALT], WATER, WHEY, SALT, MODIFIED CORN STARCH, CULTURED BUTTERMILK SOLIDS, CALCIUM AND SODIUM CASEINATES, NATURAL FLAVORING, AND GARLIC POWDER), GARLIC MINCED IN OIL (GARLIC, SOYBEAN OIL, CITRIC ACID), POTASSIUM SORBATE AND SODIUM BENZOATE TO PROTECT FLAVOR, DEHYDRATED PARSLEY, XANTHAN GUM, SPICE.",
+          "brand": "RESER'S FINE FOODS",
+          "calories": 138,
+          "source": "usda"
+        },
+        {
+          "id": 2098039,
+          "name": "PARMESAN RISOTTO",
+          "description": "ARBORIO RICE, WATER, HEAVY CREAM, WHOLE MILK, PARMESAN CHEESE (PASTEURIZED PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES, POWDERED CELLULOSE [ANTI-CAKING AGENT]), UNSALTED BUTTER, PARMESAN CHEESE FLAVOR (PARMESAN CHEESE [MILK, CULTURE, SALT, ENZYMES], SALT, YEAST EXTRACT, UNSALTED BUTTER [CREAM, FLAVORINGS], CORN OIL, OLIVE OIL, CREAM POWDER, SUGAR AND NATURAL FLAVORINGS), ROMANO CHEESE (PASTEURIZED SHEEP'S MILK, CULTURES, RENNET, SALT), SAUTEED ONIONS (ONIONS, CANOLA OIL), MODIFIED CORN STARCH, WHITE WINE (SULFITES), SALT, BLACK PEPPER.",
+          "brand": "CUCINA DI CARLA",
+          "calories": 184,
+          "source": "usda"
+        },
+        {
+          "id": 2063473,
+          "name": "PORCINI RISOTTO",
+          "description": "ARBORIO RICE, DRIED MUSHROOMS, CONTAINS 2% OR LESS GARLIC, CANOLA OIL, SHALLOTS, SALT, SPICES, CHIVES, NATURAL FLAVOR",
+          "brand": "MANITOU TRADING COMPANY",
+          "calories": 358,
+          "source": "usda"
+        },
+        {
+          "id": 467641,
+          "name": "RISOTTO RICE",
+          "description": "ARBORIO RICE (94%), ONION, PORCINI MUSHROOMS (BOLETUS EDULIS) (1,2%), CHAMPIGNON MUSHROOMS (1%), SPICE BLEND (TOMATO, BASIL, GARLIC, OREGANO, SALT, BLACK PEPPER), PARSLEY, GARLIC.",
+          "brand": "",
+          "calories": 356,
+          "source": "usda"
+        },
+        {
+          "id": 2110515,
+          "name": "RISOTTO WITH ASPARAGUS",
+          "description": "RICE, RICE FLOUR, CORN STARCH, PALM OIL, FREEZE DRIED AND DEHYDRATED ASPARAGUS, SALT, LACTOSE, DEHYDRATED PEAS POWDER, YEAST EXTRACT, DEHYDRATED ONION, DEHYDRATED PARSLEY, GLUCOSE SYRUP, SODIUM CASEINATE, SPICES, NATURAL FLAVOR.",
+          "brand": "DAVINCI",
+          "calories": 356,
+          "source": "usda"
+        },
+        {
+          "id": 2407983,
+          "name": "RISOTTO WITH ASPARAGUS",
+          "description": "PARBOILED RICE, PALM FAT (PALM FAT, GLUCOSE SYRUP, SODIUM CASEINATE), FREEZE-DRIED AND DEHYDRATED ASPARAGUS, RICE FLOUR, CORN STARCH, SALT, LACTOSE, DRIED PEAS, BAKERS YEAST EXTRACT, CELERY NATURAL FLAVOR, DRIED ONION, DRIED PARSLEY, TURMERIC",
+          "brand": "FIOR FIORE",
+          "calories": 356,
+          "source": "usda"
+        },
+        {
+          "id": 1858712,
+          "name": "SAFFRON RISOTTO",
+          "description": "CARNAROLI RICE, KURKUMA POWDER, SAFFRON POWDER.",
+          "brand": "AHOLD",
+          "calories": 356,
+          "source": "usda"
+        },
+        {
+          "id": 2537789,
+          "name": "SAFFRON RISOTTO",
+          "description": "SEASONED ABORIO RICE (COOKED RICE, ONION SAUCE, SALT), SAFFRON SAUCE (WATER, HEAVY CREAM, PARMESAN CHEESE, ONION SAUCE, STARCH, SALT, SAFFRON, VEGETABLE BROTH, PARMESAN AROMA), ONION SAUCE (ONION CUBES, WHITE WINE, SUNFLOWER OIL)",
+          "brand": "VIVA LA MAMMA",
+          "calories": 190,
+          "source": "usda"
+        },
+        {
+          "id": 777958,
+          "name": "SAFFRON RISOTTO",
+          "description": "SUPERFINO RICE, VEGETABLE BROTH (COOKING SALT, POTATO STARCH, YEAST EXTRACTS, POTATO MALTODEXTRINS, DEHYDRATED VEGETABLES (CARROT, ONION, CELERY, PARSLEY), SUNFLOWER OIL, SPICES, VEGETABLE NATURAL FLAVORS, RICE FLOUR), POWDERED SAFFRON (0.01%).",
+          "brand": "",
+          "calories": 157,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "lasagna",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.6701984405517578,
+    "details": {
+      "query": "lasagna",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.666393518447876,
+      "results": [
+        {
+          "id": 2586090,
+          "name": "LASAGNA",
+          "description": "LASAGNA NOODLES, MARINARA SAUCE, RICOTTA, MOZZARELLA, ROMANO CHEESE, EGGS, PEPPER.",
+          "brand": "SCARDIGNO'S",
+          "calories": 101,
+          "source": "usda"
+        },
+        {
+          "id": 2284608,
+          "name": "LASAGNA",
+          "description": "DURUM WHEAT SEMOLINA, [ENRICHED WITH IRON (FERROUS SULFATE) AND B VITAMINS (NIACIN, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID)].",
+          "brand": "IGA",
+          "calories": 357,
+          "source": "usda"
+        },
+        {
+          "id": 2009302,
+          "name": "LASAGNA",
+          "description": "MARINARA SAUCE(DICED TOMATO [ TOMATOES, TOMATO JUICE, SALT, CITRIC ACID AND CALCIUM CHLORIDE] , ONION, CHARDONNAY WINE, OLIVE CANOLA OIL BLEND, SUGAR, GARLIC, BASIL, SALT, BLACK PEPPER, RED PEPPER FLAKES, BAY LEAF), FILLING(RICOTTA CHEESE [ WHOLE MILK, WHEY, VINEGAR, SALT] , PARMESAN CHEESE [ PASTEURIZED MILK, CULTURE, SALT, ENZYMES] , EGG, BASIL, OREGANO), PASTA(BROWN RICE, RICE BRAN AND WATER), LOW-MOISTURE PART-SKIM MOZZARELLA AND PROVOLONE CHEESE(PASTEURIZED REDUCED-FAT MILK, PASTEURIZED MILK CHEESE CULTURE, SALT, ENZYMES, POWDERED CELLULOSE ADDED TO PREVENT CAKING, NATURAL SMOKE FLAVOR, NATAMYCIN ADDED AS A MOLD INHIBITOR). ",
+          "brand": "OMG...IT'S GLUTEN FREE",
+          "calories": 171,
+          "source": "usda"
+        },
+        {
+          "id": 2659717,
+          "name": "LASAGNA",
+          "description": "MARINARA SAUCE (TOMATOES, OIL, SALT, PEPPER, BASIL, OREGANO, GARLIC, ONIONS, WATER), LASAGNA NOODLES (REAL DURUM SEMOLINA), RICOTTA, REAL MOZZARELLA CHEESE, ROMANO CHEESE (MADE FROM SHEEP'S MILK), PARSLEY, PEPPER, EGGS.",
+          "brand": "SCARDIGNO'S",
+          "calories": 101,
+          "source": "usda"
+        },
+        {
+          "id": 2118417,
+          "name": "LASAGNA",
+          "description": "MARINARA SAUCE (TOMATO [TOMATO, TOMATO JUICE, CITRIC ACID, SALT, CALCIUM CHLORIDE], WATER, GARLIC, ONION, OLIVE OIL, SUGAR, MODIFIED CORN STARCH, SALT, BASIL, YEAST EXTRACT, PARMESAN CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], BLACK PEPPER, SPICES, XANTHAN GUM), MOZZARELLA CHEESE (LOW MOISTURE PART-SKIM MOZZARELLA CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], POTATO STARCH AND POWDERED CELLULOSE [TO PREVENT CAKING], NATAMYCIN [A NATURAL MOLD INHIBITOR]), LASAGNA NOODLES (WATER, PASTA [SEMOLINA {WHEAT}, DURUM WHEAT FLOUR, NIACIN, IRON {FERROUS SULFATE}, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID]), RICOTTA CHEESE (PASTEURIZED WHEY, PASTEURIZED MILK, VINEGAR, SALT), COOKED ITALIAN STYLE SAUSAGE (PORK, WATER, SALT, SODIUM LACTATE, SPICES, CORN SYRUP SOLIDS, PAPRIKA, FLAVORING, DISODIUM INOSINATE AND DISODIUM GUANYLATE, BHA, BHT, PROPYL GALLATE, SOY LECITHIN USED AS A PROCESSING AID), EGG PRODUCT (REAL EGG WHITES [99%], LESS THAN 1% OF: VEGETABLE GUMS [XANTHAN GUM, GUAR GUM], COLOR [INCLUDES BETA CAROTENE], VITAMINS AND MINERALS [CALCIUM PHOSPHATE, IRON {FERRIC ORTHOPHOSPHATE}, VITAMIN E {ALPHA TOCOPHERYL ACETATE}, ZINC SULFATE, CALCIUM PANTOTHENATE, VITAMIN A PALMITATE, VITAMIN B6 {PYRIDOXINE HYDROCHLORIDE}, VITAMIN B2 {RIBOFLAVIN}, VITAMIN B1 {THIAMINE}, FOLIC ACID, BIOTIN, VITAMIN B12, VITAMIN D3]), PARMESAN CHEESE (PARMESAN CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], POTATO STARCH AND POWDERED CELLULOSE [TO PREVENT CAKING]), PARSLEY.",
+          "brand": "RALEY'S",
+          "calories": 165,
+          "source": "usda"
+        },
+        {
+          "id": 2187417,
+          "name": "LASAGNA",
+          "description": "FILLING: PLUM TOMATOES (PLUM TOMATOES, TOMATO JUICE, BASIL LEAF, SALT, CITRIC ACID), GROUND BEEF, MOZZARELLA CHEESE (PASTEURIZED MILK, VINEGAR, SALT, ENZYMES), ONION, RICOTTA (PASTEURIZED WHEY, PASTEURIZED MILK, VINEGAR, SALT), PARMESAN CHEESE (PASTEURIZED PART-SKIM MILK, CHEESE CULTURES, SALT, ENZYMES, POWDERED CELLULOSE [ANTI-CAKING AGENT]), GARLIC; VEGETABLE: ZUCCHINI, GARLIC, SEA SALT, BLACK PEPPER; LASAGNA NOODLES: SEMOLINA FLOUR (ENRICHED WITH IRON [FERROUS SULFATE], NIACIN, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID).",
+          "brand": "HOME CHEF KITCHEN",
+          "calories": 88.0,
+          "source": "usda"
+        },
+        {
+          "id": 356499,
+          "name": "LASAGNA",
+          "description": "DURUM WHEAT SEMOLINA, NIACIN, FERROUS SULFATE (IRON), THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID.",
+          "brand": "",
+          "calories": 375,
+          "source": "usda"
+        },
+        {
+          "id": 1918823,
+          "name": "LASAGNA",
+          "description": "WHEAT FLOUR, SEMOLINA, EGGS, WATER.",
+          "brand": "SHOPRITE KITCHEN",
+          "calories": 310,
+          "source": "usda"
+        },
+        {
+          "id": 2118406,
+          "name": "LASAGNA",
+          "description": "MARINARA SAUCE (TOMATO [TOMATO, TOMATO JUICE, CITRIC ACID, SALT, CALCIUM CHLORIDE], WATER, GARLIC, ONION, OLIVE OIL, SUGAR, MODIFIED CORN STARCH, SALT, BASIL, YEAST EXTRACT, PARMESAN CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], BLACK PEPPER, SPICES, XANTHAN GUM), MOZZARELLA CHEESE (LOW MOISTURE PART-SKIM MOZZARELLA CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], POTATO STARCH AND POWDERED CELLULOSE [TO PREVENT CAKING], NATAMYCIN [A NATURAL MOLD INHIBITOR]), LASAGNA NOODLES (WATER, PASTA [SEMOLINA {WHEAT}, DURUM WHEAT FLOUR, NIACIN, IRON {FERROUS SULFATE}, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID]), RICOTTA CHEESE (PASTEURIZED WHEY, PASTEURIZED MILK, VINEGAR, SALT), COOKED ITALIAN STYLE SAUSAGE (PORK, WATER, SALT, SODIUM LACTATE, SPICES, CORN SYRUP SOLIDS, PAPRIKA, FLAVORING, DISODIUM INOSINATE AND DISODIUM GUANYLATE, BHA, BHT, PROPYL GALLATE, SOY LECITHIN USED AS A PROCESSING AID), EGG PRODUCT (REAL EGG WHITES [99%], LESS THAN 1% OF: VEGETABLE GUMS [XANTHAN GUM, GUAR GUM], COLOR [INCLUDES BETA CAROTENE], VITAMINS AND MINERALS [CALCIUM PHOSPHATE, IRON {FERRIC ORTHOPHOSPHATE}, VITAMIN E {ALPHA TOCOPHERYL ACETATE}, ZINC SULFATE, CALCIUM PANTOTHENATE, VITAMIN A PALMITATE, VITAMIN B6 {PYRIDOXINE HYDROCHLORIDE}, VITAMIN B2 {RIBOFLAVIN}, VITAMIN B1 {THIAMINE}, FOLIC ACID, BIOTIN, VITAMIN B12, VITAMIN D3]), PARMESAN CHEESE (PARMESAN CHEESE [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], POTATO STARCH AND POWDERED CELLULOSE [TO PREVENT CAKING]), PARSLEY.",
+          "brand": "RALEY'S",
+          "calories": 158,
+          "source": "usda"
+        },
+        {
+          "id": 2708750,
+          "name": "Lasagna with meat",
+          "description": "",
+          "brand": "",
+          "calories": 139,
+          "source": "usda"
+        },
+        {
+          "id": 2708758,
+          "name": "Lasagna, meatless",
+          "description": "",
+          "brand": "",
+          "calories": 130,
+          "source": "usda"
+        },
+        {
+          "id": 2708751,
+          "name": "Lasagna with meat, canned",
+          "description": "",
+          "brand": "",
+          "calories": 97,
+          "source": "usda"
+        },
+        {
+          "id": 2708756,
+          "name": "Lasagna with chicken or turkey",
+          "description": "",
+          "brand": "",
+          "calories": 205,
+          "source": "usda"
+        },
+        {
+          "id": 2708755,
+          "name": "Lasagna with meat and spinach",
+          "description": "",
+          "brand": "",
+          "calories": 207,
+          "source": "usda"
+        },
+        {
+          "id": 2708754,
+          "name": "Lasagna with meat, frozen",
+          "description": "",
+          "brand": "",
+          "calories": 124,
+          "source": "usda"
+        },
+        {
+          "id": 2708759,
+          "name": "Lasagna, meatless, with vegetables",
+          "description": "",
+          "brand": "",
+          "calories": 188,
+          "source": "usda"
+        },
+        {
+          "id": 2708752,
+          "name": "Lasagna with meat, from restaurant",
+          "description": "",
+          "brand": "",
+          "calories": 185,
+          "source": "usda"
+        },
+        {
+          "id": 2708753,
+          "name": "Lasagna with meat, home recipe",
+          "description": "",
+          "brand": "",
+          "calories": 206,
+          "source": "usda"
+        },
+        {
+          "id": 173333,
+          "name": "Lasagna, cheese, frozen, prepared",
+          "description": "",
+          "brand": "",
+          "calories": 130,
+          "source": "usda"
+        },
+        {
+          "id": 168960,
+          "name": "Lasagna, cheese, frozen, unprepared",
+          "description": "",
+          "brand": "",
+          "calories": 145,
+          "source": "usda"
+        },
+        {
+          "id": 172106,
+          "name": "Lasagna, Vegetable, frozen, baked",
+          "description": "",
+          "brand": "",
+          "calories": 139,
+          "source": "usda"
+        },
+        {
+          "id": 2708757,
+          "name": "Lasagna, with chicken or turkey, and spinach",
+          "description": "",
+          "brand": "",
+          "calories": 201,
+          "source": "usda"
+        },
+        {
+          "id": 169851,
+          "name": "OLIVE GARDEN, lasagna classico",
+          "description": "",
+          "brand": "",
+          "calories": 184,
+          "source": "usda"
+        },
+        {
+          "id": 169850,
+          "name": "Restaurant, Italian, lasagna with meat",
+          "description": "",
+          "brand": "",
+          "calories": 185,
+          "source": "usda"
+        },
+        {
+          "id": 173489,
+          "name": "Babyfood, dinner, beef lasagna, toddler",
+          "description": "",
+          "brand": "",
+          "calories": 77.0,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "pizza margherita",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.1586518287658691,
+    "details": {
+      "query": "pizza margherita",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.154785394668579,
+      "results": [
+        {
+          "id": 1908310,
+          "name": "PIZZA MARGHERITA",
+          "description": "TOMATO STRIPS, CRUSHED TOMATOES, WATER, PURE OLIVE OIL, CANOLA OIL, FRESH GARLIC, FRESH ONION, FRESH BASIL, OREGANO, SPICE MIX AND CITRIC ACID (ACIDIFIER).",
+          "brand": "CASA VISCO",
+          "calories": 47.0,
+          "source": "usda"
+        },
+        {
+          "id": 2510254,
+          "name": "MARGHERITA PIZZA, MARGHERITA",
+          "description": "FLOUR, WATER, WHOLE CANNED TOMATOES (TOMATOES, TOMATO JUICE, CITRIC ACID), MOZZARELLA CHEESE (MILK, SALT, ENZYMES), EXTRA VIRGIN OLIVE OIL, SALT, PARMESAN CHEESE, BASIL,",
+          "brand": "TALIA",
+          "calories": 188,
+          "source": "usda"
+        },
+        {
+          "id": 2376850,
+          "name": "MARGHERITA PIZZA, MARGHERITA",
+          "description": "DOUGH (FLOUR, WATER, EXTRA VIRGIN OLIVE OIL, SALT, YEAST), SAUCE (TOMATO, EXTRA VIRGIN OLIVE OIL, WATER, SALT), FIOR DI LATTE MOZZARELLA, BASIL",
+          "brand": "PIZZERIA DELFINA",
+          "calories": 201,
+          "source": "usda"
+        },
+        {
+          "id": 2652654,
+          "name": "MARGHERITA PIZZA, MARGHERITA",
+          "description": "CRUST: CHICKPEAS, WATER, TAPIOCA, COCOA BUTTER, OLIVE OIL, LESS THAN 2% OF: YEAST, OREGANO, GARLIC POWDER, SALT, DATE POWDER, SUNFLOWER LECITHIN, XANTHAN GUM, BAKING POWDER (CALCIUM CARBONATE, SODIUM ACID PYROPHOSPHATE, SODIUM BICARBONATE, MONOCALCIUM PHOSPHATE). TOPPINGS: MOZZARELLA CHEESE (PASTEURIZED MILK, NONFAT MILK, CULTURES, SALT, ENZYMES), TOMATOES, PARMESAN CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), BASIL. SAUCE: TOMATOES, DATE POWDER, SALT, BASIL, GARLIC POWDER, BASIL EXTRACT, OREGANO.",
+          "brand": "BANZA",
+          "calories": 239,
+          "source": "usda"
+        },
+        {
+          "id": 2174980,
+          "name": "MARGHERITA PIZZA EMPANADAS, MARGHERITA PIZZA",
+          "description": "WRAPPER: UNBLEACHED WHEAT FLOUR, MALTED BARLEY FLOUR, WATER, SUNFLOWER OIL, SALT) FILLING: MOZZARELLA CHEESE (CULTURED PASTEURIZED PART-SKIM MILK, SALT, ENZYMES), BASIL, FRESH, CANOLA OIL, BLACK PEPPER, SALT, BROWN SUGAR",
+          "brand": "LATIN GOODNESS",
+          "calories": 309,
+          "source": "usda"
+        },
+        {
+          "id": 2214663,
+          "name": "MARGHERITA PIZZA POPCORN, MARGHERITA PIZZA",
+          "description": "POPCORN, SUNFLOWER AND/OR SAFFLOWER OIL, MARGHERITA CHEESE BLEND (ORGANIC BUTTERMILK POWDER, ORGANIC PARMESAN CHEESE (SKIM MILK, CULTURES, SALT, ENZYMES), ORGANIC SWEET WHEY, ORGANIC NONFAT DRY MILK, MOZZARELLA CHEESE (MILK, CULTURES, SALT, ENZYMES)), CANE SUGAR, SEA SALT, DEHYDRATED TOMATO, ONION POWDER, GARLIC POWDER, PARSLEY, BLACK PEPPER, BASIL, CITRIC ACID, OLIVE OIL, PAPRIKA EXTRACT, NATURAL FLAVORS.",
+          "brand": "SIMPLY 7",
+          "calories": 500,
+          "source": "usda"
+        },
+        {
+          "id": 2554898,
+          "name": "MARGHERITA GOURMET PIZZA, MARGHERITA",
+          "description": "CRUST: TAPIOCA STARCH, WATER, EGGS, OLIVE OIL, CHEDDAR CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), MOZZARELLA CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES), MILK, PARMESAN CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES). TOPPINGS: MARGHERITA TOPPING (TOMATOES, BASIL, SALT, GARLIC POWDER, OLIVE OIL), MOZZARELLA CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES), TOMATO PUREE (TOMATOES, CITRIC ACID).",
+          "brand": "AGAINST THE GRAIN",
+          "calories": 235,
+          "source": "usda"
+        },
+        {
+          "id": 2672985,
+          "name": "MARGHERITA PIZZA BITES, MARGHERITA",
+          "description": "ORGANIC UNBLEACHED WHEAT FLOUR, ORGANIC TOMATOES, FILTERED WATER, PART-SKIM MOZZARELLA CHEESE (PASTEURIZED PART-SKIM MILK, CULTURE, SALT, ENZYMES [WITHOUT ANIMAL ENZYMES OR RENNET]), ORGANIC TOMATO PUREE, ORGANIC EXTRA VIRGIN OLIVE OIL, ORGANIC BASIL, ORGANIC HONEY, SEA SALT, EXPELLER PRESSED HIGH OLEIC SAFFLOWER AND/OR SUNFLOWER OIL, ORGANIC GARLIC, ORGANIC CANE SUGAR, SPICES*, YEAST.",
+          "brand": "AMY'S",
+          "calories": 307,
+          "source": "usda"
+        },
+        {
+          "id": 2608346,
+          "name": "MARGHERITA PIZZA SAUCE, MARGHERITA",
+          "description": "ITALIAN WHOLE PEELED TOMATOES, ITALIAN CHERRY TOMATOES, OLIVE OIL, CARROTS, ONIONS, SALT, BASIL, GARLIC, OREGANO",
+          "brand": "RAO'S HOMEMADE",
+          "calories": 67.0,
+          "source": "usda"
+        },
+        {
+          "id": 2633929,
+          "name": "MARGHERITA PIZZA",
+          "description": "CRUST (SOFT WHEAT FLOUR, WATER, SALT, YEAST, DRY WHEAT SOURDOUGH), TOMATO SAUCE ( TOMATO PASSATA, WATER, SALT, CORN STARCH), BUFFALO MOZZARELLA CHEESE (BUFFALO'S MILK, NATURAL WHEY STARTER, SALT, ENZYMES), SUNFLOWER OIL, BASIL LEAVES",
+          "brand": "GENIO DELLA PIZZA",
+          "calories": 208,
+          "source": "usda"
+        },
+        {
+          "id": 532205,
+          "name": "MARGHERITA PIZZA",
+          "description": "DOUGH (SOFT WHEAT FLOUR, WATER, SUNFLOWER SEED OIL, SALT, YEAST), TOMATO SAUCE (TOMATO PASSATA, WATER, TOMATO PASTE, ONION, CORN STARCH, GARLIC, BASIL, SALT, BALSAMIC VINEGAR 'ACETO BALSAMICO DI MODENA' PGI [WINE VINEGAR, CONCENTRATED GRAPE MUST], BLACK PEPPER, OREGANO, DILL), SLICED MOZZARELLA CHEESE (MILK, SALT, MICROBIAL RENNET), MOZZARELLA CHEESE (MILK, STARTER CULTURE, MICROBIAL RENNET, SALT), GRANA PADANO DOP CHEESE (MILK, SALT, ANIMAL RENNET, LYSOZYME FROM EGGS [PRESERVATIVE]), BASIL.",
+          "brand": "",
+          "calories": 221,
+          "source": "usda"
+        },
+        {
+          "id": 2187938,
+          "name": "MARGHERITA PIZZA",
+          "description": "DOUGH (FLOUR (WHEAT FLOUR, MALTED BARLEY FLOUR, NIACIN, IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), WATER, CONTAINS 2% OR LESS OF EACH OF THE FOLLOWING: YEAST, VITAL WHEAT GLUTEN, CULTURED WHEAT FLOUR, PARTIALLY HYDROGENATED SOYBEAN OIL, NATURAL BUTTER FLAVOR, AND BETA CAROTENE, SALT, SUGAR, FERMENTED WHEAT FLOUR, SOYBEAN OIL, DATEM, DEXTROSE, GUAR GUM, MALTED WHEAT FLOUR, SODIUM ACID PYROPHOSPHATES, SOY LECHITIN, ASCORBIC ACID, BAKERY ENZYME (AMYLASE, WHEAT AZODICARBONAMIDE, MICROCRYSTALLINE CELLULOSE, CORN STARCH, DICALCIUM PHOSPHATE, SODIUM BICARBONATE), MOZZARELLA (WHOLE MILK LOW MOISTURE MOZZARELLA CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), RICE FLOUR AND POWDERED CELLULOSE ADDED TO PREVENT CAKING, NATAMYCIN (A NATURAL NOLD INHIBITOR)), ROMA TOMATO, PARMESAN CHEESE (CULTURED MILK, ENZYMES, SALT, CELLULOSE (TO PREVENT CAKING), NATAMYCIN (A MOLD INHIBITOR)), GARLIC, EXTRA VIRGIN OLIVE OIL, BASIL.",
+          "brand": "PAPA JOHN'S SALADS & PRODUCE",
+          "calories": 224,
+          "source": "usda"
+        },
+        {
+          "id": 2094922,
+          "name": "MARGHERITA PIZZA",
+          "description": "WHEAT FLOUR, WATER, MOZZARELLA CHEESE 27,2% (MILK, SALT, RENNET, MILK ENZYMES), TOMATOES, EXTRA VIRGIN OLIVE OIL, SALT, BREWER'S YEAST, OREGANO.",
+          "brand": "FAIRWAY",
+          "calories": 218,
+          "source": "usda"
+        },
+        {
+          "id": 2063257,
+          "name": "MARGHERITA PIZZA",
+          "description": "PIZZA CRUST (WATER, RICE FLOUR, MODIFIED RICE STARCH, POTATO STARCH, OLIVE OIL, EVAPORATED CANE SUGAR, TAPIOCA FLOUR, POTATO FLOUR, FRESH YEAST, SALT, GARLIC POWDER, ITALIAN SEASONING, XANTHAN GUM, CALCIUM SULFATE [FOR FRESHNESS]), TOMATOES, MOZZARELLA CHEESE (PASTEURIZED MILK, SALT, CHEESE CULTURES, ENZYMES, NATAMYCIN [MOLD INHIBITOR]), TOMATOES IN JUICE (TOMATOES, CALCIUM CHLORIDE, CITRIC ACID), WATER, OLIVE OIL, SPICES, MODIFIED CORN STARCH, ONION, BROWN SUGAR, SALT, TOMATO BASE (TOMATO PASTE, SALT, SUGAR, FLAVORINGS, MALIC ACID, CITRIC ACID, ONION AND GARLIC POWDER), SOYBEAN OIL, XANTHAN GUM, GARLIC, ONION POWDER, GARLIC POWDER.",
+          "brand": "EATING RIGHT",
+          "calories": 221,
+          "source": "usda"
+        },
+        {
+          "id": 2604708,
+          "name": "MARGHERITA PIZZA",
+          "description": "CRUST: CHICKPEAS, WATER, TAPIOCA, COCOA BUTTER, OLIVE OIL, LESS THAN 2% OF: YEAST, OREGANO, GARLIC POWDER, SALT, DATE POWDER, SUNFLOWER LECITHIN, XANTHAN GUM, BAKING POWDER (CALCIUM CARBONATE, SODIUM ACID PYROPHOSPHATE, SODIUM BICARBONATE, MONOCALCIUM PHOSPHATE), TOPPINGS: MOZZARELLA CHEESE (PASTEURIZED MILK, NONFAT MILK, CULTURES, SALT, ENZYMES), TOMATOES, PARMESAN CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), BASIL, SAUCE: TOMATOES, DATE POWDER, SALT, BASIL, GARLIC POWDER, BASIL EXTRACT, OREGANO",
+          "brand": "BANZA",
+          "calories": 239,
+          "source": "usda"
+        },
+        {
+          "id": 2628009,
+          "name": "MARGHERITA PIZZA",
+          "description": "WHEAT FLOUR, WATER, PEELED TOMATOES, MOZZARELLA CHEESE (MILK, SALT, RENNET), CHERRY TOMATOES, GRANA PADANO CHEESE (MILK, SALT, RENNET, EGG WHITE LYSOZYME [NATURAL PRESERVATIVE]), SALT, EXTRA VIRGIN OLIVE OIL, YEAST.",
+          "brand": "MANDIA",
+          "calories": 225,
+          "source": "usda"
+        },
+        {
+          "id": 2075393,
+          "name": "MARGHERITA PIZZA",
+          "description": "PIZZA CRUST (ENRICHED FLOUR [WHEAT FLOUR, MALTED BARLEY FLOUR, NIACIN, IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID], WATER, CONTAINS 2% OR LESS OF EACH OF THE FOLLOWING: YEAST, VITAL WHEAT GLUTEN, CULTURED WHEAT FLOUR, PARTIALLY HYDROGENATED SOYBEAN OIL, NATURAL BUTTER FLAVOR, BETA CAROTENE, SALT, SUGAR, FERMENTED WHEAT FLOUR, SOYBEAN OIL, DATEM, DEXTROSE, GUAR GUM, MALTED WHEAT FLOUR, SODIUM ACID PYROPHOSPHATE, SOY LECITHIN, ASCORBIC ACID, BAKERY ENZYME [AMYLASE, WHEAT STARCH, SALT], SODIUM STEAROYL LACTYLATE, AZODICARBONAMIDE, MICROCRYSTALLINE CELLULOSE, CORN STARCH, DICALCIUM PHOSPHATE, SODIUM BICARBONATE), MOZZARELLA CHEESE (WHOLE MILK LOW MOISTURE MOZZARELLA CHEESE [PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES], RICE FLOUR AND POWDERED CELLULOSE ADDED TO PREVENT CAKING, NATAMYCIN [A NATURAL MOLD INHIBITOR]), TOMATOES, PARMESAN CHEESE (PASTEURIZED PART-SKIM MILK, CHEESE CULTURE, SALT, ENZYMES, POWDERED CELLULOSE [ANTI-CAKING AGENT]), MINCED GARLIC IN WATER (GARLIC, WATER, CITRIC ACID), OLIVE OIL (REFINED OLIVE POMACE OIL, EXTRA VIRGIN OLIVE OIL), BASIL.",
+          "brand": "RENAISSANCE FOOD GROUP",
+          "calories": 226,
+          "source": "usda"
+        },
+        {
+          "id": 2073180,
+          "name": "PIZZA, MARGHERITA",
+          "description": "CRUST ([ORGANIC WHEAT FLOUR, WATER, ORGANIC OLIVE OIL, YEAST, 2% OR LESS: ORGANIC SUGAR, SALT, ORGANIC SOY LECITHIN, ORGANIC OAT FLOUR, ASCORBIC ACID, ENZYMES], ORGANIC OLIVE OIL), CHEESES (ORGANIC LOW MOISTURE PART SKIM MOZZARELLA CHEESE [PASTEURIZED ORGANIC PART SKIM MILK, CHEESE CULTURES, SALT, MICROBIAL ENZYMES], ORGANIC PARMESAN CHEESE [GRADE A SKIM MILK, SALT, CULTURES, ENZYMES]), ORGANIC SAUCE (WATER, ORGANIC TOMATO PASTE, SEA SALT, ORGANIC SUGAR, ORGANIC SPICES, ORGANIC DEHYDRATED ONION, ORGANIC DEHYDRATED GARLIC), ORGANIC TOMATOES, ORGANIC OLIVE OIL, ORGANIC BASIL.",
+          "brand": "WINN-DIXIE",
+          "calories": 203,
+          "source": "usda"
+        },
+        {
+          "id": 1895832,
+          "name": "PIZZA, MARGHERITA",
+          "description": "(WHEAT FLOUR, WATER, WHOLE WHEAT FLOUR, MULTI-GRAIN FLOUR [WHOLE WHITE WHEAT FLOUR, GOLDEN FLAXSEED MEAL, WHOLE OAT FLOUR, RYE MEAL], CONTAINS 2% OR LESS OF THE FOLLOWING: YEAST, HONEY, OLIVE OIL, MOLASSES, SUGAR, VITAL WHEAT GLUTEN, SALT), CHEESE (WHOLE MILK MOZZARELLA [PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES], WHITE CHEDDAR [PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES], PARMESAN [COW'S MILK, CHEESE CULTURE, SALT, ENZYMES]), SAUCE (WATER, TOMATOES, SALT, SUGAR, SPICES, ONION POWDER, GARLIC POWDER), TOMATOES, BASIL, OLIVE OIL, SALT, GARLIC, SPICE.",
+          "brand": "ROBERT IRVINE FOODS",
+          "calories": 182,
+          "source": "usda"
+        },
+        {
+          "id": 2675842,
+          "name": "PIZZA, MARGHERITA",
+          "description": "CRUST (WHEAT FLOUR, WATER, SOYBEAN OIL, PALM OIL WITH NATURAL FLAVOR COLORED WITH BETA CAROTENE, YEAST, PRESERVATIVE [CULTURED WHEAT STARCH, CITRIC ACID], DEXTROSE, SALT, WHITE CORNMEAL, L-CYSTEINE, SOY LECITHIN [PROCESSING AID]), LOW MOISTURE MOZZARELLA CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES), TOMATOES, SHREDDED PARMESAN CHEESE (PARMESAN CHEESE [PASTEURIZED PART-SKIM MILK, CHEESE CULTURES, SALT, ENZYMES], CELLULOSE [ANTI- CAKING]), EXTRA VIRGIN OLIVE OIL, BASIL, SALT.",
+          "brand": "SIGNATURE SELECT",
+          "calories": 257,
+          "source": "usda"
+        },
+        {
+          "id": 1896013,
+          "name": "PIZZA, MARGHERITA",
+          "description": "CRUST: WATER, RICE FLOUR, POTATO STARCH, OLIVE OIL, HONEY, TAPIOCA FLOUR, FRESH YEAST, SALT. TOPPINGS: TOMATOES, OREGANO. CHEESES: WHOLE MILK MOZZARELLA CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES). SAUCE: EXTRA VIRGIN OLIVE OIL, GARLIC, PARSLEY, BASIL, SALT, OREGANO, BLACK PEPPER.",
+          "brand": "NASH BROTHERS TRADING COMPANY",
+          "calories": 243,
+          "source": "usda"
+        },
+        {
+          "id": 2154714,
+          "name": "MARGHERITA PIZZA PROTEIN PUFFS, MARGHERITA PIZZA",
+          "description": "MILK PROTEIN ISOLATE, SUNFLOWER OIL, DEXTRIN, TOMATO POWDER, SALT, SUGAR, GARLIC POWDER, ONION POWDER, SILICON DIOXIDE, NATURAL FLAVORS, LACTIC ACID, YEAST EXTRACT, PAPRIKA EXTRACT.",
+          "brand": "TWIN PEAKS INGREDIENTS",
+          "calories": 400,
+          "source": "usda"
+        },
+        {
+          "id": 2640471,
+          "name": "MARGHERITA PIZZA CLIMATE-FRIENDLY CRACKERS, MARGHERITA PIZZA",
+          "description": "ORGANIC WHEAT FLOUR, ORGANIC SUNFLOWER OIL, ORGANIC TOMATO, ORGANIC SOURDOUGH (FERMENTED ORGANIC RYE FLOUR, SALT), SEA SALT, ORGANIC SPICE BLEND (ORGANIC BASIL, ORGANIC GARLIC, ORGANIC ONION, ORGANIC OREGANO), BAKING SODA.",
+          "brand": "MOONSHOT",
+          "calories": 467,
+          "source": "usda"
+        },
+        {
+          "id": 2468320,
+          "name": "MARGHERITA PIZZA FLAVOR PROTEIN PUFFS, MARGHERITA PIZZA",
+          "description": "MILK PROTEIN ISOLATE, SUNFLOWER OIL, DEXTRIN, TOMATO POWDER, SALT, SUGAR, GARLIC POWDER, ONION POWDER, SILICON DIOXIDE, NATURAL FLAVORS, LACTIC ACID, YEAST EXTRACT, PAPRIKA EXTRACT.",
+          "brand": "TWIN PEAKS INGREDIENTS",
+          "calories": 400,
+          "source": "usda"
+        },
+        {
+          "id": 2388309,
+          "name": "MARGHERITA AUTHENTIC NEAPOLITAN PIZZA, MARGHERITA",
+          "description": "WHEAT FLOUR, WATER, PEELED TOMATOES (TOMATOES, TOMATO JUICE, CITRIC ACID), FIOR DI LATTE (COW'S MILK) MOZZARELLA CHEESE, MOTHER DOUGH (WHEAT FLOUR, WATER, SALT), EXTRA VIRGIN OLIVE OIL, SALT, PARMESAN CHEESE, BASIL LEAVES.",
+          "brand": "TALIA DI NAPOLI",
+          "calories": 188,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "gelato",
+    "success": true,
+    "source": "usda",
+    "results": 25,
+    "response_time": 1.2603521347045898,
+    "details": {
+      "query": "gelato",
+      "source": "usda",
+      "total_results": 25,
+      "response_time": 1.2557637691497803,
+      "results": [
+        {
+          "id": 2074262,
+          "name": "GELATO",
+          "description": "FILTERED WATER, EVAPORATED CANE SYRUP, MANGO BASE (INCLUDES MANGOES, JUICE CONCENTRATES [PINEAPPLE, PASSION FRUIT], NATURAL FLAVORS, ANNATTO AND TURMERIC FOR COLOR), ALMONDS, TAPIOCA MALTODEXTRIN, EXPELLER PRESSED OIL (SUNFLOWER AND/OR SAFFLOWER AND/OR CANOLA), CONTAINS 2% OR LESS OF POTATO STARCH, GUAR GUM, CARRAGEENAN, CAROB BEAN GUM, SUNFLOWER LECITHIN, SEA SALT.",
+          "brand": "DREAM",
+          "calories": 165,
+          "source": "usda"
+        },
+        {
+          "id": 1887305,
+          "name": "GELATO",
+          "description": "SKIM MILK, SUGAR, CORN SYRUP, COCONUT OIL, WATER, BUTTER, COCOA POWDER, COCOA PASTE, COCOA BUTTER, MONO AND DIGLYCERIDES, SOY LECITHIN, SODIUM ALGINATE, LOCUST BEAN GUM, PECTIN, ARTIFICIAL FLAVORINGS.",
+          "brand": "ROUNDY'S",
+          "calories": 230,
+          "source": "usda"
+        },
+        {
+          "id": 2437778,
+          "name": "GELATO",
+          "description": "CREAM, NONFAT DRY MILK, WHOLE MILK, VANILLA BEANS, VANILLA EXTRACT, CANE SUGAR, DEXTROSE, CARRAGEENAN, GUAR GUM, LOCUST BEAN GUM.",
+          "brand": "DOLCEZZA",
+          "calories": 168,
+          "source": "usda"
+        },
+        {
+          "id": 2060975,
+          "name": "GELATO",
+          "description": "WATER, CANE SUGAR, PASTEURIZED MILK, LEMON JUICE, MERINGUE PIECES (SUGAR, WHEAT STARCH, SKIM MILK, NATURAL FLAVOR), COCONUT OIL, CITRIC ACID, INULIN, RICE FLOUR, CITRUS FIBER, NATURAL FLAVORS.",
+          "brand": "THE FRESH MARKET",
+          "calories": 143,
+          "source": "usda"
+        },
+        {
+          "id": 2063160,
+          "name": "GELATO",
+          "description": "MILK, SUGAR, COCOA POWDER, REFINED COCONUT OIL*, CHOCOLATE (COCOA BUTTER, LECITHIN, VANILLIN), GLUCOSE SYRUP, DEXTROSE, DARK CHOCOLATE CHIPS (COCOA PASTE, SUGAR, COCOA BUTTER, ANHYDROUS BUTTER, NATURAL VANILLA FLAVOR, EMULSIFIERS MONO AND DIGLYCERIDES OF FATTY ACIDS, STABILIZERS: CAROB SEED FLOUR, GUAR GUM, CARRAGEENAN.",
+          "brand": "HY-VEE",
+          "calories": 108,
+          "source": "usda"
+        },
+        {
+          "id": 356475,
+          "name": "GELATO",
+          "description": "WHOLE MILK, CREAM, SUGAR, BANANA PUREE, BROWN SUGAR, NONFAT MILK POWDER, BRANDY, CARRAGEENAN, MONO AND DI-GLYCERIDES, GUAR GUM, LOCUST BEAN GUM, SUCROSE, DEXTROSE, FRUCTOSE, BANANAS, NATURAL FLAVOR, TURMERIC EXTRACT, SOY LECITHIN.",
+          "brand": "",
+          "calories": 179,
+          "source": "usda"
+        },
+        {
+          "id": 356477,
+          "name": "GELATO",
+          "description": "WHOLE MILK, CREAM, SUGAR, SKIM MILK POWDER, COFFEE, VEGETABLE OIL, COCOA, NATURAL FLAVORS, MONO- AND DI-GLYCERIDES, CARRAGEENAN, GUAR GUM, SOY LECITHIN, LOCUST BEAN GUM.",
+          "brand": "",
+          "calories": 200,
+          "source": "usda"
+        },
+        {
+          "id": 356478,
+          "name": "GELATO",
+          "description": "WHOLE MILK, SUGAR, CREAM, COCOA PROCESSED WITH ALKALI, SKIM MILK POWDER, COCOA LIQUOR, COCOA BUTTER, SOY LECITHIN, VANILLA EXTRACT, LOCUST BEAN GUM, GUAR GUM, CARRAGEENAN, MONO- AND DI-GLYCERIDES.",
+          "brand": "",
+          "calories": 200,
+          "source": "usda"
+        },
+        {
+          "id": 2291008,
+          "name": "GELATO",
+          "description": "MILK, SUGAR, REFINED COCONUT OIL*, CARAMEL SUGAR, GLUCOSE SYRUP, DEXTROSE, MONO AND DIGLYCERIDES OF FATTY ACIDS, CAROB SEED FLOUR, GUAR GUM, CARRAGEENAN, NATURAL FLAVORINGS.",
+          "brand": "HY-VEE",
+          "calories": 0,
+          "source": "usda"
+        },
+        {
+          "id": 2705637,
+          "name": "Gelato, chocolate",
+          "description": "",
+          "brand": "",
+          "calories": 251,
+          "source": "usda"
+        },
+        {
+          "id": 2705636,
+          "name": "Gelato, vanilla",
+          "description": "",
+          "brand": "",
+          "calories": 249,
+          "source": "usda"
+        },
+        {
+          "id": 2145875,
+          "name": "MINI SANDWICHES, CHOCOLATE GELATO, GELATO",
+          "description": "CHOCOLATE GELATO SANDWICH INGREDIENTS: GELATO [REHYDRATED SKIMMED MILK, SUGAR, REFINED COCONUT OIL, COCOA POWDER (PROCESSED WITH ALKALI), MILK CHOCOLATE (SUGAR, COCOA BUTTER, MILK POWDER, COCOA PASTE, ANHYDROUS BUTTER, SUNFLOWER LECITHIN), MILK PROTEINS, GLUCOSE SYRUP, PROPANE 1,2-DIOL ESTERS OF FATTY ACIDS, MONO AND DIGLYCERIDES OF FATTY ACIDS, LOCUST BEAN GUM, GUAR GUM, FLAVORS], COOKIE [WHEAT FLOUR, SUGAR, PALM OIL, GLUCOSE SYRUP, BARLEY MALT EXTRACT, CARAMELISED SUGAR, FAT-REDUCED COCOA POWDER (PROCESSED WITH ALKALI), SODIUM CARBONATE, AMMONIUM CARBONATE, SOY LECITHIN, SALT, FLAVORS]. GELATO SANDWICH INGREDIENTS: GELATO [REHYDRATED SKIMMED MILK, SUGAR, REFINED COCONUT OIL, GLUCOSE SYRUP, CREAM, BUTTER, MILK PROTEINS, PROPANE 1,2-DIOL ESTERS OF FATTY ACIDS, MONO AND DIGLYCERIDES OF FATTY ACIDS, LOCUST BEAN GUM, GUAR GUM, FLAVORS], COOKIE [WHEAT FLOUR, SUGAR, PALM OIL, GLUCOSE SYRUP, BARLEY MALT EXTRACT, CARAMELISED SUGAR, FAT-REDUCED COCOA POWDER (PROCESSED WITH ALKALI), SODIUM CARBONATE, AMMONIUM CARBONATE, SOY LECITHIN, SALT, FLAVORS].",
+          "brand": "TOPS",
+          "calories": 280,
+          "source": "usda"
+        },
+        {
+          "id": 2438438,
+          "name": "GELATO & APRICOT YOGURT, GELATO & APRICOT",
+          "description": "WHOLE MILK YOGURT GELATO (WHOLE MILK YOGURT, FAT-FREE MILK, GLUCOSE SYRUP, COCONUT OIL, SUGAR, MONO- AND DIGLYCERIDES OF FATTY ACIDS, LOCUST BEAN GUM, GUAR GUM, NATURAL FLAVORS); APRICOT JAM (APRICOT PUREE, GLUCOSE SYRUP, SUGAR, CONCENTRATED LEMON JUICE, PECTIN); SEMI-CANDLED APRICOT, (APRICOT, SUGAR, CONCENTRATED LEMON JUICE); COOKIE GRANULES (CORN FLOUR, SUGAR, BUTTER, VEGETABLE OILS (COCONUT, SUNFLOWER, OLIVE), EGGS*)",
+          "brand": "LA GELATERIA DI PIAZZA NAVONA",
+          "calories": 247,
+          "source": "usda"
+        },
+        {
+          "id": 2069880,
+          "name": "JONE'S GELATO, GELATO, VANILLA BEAN",
+          "description": "ORGANIC COCONUT MILK (ORGANIC COCONUT, WATER), BIRCH XYLITOL, ORGANIC VANILLA EXTRACT, ORGANIC VANILLA BEAN, SEA SALT, AGAR AGAR.",
+          "brand": "JONE'S GELATO",
+          "calories": 195,
+          "source": "usda"
+        },
+        {
+          "id": 2435643,
+          "name": "GELATO, STRACCIATELLA",
+          "description": "WHOLE MILK, SUGAR, CREAM, NON-FAT DRY MILK, CHOCOLATE CHIP (COCONUT OIL, SUGAR, LOW FAT COCOA POWDER, NATURAL FLAVORINGS), DEXTROSE, CELLULOSE GUM, LOCUST BEAN GUM, GUAR GUM, REDUCED MINERALS WHEY, NATURAL FLAVORS",
+          "brand": "DOLCEZZA",
+          "calories": 172,
+          "source": "usda"
+        },
+        {
+          "id": 2069801,
+          "name": "ARTISAN GELATO",
+          "description": "BLACKBERRIES, PURE CANE SUGAR, WATER, DEXTROSE, LESS THAN 1% OF LOCUST BEAN GUM AND GUAR GUM",
+          "brand": "SWEET MAGNOLIA GELATO",
+          "calories": 85.0,
+          "source": "usda"
+        },
+        {
+          "id": 2069805,
+          "name": "ARTISAN GELATO",
+          "description": "FRESH CANTALOUPES, WATER, PURE CANE SUGAR, LEMON JUICE, DEXTROSE, LESS THAN 1% LOCUST BEAN GUM AND GUAR GUM.",
+          "brand": "SWEET MAGNOLIA GELATO",
+          "calories": 102,
+          "source": "usda"
+        },
+        {
+          "id": 2063157,
+          "name": "CAPPUCCINO GELATO",
+          "description": "MILK, SUGAR, COFFEE SYRUP (SUGAR, GLUCOSE SYRUP, WATER, COFFEE POWDER, VEGETABLE OIL, CONCENTRATED MILK, FLAVORS, AGAR AGAR), REFINED COCONUT OIL*, DEXTROSE, GLUCOSE SYRUP, COFFEE POWDER, COFFEE AND CHOCOLATE PRALINES (SUGAR, COCOA POWDER, COCOA BUTTER, VANILLA NATURAL FLAVORING, COFFEE EXTRACT, ARABIC GUM, ALCOHOL, SHELLAC, CITRIC ACID), MILK PROTEIN, MONO AND DIGLYCERIDES OF FATTY ACIDS, CAROB SEED FLOUR, GUAR GUM, CARRAGEENAN.",
+          "brand": "HY-VEE",
+          "calories": 108,
+          "source": "usda"
+        },
+        {
+          "id": 718628,
+          "name": "ESPRESSO GELATO",
+          "description": "WHOLE MILK, SUGAR, HEAVY CREAM, ESPRESSO, NON-FAT DRY MILK, VANILLA, LOCUST BEAN GUM, GUAR GUM",
+          "brand": "",
+          "calories": 156,
+          "source": "usda"
+        },
+        {
+          "id": 2069050,
+          "name": "GELATO DESSERT",
+          "description": "BLACK DIAMOND PLUM: PLUM PULP (62%), SUGAR, FRUCTOSE-GLUCOSE SYRUP, WATER, FRESH MILK, LEMON JUICE.",
+          "brand": "DIVINO",
+          "calories": 141,
+          "source": "usda"
+        },
+        {
+          "id": 2069048,
+          "name": "GELATO DESSERT",
+          "description": "CIACULLI TANGERINE: TANGERINE JUICE (72%), SUGAR, GLUCOSE-FRUCTOSE SYRUP, WATER, LEMON JUICE.",
+          "brand": "DIVINO",
+          "calories": 130,
+          "source": "usda"
+        },
+        {
+          "id": 2076139,
+          "name": "GELATO ITALIANO",
+          "description": "ITALIAN FRESH HIGH QUALITY WHOLE MILK (60%), EXTRA DARK CHOCOLATE (10%), (OF WHICH COCOA FROM DOMINICAN REPUBLIC (62,8%), SUGAR, COCOA BUTTER, VANILLA EXTRACT), SUGAR, GLUCOSE SYRUP, FROM MAIZE, REHYDRATED SKIM MILK, GLUCOSE FRUCTOSE SYRUP FROM MAIZE, COCOA POWDER (3,5%), FRESH CREAM, DARK CHOCOLATE CURLS (1,5%), (SUGAR, COCOA PASTE, COCOA BUTTER, NATURAL VANILLA FLAVOR, SOY LECITHIN), BUTTER, MONO AND DIGLYCERIDES OF FATTY ACIDS, SODIUM ALGINATE AND CAROB BEAN GUM, FLAVOR.",
+          "brand": "SIVIERO MARIA",
+          "calories": 210,
+          "source": "usda"
+        },
+        {
+          "id": 2069042,
+          "name": "GELATO ITALIANO",
+          "description": "SKIM MILK, SUGAR, COCONUT OIL, CORN SYRUP, BUTTERFAT, HIGH FRUCTOSE CORN SYRUP, BOURBON VANILLA EXTRACT, MONO- AND DIGLYCERIDES, SODIUM ALGINATE AND LOCUST BEAN GUM, B-CAROTENE (COLOR), VANILLA SEEDS.",
+          "brand": "SIVIERO MARIA",
+          "calories": 212,
+          "source": "usda"
+        },
+        {
+          "id": 2652870,
+          "name": "GELATO PISTACHIO",
+          "description": "MILK, CANE SUGAR, PISTACHIO, CREAM, COCONUT OIL, GLUCOSE, DEXTROSE, VEGETABLE FIBER, MONO AND DIGLYCERIDES, LACTIC ACID ESTER, NATURAL FLAVORS, GUAR GUM, TARA GUM.",
+          "brand": "LOWES FOODS",
+          "calories": 194,
+          "source": "usda"
+        },
+        {
+          "id": 1864878,
+          "name": "GELATO POP",
+          "description": "CARAMEL MILK, CREAM, SUGAR, EGGS, DUTCHED CHOCOLATE,DEXTROSE,OIL,(SOYBEAN , COCONUT), VANILLA,CAROB GUM, SOY LECITHIN.",
+          "brand": "TALENTI",
+          "calories": 294,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "pastiera napoletana",
+    "success": true,
+    "source": "usda",
+    "results": 11,
+    "response_time": 1.0521516799926758,
+    "details": {
+      "query": "pastiera napoletana",
+      "source": "usda",
+      "total_results": 11,
+      "response_time": 1.0459253787994385,
+      "results": [
+        {
+          "id": 2619445,
+          "name": "NAPOLETANA PASTA SAUCE, NAPOLETANA",
+          "description": "ITALIAN VINE RIPENED TOMATOES (DICED, JUICE, PASTE), ITALIAN WHOLE CHERRY TOMATOES, EXTRA VIRGIN OLIVE OIL, SALT, BASIL, ONION, GARLIC, SUGAR, LEMON JUICE CONCENTRATE, DRIED OREGANO, GARLIC POWDER.",
+          "brand": "SHOPRITE",
+          "calories": 40.0,
+          "source": "usda"
+        },
+        {
+          "id": 2619599,
+          "name": "NAPOLETANA PASTA SAUCE, NAPOLETANA",
+          "description": "TOMATOES (PUREE, DICED, JUICE), CHERRY TOMATOES, EXTRA VIRGIN OLIVE OIL, SALT, BASIL, ONION, GARLIC, SUGAR, LEMON JUICE CONCENTRATE, GARLIC POWDER, DRIED OREGANO.",
+          "brand": "SHOPRITE",
+          "calories": 40.0,
+          "source": "usda"
+        },
+        {
+          "id": 1952360,
+          "name": "NAPOLETANA ROASTED GARLIC SAUCE, NAPOLETANA ROASTED GARLIC",
+          "description": "TOMATOES (WHOLE PEELED TOMATOES [TOMATOES, TOMATO JUICE], CRUSHED TOMATOES), WATER, SUGAR, ROASTED GARLIC PUREE, SALT, OLIVE OIL, BASIL, ONION POWDER, SPICE, PARSLEY.",
+          "brand": "PRIVATE SELECTION",
+          "calories": 56.0,
+          "source": "usda"
+        },
+        {
+          "id": 2322879,
+          "name": "NAPOLETANA PASTA SAUCE",
+          "description": "TOMATOES, CHERRY TOMATOES, EXTRA VIRGIN OLIVE OIL, ONION, CARROT, BASIL, SALT, LACTIC ACID, BLACK PEPPER.",
+          "brand": "SAM'S CHOICE",
+          "calories": 96.0,
+          "source": "usda"
+        },
+        {
+          "id": 2579510,
+          "name": "NAPOLETANA PASTA SAUCE",
+          "description": "TOMATOES, OLIVE OIL, ONION, SALT, SUGAR, GARLIC, HERBS",
+          "brand": "TUSCANINI",
+          "calories": 64.0,
+          "source": "usda"
+        },
+        {
+          "id": 2065528,
+          "name": "ORGANIC NAPOLETANA PASTA SAUCE",
+          "description": "ITALIAN VINE RIPENED ORGANIC TOMATOES (ORGANIC DICED, ORGANIC JUICE), ITALIAN ORGANIC WHOLE CHERRY TOMATOES, ORGANIC TOMATO PASTE, ORGANIC EXTRA VIRGIN OLIVE OIL, ORGANIC ONION, ORGANIC CARROTS, ORGANIC ITALIAN BASIL, SALT, CITRIC ACID, ORGANIC GROUND BLACK PEPPER.",
+          "brand": "RALEY'S",
+          "calories": 104,
+          "source": "usda"
+        },
+        {
+          "id": 401190,
+          "name": "REGIONI D'HALIA, NAPOLETANA PASTA SAUCE",
+          "description": "TOMATO PULP, (TOMATOES, CITRIC ACID), TOMATO PASTE, ONIONS, EXTRA VIRGIN OLIVE OIL, CARROTS, SUNFLOWER SEED OIL, BASIL, SEA SALT, GARLIC, RICE STARCH, CELERY, SUGAR, BLACK PEPPER, ROSEMARY, CITRIC ACID.",
+          "brand": "",
+          "calories": 112,
+          "source": "usda"
+        },
+        {
+          "id": 2032912,
+          "name": "SACLA ITALIA, NAPOLETANA PASTA SAUCE",
+          "description": "ITALIAN VINE RIPENED TOMATOES (DICED, JUICE, PASTE), ITALIAN WHOLE CHERRY TOMATOES (16%), EXTRA VIRGIN OLIVE OIL, ONION, CARROT, ITALIAN BASIL (1%), SALT, LACTIC ACID, BLACK PEPPER.",
+          "brand": "SACLA ITALIA",
+          "calories": 104,
+          "source": "usda"
+        },
+        {
+          "id": 2622946,
+          "name": "NAPOLETANA TIPO \"00\" UNBLEACHED EXTRA FINE FLOUR",
+          "description": "SOFT WHEAT FLOUR \"00\"",
+          "brand": "ANNA",
+          "calories": 343,
+          "source": "usda"
+        },
+        {
+          "id": 2285189,
+          "name": "QUARTERED ARTICHOKE HEARTS",
+          "description": "QUARTERED ARTICHOKE HEARTS, WATER, SALT, CITRIC ACID.",
+          "brand": "LA NAPOLETANA",
+          "calories": 19.0,
+          "source": "usda"
+        },
+        {
+          "id": 2428233,
+          "name": "THE ORIGINAL ITALIAN PEELED TOMATOES",
+          "description": "PEELED TOMATOES, TOMATO PUREE, SALT, ACIDITY REGULATOR: CITRIC ACID.",
+          "brand": "FRANK PEPE PIZZERIA NAPOLETANA",
+          "calories": 25.0,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "cantucci toscani",
+    "success": true,
+    "source": "usda",
+    "results": 9,
+    "response_time": 1.2151706218719482,
+    "details": {
+      "query": "cantucci toscani",
+      "source": "usda",
+      "total_results": 9,
+      "response_time": 1.2095084190368652,
+      "results": [
+        {
+          "id": 2438339,
+          "name": "GINGLI TOSCANI",
+          "description": "DURUM WHEAT SEMOLINA, WATER.",
+          "brand": "PASTA PANARESE",
+          "calories": 318,
+          "source": "usda"
+        },
+        {
+          "id": 2409661,
+          "name": "GIGLI TOSCANI REGIONALI ARTISAN PASTA, GIGLI TOSCANI",
+          "description": "DURUM WHEAT SEMOLINA.",
+          "brand": "BELLA ITALIA",
+          "calories": 375,
+          "source": "usda"
+        },
+        {
+          "id": 2442233,
+          "name": "TOSCANI, OLIVE OIL",
+          "description": "OLIVE OIL AND VIRGIN OLIVE OIL.",
+          "brand": "TOSCANI",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 1875997,
+          "name": "ORIGINAL ITALIAN BISCUITS, ALMONDS CANTUCCI",
+          "description": "WHOLEMEAL FARRO (TRITICUM DICOCCUM) FLOUR (33%), SUGAR, ALMONDS (20%), EGGS, BUTTER, LEAVENING AGENTS: DISODIUM DI-CALCIUM PHOSPHATE, SODIUM BICARBONATE, WHEAT STARCH",
+          "brand": "POGGIO DEL FARRO",
+          "calories": 453,
+          "source": "usda"
+        },
+        {
+          "id": 1865267,
+          "name": "SEGGIANO, TOSCANI ORGANIC PASTA",
+          "description": "ORGANICALLY GROWN TUSCAN DURUM WHEAT SEMOLINA + WATER.",
+          "brand": "SEGGIANO",
+          "calories": 345,
+          "source": "usda"
+        },
+        {
+          "id": 1896940,
+          "name": "SEGGIANO, STRACCI TOSCANI ORGANIC PASTA",
+          "description": "ORGANICALLY GROWN TUSCAN DURUM WHEAT SEMOLINA",
+          "brand": "SEGGIANO",
+          "calories": 351,
+          "source": "usda"
+        },
+        {
+          "id": 1887072,
+          "name": "ALL NATURAL SUNFLOWER OIL & EXTRA VIRGIN OLIVE OIL",
+          "description": "85% SUNFLOWER OIL, 15% EXTRA VIRGIN OLIVE OIL.",
+          "brand": "TOSCANI",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2417388,
+          "name": "OLIVE OIL",
+          "description": "REFINED OLIVE OIL, EXTRA VIRGIN OLIVE OIL",
+          "brand": "TOSCANI",
+          "calories": 800,
+          "source": "usda"
+        },
+        {
+          "id": 2418830,
+          "name": "ALMOND BISCOTTI, ALMOND",
+          "description": "WHEAT FLOUR, SUGAR, ALMONDS (21%), EGGS, EGG YOLK, BUTTER, WHOLE MILK POWDER, HONEY, SALT, LEAVENINGS (AMMONIUM BICARBONATE, BAKING SODA), VANILLA EXTRACT, NATURAL ORANGE FLAVOR.",
+          "brand": "KIRKLAND SIGNATURE",
+          "calories": 438,
+          "source": "usda"
+        }
+      ]
+    }
+  },
+  {
+    "food": "culurgiones",
+    "success": false,
+    "source": "none",
+    "results": 0,
+    "response_time": 1.5775320529937744,
+    "details": {
+      "query": "culurgiones",
+      "source": "none",
+      "total_results": 0,
+      "response_time": 1.5705561637878418,
+      "results": []
+    }
+  },
+  {
+    "food": "seadas sarde",
+    "success": false,
+    "source": "none",
+    "results": 0,
+    "response_time": 1.2899091243743896,
+    "details": {
+      "query": "seadas sarde",
+      "source": "none",
+      "total_results": 0,
+      "response_time": 1.2847375869750977,
+      "results": []
+    }
+  },
+  {
+    "food": "casoncelli bergamaschi",
+    "success": false,
+    "source": "none",
+    "results": 0,
+    "response_time": 1.2828667163848877,
+    "details": {
+      "query": "casoncelli bergamaschi",
+      "source": "none",
+      "total_results": 0,
+      "response_time": 1.2752840518951416,
+      "results": []
+    }
+  }
+]

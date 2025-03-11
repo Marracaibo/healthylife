@@ -1,0 +1,235 @@
+{
+  "query": "prosciutto crudo",
+  "timestamp": "2025-03-07T17:43:45.439482",
+  "results": [
+    {
+      "food_id": "1497",
+      "food_name": "Prosciutto",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "195",
+        "fat": "8.32",
+        "carbs": "0.30",
+        "protein": "27.80",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 195kcal | Fat: 8.32g | Carbs: 0.30g | Protein: 27.80g",
+        "food_id": "1497",
+        "food_name": "Prosciutto",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/ham-prosciutto"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "5595918",
+      "food_name": "Prosciutto",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "60",
+        "fat": "3.50",
+        "carbs": "0.00",
+        "protein": "7.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Citterio",
+        "food_description": "Per 2 slices - Calories: 60kcal | Fat: 3.50g | Carbs: 0.00g | Protein: 7.00g",
+        "food_id": "5595918",
+        "food_name": "Prosciutto",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/citterio/prosciutto"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "4132123",
+      "food_name": "Prosciutto Di Parma",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "80",
+        "fat": "5.00",
+        "carbs": "0.00",
+        "protein": "9.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Boar's Head",
+        "food_description": "Per 3 slices - Calories: 80kcal | Fat: 5.00g | Carbs: 0.00g | Protein: 9.00g",
+        "food_id": "4132123",
+        "food_name": "Prosciutto Di Parma",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/boars-head/prosciutto-di-parma/2-slices"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "90903",
+      "food_name": "Italian Style Prosciutto",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "70",
+        "fat": "4.00",
+        "carbs": "1.00",
+        "protein": "7.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Carando",
+        "food_description": "Per 1 oz - Calories: 70kcal | Fat: 4.00g | Carbs: 1.00g | Protein: 7.00g",
+        "food_id": "90903",
+        "food_name": "Italian Style Prosciutto",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/carando/italian-style-prosciutto"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "4054523",
+      "food_name": "Prosciutto Wrapped Mozzarella Cheese (4)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "320",
+        "fat": "25.00",
+        "carbs": "2.00",
+        "protein": "23.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Fiorucci",
+        "food_description": "Per 6 pieces - Calories: 320kcal | Fat: 25.00g | Carbs: 2.00g | Protein: 23.00g",
+        "food_id": "4054523",
+        "food_name": "Prosciutto Wrapped Mozzarella Cheese (4)",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/fiorucci/prosciutto-wrapped-mozzarella-cheese-(4)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "3151865",
+      "food_name": "Prosciutto",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "60",
+        "fat": "3.50",
+        "carbs": "0.00",
+        "protein": "7.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Fratelli Beretta",
+        "food_description": "Per 1 oz - Calories: 60kcal | Fat: 3.50g | Carbs: 0.00g | Protein: 7.00g",
+        "food_id": "3151865",
+        "food_name": "Prosciutto",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/fratelli-beretta/prosciutto"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "327209",
+      "food_name": "Prosciutto Ham",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "80",
+        "fat": "4.50",
+        "carbs": "0.00",
+        "protein": "8.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "San Daniele",
+        "food_description": "Per 2 slices - Calories: 80kcal | Fat: 4.50g | Carbs: 0.00g | Protein: 8.00g",
+        "food_id": "327209",
+        "food_name": "Prosciutto Ham",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/san-daniele/prosciutto-ham"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "9242332",
+      "food_name": "Prosciutto Di Parma",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "62",
+        "fat": "3.50",
+        "carbs": "0.00",
+        "protein": "8.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Citterio",
+        "food_description": "Per 2 slices - Calories: 62kcal | Fat: 3.50g | Carbs: 0.00g | Protein: 8.00g",
+        "food_id": "9242332",
+        "food_name": "Prosciutto Di Parma",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/citterio/prosciutto-di-parma"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "23238432",
+      "food_name": "Prosciutto Wrapped Mozzarella Cheese (2)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "125",
+        "fat": "10.00",
+        "carbs": "1.00",
+        "protein": "9.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Fiorucci",
+        "food_description": "Per 2 pieces - Calories: 125kcal | Fat: 10.00g | Carbs: 1.00g | Protein: 9.00g",
+        "food_id": "23238432",
+        "food_name": "Prosciutto Wrapped Mozzarella Cheese (2)",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/fiorucci/prosciutto-wrapped-mozzarella-cheese-(2)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "29455595",
+      "food_name": "Prosciutto & Mozzarella",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "160",
+        "fat": "9.50",
+        "carbs": "0.00",
+        "protein": "14.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Private Selection",
+        "food_description": "Per 2 1/2 rolls - Calories: 160kcal | Fat: 9.50g | Carbs: 0.00g | Protein: 14.00g",
+        "food_id": "29455595",
+        "food_name": "Prosciutto & Mozzarella",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/private-selection/prosciutto-mozzarella"
+      },
+      "enriched": true
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test FatSecret Image Recognition API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container { max-width: 800px; margin-top: 30px; }
+        #preview { max-width: 100%; max-height: 300px; margin: 20px 0; display: none; }
+        #resultContainer { margin-top: 20px; display: none; }
+        .food-item { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .loading { display: none; margin: 20px 0; }
+        .error-message { color: red; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Test FatSecret Image Recognition API</h2>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Riconoscimento Alimenti tramite Immagine
+            </div>
+            <div class="card-body">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="imageFile" class="form-label">Seleziona un'immagine:</label>
+                        <input type="file" class="form-control" id="imageFile" name="file" accept="image/*" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="region" class="form-label">Regione:</label>
+                        <select class="form-select" id="region" name="region">
+                            <option value="Italy" selected>Italia</option>
+                            <option value="US">Stati Uniti</option>
+                            <option value="UK">Regno Unito</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="language" class="form-label">Lingua:</label>
+                        <select class="form-select" id="language" name="language">
+                            <option value="it" selected>Italiano</option>
+                            <option value="en">Inglese</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Analizza Immagine</button>
+                </form>
+                
+                <div class="text-center">
+                    <img id="preview" class="img-fluid" alt="Anteprima immagine">
+                </div>
+                
+                <div class="loading">
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Caricamento...</span>
+                        </div>
+                    </div>
+                    <p class="text-center mt-2">Analisi in corso...</p>
+                </div>
+                
+                <div id="errorContainer" class="error-message"></div>
+                
+                <div id="resultContainer" class="mt-4">
+                    <h5 class="card-title">Risultati dell'analisi:</h5>
+                    <div id="resultsInfo" class="alert alert-info mb-3">
+                        <strong>Fonte dei dati:</strong> <span id="dataSource"></span>
+                    </div>
+                    <div id="foodResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadForm = document.getElementById('uploadForm');
+            const imageFileInput = document.getElementById('imageFile');
+            const preview = document.getElementById('preview');
+            const resultContainer = document.getElementById('resultContainer');
+            const foodResults = document.getElementById('foodResults');
+            const loading = document.querySelector('.loading');
+            const errorContainer = document.getElementById('errorContainer');
+            const dataSource = document.getElementById('dataSource');
+            
+            // Anteprima dell'immagine
+            imageFileInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Invio del form
+            uploadForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Reset dei risultati precedenti
+                foodResults.innerHTML = '';
+                errorContainer.innerHTML = '';
+                resultContainer.style.display = 'none';
+                loading.style.display = 'block';
+                
+                const formData = new FormData(uploadForm);
+                
+                try {
+                    const response = await fetch('/api/image-recognition/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Errore HTTP: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    displayResults(data);
+                } catch (error) {
+                    console.error('Errore:', error);
+                    errorContainer.innerHTML = `<p>Errore durante l'analisi: ${error.message}</p>`;
+                } finally {
+                    loading.style.display = 'none';
+                }
+            });
+            
+            // Visualizza i risultati
+            function displayResults(data) {
+                console.log('Risultati ricevuti:', data);
+                
+                // Mostra la fonte dei dati
+                if (data.status === 'mock_response') {
+                    dataSource.textContent = 'Risposta simulata (modalità test)';
+                } else {
+                    dataSource.textContent = 'FatSecret API';
+                }
+                
+                // Mostra i risultati degli alimenti
+                if (data.food_response && data.food_response.length > 0) {
+                    data.food_response.forEach(food => {
+                        const foodItem = document.createElement('div');
+                        foodItem.className = 'food-item';
+                        
+                        const foodName = document.createElement('h5');
+                        foodName.textContent = food.food_entry_name;
+                        
+                        const nutritionInfo = document.createElement('div');
+                        nutritionInfo.className = 'nutrition-info';
+                        
+                        let nutritionHtml = '<p><strong>Valori Nutrizionali:</strong></p><ul>';
+                        
+                        if (food.eaten && food.eaten.total_nutritional_content) {
+                            const nutrition = food.eaten.total_nutritional_content;
+                            nutritionHtml += `
+                                <li>Calorie: ${nutrition.calories} kcal</li>
+                                <li>Carboidrati: ${nutrition.carbohydrate}g</li>
+                                <li>Proteine: ${nutrition.protein}g</li>
+                                <li>Grassi: ${nutrition.fat}g</li>
+                            `;
+                        }
+                        
+                        nutritionHtml += '</ul>';
+                        nutritionInfo.innerHTML = nutritionHtml;
+                        
+                        // Informazioni sulla porzione
+                        const servingInfo = document.createElement('p');
+                        if (food.suggested_serving) {
+                            servingInfo.innerHTML = `<strong>Porzione suggerita:</strong> ${food.suggested_serving.serving_description}`;
+                        }
+                        
+                        foodItem.appendChild(foodName);
+                        foodItem.appendChild(servingInfo);
+                        foodItem.appendChild(nutritionInfo);
+                        
+                        foodResults.appendChild(foodItem);
+                    });
+                } else {
+                    foodResults.innerHTML = '<p>Nessun alimento riconosciuto nell\'immagine.</p>';
+                }
+                
+                resultContainer.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

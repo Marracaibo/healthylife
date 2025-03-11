@@ -1,0 +1,101 @@
+{
+  "query": "mozzarella",
+  "timestamp": "2025-03-07T18:06:01.576078",
+  "results": [
+    {
+      "food_id": "1260",
+      "food_name": "Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "302",
+        "fat": "20.03",
+        "carbs": "3.83",
+        "protein": "25.96"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "1260",
+        "food_name": "Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 302kcal | Fat: 20.03g | Carbs: 3.83g | Protein: 25.96g"
+      }
+    },
+    {
+      "food_id": "1262",
+      "food_name": "Part Skim Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "302",
+        "fat": "20.03",
+        "carbs": "3.83",
+        "protein": "25.96"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "1262",
+        "food_name": "Part Skim Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 302kcal | Fat: 20.03g | Carbs: 3.83g | Protein: 25.96g"
+      }
+    },
+    {
+      "food_id": "1261",
+      "food_name": "Whole Milk Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "300",
+        "fat": "22.35",
+        "carbs": "2.19",
+        "protein": "22.17"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "1261",
+        "food_name": "Whole Milk Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 300kcal | Fat: 22.35g | Carbs: 2.19g | Protein: 22.17g"
+      }
+    },
+    {
+      "food_id": "1263",
+      "food_name": "Low Sodium Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "280",
+        "fat": "17.10",
+        "carbs": "3.10",
+        "protein": "27.50"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "1263",
+        "food_name": "Low Sodium Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 280kcal | Fat: 17.10g | Carbs: 3.10g | Protein: 27.50g"
+      }
+    },
+    {
+      "food_id": "1319",
+      "food_name": "Imitation Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "248",
+        "fat": "12.22",
+        "carbs": "23.67",
+        "protein": "11.47"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "1319",
+        "food_name": "Imitation Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 248kcal | Fat: 12.22g | Carbs: 23.67g | Protein: 11.47g"
+      }
+    }
+  ]
+}

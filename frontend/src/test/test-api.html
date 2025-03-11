@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test API HealthyLife</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #2e7d32;
+    }
+    .input-row {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+      flex-grow: 1;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .error {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    .loading {
+      color: #1976d2;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test API HealthyLife</h1>
+  
+  <div class="input-row">
+    <input type="text" id="searchQuery" placeholder="Termine di ricerca (es. bread, pane)" value="bread">
+    <button id="searchButton">Cerca</button>
+  </div>
+  
+  <div id="statusMessage"></div>
+  
+  <h3>Risultati API:</h3>
+  <pre id="results">Nessun risultato ancora...</pre>
+  
+  <script>
+    document.getElementById('searchButton').addEventListener('click', searchFood);
+    document.getElementById('searchQuery').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        searchFood();
+      }
+    });
+    
+    async function searchFood() {
+      const query = document.getElementById('searchQuery').value.trim();
+      const resultsContainer = document.getElementById('results');
+      const statusMessage = document.getElementById('statusMessage');
+      
+      if (!query) {
+        statusMessage.innerHTML = '<span class="error">Inserisci un termine di ricerca</span>';
+        return;
+      }
+      
+      statusMessage.innerHTML = '<span class="loading">Ricerca in corso...</span>';
+      resultsContainer.textContent = 'Caricamento...';
+      
+      try {
+        console.log(`Ricerca per "${query}"...`);
+        
+        // Test chiamata diretta all'API
+        const response = await fetch(`http://localhost:8000/api/hybrid-food/search?query=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        
+        console.log('Risposta API:', data);
+        resultsContainer.textContent = JSON.stringify(data, null, 2);
+        
+        if (data.results && data.results.length > 0) {
+          statusMessage.innerHTML = `<span style="color: green">Trovati ${data.results.length} risultati</span>`;
+        } else {
+          statusMessage.innerHTML = `<span class="error">Nessun risultato trovato per "${query}"</span>`;
+        }
+      } catch (error) {
+        console.error('Errore durante la ricerca:', error);
+        resultsContainer.textContent = `Errore: ${error.message}`;
+        statusMessage.innerHTML = `<span class="error">Errore durante la ricerca</span>`;
+      }
+    }
+  </script>
+  
+  <!-- Includi il monitor API -->
+  <script src="apiMonitor.js"></script>
+</body>
+</html>

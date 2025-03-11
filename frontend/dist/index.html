@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon-192x192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#4caf50" />
+    <meta name="description" content="HealthyLife - Fitness tracking e alimentazione per uno stile di vita sano" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="HealthyLife" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>HealthyLife App</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overscroll-behavior-y: none; /* Prevent pull-to-refresh */
+      }
+      /* Nasconde la barra degli indirizzi quando l'app è aperta dal browser */
+      @media screen and (display-mode: standalone) {
+        html {
+          height: 100vh;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CqPtBV1g.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B8_vz7gL.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Gestione dell'installazione PWA
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Impedisci al browser di mostrare automaticamente il prompt
+        e.preventDefault();
+        // Salva l'evento per poterlo triggerare più tardi
+        window.deferredPrompt = e;
+      });
+
+      // Controlla se l'app è in modalità standalone
+      if (window.matchMedia('(display-mode: standalone)').matches || 
+          window.navigator.standalone === true) {
+        // L'app è in esecuzione in modalità standalone
+        console.log('App in modalità standalone');
+      }
+    </script>
+    <noscript>
+      <div style="padding: 20px; text-align: center;">
+        Per utilizzare HealthyLife, abilita JavaScript nel tuo browser.
+      </div>
+    </noscript>
+  </body>
+</html>

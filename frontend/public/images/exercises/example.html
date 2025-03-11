@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio GIF Esercizi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #1976d2;
+        }
+        .exercise-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .exercise-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .gif-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px;
+        }
+        .placeholder-image {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: 4px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #1976d2;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .secondary-button {
+            background-color: #9c27b0;
+        }
+        .detail-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .detail-item {
+            flex: 1;
+            min-width: 100px;
+            background-color: #f0f7ff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .detail-label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        .detail-value {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .info-block {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Implementazione GIF Esercizi</h1>
+        <p>Questa pagina mostra come appariranno gli esercizi con le GIF animate. Per completare l'implementazione, è necessario scaricare o creare GIF per ogni esercizio e posizionarle nella cartella <code>/images/exercises/</code>.</p>
+        
+        <div class="info-block">
+            <p><strong>Nota:</strong> Le immagini qui sotto sono solo segnaposto. Per l'implementazione finale, è necessario sostituirle con GIF reali degli esercizi.</p>
+        </div>
+
+        <h2>Anteprima per Prep Phase</h2>
+        
+        <div class="exercise-preview">
+            <div class="exercise-title">Variazioni di Squat</div>
+            <div class="gif-placeholder">
+                <!-- 
+                    Per implementare questa funzionalità, è necessario:
+                    1. Scaricare o creare una GIF che illustra l'esercizio squat
+                    2. Salvare la GIF come "squat-variations.gif" nella cartella /images/exercises/
+                    3. La GIF apparirà qui automaticamente nell'applicazione
+                -->
+                <img class="placeholder-image" src="https://via.placeholder.com/320x240.png?text=Esercizio+Squat+in+movimento" alt="Squat animation placeholder">
+            </div>
+            <a href="#" class="button secondary-button">Mostra Animazione</a>
+            
+            <div>
+                <div style="font-weight: 600; margin: 10px 0 5px 0; font-size: 0.9rem;">Descrizione</div>
+                <div style="font-size: 0.9rem;">Le variazioni di squat rinforzano i muscoli delle gambe come quadricipiti, glutei e muscoli posteriori della coscia.</div>
+            </div>
+            
+            <div>
+                <div style="font-weight: 600; margin: 10px 0 5px 0; font-size: 0.9rem;">Dettagli</div>
+                <div class="detail-box">
+                    <div class="detail-item">
+                        <div class="detail-label">Serie</div>
+                        <div class="detail-value">3</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Ripetizioni</div>
+                        <div class="detail-value">8-12</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Recupero</div>
+                        <div class="detail-value">60 sec</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="button">Guarda il Video dell'Esercizio</a>
+        </div>
+        
+        <div class="exercise-preview">
+            <div class="exercise-title">Pull Orizzontale</div>
+            <div class="gif-placeholder">
+                <img class="placeholder-image" src="https://via.placeholder.com/320x240.png?text=Esercizio+Pull+Orizzontale+in+movimento" alt="Horizontal pull animation placeholder">
+            </div>
+            <a href="#" class="button secondary-button">Mostra Animazione</a>
+            
+            <div>
+                <div style="font-weight: 600; margin: 10px 0 5px 0; font-size: 0.9rem;">Descrizione</div>
+                <div style="font-size: 0.9rem;">Il pull orizzontale lavora principalmente sui dorsali, romboidi e trapezio inferiore.</div>
+            </div>
+            
+            <div>
+                <div style="font-weight: 600; margin: 10px 0 5px 0; font-size: 0.9rem;">Dettagli</div>
+                <div class="detail-box">
+                    <div class="detail-item">
+                        <div class="detail-label">Serie</div>
+                        <div class="detail-value">3</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Ripetizioni</div>
+                        <div class="detail-value">8-10</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Recupero</div>
+                        <div class="detail-value">60 sec</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="button">Guarda il Video dell'Esercizio</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Istruzioni per Completare l'Implementazione</h2>
+        <ol>
+            <li>Ottenere GIF di alta qualità che illustrano correttamente ogni esercizio</li>
+            <li>Assicurarsi che le GIF non siano troppo grandi (idealmente sotto i 500KB)</li>
+            <li>Salvare ogni GIF con il nome corrispondente all'ID dell'esercizio</li>
+            <li>Posizionare tutte le GIF nella cartella <code>/images/exercises/</code></li>
+            <li>Testare l'app per verificare che le GIF vengano caricate correttamente</li>
+        </ol>
+        
+        <div class="info-block">
+            <p><strong>Nota:</strong> Se l'implementazione per la Prep Phase viene approvata, si può procedere con l'aggiunta di GIF per tutti gli esercizi delle altre fasi.</p>
+        </div>
+    </div>
+</body>
+</html>

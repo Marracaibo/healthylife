@@ -1,0 +1,32 @@
+{
+  "query": "barcode_8000500310427",
+  "timestamp": "2025-03-08T21:06:47.066330",
+  "results": {
+    "foods": [
+      {
+        "food_id": "8000500310427",
+        "food_name": "Biscuits croquants au coeur onctueux de Nutella®",
+        "food_description": "Per 100g - Calories: 515kcal | Fat: 24.8g | Carbs: 64g | Protein: 7.9g",
+        "brand": "Nutella,Ferrero",
+        "serving_id": "0",
+        "serving_description": "13,8 g",
+        "serving_url": "",
+        "barcode": "8000500310427",
+        "nutrients": {
+          "calories": 515,
+          "fat": 24.8,
+          "saturated_fat": 11.5,
+          "carbohydrates": 64,
+          "sugars": 35.8,
+          "fiber": null,
+          "proteins": 7.9,
+          "salt": 0.559,
+          "sodium": 0.2236
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "HealthyLife App",
+  "short_name": "HealthyLife",
+  "description": "Fitness tracking e alimentazione per uno stile di vita sano",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4caf50",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Visualizza la dashboard",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Piano Alimentare",
+      "short_name": "Pasti",
+      "description": "Gestisci il tuo piano alimentare",
+      "url": "/meal-planner",
+      "icons": [{ "src": "/icons/food-icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Workout",
+      "short_name": "Workout",
+      "description": "Accedi ai tuoi allenamenti",
+      "url": "/workout",
+      "icons": [{ "src": "/icons/workout-icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["fitness", "health", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/screenshots/dashboard.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/screenshots/meal-planner.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/screenshots/workout.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ]
+}

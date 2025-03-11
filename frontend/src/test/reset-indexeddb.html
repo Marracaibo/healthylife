@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset IndexedDB</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .warning {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .success {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+        .info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e1f5fe;
+            border-radius: 4px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strumento di Reset IndexedDB</h1>
+    
+    <div class="card">
+        <div class="warning">
+            <strong>Attenzione!</strong> Questa operazione eliminerà completamente il database IndexedDB dell'applicazione.
+            Tutti i dati salvati localmente saranno persi. Questa operazione è pensata per risolvere problemi di schema del database.
+        </div>
+        
+        <p>Se riscontri errori come <code>NotFoundError: Failed to execute 'transaction' on 'IDBDatabase': One of the specified object stores was not found</code>, 
+        questa operazione potrebbe risolvere il problema.</p>
+        
+        <button id="resetButton">Reset Database</button>
+        <button id="checkButton">Verifica Database</button>
+        
+        <div id="success" class="success">
+            Database eliminato con successo! Al prossimo avvio dell'applicazione verrà creato un nuovo database con lo schema aggiornato.
+        </div>
+        
+        <div id="error" class="error">
+            Si è verificato un errore durante l'eliminazione del database. Controlla la console per maggiori dettagli.
+        </div>
+        
+        <div id="dbInfo" class="info">
+            <h3>Informazioni Database</h3>
+            <div id="dbDetails">Clicca su "Verifica Database" per vedere i dettagli.</div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resetButton = document.getElementById('resetButton');
+            const checkButton = document.getElementById('checkButton');
+            const successMessage = document.getElementById('success');
+            const errorMessage = document.getElementById('error');
+            const dbDetails = document.getElementById('dbDetails');
+            
+            // Funzione per eliminare il database
+            resetButton.addEventListener('click', function() {
+                if (confirm('Sei sicuro di voler eliminare il database? Tutti i dati salvati localmente saranno persi.')) {
+                    const dbName = 'healthyLifeOfflineDB';
+                    const deleteRequest = indexedDB.deleteDatabase(dbName);
+                    
+                    deleteRequest.onsuccess = function() {
+                        console.log('Database eliminato con successo!');
+                        successMessage.style.display = 'block';
+                        errorMessage.style.display = 'none';
+                    };
+                    
+                    deleteRequest.onerror = function(event) {
+                        console.error('Errore durante l\'eliminazione del database:', event);
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                    };
+                    
+                    deleteRequest.onblocked = function() {
+                        console.warn('Eliminazione del database bloccata. Chiudere tutte le altre schede dell\'app.');
+                        alert('Eliminazione del database bloccata. Per favore, chiudi tutte le altre schede dell\'app e riprova.');
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                    };
+                }
+            });
+            
+            // Funzione per verificare lo stato del database
+            checkButton.addEventListener('click', function() {
+                const dbName = 'healthyLifeOfflineDB';
+                const openRequest = indexedDB.open(dbName);
+                
+                openRequest.onsuccess = function(event) {
+                    const db = event.target.result;
+                    const stores = Array.from(db.objectStoreNames);
+                    const version = db.version;
+                    
+                    let html = `<p><strong>Nome Database:</strong> ${dbName}</p>`;
+                    html += `<p><strong>Versione:</strong> ${version}</p>`;
+                    html += `<p><strong>Object Stores:</strong></p>`;
+                    
+                    if (stores.length === 0) {
+                        html += `<p>Nessun object store trovato.</p>`;
+                    } else {
+                        html += '<ul>';
+                        stores.forEach(store => {
+                            html += `<li>${store}</li>`;
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    dbDetails.innerHTML = html;
+                    db.close();
+                };
+                
+                openRequest.onerror = function(event) {
+                    console.error('Errore durante l\'apertura del database:', event);
+                    dbDetails.innerHTML = `<p>Errore durante l'apertura del database: ${event.target.error}</p>`;
+                };
+                
+                openRequest.onupgradeneeded = function(event) {
+                    // Annulla l'operazione per non modificare il database
+                    event.target.transaction.abort();
+                    dbDetails.innerHTML = `<p>Il database esiste ma richiede un aggiornamento.</p>`;
+                };
+            });
+        });
+    </script>
+</body>
+</html>

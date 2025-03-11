@@ -1,0 +1,629 @@
+[
+  {
+    "food": "pasta al pomodoro",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pasta al pomodoro",
+        "found": true,
+        "name": "Flavored Pasta",
+        "brand": "",
+        "description": "Per 636g - Calories: 725kcal | Fat: 28.93g | Carbs: 91.68g | Protein: 23.59g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.5405044555664062,
+        "raw_data": {
+          "food_description": "Per 636g - Calories: 725kcal | Fat: 28.93g | Carbs: 91.68g | Protein: 23.59g",
+          "food_id": "5082",
+          "food_name": "Flavored Pasta",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/flavored-pasta"
+        }
+      }
+    }
+  },
+  {
+    "food": "pasta alla carbonara",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pasta alla carbonara",
+        "found": true,
+        "name": "Pasta Alla Carbonara",
+        "brand": "Weight Watchers",
+        "description": "Per 1 1/4 cups - Calories: 349kcal | Fat: 9.20g | Carbs: 48.40g | Protein: 20.20g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4200336933135986,
+        "raw_data": {
+          "brand_name": "Weight Watchers",
+          "food_description": "Per 1 1/4 cups - Calories: 349kcal | Fat: 9.20g | Carbs: 48.40g | Protein: 20.20g",
+          "food_id": "2470232",
+          "food_name": "Pasta Alla Carbonara",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/weight-watchers/pasta-alla-carbonara"
+        }
+      }
+    }
+  },
+  {
+    "food": "risotto ai funghi",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "risotto ai funghi",
+        "found": true,
+        "name": "Cheese Risotto",
+        "brand": "",
+        "description": "Per 792g - Calories: 1382kcal | Fat: 50.94g | Carbs: 171.80g | Protein: 54.44g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4451360702514648,
+        "raw_data": {
+          "food_description": "Per 792g - Calories: 1382kcal | Fat: 50.94g | Carbs: 171.80g | Protein: 54.44g",
+          "food_id": "491557",
+          "food_name": "Cheese Risotto",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/risotto-cheese"
+        }
+      }
+    }
+  },
+  {
+    "food": "lasagne alla bolognese",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "lasagne alla bolognese",
+        "found": true,
+        "name": "Spaghetti Bolognese",
+        "brand": "",
+        "description": "Per 1005g - Calories: 1470kcal | Fat: 51.38g | Carbs: 182.79g | Protein: 71.58g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4103045463562012,
+        "raw_data": {
+          "food_description": "Per 1005g - Calories: 1470kcal | Fat: 51.38g | Carbs: 182.79g | Protein: 71.58g",
+          "food_id": "4524271",
+          "food_name": "Spaghetti Bolognese",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/spaghetti-with-bolognese-sauce"
+        }
+      }
+    }
+  },
+  {
+    "food": "gnocchi al pesto",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gnocchi al pesto",
+        "found": true,
+        "name": "Pesto Sauce",
+        "brand": "",
+        "description": "Per 220g - Calories: 1174kcal | Fat: 110.04g | Carbs: 11.15g | Protein: 39.78g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4127116203308105,
+        "raw_data": {
+          "food_description": "Per 220g - Calories: 1174kcal | Fat: 110.04g | Carbs: 11.15g | Protein: 39.78g",
+          "food_id": "7044",
+          "food_name": "Pesto Sauce",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/pesto-sauce"
+        }
+      }
+    }
+  },
+  {
+    "food": "bistecca alla fiorentina",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "bistecca alla fiorentina",
+        "found": true,
+        "name": "Lumache Alla Fiorentina",
+        "brand": "Whole Foods Market",
+        "description": "Per 1 cup - Calories: 220kcal | Fat: 7.00g | Carbs: 31.00g | Protein: 9.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4768178462982178,
+        "raw_data": {
+          "brand_name": "Whole Foods Market",
+          "food_description": "Per 1 cup - Calories: 220kcal | Fat: 7.00g | Carbs: 31.00g | Protein: 9.00g",
+          "food_id": "58911471",
+          "food_name": "Lumache Alla Fiorentina",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/whole-foods-market/lumache-alla-fiorentina"
+        }
+      }
+    }
+  },
+  {
+    "food": "cotoletta alla milanese",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "cotoletta alla milanese",
+        "found": true,
+        "name": "Risotto Alla Milanese",
+        "brand": "Alessi",
+        "description": "Per 1 serving - Calories: 190kcal | Fat: 0.00g | Carbs: 42.00g | Protein: 4.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4083888530731201,
+        "raw_data": {
+          "brand_name": "Alessi",
+          "food_description": "Per 1 serving - Calories: 190kcal | Fat: 0.00g | Carbs: 42.00g | Protein: 4.00g",
+          "food_id": "9720759",
+          "food_name": "Risotto Alla Milanese",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/alessi/risotto-alla-milanese"
+        }
+      }
+    }
+  },
+  {
+    "food": "ossobuco",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "ossobuco",
+        "found": true,
+        "name": "Osso Buco",
+        "brand": "Cuisine Solutions",
+        "description": "Per 1/2 portion - Calories: 190kcal | Fat: 10.00g | Carbs: 2.00g | Protein: 24.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4326016902923584,
+        "raw_data": {
+          "brand_name": "Cuisine Solutions",
+          "food_description": "Per 1/2 portion - Calories: 190kcal | Fat: 10.00g | Carbs: 2.00g | Protein: 24.00g",
+          "food_id": "1560202",
+          "food_name": "Osso Buco",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/cuisine-solutions/osso-buco"
+        }
+      }
+    }
+  },
+  {
+    "food": "saltimbocca alla romana",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "saltimbocca alla romana",
+        "found": true,
+        "name": "Gnocchi Alla Romana",
+        "brand": "Trader Joe's",
+        "description": "Per 1 piece - Calories: 180kcal | Fat: 10.00g | Carbs: 16.00g | Protein: 6.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4817924499511719,
+        "raw_data": {
+          "brand_name": "Trader Joe's",
+          "food_description": "Per 1 piece - Calories: 180kcal | Fat: 10.00g | Carbs: 16.00g | Protein: 6.00g",
+          "food_id": "67715978",
+          "food_name": "Gnocchi Alla Romana",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/trader-joes/gnocchi-alla-romana"
+        }
+      }
+    }
+  },
+  {
+    "food": "vitello tonnato",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "vitello tonnato",
+        "found": true,
+        "name": "Solid Tuna Fillets",
+        "brand": "Tonnino",
+        "description": "Per 2 oz - Calories: 90kcal | Fat: 4.00g | Carbs: 2.00g | Protein: 12.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.459956169128418,
+        "raw_data": {
+          "brand_name": "Tonnino",
+          "food_description": "Per 2 oz - Calories: 90kcal | Fat: 4.00g | Carbs: 2.00g | Protein: 12.00g",
+          "food_id": "4496932",
+          "food_name": "Solid Tuna Fillets",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/tonnino/solid-tuna-fillets"
+        }
+      }
+    }
+  },
+  {
+    "food": "parmigiano reggiano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "parmigiano reggiano",
+        "found": true,
+        "name": "Parmigiano Reggiano Cheese",
+        "brand": "Il Villaggio",
+        "description": "Per 1 oz - Calories: 110kcal | Fat: 8.00g | Carbs: 0.00g | Protein: 9.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4311656951904297,
+        "raw_data": {
+          "brand_name": "Il Villaggio",
+          "food_description": "Per 1 oz - Calories: 110kcal | Fat: 8.00g | Carbs: 0.00g | Protein: 9.00g",
+          "food_id": "4411570",
+          "food_name": "Parmigiano Reggiano Cheese",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/il-villaggio/parmigiano-reggiano-cheese"
+        }
+      }
+    }
+  },
+  {
+    "food": "mozzarella di bufala",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "mozzarella di bufala",
+        "found": true,
+        "name": "Mozzarella Di Bufala Campana",
+        "brand": "Fattorie Garofalo",
+        "description": "Per 1/4 piece - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 5.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4281139373779297,
+        "raw_data": {
+          "brand_name": "Fattorie Garofalo",
+          "food_description": "Per 1/4 piece - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 5.00g",
+          "food_id": "3025809",
+          "food_name": "Mozzarella Di Bufala Campana",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/fattorie-garofalo/mozzarella-di-bufala-campana"
+        }
+      }
+    }
+  },
+  {
+    "food": "gorgonzola",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gorgonzola",
+        "found": true,
+        "name": "Gorgonzola Cheese",
+        "brand": "Stella",
+        "description": "Per 1 oz - Calories: 100kcal | Fat: 8.00g | Carbs: 1.00g | Protein: 6.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.3533422946929932,
+        "raw_data": {
+          "brand_name": "Stella",
+          "food_description": "Per 1 oz - Calories: 100kcal | Fat: 8.00g | Carbs: 1.00g | Protein: 6.00g",
+          "food_id": "5202743",
+          "food_name": "Gorgonzola Cheese",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/stella/gorgonzola-cheese"
+        }
+      }
+    }
+  },
+  {
+    "food": "pecorino romano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pecorino romano",
+        "found": true,
+        "name": "Pecorino Romano",
+        "brand": "Locatelli",
+        "description": "Per 1 tbsp - Calories: 20kcal | Fat: 1.50g | Carbs: 0.00g | Protein: 1.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4497766494750977,
+        "raw_data": {
+          "brand_name": "Locatelli",
+          "food_description": "Per 1 tbsp - Calories: 20kcal | Fat: 1.50g | Carbs: 0.00g | Protein: 1.00g",
+          "food_id": "430521",
+          "food_name": "Pecorino Romano",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/locatelli/pecorino-romano"
+        }
+      }
+    }
+  },
+  {
+    "food": "taleggio",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "taleggio",
+        "found": true,
+        "name": "Taleggio Cheese",
+        "brand": "Whole Foods Market",
+        "description": "Per 1 serving - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 5.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4030327796936035,
+        "raw_data": {
+          "brand_name": "Whole Foods Market",
+          "food_description": "Per 1 serving - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 5.00g",
+          "food_id": "1328893",
+          "food_name": "Taleggio Cheese",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/whole-foods-market/taleggio-cheese"
+        }
+      }
+    }
+  },
+  {
+    "food": "prosciutto di parma",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "prosciutto di parma",
+        "found": true,
+        "name": "Prosciutto Di Parma",
+        "brand": "Citterio",
+        "description": "Per 2 slices - Calories: 62kcal | Fat: 3.50g | Carbs: 0.00g | Protein: 8.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.438281774520874,
+        "raw_data": {
+          "brand_name": "Citterio",
+          "food_description": "Per 2 slices - Calories: 62kcal | Fat: 3.50g | Carbs: 0.00g | Protein: 8.00g",
+          "food_id": "9242332",
+          "food_name": "Prosciutto Di Parma",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/citterio/prosciutto-di-parma"
+        }
+      }
+    }
+  },
+  {
+    "food": "mortadella",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "mortadella",
+        "found": true,
+        "name": "Mortadella",
+        "brand": "Boar's Head",
+        "description": "Per 2 oz - Calories: 160kcal | Fat: 14.00g | Carbs: 0.00g | Protein: 9.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4608166217803955,
+        "raw_data": {
+          "brand_name": "Boar's Head",
+          "food_description": "Per 2 oz - Calories: 160kcal | Fat: 14.00g | Carbs: 0.00g | Protein: 9.00g",
+          "food_id": "164439",
+          "food_name": "Mortadella",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/boars-head/mortadella"
+        }
+      }
+    }
+  },
+  {
+    "food": "salame milano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "salame milano",
+        "found": true,
+        "name": "Salame Milano",
+        "brand": "Veroni",
+        "description": "Per 1 oz - Calories: 80kcal | Fat: 6.00g | Carbs: 0.00g | Protein: 8.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4460113048553467,
+        "raw_data": {
+          "brand_name": "Veroni",
+          "food_description": "Per 1 oz - Calories: 80kcal | Fat: 6.00g | Carbs: 0.00g | Protein: 8.00g",
+          "food_id": "36383835",
+          "food_name": "Salame Milano",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/veroni/salame-milano"
+        }
+      }
+    }
+  },
+  {
+    "food": "bresaola",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "bresaola",
+        "found": true,
+        "name": "Traditional Bresaola",
+        "brand": "Volpi",
+        "description": "Per 5 slices - Calories: 60kcal | Fat: 1.50g | Carbs: 1.00g | Protein: 9.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4411468505859375,
+        "raw_data": {
+          "brand_name": "Volpi",
+          "food_description": "Per 5 slices - Calories: 60kcal | Fat: 1.50g | Carbs: 1.00g | Protein: 9.00g",
+          "food_id": "56303562",
+          "food_name": "Traditional Bresaola",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/volpi/traditional-bresaola"
+        }
+      }
+    }
+  },
+  {
+    "food": "speck",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "speck",
+        "found": true,
+        "name": "Speck",
+        "brand": "",
+        "description": "Per 537g - Calories: 1627kcal | Fat: 110.25g | Carbs: 0.70g | Protein: 151.89g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.477388620376587,
+        "raw_data": {
+          "food_description": "Per 537g - Calories: 1627kcal | Fat: 110.25g | Carbs: 0.70g | Protein: 151.89g",
+          "food_id": "4232024",
+          "food_name": "Speck",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/ham-speck"
+        }
+      }
+    }
+  },
+  {
+    "food": "tiramisu00f9",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "tiramisu00f9",
+        "found": false,
+        "time": 1.3919365406036377
+      }
+    }
+  },
+  {
+    "food": "panna cotta",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "panna cotta",
+        "found": true,
+        "name": "Panna Cotta",
+        "brand": "",
+        "description": "Per 60g - Calories: 134kcal | Fat: 7.40g | Carbs: 14.03g | Protein: 0.65g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.421107530593872,
+        "raw_data": {
+          "food_description": "Per 60g - Calories: 134kcal | Fat: 7.40g | Carbs: 14.03g | Protein: 0.65g",
+          "food_id": "4303280",
+          "food_name": "Panna Cotta",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/panna-cotta"
+        }
+      }
+    }
+  },
+  {
+    "food": "cannoli siciliani",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "cannoli siciliani",
+        "found": true,
+        "name": "Cannoli",
+        "brand": "",
+        "description": "Per 2408g - Calories: 6120kcal | Fat: 265.92g | Carbs: 694.59g | Protein: 209.60g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.5018880367279053,
+        "raw_data": {
+          "food_description": "Per 2408g - Calories: 6120kcal | Fat: 265.92g | Carbs: 694.59g | Protein: 209.60g",
+          "food_id": "597678",
+          "food_name": "Cannoli",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/pastry-cannoli"
+        }
+      }
+    }
+  },
+  {
+    "food": "panettone",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "panettone",
+        "found": true,
+        "name": "Panettone Bread",
+        "brand": "Trader Joe's",
+        "description": "Per 1 slice - Calories: 160kcal | Fat: 5.00g | Carbs: 26.00g | Protein: 3.00g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4400925636291504,
+        "raw_data": {
+          "brand_name": "Trader Joe's",
+          "food_description": "Per 1 slice - Calories: 160kcal | Fat: 5.00g | Carbs: 26.00g | Protein: 3.00g",
+          "food_id": "275160",
+          "food_name": "Panettone Bread",
+          "food_type": "Brand",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/trader-joes/panettone-bread"
+        }
+      }
+    }
+  },
+  {
+    "food": "gelato",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gelato",
+        "found": true,
+        "name": "Gelato",
+        "brand": "",
+        "description": "Per 100g - Calories: 128kcal | Fat: 0.00g | Carbs: 32.60g | Protein: 0.40g",
+        "calories": "N/A",
+        "protein": "N/A",
+        "carbs": "N/A",
+        "fat": "N/A",
+        "time": 1.4118201732635498,
+        "raw_data": {
+          "food_description": "Per 100g - Calories: 128kcal | Fat: 0.00g | Carbs: 32.60g | Protein: 0.40g",
+          "food_id": "327393",
+          "food_name": "Gelato",
+          "food_type": "Generic",
+          "food_url": "https://www.fatsecret.com/calories-nutrition/generic/gelato"
+        }
+      }
+    }
+  }
+]

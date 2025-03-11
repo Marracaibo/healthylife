@@ -1,0 +1,226 @@
+{
+  "query": "lasagne alla bolognese",
+  "timestamp": "2025-03-07T17:43:47.067274",
+  "results": [
+    {
+      "food_id": "4524271",
+      "food_name": "Spaghetti Bolognese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "1470",
+        "fat": "51.38",
+        "carbs": "182.79",
+        "protein": "71.58",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 1005g - Calories: 1470kcal | Fat: 51.38g | Carbs: 182.79g | Protein: 71.58g",
+        "food_id": "4524271",
+        "food_name": "Spaghetti Bolognese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/spaghetti-with-bolognese-sauce"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "7067093",
+      "food_name": "Turkey Bolognese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "540",
+        "fat": "29.03",
+        "carbs": "37.77",
+        "protein": "37.19",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 506g - Calories: 540kcal | Fat: 29.03g | Carbs: 37.77g | Protein: 37.19g",
+        "food_id": "7067093",
+        "food_name": "Turkey Bolognese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/spaghetti-sauce-with-turkey-homemade-style"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "16386885",
+      "food_name": "Zucchini Bolognese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "828",
+        "fat": "48.35",
+        "carbs": "55.96",
+        "protein": "49.86",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 925g - Calories: 828kcal | Fat: 48.35g | Carbs: 55.96g | Protein: 49.86g",
+        "food_id": "16386885",
+        "food_name": "Zucchini Bolognese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/zucchini-with-bolognese-sauce"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "6511598",
+      "food_name": "Zucchini Lasagna",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "346",
+        "fat": "12.10",
+        "carbs": "43.14",
+        "protein": "17.21",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 310g - Calories: 346kcal | Fat: 12.10g | Carbs: 43.14g | Protein: 17.21g",
+        "food_id": "6511598",
+        "food_name": "Zucchini Lasagna",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/zucchini-lasagna"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "5921421",
+      "food_name": "Eggplant Lasagna",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "138",
+        "fat": "6.77",
+        "carbs": "9.21",
+        "protein": "10.86",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 131g - Calories: 138kcal | Fat: 6.77g | Carbs: 9.21g | Protein: 10.86g",
+        "food_id": "5921421",
+        "food_name": "Eggplant Lasagna",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/eggplant-lasagna"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "4994",
+      "food_name": "Meatless Lasagna",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "4342",
+        "fat": "131.44",
+        "carbs": "566.52",
+        "protein": "229.21",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 2954g - Calories: 4342kcal | Fat: 131.44g | Carbs: 566.52g | Protein: 229.21g",
+        "food_id": "4994",
+        "food_name": "Meatless Lasagna",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/lasagna-meatless"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "12212090",
+      "food_name": "Lasagna Soup",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "2992",
+        "fat": "151.22",
+        "carbs": "270.70",
+        "protein": "146.62",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 2395g - Calories: 2992kcal | Fat: 151.22g | Carbs: 270.70g | Protein: 146.62g",
+        "food_id": "12212090",
+        "food_name": "Lasagna Soup",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/lasagna-soup"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "5171",
+      "food_name": "Vegetable Lasagna (Frozen Meal)",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "690",
+        "fat": "36.69",
+        "carbs": "67.61",
+        "protein": "24.92",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 469g - Calories: 690kcal | Fat: 36.69g | Carbs: 67.61g | Protein: 24.92g",
+        "food_id": "5171",
+        "food_name": "Vegetable Lasagna (Frozen Meal)",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/vegetable-lasagna-(frozen-meal)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "16815370",
+      "food_name": "Keto Lasagna",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "2295",
+        "fat": "160.08",
+        "carbs": "53.20",
+        "protein": "163.11",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 1623g - Calories: 2295kcal | Fat: 160.08g | Carbs: 53.20g | Protein: 163.11g",
+        "food_id": "16815370",
+        "food_name": "Keto Lasagna",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/lasagna-keto"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "9581583",
+      "food_name": "Mexican Lasagna",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "4935",
+        "fat": "201.07",
+        "carbs": "494.77",
+        "protein": "285.31",
+        "fiber": "2.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 2903g - Calories: 4935kcal | Fat: 201.07g | Carbs: 494.77g | Protein: 285.31g",
+        "food_id": "9581583",
+        "food_name": "Mexican Lasagna",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/lasagna-mexican"
+      },
+      "enriched": true
+    }
+  ]
+}

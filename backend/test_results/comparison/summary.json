@@ -1,0 +1,45 @@
+{
+  "success_rate": {
+    "usda": 100.0,
+    "api_ninjas": 100.0
+  },
+  "average_result_count": {
+    "usda": 25.0,
+    "api_ninjas": 1.0
+  },
+  "average_response_time": {
+    "usda": 1.5887585878372192,
+    "api_ninjas": 0.6190238714218139
+  },
+  "foods_with_results": {
+    "usda": [
+      "banana",
+      "apple",
+      "chicken breast",
+      "rice",
+      "pasta",
+      "broccoli",
+      "salmon",
+      "bread",
+      "milk",
+      "egg"
+    ],
+    "api_ninjas": [
+      "banana",
+      "apple",
+      "chicken breast",
+      "rice",
+      "pasta",
+      "broccoli",
+      "salmon",
+      "bread",
+      "milk",
+      "egg"
+    ]
+  },
+  "overall_recommendation": {
+    "best_coverage": "usda",
+    "fastest": "api_ninjas",
+    "recommendation": "Based on the test results, we recommend using a combination of APIs for the best coverage and reliability."
+  }
+}

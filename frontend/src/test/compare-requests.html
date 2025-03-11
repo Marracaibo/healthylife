@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confronto Richieste API - HealthyLife</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .card h2 {
+      margin-top: 0;
+      color: #2e7d32;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    
+    .tabs {
+      display: flex;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab {
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .tab.active {
+      border-bottom: 2px solid #2e7d32;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    button:hover {
+      background-color: #1b5e20;
+    }
+    
+    .info-box {
+      background-color: #e8f5e9;
+      border-left: 4px solid #2e7d32;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Analisi API di Ricerca Alimenti</h1>
+  </header>
+  
+  <div class="container">
+    <div class="card">
+      <h2>Dashboard di Test</h2>
+      
+      <div class="info-box">
+        <p><strong>Nota:</strong> Questi test sono progettati per confrontare le risposte delle API food quando si utilizza termini in inglese vs. italiano. Utilizzare questi strumenti per diagnosticare problemi con il servizio di ricerca alimenti.</p>
+      </div>
+      
+      <div class="tabs">
+        <div class="tab active" data-tab="compare">Confronto API</div>
+        <div class="tab" data-tab="monitor">Monitor API</div>
+        <div class="tab" data-tab="direct">Test Diretto</div>
+      </div>
+      
+      <div class="tab-content active" id="compare-tab">
+        <!-- Il contenuto verrà caricato da compareRequests.js -->
+      </div>
+      
+      <div class="tab-content" id="monitor-tab">
+        <h3>Monitor API in Tempo Reale</h3>
+        <p>Questo strumento registra tutte le chiamate API effettuate dall'applicazione.</p>
+        <button id="clearMonitorBtn">Pulisci Monitor</button>
+        <button id="toggleMonitorBtn">Nascondi Monitor</button>
+      </div>
+      
+      <div class="tab-content" id="direct-tab">
+        <h3>Test API Diretto</h3>
+        <div class="input-row" style="display: flex; margin-bottom: 15px;">
+          <input type="text" id="directSearchQuery" placeholder="Termine di ricerca (es. bread, pane)" value="bread" style="flex-grow: 1; padding: 8px; margin-right: 10px; border: 1px solid #ccc; border-radius: 4px;">
+          <button id="directSearchButton">Cerca</button>
+        </div>
+        
+        <div id="directStatusMessage"></div>
+        
+        <h4>Risultati API:</h4>
+        <pre id="directResults" style="background-color: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto; max-height: 400px; overflow-y: auto;">Nessun risultato ancora...</pre>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>Documentazione</h2>
+      
+      <p>Il servizio di ricerca alimenti integra due API principali:</p>
+      <ul>
+        <li><strong>USDA FoodData Central</strong> - Database alimentare primario, ottimizzato per termini inglesi</li>
+        <li><strong>Edamam Food Database</strong> - API di backup, anch'essa principalmente in inglese</li>
+      </ul>
+      
+      <p>Gli utenti italiani potrebbero riscontrare problemi durante la ricerca con termini italiani, poiché le API sottostanti non supportano nativamente la lingua italiana.</p>
+    </div>
+  </div>
+  
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Rimuovi la classe active da tutti i tab
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        
+        // Aggiungi la classe active al tab cliccato
+        this.classList.add('active');
+        document.getElementById(`${this.dataset.tab}-tab`).classList.add('active');
+      });
+    });
+    
+    // Test diretto
+    document.getElementById('directSearchButton').addEventListener('click', directSearch);
+    document.getElementById('directSearchQuery').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        directSearch();
+      }
+    });
+    
+    async function directSearch() {
+      const query = document.getElementById('directSearchQuery').value.trim();
+      const resultsContainer = document.getElementById('directResults');
+      const statusMessage = document.getElementById('directStatusMessage');
+      
+      if (!query) {
+        statusMessage.innerHTML = '<span style="color: #d32f2f; font-weight: bold;">Inserisci un termine di ricerca</span>';
+        return;
+      }
+      
+      statusMessage.innerHTML = '<span style="color: #1976d2; font-style: italic;">Ricerca in corso...</span>';
+      resultsContainer.textContent = 'Caricamento...';
+      
+      try {
+        console.log(`Ricerca diretta per "${query}"...`);
+        
+        // Test chiamata diretta all'API
+        const response = await fetch(`http://localhost:8000/api/hybrid-food/search?query=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        
+        console.log('Risposta API diretta:', data);
+        resultsContainer.textContent = JSON.stringify(data, null, 2);
+        
+        if (data.foods && data.foods.length > 0) {
+          statusMessage.innerHTML = `<span style="color: green">Trovati ${data.foods.length} risultati</span>`;
+        } else {
+          statusMessage.innerHTML = `<span style="color: #d32f2f; font-weight: bold;">Nessun risultato trovato per "${query}"</span>`;
+        }
+      } catch (error) {
+        console.error('Errore durante la ricerca diretta:', error);
+        resultsContainer.textContent = `Errore: ${error.message}`;
+        statusMessage.innerHTML = `<span style="color: #d32f2f; font-weight: bold;">Errore durante la ricerca</span>`;
+      }
+    }
+    
+    // Controlli per il monitor
+    document.getElementById('clearMonitorBtn').addEventListener('click', function() {
+      const logContainer = document.getElementById('api-monitor-logs');
+      if (logContainer) logContainer.innerHTML = '';
+    });
+    
+    document.getElementById('toggleMonitorBtn').addEventListener('click', function() {
+      const container = document.getElementById('api-monitor-container');
+      if (container) {
+        if (container.style.display === 'none') {
+          container.style.display = 'flex';
+          this.textContent = 'Nascondi Monitor';
+        } else {
+          container.style.display = 'none';
+          this.textContent = 'Mostra Monitor';
+        }
+      }
+    });
+  </script>
+  
+  <!-- Includi gli script di test -->
+  <script src="apiMonitor.js"></script>
+  <script src="compareRequests.js"></script>
+</body>
+</html>

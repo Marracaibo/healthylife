@@ -1,0 +1,229 @@
+{
+  "query": "mozzarella di bufala",
+  "timestamp": "2025-03-07T17:43:43.877900",
+  "results": [
+    {
+      "food_id": "1260",
+      "food_name": "Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "302",
+        "fat": "20.03",
+        "carbs": "3.83",
+        "protein": "25.96",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 302kcal | Fat: 20.03g | Carbs: 3.83g | Protein: 25.96g",
+        "food_id": "1260",
+        "food_name": "Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-mozzarella"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1262",
+      "food_name": "Part Skim Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "302",
+        "fat": "20.03",
+        "carbs": "3.83",
+        "protein": "25.96",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 302kcal | Fat: 20.03g | Carbs: 3.83g | Protein: 25.96g",
+        "food_id": "1262",
+        "food_name": "Part Skim Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-mozzarella-part-skim"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1261",
+      "food_name": "Whole Milk Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "300",
+        "fat": "22.35",
+        "carbs": "2.19",
+        "protein": "22.17",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 300kcal | Fat: 22.35g | Carbs: 2.19g | Protein: 22.17g",
+        "food_id": "1261",
+        "food_name": "Whole Milk Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-mozzarella-whole-milk"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1263",
+      "food_name": "Low Sodium Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "280",
+        "fat": "17.10",
+        "carbs": "3.10",
+        "protein": "27.50",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 280kcal | Fat: 17.10g | Carbs: 3.10g | Protein: 27.50g",
+        "food_id": "1263",
+        "food_name": "Low Sodium Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-mozzarella-low-sodium"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1319",
+      "food_name": "Imitation Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "248",
+        "fat": "12.22",
+        "carbs": "23.67",
+        "protein": "11.47",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 248kcal | Fat: 12.22g | Carbs: 23.67g | Protein: 11.47g",
+        "food_id": "1319",
+        "food_name": "Imitation Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/imitation-mozzarella-cheese"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "3025809",
+      "food_name": "Mozzarella Di Bufala Campana",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "80",
+        "fat": "7.00",
+        "carbs": "0.00",
+        "protein": "5.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Fattorie Garofalo",
+        "food_description": "Per 1/4 piece - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 5.00g",
+        "food_id": "3025809",
+        "food_name": "Mozzarella Di Bufala Campana",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/fattorie-garofalo/mozzarella-di-bufala-campana"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "30903463",
+      "food_name": "Mozzarella di Bufala (30g)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "80",
+        "fat": "7.00",
+        "carbs": "0.00",
+        "protein": "4.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Buf",
+        "food_description": "Per 2 balls - Calories: 80kcal | Fat: 7.00g | Carbs: 0.00g | Protein: 4.00g",
+        "food_id": "30903463",
+        "food_name": "Mozzarella di Bufala (30g)",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/buf/mozzarella-di-bufala-(30g)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "28245240",
+      "food_name": "Mozzarella di Bufala (50g)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "130",
+        "fat": "11.00",
+        "carbs": "0.00",
+        "protein": "8.00",
+        "fiber": "0.0"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Buf",
+        "food_description": "Per 1 serving - Calories: 130kcal | Fat: 11.00g | Carbs: 0.00g | Protein: 8.00g",
+        "food_id": "28245240",
+        "food_name": "Mozzarella di Bufala (50g)",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/buf/mozzarella-di-bufala-(50g)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1264",
+      "food_name": "Nonfat or Fat Free Mozzarella Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "149",
+        "fat": "0.00",
+        "carbs": "3.50",
+        "protein": "31.70",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 149kcal | Fat: 0.00g | Carbs: 3.50g | Protein: 31.70g",
+        "food_id": "1264",
+        "food_name": "Nonfat or Fat Free Mozzarella Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-mozzarella-nonfat-or-fat-free"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "40805",
+      "food_name": "Mozzarella Cheese (Low Sodium)",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "280",
+        "fat": "17.10",
+        "carbs": "3.10",
+        "protein": "27.50",
+        "fiber": "0.0"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 280kcal | Fat: 17.10g | Carbs: 3.10g | Protein: 27.50g",
+        "food_id": "40805",
+        "food_name": "Mozzarella Cheese (Low Sodium)",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/usda/mozzarella-cheese-(low-sodium)"
+      },
+      "enriched": true
+    }
+  ]
+}

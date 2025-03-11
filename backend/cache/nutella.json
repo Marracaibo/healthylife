@@ -1,0 +1,48 @@
+{
+  "query": "nutella",
+  "timestamp": "2025-03-07T19:12:17.714071",
+  "results": [
+    {
+      "food_id": "12345",
+      "food_name": "nutella (Generic)",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "100",
+        "fat": "5.00",
+        "carbs": "10.00",
+        "protein": "5.00",
+        "fiber": "5.4"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "12345",
+        "food_name": "nutella (Generic)",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 100kcal | Fat: 5.00g | Carbs: 10.00g | Protein: 5.00g"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "67890",
+      "food_name": "nutella (Brand)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "120",
+        "fat": "6.00",
+        "carbs": "12.00",
+        "protein": "6.00",
+        "fiber": "5.4"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "67890",
+        "food_name": "nutella (Brand)",
+        "food_type": "Brand",
+        "food_description": "Per 100g - Calories: 120kcal | Fat: 6.00g | Carbs: 12.00g | Protein: 6.00g"
+      },
+      "enriched": true
+    }
+  ]
+}

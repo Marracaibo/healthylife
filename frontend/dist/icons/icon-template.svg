@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#4caf50" rx="100" ry="100"/>
+  <text x="256" y="300" font-family="Arial, sans-serif" font-size="220" text-anchor="middle" fill="white">HL</text>
+  <path d="M256 120 A136 136 0 0 1 392 256 A136 136 0 0 1 256 392 A136 136 0 0 1 120 256 A136 136 0 0 1 256 120 Z" stroke="white" stroke-width="12" fill="none"/>
+</svg>

@@ -1,0 +1,32 @@
+{
+  "query": "barcode_1234567890123",
+  "timestamp": "2025-03-08T21:07:01.908522",
+  "results": {
+    "foods": [
+      {
+        "food_id": "1234567890123",
+        "food_name": "Test",
+        "food_description": "Per 100g - Calories: 17.5kcal | Fat: 17.5g | Carbs: 17.5g | Protein: 17.5g",
+        "brand": "Nature Foods",
+        "serving_id": "0",
+        "serving_description": "100g",
+        "serving_url": "",
+        "barcode": "1234567890123",
+        "nutrients": {
+          "calories": 17.5,
+          "fat": 17.5,
+          "saturated_fat": 17.5,
+          "carbohydrates": 17.5,
+          "sugars": 17.5,
+          "fiber": 17.5,
+          "proteins": 17.5,
+          "salt": 17.5,
+          "sodium": 7
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}

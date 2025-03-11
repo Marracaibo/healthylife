@@ -1,0 +1,32 @@
+{
+  "query": "barcode_8076809513692",
+  "timestamp": "2025-03-08T21:06:25.228100",
+  "results": {
+    "foods": [
+      {
+        "food_id": "8076809513692",
+        "food_name": "Sauce napolitaine",
+        "food_description": "Per 100g - Calories: 67kcal | Fat: 3.7g | Carbs: 6.2g | Protein: 1.4g",
+        "brand": "Barilla",
+        "serving_id": "0",
+        "serving_description": "60 g",
+        "serving_url": "",
+        "barcode": "8076809513692",
+        "nutrients": {
+          "calories": 67,
+          "fat": 3.7,
+          "saturated_fat": 0.4,
+          "carbohydrates": 6.2,
+          "sugars": 5.2,
+          "fiber": 1.8,
+          "proteins": 1.4,
+          "salt": 0.96,
+          "sodium": 0.384
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "test_date": "2025-03-07T17:23:38.611957",
+  "foods_tested": [
+    "pizza",
+    "pasta",
+    "apple",
+    "chicken",
+    "salmon",
+    "rice",
+    "banana",
+    "eggs",
+    "beef",
+    "chocolate"
+  ],
+  "results": {
+    "pizza": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Cheese Pizza",
+            "description": "Per 100g - Calories: 276kcal | Fat: 11.74g | Carbs: 30.33g | Protein: 12.33g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Pizza with Meat",
+            "description": "Per 100g - Calories: 301kcal | Fat: 13.80g | Carbs: 31.45g | Protein: 12.09g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Pizza with Meat and Vegetables",
+            "description": "Per 100g - Calories: 256kcal | Fat: 11.68g | Carbs: 27.42g | Protein: 10.16g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.4387345314025879,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "PIZZA",
+            "description": "WHEAT FLOUR, WATER, PEELED TOMATOES, MOZZARELLA CHEESE (MILK, SALT, RENNET), ASIAGO CHEESE (MILK, SALT, RENNET), FONTAL CHEESE (MILK, SALT, RENNET), EMMENTHAL CHEESE (MILK, SALT, RENNET), SALT, EXTRA VIRGIN OLIVE OIL, YEAST.",
+            "source": "usda"
+          },
+          {
+            "food_name": "PIZZA",
+            "description": "CRUST: ENRICHED FLOUR (WHEAT FLOUR, MALTED BARLEY FLOUR, NIACIN, FERROUS SULFATE, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), WATER, SOYBEAN OIL, SUGAR, YEAST, SALT, BAKING POWDER (CORNSTARCH, SODIUM BICARBONATE, SODIUM ALUMINUM SULFATE, MONOCALCIUM PHOSPHATE), DEGERMINATED YELLOW CORN MEAL, SOY FLOUR. SAUCE: WATER, TOMATO PASTE (TOMATOES), SEASONING BLEND (MODIFIED CORN STARCH, SALT, DEHYDRATED ONION, DEHYDRATED GARLIC, SUGAR, SPICE, SOYBEAN OIL, CONTAINS LESS THAN 2% OF: GUAR GUM, PARMESAN CHEESE [CULTURED MILK, SALT, ENZYMES], XANTHAN GUM, PAPRIKA, CITRIC ACID, BEET POWDER [COLOR], SOY FLOUR), SUGAR, MODIFIED FOOD STARCH. MOZZARELLA CHEESE BLEND: MOZZARELLA CHEESE SUBSTITUTE (WATER, PALM OIL, RENNET CASEIN [MILK PROTEIN], SODIUM ALUMINUM PHOSPHATE, MODIFIED FOOD STARCH, SALT, LACTIC ACID, NATURAL FLAVOR, SODIUM CITRATE, SORBIC ACID [PRESERVATIVE], ENRICHMENT BLEND [MAGNESIUM OXIDE, ZINC OXIDE, FERRIC-ORTHO-PHOSPHATE, VITAMIN A PALMITATE, RIBOFLAVIN, PYRIDOXINE HYDROCHLORIDE, NIACINAMIDE, THIAMINE MONONITRATE, VITAMIN B12], LOW MOISTURE PART-SKIM MOZZARELLA CHEESE [PASTEURIZED PART-SKIM MILK, CHEESE CULTURE, SALT, ENZYMES]), IMITATION MOZZARELLA CHEESE (WATER, PALM OIL, MODIFIED FOOD STARCH, WHEY, RENNET CASEIN [MILK PROTEIN], SALT, SODIUM ALUMINUM PHOSPHATE, CITRIC ACID, TRISODIUM PHOSPHATE, SODIUM CITRATE, POTASSIUM SORBATE, LACTIC ACID, NATURAL FLAVOR, LOW MOISTURE PART-SKIM MOZZARELLA CHEESE [PASTEURIZED PART-SKIM MILK, CHEESE CULTURES, SALT, ENZYMES]). COOKED PORK AND CHICKEN PIZZA TOPPING: SAUSAGE MADE WITH PORK AND CHICKEN (PORK, MECHANICALLY SEPARATED CHICKEN, WATER, SEASONING [SPICES, CORN SYRUP SOLIDS, SALT, DRY GARLIC, CHILI PEPPER, CARAMEL COLOR], CARAMEL COLOR, WATER, TEXTURED VEGETABLE PROTEIN [SOY PROTEIN CONCENTRATE, CARAMEL COLOR]). PEPPERONI: PORK, BEEF, SALT, CONTAINS 2% OR LESS OF: LACTIC ACID STARTER CULTURE, OLEORESIN OF PAPRIKA, SODIUM NITRITE, BHA, BHT, CITRIC ACID. MAY ALSO CONTAIN 2% OR LESS OF: SPICES, SPICE EXTRACTIVES, DEXTROSE, SUGAR, FLAVORINGS, SODIUM ASCORBATE, WATER, GARLIC POWDER, RED PEPPERS, GREEN PEPPERS, ONIONS.",
+            "source": "usda"
+          },
+          {
+            "food_name": "PIZZA",
+            "description": "CRUST (WHEAT FLOUR, WATER, EXTRA VIRGIN OLIVE OIL, OLIVE OIL, DURUM WHEAT SEMOLINA, SALT, SOURDOUGH [WHEAT FLOUR, WATER], DEXTROSE, MALTED WHEAT FLOUR, YEAST, SOY LECITHIN [PROCESSING AID]), CHEESE (LOW MOISTURE PART SKIM MOZZARELLA CHEESE [PASTEURIZED PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES], DICED MOZZARELLA [PASTEURIZED MILK, NONFAT MILK, CULTURES, SALT, ENZYMES], PARMESAN CHEESE [PASTEURIZED COW'S MILK, CHEESE CULTURES, SALT, ENZYMES], ROMANO CHEESE [PASTEURIZED COW'S MILK, CHEESE CULTURES, SALT, ENZYMES]), SAUCE (WATER, TOMATOES, OLIVE OIL, SALT, SPICES, DEHYDRATED GARLIC, CITRIC ACID), TOMATOES, BASIL.",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 1.117311716079712,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.48454999923706055,
+        "status": "no_results"
+      }
+    },
+    "pasta": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Penne",
+            "description": "Per 101g - Calories: 158kcal | Fat: 0.93g | Carbs: 30.86g | Protein: 5.80g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Spaghetti",
+            "description": "Per 101g - Calories: 158kcal | Fat: 0.93g | Carbs: 30.86g | Protein: 5.80g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Rotini",
+            "description": "Per 101g - Calories: 158kcal | Fat: 0.93g | Carbs: 30.86g | Protein: 5.80g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.47338056564331055,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "PASTA",
+            "description": "ENRICHED DURUM WHEAT (CONTAINS NIACIN, RIBOFLAVIN, THIAMIN, IRON, FOLIC ACID), WATER, MAY INCLUDE SPINACH, TOMATO OR BEET POWDERS (FOR COLOR), EGG WHITES, CHILI PEPPER, SALT, SPICES, BROWN SUGAR, GARLIC, SUGAR. ",
+            "source": "usda"
+          },
+          {
+            "food_name": "PASTA",
+            "description": "SEMOLINA, DRIED SPINACH AND DRIED TOMATO, NIACIN, IRON LACTATE, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID.",
+            "source": "usda"
+          },
+          {
+            "food_name": "PASTA",
+            "description": "DURUM WHEAT SEMOLINA, EGGS",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9571740627288818,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.4540824890136719,
+        "status": "no_results"
+      }
+    },
+    "apple": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Apples",
+            "description": "Per 100g - Calories: 52kcal | Fat: 0.17g | Carbs: 13.81g | Protein: 0.26g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Honeycrisp Apples",
+            "description": "Per 100g - Calories: 52kcal | Fat: 0.17g | Carbs: 13.81g | Protein: 0.26g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Gala Apples",
+            "description": "Per 99g - Calories: 51kcal | Fat: 0.17g | Carbs: 13.67g | Protein: 0.26g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.5505111217498779,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "APPLE",
+            "description": "CRISP APPLE.",
+            "source": "usda"
+          },
+          {
+            "food_name": "APPLE",
+            "description": "FILTERED WATER, APPLE JUICE CONCENTRATE, ASCORBIC ACID (VITAMIN C).",
+            "source": "usda"
+          },
+          {
+            "food_name": "APPLE",
+            "description": "Brand: PINK LADY",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9953467845916748,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.37564563751220703,
+        "status": "no_results"
+      }
+    },
+    "chicken": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Chicken Breast",
+            "description": "Per 101g - Calories: 197kcal | Fat: 7.79g | Carbs: 0.00g | Protein: 29.80g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Boneless Skinless Chicken Breasts",
+            "description": "Per 4 oz - Calories: 110kcal | Fat: 2.50g | Carbs: 0.00g | Protein: 23.00g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Chicken Thigh",
+            "description": "Per 101g - Calories: 247kcal | Fat: 15.49g | Carbs: 0.00g | Protein: 25.06g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.6927809715270996,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "CHICKEN",
+            "description": "CHICKEN, SEA SALT.",
+            "source": "usda"
+          },
+          {
+            "food_name": "CHICKEN",
+            "description": "CHICKEN STOCK, NATURAL FLAVOR, MALTODEXTRIN, SUGAR, SALT, YEAST EXTRACT AND XANTHAN GUM.",
+            "source": "usda"
+          },
+          {
+            "food_name": "CHICKEN",
+            "description": "CHICKEN, SALT.",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9806067943572998,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.3518190383911133,
+        "status": "no_results"
+      }
+    },
+    "salmon": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Salmon",
+            "description": "Per 100g - Calories: 146kcal | Fat: 5.93g | Carbs: 0.00g | Protein: 21.62g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Cooked Salmon",
+            "description": "Per 100g - Calories: 139kcal | Fat: 4.30g | Carbs: 0.00g | Protein: 23.45g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Baked or Broiled Salmon",
+            "description": "Per 845g - Calories: 1445kcal | Fat: 63.87g | Carbs: 4.14g | Protein: 202.52g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.45287537574768066,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "SALMON",
+            "description": "SALMON, WATER, VEGETABLE OIL (CANOLA, COTTONSEED, AND/OR SOYBEAN), CONTAINS 2% OR LESS OF: TOMATO PASTE, RICE STARCH, CITRIC ACID, SALT, DEHYDRATED GARLIC, DEHYDRATED ONION, SPICES, LIME OIL;, NATURAL FLAVORS, SOY LECITHIN, SODIUM TRIPOLYPHOSPHATE (TO RETAIN MOISTURE).",
+            "source": "usda"
+          },
+          {
+            "food_name": "SALMON",
+            "description": "FARM RAISED FISH (SALMON).",
+            "source": "usda"
+          },
+          {
+            "food_name": "SALMON",
+            "description": "SALMON, ASTAXANTHIN (FOR COLOR) FROM PANAFERD*, SALT, WHITE PEPPER",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9634099006652832,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.3906829357147217,
+        "status": "no_results"
+      }
+    },
+    "rice": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "White Rice",
+            "description": "Per 160g - Calories: 206kcal | Fat: 0.45g | Carbs: 44.50g | Protein: 4.24g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Jasmine Rice",
+            "description": "Per 1/2 cup - Calories: 107kcal | Fat: 0.00g | Carbs: 23.00g | Protein: 3.00g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Cooked Rice",
+            "description": "Per 100g - Calories: 135kcal | Fat: 1.07g | Carbs: 27.64g | Protein: 2.64g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.48310184478759766,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "RICE",
+            "description": "WATER, PARBOILED LONG GRAIN RICE, TOMATOES, POBLANO PEPPERS, VEGETABLE OIL (FROM ONE OR MORE OF THE FOLLOWING: CANOLA, SUNFLOWER), TOMATO POWDER, SALT, SUGAR, GARLIC POWDER, CUMIN, ONION POWDER, MALTODEXTRIN, NATURAL FLAVORS, PAPRIKA EXTRACT (FOR COLOR), CITRIC ACID.",
+            "source": "usda"
+          },
+          {
+            "food_name": "RICE",
+            "description": "LONG GRAIN RICE ENRICHED WITH IRON (FERRIC ORTHOPHOSPHATE), NIACIN, THIAMINE (THIAMINE MONONITRATE) AND FOLIC ACID.",
+            "source": "usda"
+          },
+          {
+            "food_name": "RICE",
+            "description": "CALROSE RICE ENRICHED WITH NIACIN, IRON, THIAMIN MONONITRATE, FOLIC ACID.",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9755876064300537,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.45787572860717773,
+        "status": "no_results"
+      }
+    },
+    "banana": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Bananas",
+            "description": "Per 100g - Calories: 89kcal | Fat: 0.33g | Carbs: 22.84g | Protein: 1.09g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Banana",
+            "description": "Per 100g - Calories: 89kcal | Fat: 0.33g | Carbs: 22.84g | Protein: 1.09g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Bananas",
+            "description": "Per 1 medium - Calories: 110kcal | Fat: 0.30g | Carbs: 29.00g | Protein: 1.00g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.46030616760253906,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "BANANA",
+            "description": "PEANUTS (AS DEFATTED PEANUT FLOUR, PEANUT BUTTER AND NATURAL PEANUT OILS), PURE WATER, TAPIOCA SYRUP, RICE SYRUP, VEGETABLE GLYCERINE, CANE SUGAR, BANANA, NATURAL COLORS AND FLAVORS, SALT, CALCIUM CARBONATE, LECITHIN, TOCOPHEROL (VITAMIN E), SODIUM ASCORBATE (VITAMIN C).",
+            "source": "usda"
+          },
+          {
+            "food_name": "BANANA",
+            "description": "BANANA, SULFUR DIOXIDE (AS A PRESERVATIVE). ",
+            "source": "usda"
+          },
+          {
+            "food_name": "Bananas, dehydrated, or banana powder",
+            "description": "N/A",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9760971069335938,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.34208130836486816,
+        "status": "no_results"
+      }
+    },
+    "eggs": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Egg",
+            "description": "Per 100g - Calories: 147kcal | Fat: 9.94g | Carbs: 0.77g | Protein: 12.58g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Scrambled Egg",
+            "description": "Per 100g - Calories: 212kcal | Fat: 16.18g | Carbs: 2.08g | Protein: 13.84g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Fried Egg",
+            "description": "Per 100g - Calories: 201kcal | Fat: 15.31g | Carbs: 0.88g | Protein: 13.63g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.4642670154571533,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "EGGS",
+            "description": "MILK CHOCOLATE (SUGAR, COCOA BUTTER, CHOCOLATE, SKIM MILK, LACTOSE, MILKFAT, SOY LECITHIN, ARTIFICIAL FLAVOR), PEANUTS, SUGAR, INVERT SUGAR, HYDROGENATED PALM KERNEL OIL, SKIM MILK, CORN SYRUP, LESS THAN 2% - PALM OIL, BUTTER, MILKFAT, SALT, SOY LECITHIN, POTASSIUM SORBATE TO MAINTAIN FRESHNESS, ARTIFICIAL FLAVOR.",
+            "source": "usda"
+          },
+          {
+            "food_name": "EGGS",
+            "description": "Brand: Generic",
+            "source": "usda"
+          },
+          {
+            "food_name": "EGGS",
+            "description": "Brand: Generic",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9781010150909424,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.3623793125152588,
+        "status": "no_results"
+      }
+    },
+    "beef": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "Beef",
+            "description": "Per 101g - Calories: 290kcal | Fat: 19.70g | Carbs: 0.00g | Protein: 26.55g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Beef Steak",
+            "description": "Per 101g - Calories: 254kcal | Fat: 15.14g | Carbs: 0.00g | Protein: 27.52g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Beef Stew Meat",
+            "description": "Per 101g - Calories: 306kcal | Fat: 20.31g | Carbs: 0.00g | Protein: 28.64g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 5.103303670883179,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "BEEF",
+            "description": "BEEF, SALT.",
+            "source": "usda"
+          },
+          {
+            "food_name": "BEEF",
+            "description": "WATER, SOY PROTEIN CONCENTRATE, SUNFLOWER OIL, COCONUT OIL, NATURAL FLAVORS, 2% OR LESS OF: METHYLCELLULOSE, CULTURED DEXTROSE, FOOD STARCH MODIFIED, YEAST EXTRACT, SOY LEGHEMOGLOBIN, SALT, MIXED TOCOPHEROLS (ANTIOXIDANT), L-TRYPTOPHAN, SOY PROTEIN VITAMINS AND MINERALS (ZINC GLUCONATE, NIACIN (VITAMIN B3), THIAMINE HYDROCHLORIDE B1), PYRIDOXINE HYDROCHLORIDE (VITAMIN B6), RIBOFLAVIN (VITAMIN B2), VITAMIN B12).",
+            "source": "usda"
+          },
+          {
+            "food_name": "BEEF",
+            "description": "BEEF, SEA SALT.",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.9825263023376465,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.35486555099487305,
+        "status": "no_results"
+      }
+    },
+    "chocolate": {
+      "fatsecret": {
+        "results": [
+          {
+            "food_name": "70% Dark Chocolate Wedges",
+            "description": "Per 2 pieces - Calories: 70kcal | Fat: 4.50g | Carbs: 6.00g | Protein: 1.00g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Milk Chocolate Bar (Snack Size)",
+            "description": "Per 2 pieces - Calories: 130kcal | Fat: 8.00g | Carbs: 16.00g | Protein: 2.00g",
+            "source": "fatsecret"
+          },
+          {
+            "food_name": "Milk Chocolate Bar",
+            "description": "Per 1 bar - Calories: 210kcal | Fat: 13.00g | Carbs: 26.00g | Protein: 3.00g",
+            "source": "fatsecret"
+          }
+        ],
+        "count": 3,
+        "elapsed": 0.49918651580810547,
+        "status": "success"
+      },
+      "usda": {
+        "results": [
+          {
+            "food_name": "CHOCOLATE",
+            "description": "SUGAR, COCOA BUTTER, DRY WHOLE MILK, CHOCOLATE LIQUOR, EMULSIFIER (SOY LECITHIN, PGPR), VANILLA EXTRACT.",
+            "source": "usda"
+          },
+          {
+            "food_name": "CHOCOLATE",
+            "description": "SUGAR, SUNFLOWER OIL, COCONUT OIL, COCOA, CHOCOLATE, CONTAINS 2% OR LESS OF: COCOA PROCESSED WITH ALKALI, SOY LECITHIN, MILK, SALT, VANILLA.",
+            "source": "usda"
+          },
+          {
+            "food_name": "CHOCOLATE",
+            "description": "UNSWEETENED SULFITE FREE COCONUT, TAPIOCA SYRUP, PALM OIL, EGG WHITE, NATURAL CHOCOLATE FLAVOR",
+            "source": "usda"
+          }
+        ],
+        "count": 3,
+        "elapsed": 1.0111756324768066,
+        "status": "success"
+      },
+      "edamam": {
+        "results": [],
+        "count": 0,
+        "elapsed": 0.37386178970336914,
+        "status": "no_results"
+      }
+    }
+  },
+  "statistics": {
+    "fatsecret": {
+      "success": 10,
+      "no_results": 0,
+      "error": 0,
+      "total_time": 9.61844778060913
+    },
+    "usda": {
+      "success": 10,
+      "no_results": 0,
+      "error": 0,
+      "total_time": 9.937336921691895
+    },
+    "edamam": {
+      "success": 0,
+      "no_results": 10,
+      "error": 0,
+      "total_time": 3.9478437900543213
+    }
+  }
+}

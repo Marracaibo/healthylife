@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test NLP API FatSecret</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .food-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+            border-radius: 0 4px 4px 0;
+        }
+        .food-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .food-brand {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        .food-desc {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .food-nutrition {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .nutrition-item {
+            background-color: #e8f4fd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+        .error {
+            color: #e74c3c;
+            padding: 10px;
+            background-color: #fadbd8;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .mock-badge {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        .api-badge {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test FatSecret NLP API</h1>
+        
+        <form action="/api/nlp/test" method="post">
+            <div class="form-group">
+                <label for="user_input">Inserisci una frase che descrive ciò che hai mangiato:</label>
+                <input type="text" id="user_input" name="user_input" placeholder="Es. Ho mangiato una pizza margherita e una coca cola" 
+                       value="{{ user_input if user_input else '' }}" required>
+            </div>
+            <button type="submit">Analizza</button>
+        </form>
+
+        {% if error %}
+        <div class="error">
+            <strong>Errore:</strong> {{ error }}
+        </div>
+        {% endif %}
+        
+        {% if results %}
+        <div class="results">
+            <h2>
+                Risultati 
+                {% if is_mock %}
+                <span class="mock-badge">MOCK</span>
+                {% else %}
+                <span class="api-badge">API</span>
+                {% endif %}
+            </h2>
+            
+            {% if results.foods and results.foods|length > 0 %}
+                {% for food in results.foods %}
+                <div class="food-item">
+                    <div class="food-name">{{ food.name }}</div>
+                    {% if food.brand and food.brand != "Generic" %}
+                    <div class="food-brand">{{ food.brand }}</div>
+                    {% endif %}
+                    {% if food.description %}
+                    <div class="food-desc">{{ food.description }}</div>
+                    {% endif %}
+                    {% if food.serving_description %}
+                    <div class="food-desc">Porzione: {{ food.serving_description }}</div>
+                    {% endif %}
+                    
+                    {% if food.nutrition %}
+                    <div class="food-nutrition">
+                        {% if food.nutrition.calories is defined %}
+                        <span class="nutrition-item">🔥 {{ food.nutrition.calories }} kcal</span>
+                        {% endif %}
+                        {% if food.nutrition.protein is defined %}
+                        <span class="nutrition-item">🥩 {{ food.nutrition.protein }}g proteine</span>
+                        {% endif %}
+                        {% if food.nutrition.carbohydrate is defined %}
+                        <span class="nutrition-item">🍚 {{ food.nutrition.carbohydrate }}g carboidrati</span>
+                        {% endif %}
+                        {% if food.nutrition.fat is defined %}
+                        <span class="nutrition-item">🧈 {{ food.nutrition.fat }}g grassi</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nessun alimento riconosciuto nella frase.</p>
+            {% endif %}
+            
+            <pre style="margin-top: 30px; background: #f8f9fa; padding: 15px; overflow-x: auto; border-radius: 4px; font-size: 14px;">
+{{ results|tojson(indent=2) }}
+            </pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

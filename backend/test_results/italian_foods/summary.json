@@ -1,0 +1,62 @@
+{
+  "usda": {
+    "success_rate": 100.0,
+    "average_results": 22.266666666666666,
+    "average_response_time": 1.2451685428619386,
+    "foods_found": [
+      "pasta barilla",
+      "parmigiano reggiano",
+      "prosciutto di parma",
+      "mozzarella di bufala",
+      "gorgonzola",
+      "olio extravergine di oliva",
+      "pomodori san marzano",
+      "pesto alla genovese",
+      "panettone",
+      "tiramis\u00f9",
+      "gnocchi",
+      "polenta",
+      "bresaola",
+      "pecorino romano",
+      "aceto balsamico"
+    ]
+  },
+  "api_ninjas": {
+    "success_rate": 66.66666666666666,
+    "average_results": 1.0,
+    "average_response_time": 0.6304065704345703,
+    "foods_found": [
+      "pasta barilla",
+      "parmigiano reggiano",
+      "prosciutto di parma",
+      "mozzarella di bufala",
+      "gorgonzola",
+      "pesto alla genovese",
+      "panettone",
+      "gnocchi",
+      "polenta",
+      "pecorino romano"
+    ]
+  },
+  "combined": {
+    "success_rate": 93.33333333333333,
+    "average_results": 24.071428571428573,
+    "average_response_time": 1.2993017094475883,
+    "foods_found": [
+      "pasta barilla",
+      "parmigiano reggiano",
+      "prosciutto di parma",
+      "mozzarella di bufala",
+      "gorgonzola",
+      "olio extravergine di oliva",
+      "pomodori san marzano",
+      "pesto alla genovese",
+      "panettone",
+      "gnocchi",
+      "polenta",
+      "bresaola",
+      "pecorino romano",
+      "aceto balsamico"
+    ]
+  }
+}

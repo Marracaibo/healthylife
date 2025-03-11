@@ -1,0 +1,235 @@
+{
+  "query": "pizza margherita",
+  "timestamp": "2025-03-07T17:43:48.614454",
+  "results": [
+    {
+      "food_id": "11088213",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "120",
+        "fat": "7.00",
+        "carbs": "12.00",
+        "protein": "3.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Graze",
+        "food_description": "Per 1 package - Calories: 120kcal | Fat: 7.00g | Carbs: 12.00g | Protein: 3.00g",
+        "food_id": "11088213",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/graze/pizza-margherita"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "245444",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "325",
+        "fat": "12.00",
+        "carbs": "26.00",
+        "protein": "28.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Buca di Beppo",
+        "food_description": "Per 2 slices - Calories: 325kcal | Fat: 12.00g | Carbs: 26.00g | Protein: 28.00g",
+        "food_id": "245444",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/buca-di-beppo/pizza-margherita"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "4780240",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "350",
+        "fat": "12.00",
+        "carbs": "45.00",
+        "protein": "15.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Trader Giotto's",
+        "food_description": "Per 1/3 pizza - Calories: 350kcal | Fat: 12.00g | Carbs: 45.00g | Protein: 15.00g",
+        "food_id": "4780240",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/trader-giottos/pizza-margherita/1-3-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "6028091",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "320",
+        "fat": "11.00",
+        "carbs": "40.00",
+        "protein": "15.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Trader Joe's",
+        "food_description": "Per 1/3 pizza - Calories: 320kcal | Fat: 11.00g | Carbs: 40.00g | Protein: 15.00g",
+        "food_id": "6028091",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/trader-joes/pizza-margherita/1-3-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "2991195",
+      "food_name": "Margherita Pizza",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "4205",
+        "fat": "80.50",
+        "carbs": "707.30",
+        "protein": "147.26",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 1529g - Calories: 4205kcal | Fat: 80.50g | Carbs: 707.30g | Protein: 147.26g",
+        "food_id": "2991195",
+        "food_name": "Margherita Pizza",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/margherita-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "70756",
+      "food_name": "Margherita Pizza",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "280",
+        "fat": "16.00",
+        "carbs": "23.00",
+        "protein": "14.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Bellatoria Pizza",
+        "food_description": "Per 1/3 pizza - Calories: 280kcal | Fat: 16.00g | Carbs: 23.00g | Protein: 14.00g",
+        "food_id": "70756",
+        "food_name": "Margherita Pizza",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/bellatoria-pizza/margherita-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "84662790",
+      "food_name": "Margherita Pizza",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "220",
+        "fat": "10.00",
+        "carbs": "22.00",
+        "protein": "9.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "California Pizza Kitchen",
+        "food_description": "Per 1 serving - Calories: 220kcal | Fat: 10.00g | Carbs: 22.00g | Protein: 9.00g",
+        "food_id": "84662790",
+        "food_name": "Margherita Pizza",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/california-pizza-kitchen/margherita-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "25944004",
+      "food_name": "Margherita Pizza",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "260",
+        "fat": "16.00",
+        "carbs": "9.00",
+        "protein": "17.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Real Good Pizza Co.",
+        "food_description": "Per 1/4 pizza - Calories: 260kcal | Fat: 16.00g | Carbs: 9.00g | Protein: 17.00g",
+        "food_id": "25944004",
+        "food_name": "Margherita Pizza",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/real-good-pizza-co/margherita-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "3348398",
+      "food_name": "Margherita Pizza",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "600",
+        "fat": "30.00",
+        "carbs": "100.00",
+        "protein": "20.00",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Punch Pizza",
+        "food_description": "Per 1 pizza - Calories: 600kcal | Fat: 30.00g | Carbs: 100.00g | Protein: 20.00g",
+        "food_id": "3348398",
+        "food_name": "Margherita Pizza",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/punch-pizza/margherita-pizza"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "98073",
+      "food_name": "Margherita Pizza",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "741",
+        "fat": "25.20",
+        "carbs": "96.50",
+        "protein": "34.60",
+        "fiber": "2.3"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Earls",
+        "food_description": "Per 1 serving - Calories: 741kcal | Fat: 25.20g | Carbs: 96.50g | Protein: 34.60g",
+        "food_id": "98073",
+        "food_name": "Margherita Pizza",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/earls/margherita-pizza"
+      },
+      "enriched": true
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "query": "parmigiano reggiano",
+  "timestamp": "2025-03-07T17:43:42.048999",
+  "results": [
+    {
+      "food_id": "6564594",
+      "food_name": "Parmigiano Reggiano Cheese",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "110",
+        "fat": "8.00",
+        "carbs": "0.00",
+        "protein": "9.00"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Il Giardino",
+        "food_description": "Per 1 oz - Calories: 110kcal | Fat: 8.00g | Carbs: 0.00g | Protein: 9.00g",
+        "food_id": "6564594",
+        "food_name": "Parmigiano Reggiano Cheese",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/il-giardino/parmigiano-reggiano-cheese"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "3502761",
+      "food_name": "Parmigiano Reggiano",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "20",
+        "fat": "1.50",
+        "carbs": "0.00",
+        "protein": "2.00"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Wegmans",
+        "food_description": "Per 1 tbsp - Calories: 20kcal | Fat: 1.50g | Carbs: 0.00g | Protein: 2.00g",
+        "food_id": "3502761",
+        "food_name": "Parmigiano Reggiano",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/wegmans/parmigiano-reggiano"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "15012123",
+      "food_name": "Parmigiano Reggiano",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "110",
+        "fat": "8.00",
+        "carbs": "0.00",
+        "protein": "9.00"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Boar's Head",
+        "food_description": "Per 1 oz - Calories: 110kcal | Fat: 8.00g | Carbs: 0.00g | Protein: 9.00g",
+        "food_id": "15012123",
+        "food_name": "Parmigiano Reggiano",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/boars-head/parmigiano-reggiano"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1268",
+      "food_name": "Hard Parmesan Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "392",
+        "fat": "25.83",
+        "carbs": "3.22",
+        "protein": "35.75"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 392kcal | Fat: 25.83g | Carbs: 3.22g | Protein: 35.75g",
+        "food_id": "1268",
+        "food_name": "Hard Parmesan Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-parmesan-hard"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "33712",
+      "food_name": "Parmesan Cheese (Grated)",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "431",
+        "fat": "28.61",
+        "carbs": "4.06",
+        "protein": "38.46"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 431kcal | Fat: 28.61g | Carbs: 4.06g | Protein: 38.46g",
+        "food_id": "33712",
+        "food_name": "Parmesan Cheese (Grated)",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/usda/parmesan-cheese-(grated)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "24144988",
+      "food_name": "Parmigiano Reggiano",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "120",
+        "fat": "9.00",
+        "carbs": "0.00",
+        "protein": "10.00"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Tre Stelle",
+        "food_description": "Per 3cm cube - Calories: 120kcal | Fat: 9.00g | Carbs: 0.00g | Protein: 10.00g",
+        "food_id": "24144988",
+        "food_name": "Parmigiano Reggiano",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/tre-stelle/parmigiano-reggiano"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1269",
+      "food_name": "Low Sodium Parmesan Cheese",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "456",
+        "fat": "29.99",
+        "carbs": "3.70",
+        "protein": "41.60"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 456kcal | Fat: 29.99g | Carbs: 3.70g | Protein: 41.60g",
+        "food_id": "1269",
+        "food_name": "Low Sodium Parmesan Cheese",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/cheese-parmesan-low-sodium"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "2949",
+      "food_name": "Fish Parmesan (Frozen Meal)",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "3258",
+        "fat": "146.68",
+        "carbs": "198.16",
+        "protein": "273.95"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 1688g - Calories: 3258kcal | Fat: 146.68g | Carbs: 198.16g | Protein: 273.95g",
+        "food_id": "2949",
+        "food_name": "Fish Parmesan (Frozen Meal)",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/fish-parmesan-(frozen-meal)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1270",
+      "food_name": "Fat Free Parmesan Cheese Topping",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "370",
+        "fat": "5.00",
+        "carbs": "40.00",
+        "protein": "40.00"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_description": "Per 100g - Calories: 370kcal | Fat: 5.00g | Carbs: 40.00g | Protein: 40.00g",
+        "food_id": "1270",
+        "food_name": "Fat Free Parmesan Cheese Topping",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/parmesan-cheese-topping-fat-free"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "202595",
+      "food_name": "Grated Parmigiano Reggiano Cheese",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "20",
+        "fat": "1.50",
+        "carbs": "0.00",
+        "protein": "2.00"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Trader Joe's",
+        "food_description": "Per 1 tbsp - Calories: 20kcal | Fat: 1.50g | Carbs: 0.00g | Protein: 2.00g",
+        "food_id": "202595",
+        "food_name": "Grated Parmigiano Reggiano Cheese",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/trader-joes/grated-parmigiano-reggiano-cheese"
+      },
+      "enriched": true
+    }
+  ]
+}

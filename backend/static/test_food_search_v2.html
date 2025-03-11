@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Ricerca Alimenti V2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .results-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .search-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-metadata {
+            color: #666;
+            font-size: 14px;
+        }
+        .result-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #111;
+        }
+        .result-brand {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .result-nutrition {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .nutrition-item {
+            background-color: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            color: #333;
+        }
+        .nutrition-item.calories {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .nutrition-item.fat {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .nutrition-item.carbs {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .nutrition-item.protein {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .nutrition-item.id {
+            background-color: #f5f5f5;
+            color: #757575;
+            font-size: 12px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .action-button {
+            padding: 8px 16px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .action-button:hover {
+            background-color: #1976D2;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-style: italic;
+            color: #666;
+        }
+        .error {
+            color: #f44336;
+            padding: 15px;
+            background-color: #ffebee;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        .food-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        .details-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .details-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .servings-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .servings-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .serving-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .serving-item:last-child {
+            border-bottom: none;
+        }
+        .close-details {
+            margin-top: 15px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Ricerca Alimenti V2</h1>
+    
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Cerca alimenti (es. pasta barilla, pollo, pizza)" value="pasta barilla">
+            <button id="search-button">Cerca</button>
+        </div>
+        
+        <div class="results-container" id="results-container">
+            <p>Inserisci un termine di ricerca e premi Cerca</p>
+        </div>
+        
+        <div class="food-details" id="food-details">
+            <div class="details-title">Dettagli Alimento</div>
+            <div class="details-content" id="details-content"></div>
+            <div class="close-details">
+                <button class="action-button" id="close-details-button">Chiudi</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const resultsContainer = document.getElementById('results-container');
+            const foodDetailsContainer = document.getElementById('food-details');
+            const detailsContent = document.getElementById('details-content');
+            const closeDetailsButton = document.getElementById('close-details-button');
+            
+            // Funzione per cercare alimenti
+            async function searchFoods() {
+                const query = searchInput.value.trim();
+                
+                if (!query) {
+                    resultsContainer.innerHTML = '<p>Inserisci un termine di ricerca</p>';
+                    return;
+                }
+                
+                resultsContainer.innerHTML = '<p class="loading">Ricerca in corso...</p>';
+                foodDetailsContainer.style.display = 'none';
+                
+                try {
+                    const response = await fetch(`/api/food-search-v2/search?query=${encodeURIComponent(query)}`);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Errore nella ricerca: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    const results = data.results || [];
+                    const metadata = data.metadata || {};
+                    
+                    let resultsHtml = `
+                        <div class="search-header">
+                            <h2>Risultati per "${query}"</h2>
+                            <div class="search-metadata">
+                                Trovati ${results.length} risultati in ${(metadata.elapsed_time || 0).toFixed(2)} secondi
+                            </div>
+                        </div>
+                    `;
+                    
+                    if (results.length > 0) {
+                        resultsHtml += '<div class="results-list">';
+                        
+                        results.forEach(food => {
+                            const nutrition = food.nutrition || {};
+                            const brand = food.brand !== "Generic" && food.brand !== "Brand" ? food.brand : "";
+                            
+                            resultsHtml += `
+                                <div class="result-item">
+                                    <div class="result-title">${food.food_name}</div>
+                                    ${brand ? `<div class="result-brand">${brand}</div>` : ''}
+                                    <div class="result-nutrition">
+                                        <div class="nutrition-item id">ID: ${food.food_id}</div>
+                                        ${nutrition.calories ? `<div class="nutrition-item calories">Calorie: ${nutrition.calories}</div>` : ''}
+                                        ${nutrition.fat ? `<div class="nutrition-item fat">Grassi: ${nutrition.fat}</div>` : ''}
+                                        ${nutrition.carbs ? `<div class="nutrition-item carbs">Carboidrati: ${nutrition.carbs}</div>` : ''}
+                                        ${nutrition.protein ? `<div class="nutrition-item protein">Proteine: ${nutrition.protein}</div>` : ''}
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button class="action-button" data-food-id="${food.food_id}">Dettagli</button>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        resultsHtml += '</div>';
+                    } else {
+                        resultsHtml += '<p class="no-results">Nessun risultato trovato</p>';
+                    }
+                    
+                    resultsContainer.innerHTML = resultsHtml;
+                    
+                    // Aggiungi event listener per i pulsanti di dettaglio
+                    document.querySelectorAll('.action-button[data-food-id]').forEach(button => {
+                        button.addEventListener('click', () => {
+                            const foodId = button.getAttribute('data-food-id');
+                            showFoodDetails(foodId);
+                        });
+                    });
+                    
+                } catch (error) {
+                    resultsContainer.innerHTML = `<div class="error">Errore: ${error.message}</div>`;
+                    console.error('Errore durante la ricerca:', error);
+                }
+            }
+            
+            // Funzione per mostrare i dettagli di un alimento
+            async function showFoodDetails(foodId) {
+                try {
+                    detailsContent.innerHTML = '<p class="loading">Caricamento dettagli...</p>';
+                    foodDetailsContainer.style.display = 'block';
+                    
+                    const response = await fetch(`/api/food-search-v2/food/${foodId}`);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Errore nel recupero dei dettagli: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    const food = data.food || {};
+                    
+                    // Formatta i dettagli dell'alimento
+                    let detailsHtml = `
+                        <h3>${food.food_name}</h3>
+                        ${food.brand && food.brand !== "Generic" ? `<p><strong>Brand:</strong> ${food.brand}</p>` : ''}
+                        ${food.food_type ? `<p><strong>Tipo:</strong> ${food.food_type}</p>` : ''}
+                        
+                        <h4>Informazioni Nutrizionali</h4>
+                    `;
+                    
+                    // Mostra le informazioni nutrizionali
+                    const nutrition = food.nutrition || {};
+                    if (Object.keys(nutrition).length > 0) {
+                        detailsHtml += `
+                            <p><strong>Porzione:</strong> ${nutrition.serving_size || "100"}${nutrition.serving_unit || "g"}</p>
+                            <ul>
+                                ${nutrition.calories ? `<li><strong>Calorie:</strong> ${nutrition.calories}</li>` : ''}
+                                ${nutrition.fat ? `<li><strong>Grassi totali:</strong> ${nutrition.fat}</li>` : ''}
+                                ${nutrition.saturated_fat ? `<li><strong>Grassi saturi:</strong> ${nutrition.saturated_fat}</li>` : ''}
+                                ${nutrition.carbs ? `<li><strong>Carboidrati:</strong> ${nutrition.carbs}</li>` : ''}
+                                ${nutrition.sugar ? `<li><strong>Zuccheri:</strong> ${nutrition.sugar}</li>` : ''}
+                                ${nutrition.fiber ? `<li><strong>Fibre:</strong> ${nutrition.fiber}</li>` : ''}
+                                ${nutrition.protein ? `<li><strong>Proteine:</strong> ${nutrition.protein}</li>` : ''}
+                                ${nutrition.sodium ? `<li><strong>Sodio:</strong> ${nutrition.sodium}</li>` : ''}
+                                ${nutrition.cholesterol ? `<li><strong>Colesterolo:</strong> ${nutrition.cholesterol}</li>` : ''}
+                            </ul>
+                        `;
+                    } else {
+                        detailsHtml += '<p>Informazioni nutrizionali non disponibili</p>';
+                    }
+                    
+                    // Mostra le porzioni disponibili se presenti
+                    if (food.servings && food.servings.length > 0) {
+                        detailsHtml += `
+                            <div class="servings-title">Porzioni disponibili:</div>
+                            <ul class="servings-list">
+                        `;
+                        
+                        food.servings.forEach(serving => {
+                            detailsHtml += `
+                                <li class="serving-item">
+                                    <strong>${serving.serving_description || 'Porzione standard'}</strong><br>
+                                    Calorie: ${serving.calories || 'N/A'}, 
+                                    Grassi: ${serving.fat || 'N/A'}, 
+                                    Carboidrati: ${serving.carbohydrate || 'N/A'}, 
+                                    Proteine: ${serving.protein || 'N/A'}
+                                </li>
+                            `;
+                        });
+                        
+                        detailsHtml += '</ul>';
+                    }
+                    
+                    detailsContent.innerHTML = detailsHtml;
+                    
+                } catch (error) {
+                    detailsContent.innerHTML = `<div class="error">Errore: ${error.message}</div>`;
+                    console.error('Errore durante il recupero dei dettagli:', error);
+                }
+            }
+            
+            // Chiudi i dettagli quando si preme il pulsante Chiudi
+            closeDetailsButton.addEventListener('click', () => {
+                foodDetailsContainer.style.display = 'none';
+            });
+            
+            // Event listeners
+            searchButton.addEventListener('click', searchFoods);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchFoods();
+                }
+            });
+            
+            // Esegui una ricerca all'avvio se c'è già un valore nell'input
+            if (searchInput.value.trim()) {
+                searchFoods();
+            }
+        });
+    </script>
+</body>
+</html>

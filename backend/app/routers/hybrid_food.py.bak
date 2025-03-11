@@ -1,0 +1,201 @@
+# Questo file è stato rinominato in .bak e non viene più utilizzato a causa di conflitti di routing
+# Si prega di utilizzare il router in routers/hybrid_food_service.py invece
+
+from fastapi import APIRouter, Query, Depends, HTTPException
+from typing import List, Optional, Dict, Any
+import logging
+import os
+from ..services.food_api_service import search_usda_foods, search_edamam_foods
+
+router = APIRouter(tags=["hybrid-food"])
+
+logger = logging.getLogger(__name__)
+
+@router.get("/search")
+async def search_foods(
+    query: str = Query(..., description="The food search query"),
+    max_results: int = Query(25, description="Maximum number of results to return"),
+    use_cache: bool = Query(True, description="Whether to use cached results if available")
+):
+    """
+    Search for foods using multiple food databases.
+    """
+    logger.info(f"Searching for foods with query: '{query}', max_results: {max_results}")
+    
+    # Usa la query così com'è
+    search_query = query.strip()
+    
+    # Chiave cache semplificata
+    cache_key = f"{search_query.lower()}_{max_results}"
+    
+    use_edamam_only = os.getenv("USE_EDAMAM_ONLY", "false").lower() == "true"
+    use_edamam_aggregated = os.getenv("USE_EDAMAM_AGGREGATED", "true").lower() == "true"
+    
+    results = []
+    
+    try:
+        if not use_edamam_only:
+            usda_api_key = os.getenv("USDA_API_KEY")
+            if usda_api_key:
+                try:
+                    usda_results = await search_usda_foods(search_query, max_results, usda_api_key)
+                    if usda_results:
+                        results.extend(usda_results)
+                        logger.info(f"Found {len(usda_results)} results from USDA API")
+                    else:
+                        logger.info("No results from USDA API")
+                except Exception as e:
+                    logger.error(f"Error searching USDA API: {str(e)}")
+            else:
+                logger.warning("USDA API key not configured, skipping USDA search")
+        
+        edamam_app_id = os.getenv("EDAMAM_APP_ID")
+        edamam_app_key = os.getenv("EDAMAM_APP_KEY")
+        
+        if edamam_app_id and edamam_app_key:
+            try:
+                if use_edamam_aggregated or len(results) < max_results:
+                    remaining_results = max_results - len(results) if not use_edamam_aggregated else max_results
+                    edamam_results = await search_edamam_foods(search_query, remaining_results, edamam_app_id, edamam_app_key)
+                    
+                    if edamam_results:
+                        results.extend(edamam_results)
+                        logger.info(f"Found {len(edamam_results)} results from Edamam API")
+                    else:
+                        logger.info("No results from Edamam API")
+            except Exception as e:
+                logger.error(f"Error searching Edamam API: {str(e)}")
+        else:
+            logger.warning("Edamam API credentials not configured, skipping Edamam search")
+        
+        results = results[:max_results]
+        
+        if not results:
+            logger.warning(f"No results found for query: '{query}'")
+            
+        return {
+            "results": results,
+            "metadata": {
+                "query": query,
+                "total_results": len(results),
+                "sources_used": ["usda", "edamam"] if not use_edamam_only else ["edamam"]
+            }
+        }
+            
+    except Exception as e:
+        logger.error(f"Error during hybrid food search: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error searching foods: {str(e)}")
+
+@router.get("/barcode/{code}")
+async def search_by_barcode(
+    code: str,
+    max_results: int = Query(10, description="Maximum number of results to return")
+):
+    """
+    Search for foods using a barcode/UPC code.
+    This endpoint only uses the USDA API which has support for UPC codes.
+    """
+    logger.info(f"Searching for foods with barcode: '{code}'")
+    
+    try:
+        usda_api_key = os.getenv("USDA_API_KEY")
+        
+        if not usda_api_key:
+            logger.error("USDA API key not configured for barcode search")
+            raise HTTPException(status_code=500, detail="API key not configured for barcode search")
+        
+        results = await search_usda_foods(code, max_results, usda_api_key, is_barcode=True)
+        
+        if not results:
+            logger.warning(f"No results found for barcode: '{code}'")
+        
+        return {
+            "success": True,
+            "results": results,
+            "metadata": {
+                "barcode": code,
+                "total_results": len(results),
+                "source": "usda"
+            }
+        }
+    
+    except Exception as e:
+        logger.error(f"Error during barcode search: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error searching by barcode: {str(e)}")
+
+@router.get("/details")
+async def get_food_details(
+    food_id: str = Query(..., description="ID of the food item"),
+    source: str = Query("auto", description="Source of the food item (usda, edamam, or auto)")
+):
+    """
+    Get detailed information about a specific food item.
+    """
+    logger.info(f"Getting details for food ID: {food_id} from source: {source}")
+    
+    try:
+        usda_api_key = os.getenv("USDA_API_KEY")
+        edamam_app_id = os.getenv("EDAMAM_APP_ID")
+        edamam_app_key = os.getenv("EDAMAM_APP_KEY")
+        
+        food_detail = None
+        
+        if source.lower() == "usda" or source.lower() == "auto":
+            if usda_api_key:
+                logger.info(f"Querying USDA API for food ID: {food_id}")
+                
+                food_detail = {
+                    "id": food_id,
+                    "name": f"USDA Food Item {food_id}",
+                    "brand": "USDA",
+                    "source": "usda",
+                    "nutrients": {
+                        "calories": 120,
+                        "protein": 5,
+                        "carbs": 20,
+                        "fat": 3
+                    },
+                    "serving_size": {
+                        "amount": 100,
+                        "unit": "g"
+                    }
+                }
+        
+        if (food_detail is None and source.lower() == "auto") or source.lower() == "edamam":
+            if edamam_app_id and edamam_app_key:
+                logger.info(f"Querying Edamam API for food ID: {food_id}")
+                
+                food_detail = {
+                    "id": food_id,
+                    "name": f"Edamam Food Item {food_id}",
+                    "brand": "Edamam",
+                    "source": "edamam",
+                    "nutrients": {
+                        "calories": 150,
+                        "protein": 8,
+                        "carbs": 15,
+                        "fat": 5
+                    },
+                    "serving_size": {
+                        "amount": 100,
+                        "unit": "g"
+                    },
+                    "image": "https://www.edamam.com/food-img/dummy.jpg"
+                }
+        
+        if food_detail:
+            return {
+                "success": True,
+                "source": food_detail.get("source", "unknown"),
+                "food": food_detail
+            }
+        else:
+            logger.warning(f"Food item with ID {food_id} not found in any source")
+            return {
+                "success": False,
+                "error": f"Food item with ID {food_id} not found"
+            }
+            
+    except Exception as e:
+        logger.error(f"Error getting food details: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error getting food details: {str(e)}")

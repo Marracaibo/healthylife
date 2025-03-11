@@ -1,0 +1,32 @@
+{
+  "query": "barcode_8001505005707",
+  "timestamp": "2025-03-08T21:06:09.977749",
+  "results": {
+    "foods": [
+      {
+        "food_id": "8001505005707",
+        "food_name": "Nocciolata",
+        "food_description": "Per 100g - Calories: 544kcal | Fat: 32g | Carbs: 54g | Protein: 8.1g",
+        "brand": "Rigoni di Asiago",
+        "serving_id": "0",
+        "serving_description": "15g",
+        "serving_url": "",
+        "barcode": "8001505005707",
+        "nutrients": {
+          "calories": 544,
+          "fat": 32,
+          "saturated_fat": 5.7,
+          "carbohydrates": 54,
+          "sugars": 51,
+          "fiber": 3.6,
+          "proteins": 8.1,
+          "salt": 0.12,
+          "sodium": 0.048
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}

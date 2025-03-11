@@ -1,0 +1,23 @@
+// Export all page components
+export { default as Dashboard } from './Dashboard';
+export { default as MealPlanner } from './MealPlanner';
+export { default as Progress } from './Progress';
+export { default as DailyDiary } from './DailyDiary';
+export { default as FoodTracker } from './FoodTracker';
+export { default as Settings } from './Settings';
+export { default as Workout } from './Workout';
+export { default as WorkoutPrograms } from './WorkoutPrograms';
+export { default as SkillsProgression } from './SkillsProgression';
+export { default as Transformation } from './Transformation';
+export { default as Shop } from './Shop';
+export { default as Motivation } from './Motivation';
+export { default as TestHybridFood } from './TestHybridFood';
+export { default as SimpleTestPage } from './SimpleTestPage';
+export { default as FoodServiceDiagnosticPage } from './FoodServiceDiagnosticPage';
+export { default as FoodSearchTestPage } from './FoodSearchTestPage';
+export { default as NLPTestPage } from './NLPTestPage';
+export { default as ImageRecognitionTestPage } from './ImageRecognitionTestPage';
+export { default as CustomWorkoutGenerator } from './CustomWorkoutGenerator';
+export { default as WorkoutBuilder } from './WorkoutBuilder';
+export { default as WorkoutCalendar } from './WorkoutCalendar';
+export { default as WorkoutProgressTracker } from './WorkoutProgressTracker';

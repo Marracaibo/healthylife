@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Connessione API HealthyLifeApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #results {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .success {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .error {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Connessione API HealthyLifeApp</h1>
+  <p>Questo strumento permette di verificare la connessione alle API del backend e testare le funzionalitu00e0 di ricerca alimenti.</p>
+  
+  <div>
+    <button id="testConnection">Test Connessione Base</button>
+    <button id="testSearch">Test Ricerca Alimenti</button>
+    <button id="clearResults">Pulisci Risultati</button>
+  </div>
+  
+  <div>
+    <label for="searchQuery">Query di ricerca personalizzata:</label>
+    <input type="text" id="searchQuery" value="bread" style="padding: 8px; margin: 5px 0;">
+    <button id="customSearch">Cerca</button>
+  </div>
+  
+  <h3>Risultati:</h3>
+  <div id="results">I risultati dei test appariranno qui...</div>
+
+  <script>
+    const API_BASE_URL = 'http://localhost:8000/api';
+    const resultsDiv = document.getElementById('results');
+    
+    function log(message, isError = false) {
+      const timestamp = new Date().toLocaleTimeString();
+      resultsDiv.innerHTML += `[${timestamp}] ${isError ? '<span class="error">' : ''}${message}${isError ? '</span>' : ''}\n`;
+      resultsDiv.scrollTop = resultsDiv.scrollHeight;
+    }
+    
+    // Test connessione base
+    async function testConnection() {
+      log('Esecuzione test connessione base...');
+      try {
+        const response = await fetch(`${API_BASE_URL}/docs`);
+        const success = response.status === 200;
+        log(`Test connessione base: ${success ? '<span class="success">OK</span>' : '<span class="error">FALLITO</span>'} (Status: ${response.status})`);
+        return success;
+      } catch (error) {
+        log(`Errore durante il test di connessione: ${error.message}`, true);
+        return false;
+      }
+    }
+    
+    // Test ricerca alimenti
+    async function testFoodSearch(query = 'bread') {
+      log(`Esecuzione test ricerca per "${query}"...`);
+      try {
+        const response = await fetch(`${API_BASE_URL}/hybrid-food/search?query=${encodeURIComponent(query)}&max_results=5`);
+        const data = await response.json();
+        const success = response.status === 200;
+        
+        log(`Test ricerca per "${query}": ${success ? '<span class="success">OK</span>' : '<span class="error">FALLITO</span>'} (Status: ${response.status})`);
+        
+        if (success) {
+          const resultsCount = data.results ? data.results.length : 0;
+          log(`Numero risultati: ${resultsCount}`);
+          
+          if (resultsCount > 0) {
+            log('Primi 2 risultati:');
+            data.results.slice(0, 2).forEach((item, index) => {
+              log(`  ${index + 1}. ${item.name} (${item.source})`);
+            });
+          } else {
+            log('Nessun risultato trovato', true);
+          }
+        }
+        
+        return data;
+      } catch (error) {
+        log(`Errore durante la ricerca per "${query}": ${error.message}`, true);
+        return null;
+      }
+    }
+    
+    // Event listeners
+    document.getElementById('testConnection').addEventListener('click', async () => {
+      await testConnection();
+    });
+    
+    document.getElementById('testSearch').addEventListener('click', async () => {
+      const conn = await testConnection();
+      if (conn) {
+        await testFoodSearch('bread');
+        await testFoodSearch('apple');
+      }
+    });
+    
+    document.getElementById('customSearch').addEventListener('click', async () => {
+      const query = document.getElementById('searchQuery').value.trim();
+      if (query) {
+        await testFoodSearch(query);
+      } else {
+        log('Inserisci una query valida', true);
+      }
+    });
+    
+    document.getElementById('clearResults').addEventListener('click', () => {
+      resultsDiv.innerHTML = 'I risultati dei test appariranno qui...';
+    });
+  </script>
+</body>
+</html>

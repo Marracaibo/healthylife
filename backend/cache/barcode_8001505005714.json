@@ -1,0 +1,32 @@
+{
+  "query": "barcode_8001505005714",
+  "timestamp": "2025-03-08T21:09:01.486195",
+  "results": {
+    "foods": [
+      {
+        "food_id": "8001505005714",
+        "food_name": "Fiordifrutta - Poires",
+        "food_description": "Per 100g - Calories: 145kcal | Fat: 0g | Carbs: 35g | Protein: 0g",
+        "brand": "Rigoni di asiago",
+        "serving_id": "0",
+        "serving_description": "15g",
+        "serving_url": "",
+        "barcode": "8001505005714",
+        "nutrients": {
+          "calories": 145,
+          "fat": 0,
+          "saturated_fat": 0,
+          "carbohydrates": 35,
+          "sugars": 34,
+          "fiber": 2.5,
+          "proteins": 0,
+          "salt": 0.05,
+          "sodium": 0.02
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}

@@ -1,0 +1,160 @@
+2025-03-01 21:19:36,823 - INFO - Avvio dei test su alimenti italiani...
+2025-03-01 21:19:36,823 - INFO - [1/127] Testando: pasta barilla
+2025-03-01 21:19:38,133 - INFO - Risultato per 'pasta barilla': Trovato in openfoodfacts, Nome: Spaghetti N.5
+2025-03-01 21:19:38,134 - INFO - [2/127] Testando: pasta de cecco
+2025-03-01 21:19:47,212 - INFO - Risultato per 'pasta de cecco': Trovato in openfoodfacts, Nome: Spaghetti N12
+2025-03-01 21:19:47,212 - INFO - [3/127] Testando: pasta la molisana
+2025-03-01 21:19:49,101 - INFO - Risultato per 'pasta la molisana': Trovato in openfoodfacts, Nome: Fusilli n.28
+2025-03-01 21:19:49,102 - INFO - [4/127] Testando: pasta rummo
+2025-03-01 21:19:50,708 - INFO - Risultato per 'pasta rummo': Trovato in openfoodfacts, Nome: gnocchi di patate
+2025-03-01 21:19:50,708 - INFO - [5/127] Testando: pasta garofalo
+2025-03-01 21:19:52,405 - INFO - Risultato per 'pasta garofalo': Trovato in openfoodfacts, Nome: Penne Ziti Rigate Integrale Bio
+2025-03-01 21:19:52,405 - INFO - [6/127] Testando: pasta divella
+2025-03-01 21:19:54,053 - INFO - Risultato per 'pasta divella': Trovato in openfoodfacts, Nome: Linguine 14
+2025-03-01 21:19:54,053 - INFO - [7/127] Testando: pasta voiello
+2025-03-01 21:19:56,169 - INFO - Risultato per 'pasta voiello': Trovato in openfoodfacts, Nome: Fusilli 500g voiello 2015
+2025-03-01 21:19:56,169 - INFO - [8/127] Testando: pasta agnesi
+2025-03-01 21:19:58,421 - INFO - Risultato per 'pasta agnesi': Trovato in openfoodfacts, Nome: Pesto rosso Agnesi
+2025-03-01 21:19:58,421 - INFO - [9/127] Testando: pasta integrale
+2025-03-01 21:20:06,047 - INFO - Risultato per 'pasta integrale': Trovato in openfoodfacts, Nome: Integrale Spaghetti
+2025-03-01 21:20:06,048 - INFO - [10/127] Testando: pasta di farro
+2025-03-01 21:20:07,811 - INFO - Risultato per 'pasta di farro': Trovato in openfoodfacts, Nome: I pronti al vapore al farro
+2025-03-01 21:20:07,811 - INFO - [11/127] Testando: pasta di kamut
+2025-03-01 21:20:09,524 - INFO - Risultato per 'pasta di kamut': Trovato in openfoodfacts, Nome: TORTIGLIONI KAMUT
+2025-03-01 21:20:09,524 - INFO - [12/127] Testando: pasta di grano saraceno
+2025-03-01 21:20:11,203 - INFO - Risultato per 'pasta di grano saraceno': Trovato in openfoodfacts, Nome: Pasta grano saraceno
+2025-03-01 21:20:11,203 - INFO - [13/127] Testando: riso arborio
+2025-03-01 21:20:12,869 - INFO - Risultato per 'riso arborio': Trovato in openfoodfacts, Nome: Riso arborio
+2025-03-01 21:20:12,869 - INFO - [14/127] Testando: riso carnaroli
+2025-03-01 21:20:14,359 - INFO - Risultato per 'riso carnaroli': Trovato in openfoodfacts, Nome: Curtiriso Riso Carnaroli
+2025-03-01 21:20:14,359 - INFO - [15/127] Testando: riso vialone nano
+2025-03-01 21:20:15,824 - INFO - Risultato per 'riso vialone nano': Trovato in openfoodfacts, Nome: Riso nano vialone veronese igp
+2025-03-01 21:20:15,825 - INFO - [16/127] Testando: riso basmati
+2025-03-01 21:20:17,462 - INFO - Risultato per 'riso basmati': Trovato in openfoodfacts, Nome: Sapori&emozioni basmati integrale
+2025-03-01 21:20:17,462 - INFO - [17/127] Testando: pane casereccio
+2025-03-01 21:20:18,940 - INFO - Risultato per 'pane casereccio': Trovato in openfoodfacts, Nome: Pane casereccio
+2025-03-01 21:20:18,940 - INFO - [18/127] Testando: pane di altamura
+2025-03-01 21:20:20,528 - INFO - Risultato per 'pane di altamura': Trovato in openfoodfacts, Nome: Bruschetta di Altamura
+2025-03-01 21:20:20,528 - INFO - [19/127] Testando: pane di matera
+2025-03-01 21:20:26,946 - WARNING - Nessun risultato trovato per 'pane di matera'
+2025-03-01 21:20:26,947 - INFO - [20/127] Testando: focaccia genovese
+2025-03-01 21:20:30,335 - INFO - Risultato per 'focaccia genovese': Trovato in fatsecret, Nome: Italian Flatbread Focaccia
+2025-03-01 21:20:30,335 - INFO - [21/127] Testando: grissini torinesi
+2025-03-01 21:20:32,934 - INFO - Risultato per 'grissini torinesi': Trovato in fatsecret, Nome: Grissini Torinesi Thin Breadsticks
+2025-03-01 21:20:32,934 - INFO - [22/127] Testando: taralli pugliesi
+2025-03-01 21:20:35,570 - INFO - Risultato per 'taralli pugliesi': Trovato in fatsecret, Nome: Taralli
+2025-03-01 21:20:35,570 - INFO - [23/127] Testando: friselle
+2025-03-01 21:20:38,151 - INFO - Risultato per 'friselle': Trovato in fatsecret, Nome: Roselle
+2025-03-01 21:20:38,152 - INFO - [24/127] Testando: piadina romagnola
+2025-03-01 21:20:40,730 - INFO - Risultato per 'piadina romagnola': Trovato in fatsecret, Nome: Roasted Vegetable Piadina
+2025-03-01 21:20:40,730 - INFO - [25/127] Testando: crackers gran pavesi
+2025-03-01 21:20:48,020 - INFO - Risultato per 'crackers gran pavesi': Trovato in fatsecret, Nome: Oatmeal Crackers
+2025-03-01 21:20:48,020 - INFO - [26/127] Testando: crackers ritz
+2025-03-01 21:20:50,633 - INFO - Risultato per 'crackers ritz': Trovato in fatsecret, Nome: Crackers - Fresh Stack
+2025-03-01 21:20:50,633 - INFO - [27/127] Testando: fette biscottate mulino bianco
+2025-03-01 21:20:53,231 - INFO - Risultato per 'fette biscottate mulino bianco': Trovato in fatsecret, Nome: Fette Biscottate Integrali
+2025-03-01 21:20:53,232 - INFO - [28/127] Testando: parmigiano reggiano
+2025-03-01 21:20:55,707 - INFO - Risultato per 'parmigiano reggiano': Trovato in fatsecret, Nome: Parmigiano Reggiano Cheese
+2025-03-01 21:20:55,708 - INFO - [29/127] Testando: grana padano
+2025-03-01 21:20:58,210 - INFO - Risultato per 'grana padano': Trovato in fatsecret, Nome: Shaved Grana Padano Parmesan
+2025-03-01 21:20:58,211 - INFO - [30/127] Testando: pecorino romano
+2025-03-01 21:21:00,731 - INFO - Risultato per 'pecorino romano': Trovato in fatsecret, Nome: Pecorino Romano
+2025-03-01 21:21:00,731 - INFO - [31/127] Testando: pecorino toscano
+2025-03-01 21:21:02,432 - INFO - Risultato per 'pecorino toscano': Trovato in openfoodfacts, Nome: Sfogliavelo pecorino e prosciutto toscano dop
+2025-03-01 21:21:02,432 - INFO - [32/127] Testando: mozzarella di bufala
+2025-03-01 21:21:09,930 - INFO - Risultato per 'mozzarella di bufala': Trovato in openfoodfacts, Nome: Mozzarella di bufala campana aop
+2025-03-01 21:21:09,930 - INFO - [33/127] Testando: burrata
+2025-03-01 21:21:11,531 - INFO - Risultato per 'burrata': Trovato in openfoodfacts, Nome: Burrata di Buffala
+2025-03-01 21:21:11,531 - INFO - [34/127] Testando: stracchino
+2025-03-01 21:21:13,044 - INFO - Risultato per 'stracchino': Trovato in openfoodfacts, Nome: Stracchino
+2025-03-01 21:21:13,044 - INFO - [35/127] Testando: gorgonzola
+2025-03-01 21:21:14,692 - INFO - Risultato per 'gorgonzola': Trovato in openfoodfacts, Nome: Gorgonzola cremoso galbani 150g 28%
+2025-03-01 21:21:14,692 - INFO - [36/127] Testando: taleggio
+2025-03-01 21:21:16,166 - INFO - Risultato per 'taleggio': Trovato in openfoodfacts, Nome: Taleggio DOP
+2025-03-01 21:21:16,166 - INFO - [37/127] Testando: asiago
+2025-03-01 21:21:17,673 - INFO - Risultato per 'asiago': Trovato in openfoodfacts, Nome: Nocciolata
+2025-03-01 21:21:17,673 - INFO - [38/127] Testando: fontina
+2025-03-01 21:21:19,344 - INFO - Risultato per 'fontina': Trovato in openfoodfacts, Nome: tortellini with fontina cheese & spinach
+2025-03-01 21:21:19,344 - INFO - [39/127] Testando: provolone
+2025-03-01 21:21:21,017 - INFO - Risultato per 'provolone': Trovato in openfoodfacts, Nome: provolone dolce
+2025-03-01 21:21:21,018 - INFO - [40/127] Testando: scamorza
+2025-03-01 21:21:22,545 - INFO - Risultato per 'scamorza': Trovato in openfoodfacts, Nome: Fette biscottate malto d'orzo
+2025-03-01 21:21:22,545 - INFO - [41/127] Testando: prosciutto di parma
+2025-03-01 21:21:25,796 - INFO - Risultato per 'prosciutto di parma': Trovato in fatsecret, Nome: Prosciutto Di Parma
+2025-03-01 21:21:25,796 - INFO - [42/127] Testando: prosciutto san daniele
+2025-03-01 21:21:52,400 - INFO - Risultato per 'prosciutto san daniele': Trovato in fatsecret, Nome: Prosciutto Ham
+2025-03-01 21:21:52,400 - INFO - [43/127] Testando: prosciutto cotto
+2025-03-01 21:22:15,886 - INFO - Risultato per 'prosciutto cotto': Trovato in fatsecret, Nome: Prosciutto
+2025-03-01 21:22:15,886 - INFO - [44/127] Testando: mortadella
+2025-03-01 21:22:39,301 - INFO - Risultato per 'mortadella': Trovato in fatsecret, Nome: Mortadella
+2025-03-01 21:22:39,301 - INFO - [45/127] Testando: salame milano
+2025-03-01 21:23:02,750 - INFO - Risultato per 'salame milano': Trovato in fatsecret, Nome: Salame Milano
+2025-03-01 21:23:02,750 - INFO - [46/127] Testando: salame napoli
+2025-03-01 21:23:26,209 - INFO - Risultato per 'salame napoli': Trovato in fatsecret, Nome: Salame Napoli
+2025-03-01 21:23:26,210 - INFO - [47/127] Testando: salame toscano
+2025-03-01 21:23:49,644 - INFO - Risultato per 'salame toscano': Trovato in fatsecret, Nome: Salame Toscano
+2025-03-01 21:23:49,644 - INFO - [48/127] Testando: bresaola
+2025-03-01 21:24:13,086 - INFO - Risultato per 'bresaola': Trovato in fatsecret, Nome: Traditional Bresaola
+2025-03-01 21:24:13,087 - INFO - [49/127] Testando: pancetta
+2025-03-01 21:24:40,278 - WARNING - Nessun risultato trovato per 'pancetta'
+2025-03-01 21:24:40,278 - INFO - [50/127] Testando: guanciale
+2025-03-01 21:25:03,053 - WARNING - Nessun risultato trovato per 'guanciale'
+2025-03-01 21:25:03,053 - INFO - [51/127] Testando: speck
+2025-03-01 21:25:26,457 - INFO - Risultato per 'speck': Trovato in fatsecret, Nome: Speck
+2025-03-01 21:25:26,458 - INFO - [52/127] Testando: coppa
+2025-03-01 21:25:49,974 - INFO - Risultato per 'coppa': Trovato in fatsecret, Nome: Dry Coppa
+2025-03-01 21:25:49,975 - INFO - [53/127] Testando: culatello
+2025-03-01 21:26:12,467 - WARNING - Nessun risultato trovato per 'culatello'
+2025-03-01 21:26:12,468 - INFO - [54/127] Testando: yogurt lidl
+2025-03-01 21:26:35,918 - INFO - Risultato per 'yogurt lidl': Trovato in fatsecret, Nome: Nonfat Greek Yogurt Vanilla
+2025-03-01 21:26:35,918 - INFO - [55/127] Testando: latte lidl
+2025-03-01 21:26:59,586 - INFO - Risultato per 'latte lidl': Trovato in fatsecret, Nome: Coffee Latte
+2025-03-01 21:26:59,586 - INFO - [56/127] Testando: formaggio lidl
+2025-03-01 21:27:23,114 - INFO - Risultato per 'formaggio lidl': Trovato in fatsecret, Nome: Ravioli Formaggio
+2025-03-01 21:27:23,114 - INFO - [57/127] Testando: prosciutto lidl
+2025-03-01 21:27:50,320 - WARNING - Nessun risultato trovato per 'prosciutto lidl'
+2025-03-01 21:27:50,321 - INFO - [58/127] Testando: pasta lidl
+2025-03-01 21:28:13,779 - INFO - Risultato per 'pasta lidl': Trovato in fatsecret, Nome: Meat Flavored Pasta Sauce
+2025-03-01 21:28:13,779 - INFO - [59/127] Testando: biscotti lidl
+2025-03-01 21:28:37,270 - INFO - Risultato per 'biscotti lidl': Trovato in fatsecret, Nome: Biscotti Cookie (Italian Sugar Cookie)
+2025-03-01 21:28:37,270 - INFO - [60/127] Testando: cereali lidl
+2025-03-01 21:29:00,729 - INFO - Risultato per 'cereali lidl': Trovato in fatsecret, Nome: Whole Wheat Cereal
+2025-03-01 21:29:00,729 - INFO - [61/127] Testando: pane lidl
+2025-03-01 21:29:24,178 - INFO - Risultato per 'pane lidl': Trovato in fatsecret, Nome: Pine Nuts
+2025-03-01 21:29:24,178 - INFO - [62/127] Testando: yogurt tosano
+2025-03-01 21:29:47,675 - INFO - Risultato per 'yogurt tosano': Trovato in fatsecret, Nome: Yogurt
+2025-03-01 21:29:47,676 - INFO - [63/127] Testando: latte tosano
+2025-03-01 21:30:11,923 - INFO - Risultato per 'latte tosano': Trovato in fatsecret, Nome: Decaffeinated Latte Coffee
+2025-03-01 21:30:11,924 - INFO - [64/127] Testando: formaggio tosano
+2025-03-01 21:30:39,612 - INFO - Risultato per 'formaggio tosano': Trovato in fatsecret, Nome: Ravioli Formaggio
+2025-03-01 21:30:39,612 - INFO - [65/127] Testando: prosciutto tosano
+2025-03-01 21:31:03,057 - INFO - Risultato per 'prosciutto tosano': Trovato in fatsecret, Nome: Prosciutto
+2025-03-01 21:31:03,057 - INFO - [66/127] Testando: pasta tosano
+2025-03-01 21:31:26,523 - INFO - Risultato per 'pasta tosano': Trovato in fatsecret, Nome: Flavored Pasta
+2025-03-01 21:31:26,524 - INFO - [67/127] Testando: biscotti tosano
+2025-03-01 21:31:50,009 - INFO - Risultato per 'biscotti tosano': Trovato in fatsecret, Nome: Biscotti Cookie (Italian Sugar Cookie)
+2025-03-01 21:31:50,009 - INFO - [68/127] Testando: cereali tosano
+2025-03-01 21:32:13,500 - INFO - Risultato per 'cereali tosano': Trovato in fatsecret, Nome: Whole Wheat Cereal
+2025-03-01 21:32:13,500 - INFO - [69/127] Testando: pane tosano
+2025-03-01 21:32:36,945 - INFO - Risultato per 'pane tosano': Trovato in fatsecret, Nome: Pane Toscano
+2025-03-01 21:32:36,945 - INFO - [70/127] Testando: yogurt eurospin
+2025-03-01 21:33:00,463 - INFO - Risultato per 'yogurt eurospin': Trovato in fatsecret, Nome: Yogurt
+2025-03-01 21:33:00,463 - INFO - [71/127] Testando: latte eurospin
+2025-03-01 21:33:49,643 - INFO - Risultato per 'latte eurospin': Trovato in fatsecret, Nome: Decaffeinated Latte Coffee
+2025-03-01 21:33:49,643 - INFO - [72/127] Testando: formaggio eurospin
+2025-03-01 21:34:13,166 - INFO - Risultato per 'formaggio eurospin': Trovato in fatsecret, Nome: Ravioli Formaggio
+2025-03-01 21:34:13,166 - INFO - [73/127] Testando: prosciutto eurospin
+2025-03-01 21:34:36,573 - INFO - Risultato per 'prosciutto eurospin': Trovato in fatsecret, Nome: Prosciutto
+2025-03-01 21:34:36,574 - INFO - [74/127] Testando: pasta eurospin
+2025-03-01 21:34:59,999 - INFO - Risultato per 'pasta eurospin': Trovato in fatsecret, Nome: Flavored Pasta
+2025-03-01 21:34:59,999 - INFO - [75/127] Testando: biscotti eurospin
+2025-03-01 21:35:23,440 - INFO - Risultato per 'biscotti eurospin': Trovato in fatsecret, Nome: Biscotti Cookie (Italian Sugar Cookie)
+2025-03-01 21:35:23,441 - INFO - [76/127] Testando: cereali eurospin
+2025-03-01 21:35:46,884 - INFO - Risultato per 'cereali eurospin': Trovato in fatsecret, Nome: Whole Wheat Cereal
+2025-03-01 21:35:46,885 - INFO - [77/127] Testando: pane eurospin
+2025-03-01 21:36:10,344 - INFO - Risultato per 'pane eurospin': Trovato in fatsecret, Nome: Mexican Sweet Roll (Pan Dulce)
+2025-03-01 21:36:10,344 - INFO - [78/127] Testando: yogurt conad
+2025-03-01 21:36:59,504 - INFO - Risultato per 'yogurt conad': Trovato in fatsecret, Nome: Yogurt
+2025-03-01 21:36:59,504 - INFO - [79/127] Testando: latte conad
+2025-03-01 21:37:22,945 - INFO - Risultato per 'latte conad': Trovato in fatsecret, Nome: Decaffeinated Latte Coffee
+2025-03-01 21:37:22,946 - INFO - [80/127] Testando: formaggio conad

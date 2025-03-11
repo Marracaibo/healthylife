@@ -1,0 +1,101 @@
+{
+  "query": "pizza",
+  "timestamp": "2025-03-07T18:05:49.434570",
+  "results": [
+    {
+      "food_id": "11088213",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "120",
+        "fat": "7.00",
+        "carbs": "12.00",
+        "protein": "3.00"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "11088213",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_description": "Per 100g - Calories: 120kcal | Fat: 7.00g | Carbs: 12.00g | Protein: 3.00g"
+      }
+    },
+    {
+      "food_id": "245444",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "325",
+        "fat": "12.00",
+        "carbs": "26.00",
+        "protein": "28.00"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "245444",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_description": "Per 100g - Calories: 325kcal | Fat: 12.00g | Carbs: 26.00g | Protein: 28.00g"
+      }
+    },
+    {
+      "food_id": "4780240",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "350",
+        "fat": "12.00",
+        "carbs": "45.00",
+        "protein": "15.00"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "4780240",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_description": "Per 100g - Calories: 350kcal | Fat: 12.00g | Carbs: 45.00g | Protein: 15.00g"
+      }
+    },
+    {
+      "food_id": "6028091",
+      "food_name": "Pizza Margherita",
+      "brand": "Brand",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "320",
+        "fat": "11.00",
+        "carbs": "40.00",
+        "protein": "15.00"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "6028091",
+        "food_name": "Pizza Margherita",
+        "food_type": "Brand",
+        "food_description": "Per 100g - Calories: 320kcal | Fat: 11.00g | Carbs: 40.00g | Protein: 15.00g"
+      }
+    },
+    {
+      "food_id": "2991195",
+      "food_name": "Margherita Pizza",
+      "brand": "Generic",
+      "source": "fatsecret",
+      "nutrition": {
+        "calories": "4205",
+        "fat": "80.50",
+        "carbs": "707.30",
+        "protein": "147.26"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "food_id": "2991195",
+        "food_name": "Margherita Pizza",
+        "food_type": "Generic",
+        "food_description": "Per 100g - Calories: 4205kcal | Fat: 80.50g | Carbs: 707.30g | Protein: 147.26g"
+      }
+    }
+  ]
+}

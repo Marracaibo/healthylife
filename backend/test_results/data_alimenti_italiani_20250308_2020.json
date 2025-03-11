@@ -1,0 +1,277 @@
+[
+  {
+    "food": "pasta al pomodoro",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pasta al pomodoro",
+        "found": false,
+        "time": 0.00016880035400390625
+      }
+    }
+  },
+  {
+    "food": "pasta alla carbonara",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pasta alla carbonara",
+        "found": false,
+        "time": 0.00012302398681640625
+      }
+    }
+  },
+  {
+    "food": "risotto ai funghi",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "risotto ai funghi",
+        "found": false,
+        "time": 0.00016164779663085938
+      }
+    }
+  },
+  {
+    "food": "lasagne alla bolognese",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "lasagne alla bolognese",
+        "found": false,
+        "time": 0.0001285076141357422
+      }
+    }
+  },
+  {
+    "food": "gnocchi al pesto",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gnocchi al pesto",
+        "found": false,
+        "time": 0.00010752677917480469
+      }
+    }
+  },
+  {
+    "food": "bistecca alla fiorentina",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "bistecca alla fiorentina",
+        "found": false,
+        "time": 9.72747802734375e-05
+      }
+    }
+  },
+  {
+    "food": "cotoletta alla milanese",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "cotoletta alla milanese",
+        "found": false,
+        "time": 0.00010657310485839844
+      }
+    }
+  },
+  {
+    "food": "ossobuco",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "ossobuco",
+        "found": false,
+        "time": 0.00013875961303710938
+      }
+    }
+  },
+  {
+    "food": "saltimbocca alla romana",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "saltimbocca alla romana",
+        "found": false,
+        "time": 0.00011587142944335938
+      }
+    }
+  },
+  {
+    "food": "vitello tonnato",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "vitello tonnato",
+        "found": false,
+        "time": 0.00011968612670898438
+      }
+    }
+  },
+  {
+    "food": "parmigiano reggiano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "parmigiano reggiano",
+        "found": false,
+        "time": 9.679794311523438e-05
+      }
+    }
+  },
+  {
+    "food": "mozzarella di bufala",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "mozzarella di bufala",
+        "found": false,
+        "time": 0.0001239776611328125
+      }
+    }
+  },
+  {
+    "food": "gorgonzola",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gorgonzola",
+        "found": false,
+        "time": 9.226799011230469e-05
+      }
+    }
+  },
+  {
+    "food": "pecorino romano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "pecorino romano",
+        "found": false,
+        "time": 9.894371032714844e-05
+      }
+    }
+  },
+  {
+    "food": "taleggio",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "taleggio",
+        "found": false,
+        "time": 0.0001583099365234375
+      }
+    }
+  },
+  {
+    "food": "prosciutto di parma",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "prosciutto di parma",
+        "found": false,
+        "time": 0.00027871131896972656
+      }
+    }
+  },
+  {
+    "food": "mortadella",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "mortadella",
+        "found": false,
+        "time": 0.0001366138458251953
+      }
+    }
+  },
+  {
+    "food": "salame milano",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "salame milano",
+        "found": false,
+        "time": 9.965896606445312e-05
+      }
+    }
+  },
+  {
+    "food": "bresaola",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "bresaola",
+        "found": false,
+        "time": 9.775161743164062e-05
+      }
+    }
+  },
+  {
+    "food": "speck",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "speck",
+        "found": false,
+        "time": 0.00011539459228515625
+      }
+    }
+  },
+  {
+    "food": "tiramisu00f9",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "tiramisu00f9",
+        "found": false,
+        "time": 8.988380432128906e-05
+      }
+    }
+  },
+  {
+    "food": "panna cotta",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "panna cotta",
+        "found": false,
+        "time": 0.00010061264038085938
+      }
+    }
+  },
+  {
+    "food": "cannoli siciliani",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "cannoli siciliani",
+        "found": false,
+        "time": 0.00010418891906738281
+      }
+    }
+  },
+  {
+    "food": "panettone",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "panettone",
+        "found": false,
+        "time": 0.00010228157043457031
+      }
+    }
+  },
+  {
+    "food": "gelato",
+    "results": {
+      "fatsecret": {
+        "service": "FatSecret",
+        "food": "gelato",
+        "found": false,
+        "time": 9.608268737792969e-05
+      }
+    }
+  }
+]

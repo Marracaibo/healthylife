@@ -1,0 +1,506 @@
+{
+  "query": "birr",
+  "timestamp": "2025-03-08T18:34:09.342339",
+  "results": [
+    {
+      "food_id": "55157298",
+      "food_name": "Birria Tacos",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "83381244",
+      "food_name": "Birria",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "93547887",
+      "food_name": "Birria",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "86811493",
+      "food_name": "Birria Quesa Tacos with Consommé (3 Pieces)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "86811534",
+      "food_name": "Birria Quesa Tacos with Consommé without Mexican Rice & Refried Beans - 3 Pieces",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "95402236",
+      "food_name": "Birria Sauce",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "63817030",
+      "food_name": "Birria Con Consome",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "73984159",
+      "food_name": "Birria Beef Ramen with Vegetables",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "86811026",
+      "food_name": "Birria Quesa Tacos with Consommé (2 Pieces)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "86811429",
+      "food_name": "Birria Quesa Tacos with Consommé without Mexican Rice & Refried Beans - 2 Pieces",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "62356",
+      "food_name": "Bier Sausage",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "86871138",
+      "food_name": "Naked Bird",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "84535681",
+      "food_name": "Super Bird",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69851",
+      "food_name": "Rice (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "2255775",
+      "food_name": "Steak (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "19064173",
+      "food_name": "Early Bird (Small)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69860",
+      "food_name": "Queso (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "13708797",
+      "food_name": "Surfin' Bird (Regular)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "25303672",
+      "food_name": "Premium Pils Bier",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "67150200",
+      "food_name": "Super Bird Omelette",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "87673",
+      "food_name": "Classic Jelly Bird Eggs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69853",
+      "food_name": "Black Beans (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69855",
+      "food_name": "Flour Tortilla (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69858",
+      "food_name": "Mild Sauce (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "17672158",
+      "food_name": "Angry Bird Snack Tacos",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "21097087",
+      "food_name": "Angry Bird Folded Flat",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "75158846",
+      "food_name": "Dirty Bird Classic Cocktails",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69682",
+      "food_name": "Veggie Burrito (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "595493",
+      "food_name": "Tiny Jelly Bird Eggs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "7375799",
+      "food_name": "Black Jelly Bird Eggs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "20045046",
+      "food_name": "Speckled Jelly Bird Eggs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "46951685",
+      "food_name": "Spiced Jelly Bird Eggs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "74965747",
+      "food_name": "Bottle Birra Moretti 12 oz",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69856",
+      "food_name": "Jack/Cheddar Blend (Half Bird)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "84659569",
+      "food_name": "Loaded Bird Dawg, 1 ea",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "3297836",
+      "food_name": "Organic Early Bird Multi Seed Bread",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "69938008",
+      "food_name": "The Super Bird (Add Sauce Choice)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "84659562",
+      "food_name": "Honey BBQ Bird Dawg, 1 ea",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "95629",
+      "food_name": "Frosted Chocolate Donuts",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "50758",
+      "food_name": "Pecan Spins (100 Calorie)",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "715164",
+      "food_name": "Honey Bun",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "845590",
+      "food_name": "Pecan Pie",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "20100501",
+      "food_name": "Chicken Breast",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "126008",
+      "food_name": "Boneless Skinless Chicken Thighs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "75929",
+      "food_name": "Strawberry Cereal Bars",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "367106",
+      "food_name": "Snowballs",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "1858378",
+      "food_name": "Seafood Mix",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "1688753",
+      "food_name": "Chocolate Cupcake",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "3102450",
+      "food_name": "Squid Ring",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    },
+    {
+      "food_id": "4200406",
+      "food_name": "Pork Loin Fritters",
+      "brand": null,
+      "serving_size": "100",
+      "serving_unit": "g",
+      "image_url": "",
+      "nutrition": {},
+      "source": "fatsecret"
+    }
+  ]
+}

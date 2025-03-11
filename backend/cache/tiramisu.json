@@ -1,0 +1,235 @@
+{
+  "query": "tiramisu",
+  "timestamp": "2025-03-07T17:43:50.238773",
+  "results": [
+    {
+      "food_id": "1234",
+      "food_name": "Tiramisu",
+      "brand": "Generic",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "3944",
+        "fat": "253.62",
+        "carbs": "340.15",
+        "protein": "66.47",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "food_description": "Per 1393g - Calories: 3944kcal | Fat: 253.62g | Carbs: 340.15g | Protein: 66.47g",
+        "food_id": "1234",
+        "food_name": "Tiramisu",
+        "food_type": "Generic",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/generic/tiramisu"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "19694235",
+      "food_name": "Tiramisu Cake Slice",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "330",
+        "fat": "19.00",
+        "carbs": "36.00",
+        "protein": "4.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Whole Foods Market",
+        "food_description": "Per 4 oz - Calories: 330kcal | Fat: 19.00g | Carbs: 36.00g | Protein: 4.00g",
+        "food_id": "19694235",
+        "food_name": "Tiramisu Cake Slice",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/whole-foods-market/tiramisu-cake-slice"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1265964",
+      "food_name": "Tiramisu",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "210",
+        "fat": "11.00",
+        "carbs": "27.00",
+        "protein": "2.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Bertucci's",
+        "food_description": "Per 1 serving - Calories: 210kcal | Fat: 11.00g | Carbs: 27.00g | Protein: 2.00g",
+        "food_id": "1265964",
+        "food_name": "Tiramisu",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/bertuccis/tiramisu"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "1952376",
+      "food_name": "Tiramisu Cake",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "170",
+        "fat": "11.00",
+        "carbs": "18.00",
+        "protein": "2.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Costco",
+        "food_description": "Per 1 piece - Calories: 170kcal | Fat: 11.00g | Carbs: 18.00g | Protein: 2.00g",
+        "food_id": "1952376",
+        "food_name": "Tiramisu Cake",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/costco/tiramisu-cake"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "28553891",
+      "food_name": "Tiramisu",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "210",
+        "fat": "7.00",
+        "carbs": "32.00",
+        "protein": "4.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Dessert Italiano",
+        "food_description": "Per 1 glass - Calories: 210kcal | Fat: 7.00g | Carbs: 32.00g | Protein: 4.00g",
+        "food_id": "28553891",
+        "food_name": "Tiramisu",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/dessert-italiano/tiramisu"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "9657703",
+      "food_name": "Tiramisu",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "150",
+        "fat": "6.00",
+        "carbs": "23.00",
+        "protein": "2.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Roma",
+        "food_description": "Per 2 oz - Calories: 150kcal | Fat: 6.00g | Carbs: 23.00g | Protein: 2.00g",
+        "food_id": "9657703",
+        "food_name": "Tiramisu",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/roma/tiramisu"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "74965344",
+      "food_name": "Tiramisu (Mini)",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "390",
+        "fat": "23.00",
+        "carbs": "35.00",
+        "protein": "5.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Maggiano's",
+        "food_description": "Per 1 serving - Calories: 390kcal | Fat: 23.00g | Carbs: 35.00g | Protein: 5.00g",
+        "food_id": "74965344",
+        "food_name": "Tiramisu (Mini)",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/maggianos/tiramisu-(mini)"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "70360700",
+      "food_name": "Tiramisu - Catering",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "470",
+        "fat": "27.00",
+        "carbs": "54.00",
+        "protein": "6.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "Olive Garden",
+        "food_description": "Per 1 slice - Calories: 470kcal | Fat: 27.00g | Carbs: 54.00g | Protein: 6.00g",
+        "food_id": "70360700",
+        "food_name": "Tiramisu - Catering",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/olive-garden/tiramisu-catering"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "68608877",
+      "food_name": "Tiramisu Dessert",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "260",
+        "fat": "12.00",
+        "carbs": "33.00",
+        "protein": "4.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "100g",
+      "original_data": {
+        "brand_name": "Specially Selected",
+        "food_description": "Per 100g - Calories: 260kcal | Fat: 12.00g | Carbs: 33.00g | Protein: 4.00g",
+        "food_id": "68608877",
+        "food_name": "Tiramisu Dessert",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/specially-selected/tiramisu-dessert"
+      },
+      "enriched": true
+    },
+    {
+      "food_id": "71516136",
+      "food_name": "Tiramisu",
+      "brand": "Brand",
+      "source": "hybrid",
+      "nutrition": {
+        "calories": "600",
+        "fat": "38.00",
+        "carbs": "49.00",
+        "protein": "9.00",
+        "fiber": "0.6"
+      },
+      "serving_size": "serving",
+      "original_data": {
+        "brand_name": "North Italia",
+        "food_description": "Per 1 dessert - Calories: 600kcal | Fat: 38.00g | Carbs: 49.00g | Protein: 9.00g",
+        "food_id": "71516136",
+        "food_name": "Tiramisu",
+        "food_type": "Brand",
+        "food_url": "https://www.fatsecret.com/calories-nutrition/north-italia/tiramisu"
+      },
+      "enriched": true
+    }
+  ]
+}

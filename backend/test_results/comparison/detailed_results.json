@@ -1,0 +1,3612 @@
+{
+  "banana": {
+    "usda": {
+      "response_time": 2.106454372406006,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2012128,
+        "food_name": "BANANA",
+        "brand_name": "BETTER'N PEANUT BUTTER",
+        "nutrients": {
+          "protein": 12.5,
+          "fat": 3.12,
+          "carbs": 40.6,
+          "calories": 312
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2012128,
+          "food_name": "BANANA",
+          "brand_name": "BETTER'N PEANUT BUTTER",
+          "nutrients": {
+            "protein": 12.5,
+            "fat": 3.12,
+            "carbs": 40.6,
+            "calories": 312
+          }
+        },
+        {
+          "food_id": 2011468,
+          "food_name": "BANANA",
+          "brand_name": "NUTTY & FRUITY",
+          "nutrients": {
+            "protein": 0.0,
+            "fat": 0.0,
+            "carbs": 78.6,
+            "calories": 336
+          }
+        },
+        {
+          "food_id": 173945,
+          "food_name": "Bananas, dehydrated, or banana powder",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 346,
+            "protein": 3.89,
+            "fat": 1.81,
+            "carbs": 88.3
+          }
+        },
+        {
+          "food_id": 2709225,
+          "food_name": "Banana, baked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.82,
+            "fat": 0.166,
+            "carbs": 32.43,
+            "calories": 161
+          }
+        },
+        {
+          "food_id": 2709224,
+          "food_name": "Banana, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.74,
+            "fat": 0.073,
+            "carbs": 22.71,
+            "calories": 97
+          }
+        },
+        {
+          "food_id": 2709200,
+          "food_name": "Banana chips",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.3,
+            "fat": 0.63,
+            "carbs": 58.4,
+            "calories": 519
+          }
+        },
+        {
+          "food_id": 2709342,
+          "food_name": "Banana nectar",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.26,
+            "fat": 0.026,
+            "carbs": 18.01,
+            "calories": 74
+          }
+        },
+        {
+          "food_id": 2705697,
+          "food_name": "Banana pudding",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.57,
+            "fat": 0.617,
+            "carbs": 28,
+            "calories": 160
+          }
+        },
+        {
+          "food_id": 2705660,
+          "food_name": "Banana split",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.42,
+            "fat": 0.296,
+            "carbs": 32.59,
+            "calories": 199
+          }
+        },
+        {
+          "food_id": 173944,
+          "food_name": "Bananas, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.33,
+            "calories": 89.0,
+            "carbs": 22.8,
+            "protein": 1.09
+          }
+        },
+        {
+          "food_id": 1105073,
+          "food_name": "Bananas, overripe, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.22,
+            "protein": 0.73,
+            "carbs": 18.0,
+            "calories": 357
+          }
+        },
+        {
+          "food_id": 2707856,
+          "food_name": "Cake or cupcake, banana",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.47,
+            "fat": 6.938,
+            "carbs": 53.07,
+            "calories": 379
+          }
+        },
+        {
+          "food_id": 167629,
+          "food_name": "Melon, banana (Navajo)",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.84,
+            "calories": 21.0,
+            "fat": 0.2,
+            "carbs": 4.06
+          }
+        },
+        {
+          "food_id": 169394,
+          "food_name": "Pepper, banana, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.66,
+            "fat": 0.0,
+            "carbs": 5.35,
+            "calories": 113
+          }
+        },
+        {
+          "food_id": 2709802,
+          "food_name": "Peppers, banana, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.66,
+            "fat": 0.243,
+            "carbs": 5.35,
+            "calories": 27
+          }
+        },
+        {
+          "food_id": 2708004,
+          "food_name": "Pie, banana cream",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.42,
+            "fat": 1.145,
+            "carbs": 32.35,
+            "calories": 284
+          }
+        },
+        {
+          "food_id": 168849,
+          "food_name": "Snacks, banana chips",
+          "brand_name": "",
+          "nutrients": {
+            "carbs": 58.4,
+            "calories": 2170.0,
+            "fat": 29.0,
+            "protein": 2.3
+          }
+        },
+        {
+          "food_id": 171351,
+          "food_name": "Babyfood, apple-banana juice",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 213,
+            "fat": 0.034,
+            "carbs": 12.3,
+            "protein": 0.2
+          }
+        },
+        {
+          "food_id": 167732,
+          "food_name": "Babyfood, banana no tapioca, strained",
+          "brand_name": "",
+          "nutrients": {
+            "carbs": 21.3,
+            "calories": 381,
+            "protein": 1.0,
+            "fat": 0.041
+          }
+        },
+        {
+          "food_id": 170962,
+          "food_name": "Babyfood, juice, orange and banana",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 50.0,
+            "fat": 0.1,
+            "carbs": 11.9,
+            "protein": 0.7
+          }
+        },
+        {
+          "food_id": 2709365,
+          "food_name": "Baby Toddler bananas, Stage 1",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1,
+            "fat": 0.041,
+            "carbs": 21.34,
+            "calories": 91
+          }
+        },
+        {
+          "food_id": 2709366,
+          "food_name": "Baby Toddler bananas, Stage 2",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1,
+            "fat": 0.041,
+            "carbs": 21.34,
+            "calories": 91
+          }
+        },
+        {
+          "food_id": 167733,
+          "food_name": "Babyfood, banana apple dessert, strained",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.058,
+            "carbs": 16.3,
+            "protein": 0.3,
+            "calories": 285
+          }
+        },
+        {
+          "food_id": 170999,
+          "food_name": "Babyfood, banana with mixed berries, strained",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.01,
+            "calories": 92.0,
+            "fat": 0.123,
+            "carbs": 21.3
+          }
+        },
+        {
+          "food_id": 170965,
+          "food_name": "Babyfood, cereal, mixed, with bananas, dry",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 4.6,
+            "calories": 391,
+            "carbs": 77.1,
+            "protein": 10.7
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6637940406799316,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_banana",
+        "food_name": "banana",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 23.2,
+          "fat": 0.3,
+          "fiber": 2.6,
+          "sugar": 12.3
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_banana",
+          "food_name": "banana",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 23.2,
+            "fat": 0.3,
+            "fiber": 2.6,
+            "sugar": 12.3
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "banana",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 2.106454372406006,
+      "api_ninjas_time": 0.6637940406799316,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 312,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 12.5,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 40.6,
+          "api_ninjas": 23.2
+        },
+        "fat": {
+          "usda": 3.12,
+          "api_ninjas": 0.3
+        }
+      }
+    }
+  },
+  "apple": {
+    "usda": {
+      "response_time": 1.4632771015167236,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 454004,
+        "food_name": "APPLE",
+        "brand_name": "",
+        "nutrients": {
+          "fat": 0.65,
+          "protein": 0.0,
+          "carbs": 14.3,
+          "calories": 52.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 454004,
+          "food_name": "APPLE",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.65,
+            "protein": 0.0,
+            "carbs": 14.3,
+            "calories": 52.0
+          }
+        },
+        {
+          "food_id": 2117388,
+          "food_name": "APPLE",
+          "brand_name": "BEST CHOICE",
+          "nutrients": {
+            "protein": 0.0,
+            "fat": 0.0,
+            "carbs": 11.7,
+            "calories": 46.0
+          }
+        },
+        {
+          "food_id": 2124902,
+          "food_name": "APPLE",
+          "brand_name": "PINK LADY",
+          "nutrients": {
+            "protein": 0.41,
+            "fat": 0.0,
+            "carbs": 14.0,
+            "calories": 54.0
+          }
+        },
+        {
+          "food_id": 2709294,
+          "food_name": "Apple, candied",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.34,
+            "fat": 0.908,
+            "carbs": 29.61,
+            "calories": 134
+          }
+        },
+        {
+          "food_id": 2709215,
+          "food_name": "Apple, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.17,
+            "fat": 0.051,
+            "carbs": 14.8,
+            "calories": 61
+          }
+        },
+        {
+          "food_id": 2709196,
+          "food_name": "Apple, dried",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.93,
+            "fat": 0.093,
+            "carbs": 65.89,
+            "calories": 243
+          }
+        },
+        {
+          "food_id": 2708023,
+          "food_name": "Crisp, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.81,
+            "fat": 0.718,
+            "carbs": 30.18,
+            "calories": 215
+          }
+        },
+        {
+          "food_id": 2709220,
+          "food_name": "Apple, baked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.32,
+            "fat": 0.143,
+            "carbs": 22.7,
+            "calories": 113
+          }
+        },
+        {
+          "food_id": 2709319,
+          "food_name": "Apple cider",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.1,
+            "fat": 0.039,
+            "carbs": 11.3,
+            "calories": 46
+          }
+        },
+        {
+          "food_id": 2708019,
+          "food_name": "Cobbler, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.05,
+            "fat": 1.078,
+            "carbs": 33.56,
+            "calories": 217
+          }
+        },
+        {
+          "food_id": 174988,
+          "food_name": "Croissants, apple",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 254,
+            "fat": 0.628,
+            "carbs": 37.1,
+            "protein": 7.4
+          }
+        },
+        {
+          "food_id": 2707995,
+          "food_name": "Pie, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.7,
+            "fat": 2.028,
+            "carbs": 37.55,
+            "calories": 296
+          }
+        },
+        {
+          "food_id": 2708039,
+          "food_name": "Strudel, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.96,
+            "fat": 0.501,
+            "carbs": 37.18,
+            "calories": 281
+          }
+        },
+        {
+          "food_id": 175032,
+          "food_name": "Strudel, apple",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 274,
+            "protein": 3.3,
+            "fat": 2.04,
+            "carbs": 41.1
+          }
+        },
+        {
+          "food_id": 2709219,
+          "food_name": "Apple pie filling",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.1,
+            "fat": 0,
+            "carbs": 26.1,
+            "calories": 100
+          }
+        },
+        {
+          "food_id": 2709320,
+          "food_name": "Apple juice, 100%",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.09,
+            "fat": 0.039,
+            "carbs": 11.34,
+            "calories": 48
+          }
+        },
+        {
+          "food_id": 2709293,
+          "food_name": "Apple salad with dressing",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.45,
+            "fat": 8.98,
+            "carbs": 12.2,
+            "calories": 180
+          }
+        },
+        {
+          "food_id": 170959,
+          "food_name": "Babyfood, juice, apple",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.1,
+            "calories": 47.0,
+            "protein": 0.0,
+            "carbs": 11.7
+          }
+        },
+        {
+          "food_id": 2707855,
+          "food_name": "Cake or cupcake, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.41,
+            "fat": 6.936,
+            "carbs": 52.52,
+            "calories": 376
+          }
+        },
+        {
+          "food_id": 168816,
+          "food_name": "Fruit butters, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.39,
+            "fat": 0.053,
+            "carbs": 42.5,
+            "calories": 724
+          }
+        },
+        {
+          "food_id": 168171,
+          "food_name": "Rose-apples, raw",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 25.0,
+            "fat": 0.3,
+            "protein": 0.6,
+            "carbs": 5.7
+          }
+        },
+        {
+          "food_id": 2709374,
+          "food_name": "Baby Toddler juice, apple",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0,
+            "fat": 0.031,
+            "carbs": 11.7,
+            "calories": 47
+          }
+        },
+        {
+          "food_id": 2709662,
+          "food_name": "Carrots, raw, salad with apples",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.85,
+            "fat": 9.489,
+            "carbs": 8.59,
+            "calories": 181
+          }
+        },
+        {
+          "food_id": 2707996,
+          "food_name": "Pie, apple, fast food",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3,
+            "fat": 5.376,
+            "carbs": 42.6,
+            "calories": 316
+          }
+        },
+        {
+          "food_id": 2709321,
+          "food_name": "Apple juice, 100%, with calcium added",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.12,
+            "fat": 0.051,
+            "carbs": 11.49,
+            "calories": 48
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6681942939758301,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_apple",
+        "food_name": "apple",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 14.1,
+          "fat": 0.2,
+          "fiber": 2.4,
+          "sugar": 10.3
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_apple",
+          "food_name": "apple",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 14.1,
+            "fat": 0.2,
+            "fiber": 2.4,
+            "sugar": 10.3
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "apple",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.4632771015167236,
+      "api_ninjas_time": 0.6681942939758301,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 52.0,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 0.0,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 14.3,
+          "api_ninjas": 14.1
+        },
+        "fat": {
+          "usda": 0.65,
+          "api_ninjas": 0.2
+        }
+      }
+    }
+  },
+  "chicken breast": {
+    "usda": {
+      "response_time": 1.572411060333252,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2187885,
+        "food_name": "CHICKEN BREAST",
+        "brand_name": "GIANT EAGLE",
+        "nutrients": {
+          "protein": 20.4,
+          "fat": 4.58,
+          "carbs": 1.06,
+          "calories": 165
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2187885,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "GIANT EAGLE",
+          "nutrients": {
+            "protein": 20.4,
+            "fat": 4.58,
+            "carbs": 1.06,
+            "calories": 165
+          }
+        },
+        {
+          "food_id": 2092152,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "TYSON",
+          "nutrients": {
+            "protein": 14.3,
+            "fat": 0.0,
+            "carbs": 3.57,
+            "calories": 143
+          }
+        },
+        {
+          "food_id": 2125872,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "JENNIE-O",
+          "nutrients": {
+            "protein": 19.6,
+            "fat": 0.0,
+            "carbs": 1.79,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 2055943,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "BUTTERFIELD FARMS",
+          "nutrients": {
+            "protein": 21.4,
+            "fat": 0.0,
+            "carbs": 0.0,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 2096160,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "H-E-B",
+          "nutrients": {
+            "protein": 11.4,
+            "fat": 0.65,
+            "carbs": 5.71,
+            "calories": 96.0
+          }
+        },
+        {
+          "food_id": 2066523,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "EDDY FOODS",
+          "nutrients": {
+            "protein": 17.0,
+            "fat": 0.45,
+            "carbs": 3.57,
+            "calories": 116
+          }
+        },
+        {
+          "food_id": 1648039,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "OSCAR MAYER",
+          "nutrients": {
+            "protein": 17.9,
+            "fat": 0.0,
+            "carbs": 3.57,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 2620738,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "SHOPRITE",
+          "nutrients": {
+            "protein": 17.9,
+            "fat": 0.89,
+            "carbs": 1.79,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 1935739,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "HILLSHIRE FARM",
+          "nutrients": {
+            "protein": 18.4,
+            "fat": 0.0,
+            "carbs": 2.04,
+            "calories": 92.0
+          }
+        },
+        {
+          "food_id": 2279206,
+          "food_name": "CHICKEN BREAST",
+          "brand_name": "FAREWAY",
+          "nutrients": {
+            "protein": 21.4,
+            "fat": 0.0,
+            "carbs": 0.0,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 2705964,
+          "food_name": "Chicken breast, rotisserie, skin not eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 28.04,
+            "fat": 0.49,
+            "carbs": 0,
+            "calories": 144
+          }
+        },
+        {
+          "food_id": 171515,
+          "food_name": "Chicken breast tenders, breaded, uncooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 14.7,
+            "fat": 3.26,
+            "carbs": 15.0,
+            "calories": 1100.0
+          }
+        },
+        {
+          "food_id": 174608,
+          "food_name": "Chicken breast, roll, oven-roasted",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 1.46,
+            "carbs": 1.79,
+            "protein": 14.6,
+            "calories": 562
+          }
+        },
+        {
+          "food_id": 2705963,
+          "food_name": "Chicken breast, rotisserie, skin eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 26.37,
+            "fat": 0.945,
+            "carbs": 0.09,
+            "calories": 175
+          }
+        },
+        {
+          "food_id": 2705971,
+          "food_name": "Chicken breast, sauteed, skin eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 25.72,
+            "fat": 2.451,
+            "carbs": 0,
+            "calories": 206
+          }
+        },
+        {
+          "food_id": 2705972,
+          "food_name": "Chicken breast, sauteed, skin not eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 29.62,
+            "fat": 1.327,
+            "carbs": 0,
+            "calories": 176
+          }
+        },
+        {
+          "food_id": 2705965,
+          "food_name": "Chicken breast, stewed, skin eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 24.7,
+            "fat": 1.616,
+            "carbs": 0,
+            "calories": 181
+          }
+        },
+        {
+          "food_id": 2705966,
+          "food_name": "Chicken breast, stewed, skin not eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 27.96,
+            "fat": 0.527,
+            "carbs": 0,
+            "calories": 149
+          }
+        },
+        {
+          "food_id": 2646170,
+          "food_name": "Chicken, breast, boneless, skinless, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.296,
+            "protein": 22.5,
+            "carbs": 0.0,
+            "calories": 112
+          }
+        },
+        {
+          "food_id": 171514,
+          "food_name": "Chicken breast tenders, breaded, cooked, microwaved",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 2.79,
+            "protein": 16.4,
+            "calories": 252,
+            "carbs": 17.6
+          }
+        },
+        {
+          "food_id": 2705969,
+          "food_name": "Chicken breast, grilled with sauce, skin eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 21.15,
+            "fat": 2.16,
+            "carbs": 7.34,
+            "calories": 202
+          }
+        },
+        {
+          "food_id": 2705970,
+          "food_name": "Chicken breast, grilled with sauce, skin not eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 24.33,
+            "fat": 1.242,
+            "carbs": 7.34,
+            "calories": 178
+          }
+        },
+        {
+          "food_id": 172945,
+          "food_name": "Oscar Mayer, Chicken Breast (honey glazed)",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 1.5,
+            "protein": 19.8,
+            "carbs": 4.3,
+            "calories": 454
+          }
+        },
+        {
+          "food_id": 2705980,
+          "food_name": "Chicken breast, baked, coated, skin / coating eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 23.75,
+            "fat": 2.324,
+            "carbs": 4.01,
+            "calories": 207
+          }
+        },
+        {
+          "food_id": 2705981,
+          "food_name": "Chicken breast, baked, coated, skin / coating not eaten",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 29.62,
+            "fat": 1.327,
+            "carbs": 0,
+            "calories": 176
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6493368148803711,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_chicken_breast",
+        "food_name": "chicken breast",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 0.0,
+          "fat": 3.5,
+          "fiber": 0.0,
+          "sugar": 0.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_chicken_breast",
+          "food_name": "chicken breast",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 0.0,
+            "fat": 3.5,
+            "fiber": 0.0,
+            "sugar": 0.0
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "chicken breast",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.572411060333252,
+      "api_ninjas_time": 0.6493368148803711,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 165,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 20.4,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 1.06,
+          "api_ninjas": 0.0
+        },
+        "fat": {
+          "usda": 4.58,
+          "api_ninjas": 3.5
+        }
+      }
+    }
+  },
+  "rice": {
+    "usda": {
+      "response_time": 1.702817440032959,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 356554,
+        "food_name": "RICE",
+        "brand_name": "",
+        "nutrients": {
+          "fat": 0.0,
+          "protein": 3.47,
+          "carbs": 26.4,
+          "calories": 139
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 356554,
+          "food_name": "RICE",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.0,
+            "protein": 3.47,
+            "carbs": 26.4,
+            "calories": 139
+          }
+        },
+        {
+          "food_id": 2077766,
+          "food_name": "RICE",
+          "brand_name": "WINDMILL RICE",
+          "nutrients": {
+            "protein": 6.67,
+            "fat": 0.0,
+            "carbs": 77.8,
+            "calories": 356
+          }
+        },
+        {
+          "food_id": 356582,
+          "food_name": "RICE",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.0,
+            "protein": 6.67,
+            "carbs": 80.0,
+            "calories": 356
+          }
+        },
+        {
+          "food_id": 1888780,
+          "food_name": "RICE",
+          "brand_name": "TEXAS",
+          "nutrients": {
+            "protein": 6.67,
+            "fat": 0.0,
+            "carbs": 80.0,
+            "calories": 356
+          }
+        },
+        {
+          "food_id": 2021679,
+          "food_name": "RICE",
+          "brand_name": "RICO",
+          "nutrients": {
+            "protein": 6.38,
+            "fat": 0.0,
+            "carbs": 78.7,
+            "calories": 340
+          }
+        },
+        {
+          "food_id": 2116789,
+          "food_name": "RICE",
+          "brand_name": "RICESELECT",
+          "nutrients": {
+            "protein": 6.67,
+            "fat": 0.0,
+            "carbs": 75.6,
+            "calories": 333
+          }
+        },
+        {
+          "food_id": 2443255,
+          "food_name": "RICE",
+          "brand_name": "WEIS",
+          "nutrients": {
+            "protein": 6.67,
+            "fat": 0.0,
+            "carbs": 80.0,
+            "calories": 356
+          }
+        },
+        {
+          "food_id": 2709078,
+          "food_name": "Dirty rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.12,
+            "fat": 0.702,
+            "carbs": 17.25,
+            "calories": 112
+          }
+        },
+        {
+          "food_id": 2709089,
+          "food_name": "Rice dressing",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.98,
+            "fat": 0.984,
+            "carbs": 17.61,
+            "calories": 110
+          }
+        },
+        {
+          "food_id": 2708163,
+          "food_name": "Crackers, rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10,
+            "fat": 1.641,
+            "carbs": 82.64,
+            "calories": 416
+          }
+        },
+        {
+          "food_id": 2708166,
+          "food_name": "Rice paper",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.91,
+            "fat": 0.322,
+            "carbs": 72.26,
+            "calories": 323
+          }
+        },
+        {
+          "food_id": 2709077,
+          "food_name": "Rice pilaf",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.29,
+            "fat": 1.117,
+            "carbs": 24.08,
+            "calories": 137
+          }
+        },
+        {
+          "food_id": 2708162,
+          "food_name": "Rice cake",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 7.1,
+            "fat": 1.52,
+            "carbs": 81.1,
+            "calories": 392
+          }
+        },
+        {
+          "food_id": 2708161,
+          "food_name": "Chips, rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 8.2,
+            "fat": 0.98,
+            "carbs": 81.5,
+            "calories": 384
+          }
+        },
+        {
+          "food_id": 2708958,
+          "food_name": "Adobo, with rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 17.69,
+            "fat": 1.022,
+            "carbs": 8.86,
+            "calories": 181
+          }
+        },
+        {
+          "food_id": 2707794,
+          "food_name": "Bread, rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.31,
+            "fat": 0.516,
+            "carbs": 45.78,
+            "calories": 248
+          }
+        },
+        {
+          "food_id": 2708415,
+          "food_name": "Cream of rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.17,
+            "fat": 0.025,
+            "carbs": 15.28,
+            "calories": 69
+          }
+        },
+        {
+          "food_id": 2706726,
+          "food_name": "Gumbo with rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 8.16,
+            "fat": 0.793,
+            "carbs": 6.55,
+            "calories": 89
+          }
+        },
+        {
+          "food_id": 2706879,
+          "food_name": "Gumbo, no rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 8.54,
+            "fat": 0.849,
+            "carbs": 4.03,
+            "calories": 83
+          }
+        },
+        {
+          "food_id": 2705685,
+          "food_name": "Pudding, rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.23,
+            "fat": 0.129,
+            "carbs": 18.39,
+            "calories": 108
+          }
+        },
+        {
+          "food_id": 173161,
+          "food_name": "Rice crackers",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.0,
+            "calories": 416,
+            "fat": 5.0,
+            "carbs": 82.6
+          }
+        },
+        {
+          "food_id": 2709071,
+          "food_name": "Rice croquette",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.35,
+            "fat": 1.756,
+            "carbs": 20.08,
+            "calories": 154
+          }
+        },
+        {
+          "food_id": 2705411,
+          "food_name": "Rice milk",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 0.28,
+            "fat": 0.313,
+            "carbs": 9.17,
+            "calories": 47
+          }
+        },
+        {
+          "food_id": 2709090,
+          "food_name": "Rice with raisins",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.65,
+            "fat": 0.766,
+            "carbs": 32.13,
+            "calories": 162
+          }
+        },
+        {
+          "food_id": 2709146,
+          "food_name": "Soup, rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.54,
+            "fat": 0.299,
+            "carbs": 6.78,
+            "calories": 51
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6307768821716309,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_rice",
+        "food_name": "rice",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 28.4,
+          "fat": 0.3,
+          "fiber": 0.4,
+          "sugar": 0.1
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_rice",
+          "food_name": "rice",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 28.4,
+            "fat": 0.3,
+            "fiber": 0.4,
+            "sugar": 0.1
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "rice",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.702817440032959,
+      "api_ninjas_time": 0.6307768821716309,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 139,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 3.47,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 26.4,
+          "api_ninjas": 28.4
+        },
+        "fat": {
+          "usda": 0.0,
+          "api_ninjas": 0.3
+        }
+      }
+    }
+  },
+  "pasta": {
+    "usda": {
+      "response_time": 1.6067790985107422,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2071343,
+        "food_name": "PASTA",
+        "brand_name": "FAMILY FAVORITES",
+        "nutrients": {
+          "protein": 11.3,
+          "fat": 0.0,
+          "carbs": 66.0,
+          "calories": 340
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2071343,
+          "food_name": "PASTA",
+          "brand_name": "FAMILY FAVORITES",
+          "nutrients": {
+            "protein": 11.3,
+            "fat": 0.0,
+            "carbs": 66.0,
+            "calories": 340
+          }
+        },
+        {
+          "food_id": 465736,
+          "food_name": "PASTA",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.0,
+            "protein": 12.5,
+            "carbs": 78.6,
+            "calories": 375
+          }
+        },
+        {
+          "food_id": 2063604,
+          "food_name": "PASTA",
+          "brand_name": "MUHLEN",
+          "nutrients": {
+            "protein": 12.5,
+            "fat": 0.0,
+            "carbs": 69.6,
+            "calories": 357
+          }
+        },
+        {
+          "food_id": 1664662,
+          "food_name": "PASTA",
+          "brand_name": "CAMPBELL'S",
+          "nutrients": {
+            "protein": 3.51,
+            "fat": 0.29,
+            "carbs": 14.6,
+            "calories": 94.0
+          }
+        },
+        {
+          "food_id": 2432724,
+          "food_name": "PASTA",
+          "brand_name": "BRANDLESS",
+          "nutrients": {
+            "protein": 12.5,
+            "fat": 0.0,
+            "carbs": 71.4,
+            "calories": 357
+          }
+        },
+        {
+          "food_id": 2069040,
+          "food_name": "PASTA",
+          "brand_name": "BERTAGNI",
+          "nutrients": {
+            "protein": 11.2,
+            "fat": 6.25,
+            "carbs": 33.8,
+            "calories": 300
+          }
+        },
+        {
+          "food_id": 1902154,
+          "food_name": "PASTA",
+          "brand_name": "MAESTRI FOODS",
+          "nutrients": {
+            "protein": 12.0,
+            "fat": 0.07,
+            "carbs": 77.5,
+            "calories": 368
+          }
+        },
+        {
+          "food_id": 1855647,
+          "food_name": "PASTA",
+          "brand_name": "MUELLER'S",
+          "nutrients": {
+            "protein": 12.5,
+            "fat": 0.0,
+            "carbs": 73.2,
+            "calories": 357
+          }
+        },
+        {
+          "food_id": 2708357,
+          "food_name": "Pasta, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.76,
+            "fat": 0.324,
+            "carbs": 30.68,
+            "calories": 157
+          }
+        },
+        {
+          "food_id": 2708930,
+          "food_name": "Flavored pasta",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.47,
+            "fat": 0.719,
+            "carbs": 14.45,
+            "calories": 87
+          }
+        },
+        {
+          "food_id": 2708351,
+          "food_name": "Pasta, vegetable, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.52,
+            "fat": 0.044,
+            "carbs": 26.55,
+            "calories": 128
+          }
+        },
+        {
+          "food_id": 2708359,
+          "food_name": "Pasta, gluten free",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.2,
+            "fat": 0.329,
+            "carbs": 38.05,
+            "calories": 179
+          }
+        },
+        {
+          "food_id": 2708828,
+          "food_name": "Pasta with sauce, NFS",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.86,
+            "fat": 0.411,
+            "carbs": 19.15,
+            "calories": 125
+          }
+        },
+        {
+          "food_id": 169736,
+          "food_name": "Pasta, dry, enriched",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 371,
+            "fat": 1.51,
+            "carbs": 74.7,
+            "protein": 13.0
+          }
+        },
+        {
+          "food_id": 168927,
+          "food_name": "Pasta, dry, unenriched",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 13.0,
+            "fat": 0.564,
+            "calories": 371,
+            "carbs": 74.7
+          }
+        },
+        {
+          "food_id": 2706593,
+          "food_name": "Stew, beef, with pasta",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 9.76,
+            "fat": 0.267,
+            "carbs": 10.81,
+            "calories": 132
+          }
+        },
+        {
+          "food_id": 2706677,
+          "food_name": "Stew, chicken, with pasta",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.24,
+            "fat": 0.566,
+            "carbs": 10.81,
+            "calories": 108
+          }
+        },
+        {
+          "food_id": 2706520,
+          "food_name": "Stew, pork, with pasta",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 9.35,
+            "fat": 0.72,
+            "carbs": 10.81,
+            "calories": 133
+          }
+        },
+        {
+          "food_id": 2710136,
+          "food_name": "Toddler meal, pasta",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.08,
+            "fat": 0.209,
+            "carbs": 16.11,
+            "calories": 101
+          }
+        },
+        {
+          "food_id": 2708358,
+          "food_name": "Pasta, whole grain, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.95,
+            "fat": 0.571,
+            "carbs": 29.89,
+            "calories": 148
+          }
+        },
+        {
+          "food_id": 2708827,
+          "food_name": "Pasta with vegetables, no sauce or dressing",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.46,
+            "fat": 1.332,
+            "carbs": 23.1,
+            "calories": 144
+          }
+        },
+        {
+          "food_id": 2708855,
+          "food_name": "Pasta with cream sauce, restaurant",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.72,
+            "fat": 3.059,
+            "carbs": 15.56,
+            "calories": 204
+          }
+        },
+        {
+          "food_id": 172266,
+          "food_name": "Babyfood, dinner, pasta with vegetables",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 60.0,
+            "fat": 1.23,
+            "carbs": 8.4,
+            "protein": 1.7
+          }
+        },
+        {
+          "food_id": 2709082,
+          "food_name": "Flavored rice and pasta mixture",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.68,
+            "fat": 1.087,
+            "carbs": 19.11,
+            "calories": 118
+          }
+        },
+        {
+          "food_id": 2708947,
+          "food_name": "Macaroni or pasta salad with cheese",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 6.89,
+            "fat": 5.987,
+            "carbs": 21.78,
+            "calories": 246
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.36170506477355957,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_pasta",
+        "food_name": "pasta",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 31.3,
+          "fat": 0.9,
+          "fiber": 1.8,
+          "sugar": 0.6
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_pasta",
+          "food_name": "pasta",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 31.3,
+            "fat": 0.9,
+            "fiber": 1.8,
+            "sugar": 0.6
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "pasta",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.6067790985107422,
+      "api_ninjas_time": 0.36170506477355957,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 340,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 11.3,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 66.0,
+          "api_ninjas": 31.3
+        },
+        "fat": {
+          "usda": 0.0,
+          "api_ninjas": 0.9
+        }
+      }
+    }
+  },
+  "broccoli": {
+    "usda": {
+      "response_time": 1.5944700241088867,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2549992,
+        "food_name": "BROCCOLI",
+        "brand_name": "GREAT VALUE",
+        "nutrients": {
+          "protein": 2.35,
+          "fat": 0.0,
+          "carbs": 4.71,
+          "calories": 24.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2549992,
+          "food_name": "BROCCOLI",
+          "brand_name": "GREAT VALUE",
+          "nutrients": {
+            "protein": 2.35,
+            "fat": 0.0,
+            "carbs": 4.71,
+            "calories": 24.0
+          }
+        },
+        {
+          "food_id": 1935906,
+          "food_name": "BROCCOLI",
+          "brand_name": "EAT SMART",
+          "nutrients": {
+            "protein": 3.53,
+            "fat": 0.0,
+            "carbs": 4.71,
+            "calories": 29.0
+          }
+        },
+        {
+          "food_id": 539572,
+          "food_name": "BROCCOLI",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.0,
+            "protein": 2.7,
+            "carbs": 5.41,
+            "calories": 34.0
+          }
+        },
+        {
+          "food_id": 2384291,
+          "food_name": "BROCCOLI",
+          "brand_name": "MAMBO",
+          "nutrients": {
+            "protein": 1.18,
+            "fat": 0.0,
+            "carbs": 3.53,
+            "calories": 29.0
+          }
+        },
+        {
+          "food_id": 2325759,
+          "food_name": "BROCCOLI",
+          "brand_name": "GOOD & GATHER",
+          "nutrients": {
+            "protein": 2.35,
+            "fat": 0.0,
+            "carbs": 4.71,
+            "calories": 24.0
+          }
+        },
+        {
+          "food_id": 2709656,
+          "food_name": "Fried broccoli",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.28,
+            "fat": 4.819,
+            "carbs": 22.41,
+            "calories": 223
+          }
+        },
+        {
+          "food_id": 2709643,
+          "food_name": "Broccoli, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.57,
+            "fat": 0.017,
+            "carbs": 6.27,
+            "calories": 39
+          }
+        },
+        {
+          "food_id": 2706738,
+          "food_name": "Beef and broccoli",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.43,
+            "fat": 3.37,
+            "carbs": 5.09,
+            "calories": 160
+          }
+        },
+        {
+          "food_id": 747447,
+          "food_name": "Broccoli, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.07,
+            "calories": 31.0,
+            "carbs": 3.8,
+            "protein": 2.57
+          }
+        },
+        {
+          "food_id": 170379,
+          "food_name": "Broccoli, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.37,
+            "calories": 34.0,
+            "carbs": 6.64,
+            "protein": 2.82
+          }
+        },
+        {
+          "food_id": 170382,
+          "food_name": "Broccoli raab, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 104,
+            "fat": 0.52,
+            "carbs": 3.12,
+            "protein": 3.83
+          }
+        },
+        {
+          "food_id": 170381,
+          "food_name": "Broccoli raab, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.49,
+            "carbs": 2.85,
+            "calories": 92.0,
+            "protein": 3.17
+          }
+        },
+        {
+          "food_id": 2709572,
+          "food_name": "Broccoli raab, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.17,
+            "fat": 0.218,
+            "carbs": 2.85,
+            "calories": 22
+          }
+        },
+        {
+          "food_id": 2709573,
+          "food_name": "Broccoli raab, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.2,
+            "fat": 0.981,
+            "carbs": 2.88,
+            "calories": 46
+          }
+        },
+        {
+          "food_id": 2709813,
+          "food_name": "Broccoli slaw salad",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.97,
+            "fat": 4.426,
+            "carbs": 10.41,
+            "calories": 123
+          }
+        },
+        {
+          "food_id": 2709658,
+          "food_name": "Broccoli, Chinese, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.22,
+            "fat": 1.111,
+            "carbs": 4.72,
+            "calories": 50
+          }
+        },
+        {
+          "food_id": 2709657,
+          "food_name": "Broccoli, chinese, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 1.2,
+            "fat": 0.347,
+            "carbs": 4.67,
+            "calories": 26
+          }
+        },
+        {
+          "food_id": 2709654,
+          "food_name": "Broccoli casserole with noodles",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.55,
+            "fat": 0.385,
+            "carbs": 15.86,
+            "calories": 112
+          }
+        },
+        {
+          "food_id": 2709655,
+          "food_name": "Broccoli casserole with rice",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.14,
+            "fat": 0.563,
+            "carbs": 15.06,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 169392,
+          "food_name": "Broccoli, chinese, cooked",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.72,
+            "calories": 22.0,
+            "carbs": 3.81,
+            "protein": 1.14
+          }
+        },
+        {
+          "food_id": 169404,
+          "food_name": "Broccoli, chinese, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.116,
+            "carbs": 4.67,
+            "protein": 1.2,
+            "calories": 26.0
+          }
+        },
+        {
+          "food_id": 2710792,
+          "food_name": "Broccoli, cooked, as ingredient",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 2.68,
+            "fat": 0.018,
+            "carbs": 6.53,
+            "calories": 41
+          }
+        },
+        {
+          "food_id": 169329,
+          "food_name": "Broccoli, leaves, raw",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 28.0,
+            "carbs": 5.06,
+            "fat": 0.054,
+            "protein": 2.98
+          }
+        },
+        {
+          "food_id": 169331,
+          "food_name": "Broccoli, stalks, raw",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 28.0,
+            "fat": 0.054,
+            "carbs": 5.24,
+            "protein": 2.98
+          }
+        },
+        {
+          "food_id": 2709659,
+          "food_name": "Soup, broccoli cheese",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.26,
+            "fat": 0.28,
+            "carbs": 6.08,
+            "calories": 82
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6312282085418701,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_broccoli",
+        "food_name": "broccoli",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 7.3,
+          "fat": 0.4,
+          "fiber": 3.3,
+          "sugar": 1.4
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_broccoli",
+          "food_name": "broccoli",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 7.3,
+            "fat": 0.4,
+            "fiber": 3.3,
+            "sugar": 1.4
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "broccoli",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.5944700241088867,
+      "api_ninjas_time": 0.6312282085418701,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 24.0,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 2.35,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 4.71,
+          "api_ninjas": 7.3
+        },
+        "fat": {
+          "usda": 0.0,
+          "api_ninjas": 0.4
+        }
+      }
+    }
+  },
+  "salmon": {
+    "usda": {
+      "response_time": 1.7051782608032227,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2016166,
+        "food_name": "SALMON",
+        "brand_name": "SEA CUISINE",
+        "nutrients": {
+          "protein": 15.2,
+          "fat": 1.32,
+          "carbs": 2.65,
+          "calories": 139
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2016166,
+          "food_name": "SALMON",
+          "brand_name": "SEA CUISINE",
+          "nutrients": {
+            "protein": 15.2,
+            "fat": 1.32,
+            "carbs": 2.65,
+            "calories": 139
+          }
+        },
+        {
+          "food_id": 1028841,
+          "food_name": "SALMON",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 19.0,
+            "fat": 2.46,
+            "carbs": 0.0,
+            "calories": 232
+          }
+        },
+        {
+          "food_id": 2470000,
+          "food_name": "SALMON",
+          "brand_name": "BLUE CIRCLE",
+          "nutrients": {
+            "protein": 20.7,
+            "fat": 2.82,
+            "carbs": 0.0,
+            "calories": 207
+          }
+        },
+        {
+          "food_id": 1895461,
+          "food_name": "SALMON",
+          "brand_name": "SANTA MONICA SEAFOOD",
+          "nutrients": {
+            "protein": 21.8,
+            "fat": 2.27,
+            "carbs": 1.82,
+            "calories": 209
+          }
+        },
+        {
+          "food_id": 2706850,
+          "food_name": "Lomi salmon",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 7.55,
+            "fat": 0.544,
+            "carbs": 3.31,
+            "calories": 60
+          }
+        },
+        {
+          "food_id": 2706826,
+          "food_name": "Salmon salad",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.82,
+            "fat": 9.527,
+            "carbs": 2.73,
+            "calories": 213
+          }
+        },
+        {
+          "food_id": 172343,
+          "food_name": "Fish oil, salmon",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 902,
+            "fat": 19.9,
+            "carbs": 0.0,
+            "protein": 0.0
+          }
+        },
+        {
+          "food_id": 2706291,
+          "food_name": "Fish, salmon, canned",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 24.62,
+            "fat": 1.298,
+            "carbs": 0,
+            "calories": 136
+          }
+        },
+        {
+          "food_id": 2706289,
+          "food_name": "Fish, salmon, fried",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 17.45,
+            "fat": 7.003,
+            "carbs": 11.72,
+            "calories": 307
+          }
+        },
+        {
+          "food_id": 2706287,
+          "food_name": "Fish, salmon, grilled",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 25.92,
+            "fat": 4.622,
+            "carbs": 0,
+            "calories": 259
+          }
+        },
+        {
+          "food_id": 2706285,
+          "food_name": "Fish, salmon, NFS",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 25.4,
+            "fat": 5.172,
+            "carbs": 0.01,
+            "calories": 274
+          }
+        },
+        {
+          "food_id": 2706284,
+          "food_name": "Fish, salmon, raw",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 20.44,
+            "fat": 3.117,
+            "carbs": 0,
+            "calories": 188
+          }
+        },
+        {
+          "food_id": 2706292,
+          "food_name": "Fish, salmon, smoked",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 18.28,
+            "fat": 0.995,
+            "carbs": 0,
+            "calories": 117
+          }
+        },
+        {
+          "food_id": 2706290,
+          "food_name": "Fish, salmon, steamed",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 25.82,
+            "fat": 3.938,
+            "carbs": 0,
+            "calories": 237
+          }
+        },
+        {
+          "food_id": 2707023,
+          "food_name": "Salmon cake sandwich",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 13.86,
+            "fat": 6.722,
+            "carbs": 19.37,
+            "calories": 279
+          }
+        },
+        {
+          "food_id": 2708963,
+          "food_name": "Sushi roll, salmon",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 6.88,
+            "fat": 0.32,
+            "carbs": 15.3,
+            "calories": 103
+          }
+        },
+        {
+          "food_id": 2708969,
+          "food_name": "Sushi, topped with salmon",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 8.92,
+            "fat": 0.428,
+            "carbs": 13.39,
+            "calories": 107
+          }
+        },
+        {
+          "food_id": 2706552,
+          "food_name": "Fish, salmon cake or patty",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 16.07,
+            "fat": 9.148,
+            "carbs": 4.46,
+            "calories": 285
+          }
+        },
+        {
+          "food_id": 2706286,
+          "food_name": "Fish, salmon, baked or broiled",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 25.4,
+            "fat": 5.172,
+            "carbs": 0.01,
+            "calories": 274
+          }
+        },
+        {
+          "food_id": 173688,
+          "food_name": "Fish, salmon, chinook, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 3.1,
+            "calories": 750,
+            "protein": 19.9,
+            "carbs": 0.0
+          }
+        },
+        {
+          "food_id": 173687,
+          "food_name": "Fish, salmon, chinook, smoked",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 117,
+            "fat": 0.929,
+            "carbs": 0.0,
+            "protein": 18.3
+          }
+        },
+        {
+          "food_id": 173689,
+          "food_name": "Fish, salmon, chum, raw",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 120,
+            "fat": 0.84,
+            "carbs": 0.0,
+            "protein": 20.1
+          }
+        },
+        {
+          "food_id": 175138,
+          "food_name": "Fish, salmon, pink, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 0.015,
+            "calories": 532,
+            "protein": 20.5,
+            "carbs": 0.0
+          }
+        },
+        {
+          "food_id": 173691,
+          "food_name": "Fish, salmon, sockeye, raw",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 4.69,
+            "calories": 131,
+            "protein": 22.2,
+            "carbs": 0.0
+          }
+        },
+        {
+          "food_id": 2706578,
+          "food_name": "Stewed salmon, Puerto Rican style",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 12.02,
+            "fat": 2.199,
+            "carbs": 8.47,
+            "calories": 146
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6343324184417725,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_salmon",
+        "food_name": "salmon",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 0.0,
+          "fat": 12.1,
+          "fiber": 0.0,
+          "sugar": 0.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_salmon",
+          "food_name": "salmon",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 0.0,
+            "fat": 12.1,
+            "fiber": 0.0,
+            "sugar": 0.0
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "salmon",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.7051782608032227,
+      "api_ninjas_time": 0.6343324184417725,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 139,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 15.2,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 2.65,
+          "api_ninjas": 0.0
+        },
+        "fat": {
+          "usda": 1.32,
+          "api_ninjas": 12.1
+        }
+      }
+    }
+  },
+  "bread": {
+    "usda": {
+      "response_time": 1.4084713459014893,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2071481,
+        "food_name": "BREAD",
+        "brand_name": "PANADERIA PAN DEL CIELO",
+        "nutrients": {
+          "protein": 10.7,
+          "fat": 1.79,
+          "carbs": 66.1,
+          "calories": 357
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2071481,
+          "food_name": "BREAD",
+          "brand_name": "PANADERIA PAN DEL CIELO",
+          "nutrients": {
+            "protein": 10.7,
+            "fat": 1.79,
+            "carbs": 66.1,
+            "calories": 357
+          }
+        },
+        {
+          "food_id": 2058078,
+          "food_name": "BREAD",
+          "brand_name": "JOHANN'S BAKERY",
+          "nutrients": {
+            "protein": 3.57,
+            "fat": 0.0,
+            "carbs": 32.1,
+            "calories": 146
+          }
+        },
+        {
+          "food_id": 1916888,
+          "food_name": "BREAD",
+          "brand_name": "GRATEFUL",
+          "nutrients": {
+            "protein": 7.89,
+            "fat": 0.0,
+            "carbs": 55.3,
+            "calories": 263
+          }
+        },
+        {
+          "food_id": 2339103,
+          "food_name": "BREAD",
+          "brand_name": "VILLAGE HEARTH",
+          "nutrients": {
+            "protein": 8.7,
+            "fat": 0.0,
+            "carbs": 43.5,
+            "calories": 196
+          }
+        },
+        {
+          "food_id": 1850717,
+          "food_name": "BREAD",
+          "brand_name": "BOULART",
+          "nutrients": {
+            "protein": 8.0,
+            "fat": 0.0,
+            "carbs": 50.0,
+            "calories": 240
+          }
+        },
+        {
+          "food_id": 2071305,
+          "food_name": "BREAD",
+          "brand_name": "CHABASO BAKERY",
+          "nutrients": {
+            "protein": 8.77,
+            "fat": 0.0,
+            "carbs": 56.1,
+            "calories": 263
+          }
+        },
+        {
+          "food_id": 2431121,
+          "food_name": "BREAD",
+          "brand_name": "CONCHAS",
+          "nutrients": {
+            "protein": 5.88,
+            "fat": 3.53,
+            "carbs": 51.8,
+            "calories": 306
+          }
+        },
+        {
+          "food_id": 2011754,
+          "food_name": "BREAD",
+          "brand_name": "FRANZ",
+          "nutrients": {
+            "protein": 5.56,
+            "fat": 0.0,
+            "carbs": 44.4,
+            "calories": 222
+          }
+        },
+        {
+          "food_id": 2072082,
+          "food_name": "BREAD",
+          "brand_name": "HOLSUM",
+          "nutrients": {
+            "protein": 7.69,
+            "fat": 0.0,
+            "carbs": 50.0,
+            "calories": 269
+          }
+        },
+        {
+          "food_id": 2125534,
+          "food_name": "BREAD",
+          "brand_name": "L'OVEN FRESH",
+          "nutrients": {
+            "protein": 7.14,
+            "fat": 0.0,
+            "carbs": 50.0,
+            "calories": 250
+          }
+        },
+        {
+          "food_id": 2157209,
+          "food_name": "BREAD",
+          "brand_name": "OLD MISSION MULTIGRAIN",
+          "nutrients": {
+            "protein": 270,
+            "fat": 0.0,
+            "carbs": 1700.0,
+            "calories": 8600.0
+          }
+        },
+        {
+          "food_id": 2071165,
+          "food_name": "BREAD",
+          "brand_name": "ARCHER FARMS",
+          "nutrients": {
+            "protein": 10.2,
+            "fat": 4.08,
+            "carbs": 49.0,
+            "calories": 306
+          }
+        },
+        {
+          "food_id": 1941823,
+          "food_name": "BREAD",
+          "brand_name": "STONE MILL BREAD",
+          "nutrients": {
+            "protein": 7.14,
+            "fat": 0.0,
+            "carbs": 50.0,
+            "calories": 250
+          }
+        },
+        {
+          "food_id": 1153769,
+          "food_name": "BREAD",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.4,
+            "fat": 0.0,
+            "carbs": 52.1,
+            "calories": 250
+          }
+        },
+        {
+          "food_id": 2480938,
+          "food_name": "BREAD",
+          "brand_name": "VOYAGEURS BAKEHOUSE",
+          "nutrients": {
+            "protein": 7.27,
+            "fat": 0.0,
+            "carbs": 47.3,
+            "calories": 255
+          }
+        },
+        {
+          "food_id": 2014227,
+          "food_name": "BREAD",
+          "brand_name": "OLDMILL BREAD CO.",
+          "nutrients": {
+            "protein": 10.0,
+            "fat": 0.0,
+            "carbs": 54.0,
+            "calories": 248
+          }
+        },
+        {
+          "food_id": 2436286,
+          "food_name": "BREAD",
+          "brand_name": "COUNTRY OVEN",
+          "nutrients": {
+            "protein": 11.1,
+            "fat": 0.0,
+            "carbs": 44.4,
+            "calories": 222
+          }
+        },
+        {
+          "food_id": 2707850,
+          "food_name": "Bread, fruit",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 6.01,
+            "fat": 7.909,
+            "carbs": 47.34,
+            "calories": 374
+          }
+        },
+        {
+          "food_id": 2707613,
+          "food_name": "Bread, naan",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.09,
+            "fat": 1.367,
+            "carbs": 50.23,
+            "calories": 311
+          }
+        },
+        {
+          "food_id": 2707851,
+          "food_name": "Bread, zucchini",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 5.05,
+            "fat": 4.61,
+            "carbs": 42.64,
+            "calories": 306
+          }
+        },
+        {
+          "food_id": 2707714,
+          "food_name": "Bread, puri",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 6.84,
+            "fat": 9.568,
+            "carbs": 39.23,
+            "calories": 409
+          }
+        },
+        {
+          "food_id": 2707849,
+          "food_name": "Bread, pumpkin",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 4.97,
+            "fat": 4.519,
+            "carbs": 43.21,
+            "calories": 305
+          }
+        },
+        {
+          "food_id": 2707755,
+          "food_name": "Bread, rye",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 8.5,
+            "fat": 0.799,
+            "carbs": 48.3,
+            "calories": 259
+          }
+        },
+        {
+          "food_id": 2707650,
+          "food_name": "Bread, vegetable",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 9.67,
+            "fat": 0.762,
+            "carbs": 47.98,
+            "calories": 259
+          }
+        },
+        {
+          "food_id": 2707598,
+          "food_name": "Bread, white",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 9.43,
+            "fat": 1.87,
+            "carbs": 49.2,
+            "calories": 267
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6419012546539307,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_bread",
+        "food_name": "bread",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 50.2,
+          "fat": 3.4,
+          "fiber": 2.7,
+          "sugar": 5.7
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_bread",
+          "food_name": "bread",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 50.2,
+            "fat": 3.4,
+            "fiber": 2.7,
+            "sugar": 5.7
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "bread",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.4084713459014893,
+      "api_ninjas_time": 0.6419012546539307,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 357,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 10.7,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 66.1,
+          "api_ninjas": 50.2
+        },
+        "fat": {
+          "usda": 1.79,
+          "api_ninjas": 3.4
+        }
+      }
+    }
+  },
+  "milk": {
+    "usda": {
+      "response_time": 1.205240249633789,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2454032,
+        "food_name": "MILK",
+        "brand_name": "VALUE CORNER",
+        "nutrients": {
+          "protein": 3.75,
+          "fat": 2.08,
+          "carbs": 5.42,
+          "calories": 67.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2454032,
+          "food_name": "MILK",
+          "brand_name": "VALUE CORNER",
+          "nutrients": {
+            "protein": 3.75,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2078244,
+          "food_name": "MILK",
+          "brand_name": "WINN-DIXIE",
+          "nutrients": {
+            "protein": 3.75,
+            "fat": 2.08,
+            "carbs": 4.58,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 1909132,
+          "food_name": "MILK",
+          "brand_name": "JUNIPER VALLEY",
+          "nutrients": {
+            "protein": 3.39,
+            "fat": 1.27,
+            "carbs": 5.08,
+            "calories": 55.0
+          }
+        },
+        {
+          "food_id": 2501185,
+          "food_name": "MILK",
+          "brand_name": "HOOD",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2503416,
+          "food_name": "MILK",
+          "brand_name": "CROWLEY",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2475001,
+          "food_name": "MILK",
+          "brand_name": "WEIS QUALITY",
+          "nutrients": {
+            "protein": 3.38,
+            "fat": 0.0,
+            "carbs": 5.07,
+            "calories": 51.0
+          }
+        },
+        {
+          "food_id": 2083027,
+          "food_name": "MILK",
+          "brand_name": "BOGOPA",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2062196,
+          "food_name": "MILK",
+          "brand_name": "COLORADO PROUD",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.0,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2476573,
+          "food_name": "MILK",
+          "brand_name": "LUCERNE DAIRY FARMS",
+          "nutrients": {
+            "protein": 3.75,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2098011,
+          "food_name": "MILK",
+          "brand_name": "MOUNTAIN DAIRY",
+          "nutrients": {
+            "protein": 4.17,
+            "fat": 1.25,
+            "carbs": 5.42,
+            "calories": 54.0
+          }
+        },
+        {
+          "food_id": 2658737,
+          "food_name": "MILK",
+          "brand_name": "LUCERNE",
+          "nutrients": {
+            "protein": 3.75,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2471393,
+          "food_name": "MILK",
+          "brand_name": "LEFT FIELD FARMS",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 0.0,
+            "carbs": 5.42,
+            "calories": 71.0
+          }
+        },
+        {
+          "food_id": 1954124,
+          "food_name": "MILK",
+          "brand_name": "OBERWIES DAIRY",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 6.67,
+            "carbs": 3.33,
+            "calories": 133
+          }
+        },
+        {
+          "food_id": 2062449,
+          "food_name": "MILK",
+          "brand_name": "TURKEY HILL",
+          "nutrients": {
+            "protein": 3.38,
+            "fat": 2.17,
+            "carbs": 4.59,
+            "calories": 63.0
+          }
+        },
+        {
+          "food_id": 1909141,
+          "food_name": "MILK",
+          "brand_name": "JUNIPER VALLEY",
+          "nutrients": {
+            "protein": 3.39,
+            "fat": 1.27,
+            "carbs": 5.08,
+            "calories": 55.0
+          }
+        },
+        {
+          "food_id": 2092649,
+          "food_name": "MILK",
+          "brand_name": "SHAMROCK FARMS",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 4.58,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2630156,
+          "food_name": "MILK",
+          "brand_name": "LACTAID",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.0,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 1881028,
+          "food_name": "MILK",
+          "brand_name": "HORIZON ORGANIC",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 0.0,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2074481,
+          "food_name": "MILK",
+          "brand_name": "SOUTHERN HOME",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.0,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2078442,
+          "food_name": "MILK",
+          "brand_name": "PRICE CHOPPER",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.0,
+            "calories": 62.0
+          }
+        },
+        {
+          "food_id": 2085761,
+          "food_name": "MILK",
+          "brand_name": "DAIRY PURE",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2657009,
+          "food_name": "MILK",
+          "brand_name": "VALUE CORNER",
+          "nutrients": {
+            "protein": 3.75,
+            "fat": 2.08,
+            "carbs": 5.42,
+            "calories": 67.0
+          }
+        },
+        {
+          "food_id": 2083378,
+          "food_name": "MILK",
+          "brand_name": "BORDEN",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.5,
+            "carbs": 11.2,
+            "calories": 92.0
+          }
+        },
+        {
+          "food_id": 1960596,
+          "food_name": "MILK",
+          "brand_name": "DRIFTWOOD",
+          "nutrients": {
+            "protein": 3.39,
+            "fat": 2.12,
+            "carbs": 4.66,
+            "calories": 64.0
+          }
+        },
+        {
+          "food_id": 1909137,
+          "food_name": "MILK",
+          "brand_name": "ELMHURST DAIRY",
+          "nutrients": {
+            "protein": 3.33,
+            "fat": 2.08,
+            "carbs": 5.0,
+            "calories": 62.0
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6224753856658936,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_milk",
+        "food_name": "milk",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 4.9,
+          "fat": 1.9,
+          "fiber": 0.0,
+          "sugar": 0.0
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_milk",
+          "food_name": "milk",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 4.9,
+            "fat": 1.9,
+            "fiber": 0.0,
+            "sugar": 0.0
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "milk",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.205240249633789,
+      "api_ninjas_time": 0.6224753856658936,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 67.0,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 3.75,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 5.42,
+          "api_ninjas": 4.9
+        },
+        "fat": {
+          "usda": 2.08,
+          "api_ninjas": 1.9
+        }
+      }
+    }
+  },
+  "egg": {
+    "usda": {
+      "response_time": 1.522486925125122,
+      "success": true,
+      "error": null,
+      "result_count": 25,
+      "first_result": {
+        "food_id": 2575290,
+        "food_name": "EGG",
+        "brand_name": "SNICKERS",
+        "nutrients": {
+          "protein": 6.41,
+          "fat": 16.0,
+          "carbs": 57.7,
+          "calories": 513
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": 2575290,
+          "food_name": "EGG",
+          "brand_name": "SNICKERS",
+          "nutrients": {
+            "protein": 6.41,
+            "fat": 16.0,
+            "carbs": 57.7,
+            "calories": 513
+          }
+        },
+        {
+          "food_id": 2171141,
+          "food_name": "EGG",
+          "brand_name": "GALERIE",
+          "nutrients": {
+            "protein": 0.0,
+            "fat": 0.0,
+            "carbs": 90.0,
+            "calories": 367
+          }
+        },
+        {
+          "food_id": 2677671,
+          "food_name": "EGG",
+          "brand_name": "JUST",
+          "nutrients": {
+            "protein": 11.4,
+            "fat": 3.41,
+            "carbs": 2.27,
+            "calories": 159
+          }
+        },
+        {
+          "food_id": 747997,
+          "food_name": "Eggs, Grade A, Large, egg white",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.7,
+            "fat": 0.0,
+            "calories": 55.0,
+            "carbs": 2.36
+          }
+        },
+        {
+          "food_id": 748967,
+          "food_name": "Eggs, Grade A, Large, egg whole",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 617,
+            "fat": 8.65,
+            "protein": 12.4,
+            "carbs": 0.2
+          }
+        },
+        {
+          "food_id": 748236,
+          "food_name": "Eggs, Grade A, Large, egg yolk",
+          "brand_name": "",
+          "nutrients": {
+            "fat": 28.8,
+            "protein": 16.2,
+            "carbs": 1.02,
+            "calories": 1400.0
+          }
+        },
+        {
+          "food_id": 2707180,
+          "food_name": "Egg, Benedict",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 13.81,
+            "fat": 2.036,
+            "carbs": 8.48,
+            "calories": 288
+          }
+        },
+        {
+          "food_id": 2707179,
+          "food_name": "Egg, creamed",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 7.79,
+            "fat": 1.385,
+            "carbs": 5.52,
+            "calories": 148
+          }
+        },
+        {
+          "food_id": 2707181,
+          "food_name": "Egg, deviled",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.52,
+            "fat": 5.014,
+            "carbs": 1.07,
+            "calories": 198
+          }
+        },
+        {
+          "food_id": 174901,
+          "food_name": "Bagels, egg",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 278,
+            "protein": 10.6,
+            "fat": 2.1,
+            "carbs": 53.0
+          }
+        },
+        {
+          "food_id": 172673,
+          "food_name": "Bread, egg",
+          "brand_name": "",
+          "nutrients": {
+            "calories": 287,
+            "protein": 9.5,
+            "fat": 1.11,
+            "carbs": 47.8
+          }
+        },
+        {
+          "food_id": 2708984,
+          "food_name": "Congee, with egg",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 3.12,
+            "fat": 0.382,
+            "carbs": 6.91,
+            "calories": 60
+          }
+        },
+        {
+          "food_id": 2707343,
+          "food_name": "Egg burrito",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.91,
+            "fat": 3.223,
+            "carbs": 20.06,
+            "calories": 249
+          }
+        },
+        {
+          "food_id": 2708597,
+          "food_name": "Quesadilla, egg",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 10.91,
+            "fat": 3.223,
+            "carbs": 20.06,
+            "calories": 249
+          }
+        },
+        {
+          "food_id": 2708602,
+          "food_name": "Taquito, egg",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 9.9,
+            "fat": 3.912,
+            "carbs": 29.25,
+            "calories": 281
+          }
+        },
+        {
+          "food_id": 2707201,
+          "food_name": "Egg omelet or scrambled egg, made with butter",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.61,
+            "fat": 1.861,
+            "carbs": 0.9,
+            "calories": 182
+          }
+        },
+        {
+          "food_id": 2707199,
+          "food_name": "Egg omelet or scrambled egg, made with margarine",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.57,
+            "fat": 3.388,
+            "carbs": 0.95,
+            "calories": 171
+          }
+        },
+        {
+          "food_id": 2707200,
+          "food_name": "Egg omelet or scrambled egg, made with oil",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.56,
+            "fat": 4.202,
+            "carbs": 0.9,
+            "calories": 192
+          }
+        },
+        {
+          "food_id": 2707205,
+          "food_name": "Egg omelet or scrambled egg, no added fat",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 12.36,
+            "fat": 1.815,
+            "carbs": 0.96,
+            "calories": 143
+          }
+        },
+        {
+          "food_id": 2707198,
+          "food_name": "Egg omelet or scrambled egg, NS as to fat",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.58,
+            "fat": 3.337,
+            "carbs": 0.91,
+            "calories": 185
+          }
+        },
+        {
+          "food_id": 2708972,
+          "food_name": "Sushi, topped with egg",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 7.32,
+            "fat": 0.971,
+            "carbs": 10.25,
+            "calories": 119
+          }
+        },
+        {
+          "food_id": 2707203,
+          "food_name": "Egg omelet or scrambled egg, made with cooking spray",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 12.24,
+            "fat": 2.015,
+            "carbs": 1.15,
+            "calories": 149
+          }
+        },
+        {
+          "food_id": 2707204,
+          "food_name": "Egg omelet or scrambled egg, NS as to fat type",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 11.58,
+            "fat": 3.337,
+            "carbs": 0.91,
+            "calories": 185
+          }
+        },
+        {
+          "food_id": 2707209,
+          "food_name": "Egg omelet or scrambled egg, with cheese, made with butter",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 12.69,
+            "fat": 1.762,
+            "carbs": 1.41,
+            "calories": 203
+          }
+        },
+        {
+          "food_id": 2707207,
+          "food_name": "Egg omelet or scrambled egg, with cheese, made with margarine",
+          "brand_name": "",
+          "nutrients": {
+            "protein": 12.65,
+            "fat": 3.102,
+            "carbs": 1.45,
+            "calories": 194
+          }
+        }
+      ]
+    },
+    "api_ninjas": {
+      "response_time": 0.6864943504333496,
+      "success": true,
+      "error": null,
+      "result_count": 1,
+      "first_result": {
+        "food_id": "ninja_egg",
+        "food_name": "egg",
+        "brand_name": "",
+        "serving_size": "Only available for premium subscribers.",
+        "serving_unit": "g",
+        "nutrients": {
+          "calories": "Only available for premium subscribers.",
+          "protein": "Only available for premium subscribers.",
+          "carbs": 0.7,
+          "fat": 9.7,
+          "fiber": 0.0,
+          "sugar": 0.4
+        }
+      },
+      "formatted_results": [
+        {
+          "food_id": "ninja_egg",
+          "food_name": "egg",
+          "brand_name": "",
+          "serving_size": "Only available for premium subscribers.",
+          "serving_unit": "g",
+          "nutrients": {
+            "calories": "Only available for premium subscribers.",
+            "protein": "Only available for premium subscribers.",
+            "carbs": 0.7,
+            "fat": 9.7,
+            "fiber": 0.0,
+            "sugar": 0.4
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "food": "egg",
+      "usda_success": true,
+      "api_ninjas_success": true,
+      "usda_count": 25,
+      "api_ninjas_count": 1,
+      "usda_time": 1.522486925125122,
+      "api_ninjas_time": 0.6864943504333496,
+      "nutrient_comparison": {
+        "calories": {
+          "usda": 513,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "protein": {
+          "usda": 6.41,
+          "api_ninjas": "Only available for premium subscribers."
+        },
+        "carbs": {
+          "usda": 57.7,
+          "api_ninjas": 0.7
+        },
+        "fat": {
+          "usda": 16.0,
+          "api_ninjas": 9.7
+        }
+      }
+    }
+  }
+}

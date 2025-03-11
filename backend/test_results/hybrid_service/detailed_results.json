@@ -1,0 +1,261 @@
+{
+  "apple": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.7238211631774902,
+    "first_result": {
+      "id": 454004,
+      "name": "APPLE",
+      "description": "CRISP APPLE.",
+      "brand": "",
+      "calories": 52.0,
+      "source": "usda"
+    }
+  },
+  "banana": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.841797113418579,
+    "first_result": {
+      "id": 2012128,
+      "name": "BANANA",
+      "description": "PEANUTS (AS DEFATTED PEANUT FLOUR, PEANUT BUTTER AND NATURAL PEANUT OILS), PURE WATER, TAPIOCA SYRUP, RICE SYRUP, VEGETABLE GLYCERINE, CANE SUGAR, BANANA, NATURAL COLORS AND FLAVORS, SALT, CALCIUM CARBONATE, LECITHIN, TOCOPHEROL (VITAMIN E), SODIUM ASCORBATE (VITAMIN C).",
+      "brand": "BETTER'N PEANUT BUTTER",
+      "calories": 312,
+      "source": "usda"
+    }
+  },
+  "chicken breast": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.4613349437713623,
+    "first_result": {
+      "id": 2187885,
+      "name": "CHICKEN BREAST",
+      "description": "BONELESS SKINLESS CHICKEN BREAST (CONTAINS WATER, SALT, SODIUM PHOSPHATES), CHERRYWOOD SMOKED HAM (CONTAINS UP TO 4% OF A SOLUTION OF WATER, SALT, TURBINADO SUGAR, BAKING SODA, NATURAL FLAVOR, LACTIC ACID STARTER CULTURE [NOT FROM MILK]), RICOTTA CHEESE (PASTEURIZED MILK, PASTEURIZED WHEY, PASTEURIZED CREAM, VINEGAR, SALT, STABILIZER [MODIFIED FOOD STARCH, GUAR GUM, CARRAGEENAN], POTASSIUM SORBATE TO PROTECT FLAVOR), MILD CHEDDAR CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES, ANNATTO), SHARP CHEDDAR CHEESE (CULTURED PASTEURIZED MILK, SALT, ENZYMES, ANNATTO COLOR, POTATO STARCH AND POWDERED CELLULOSE [ANTICAKING], NATAMYCIN [MOLD INHIBITOR]), MOZZARELLA CHEESE (MILK, CHEESE CULTURES, SALT, ENZYMES, POWDERED CELLULOSE [ANTICAKING], NATAMYCIN [TO PROTECT FLAVOR]), PARMESAN CHEESE (PART-SKIMMED PASTEURIZED COW'S MILK, CHEESE CULTURES, SALT, ENZYMES, RICE FLOUR AND POWDERED CELLULOSE ADDED TO PREVENT CAKING), PARSLEY, SALT, THYME, BLACK PEPPER.",
+      "brand": "GIANT EAGLE",
+      "calories": 165,
+      "source": "usda"
+    }
+  },
+  "salmon": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 2.213345766067505,
+    "first_result": {
+      "id": 2016166,
+      "name": "SALMON",
+      "description": "SALMON, WATER, VEGETABLE OIL (CANOLA, COTTONSEED, AND/OR SOYBEAN), CONTAINS 2% OR LESS OF: TOMATO PASTE, RICE STARCH, CITRIC ACID, SALT, DEHYDRATED GARLIC, DEHYDRATED ONION, SPICES, LIME OIL;, NATURAL FLAVORS, SOY LECITHIN, SODIUM TRIPOLYPHOSPHATE (TO RETAIN MOISTURE).",
+      "brand": "SEA CUISINE",
+      "calories": 139,
+      "source": "usda"
+    }
+  },
+  "olive oil": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.173957347869873,
+    "first_result": {
+      "id": 2710186,
+      "name": "Olive oil",
+      "description": "",
+      "brand": "",
+      "calories": 900,
+      "source": "usda"
+    }
+  },
+  "pasta barilla": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.5866284370422363,
+    "first_result": {
+      "id": 2016665,
+      "name": "ACADEMIA BARILLA, FARFALLE BARILLA PASTA",
+      "description": "SEMOLINA (WHEAT), DURUM WHEAT FLOUR, NIACIN, IRON (FERROUS LACTATE), THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID.",
+      "brand": "ACADEMIA BARILLA",
+      "calories": 357,
+      "source": "usda"
+    }
+  },
+  "parmigiano reggiano": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.2057826519012451,
+    "first_result": {
+      "id": 2021131,
+      "name": "PARMIGIANO REGGIANO",
+      "description": "PART - SKIM MILK, SALT, RENNET.",
+      "brand": "LE DELIZIE DEL FARNESE SEMPRE BONI",
+      "calories": 393,
+      "source": "usda"
+    }
+  },
+  "prosciutto di parma": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.240955114364624,
+    "first_result": {
+      "id": 2432743,
+      "name": "PROSCIUTTO DI PARMA",
+      "description": "ITALIAN PORK LEG, SEA SALT",
+      "brand": "PARMA",
+      "calories": 200,
+      "source": "usda"
+    }
+  },
+  "mozzarella di bufala": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 2.0751054286956787,
+    "first_result": {
+      "id": 1884913,
+      "name": "MOZZARELLA DI BUFALA CAMPANA DOP CHEESE",
+      "description": "PASTEURIZED BUFFALO MILK, NATURAL WHEY, ANIMAL RENNET AND SALT.",
+      "brand": "IL VILLAGGIO",
+      "calories": 317,
+      "source": "usda"
+    }
+  },
+  "tiramisu": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.2782669067382812,
+    "first_result": {
+      "id": 2705702,
+      "name": "Tiramisu",
+      "description": "",
+      "brand": "",
+      "calories": 353,
+      "source": "usda"
+    }
+  },
+  "chicken cacciatore": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.4756603240966797,
+    "first_result": {
+      "id": 2119583,
+      "name": "CHICKEN CACCIATORE",
+      "description": "SEASONING BLEND (ENRICHED WHEAT FLOUR [WHEAT FLOUR, NIACIN, IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID], SALT, CHICKEN BROTH, GARLIC, ONION, SPICES, CHILI PEPPER, PARSLEY), EGG-FREE PASTA NOODLES (SEMOLINA, ENRICHED WITH IRON [FERROUS SULFATE], AND B VITAMINS [NIACIN, THIAMIN MONONITRATE, RIBOFLAVIN, FOLIC ACID]), MUSHROOMS, ONION, TOMATOES.",
+      "brand": "CROCK-POT",
+      "calories": 333,
+      "source": "usda"
+    }
+  },
+  "risotto": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.2867405414581299,
+    "first_result": {
+      "id": 777970,
+      "name": "RISOTTO",
+      "description": "SUPERFINO RICE, VEGETABLE BROTH (COOKING SALT, POTATO STARCH, YEAST EXTRACTS, POTATO MALTODEXTRINS, DEHYDRATED VEGETABLES (CARROT, ONION, CELERY, PARSLEY), SUNFLOWER OIL, SPICES, VEGETABLE NATURAL FLAVORS, RICE FLOUR), DEHYDRATED SWEET PEPPER (5%).",
+      "brand": "",
+      "calories": 157,
+      "source": "usda"
+    }
+  },
+  "lasagna": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.626237392425537,
+    "first_result": {
+      "id": 2586090,
+      "name": "LASAGNA",
+      "description": "LASAGNA NOODLES, MARINARA SAUCE, RICOTTA, MOZZARELLA, ROMANO CHEESE, EGGS, PEPPER.",
+      "brand": "SCARDIGNO'S",
+      "calories": 101,
+      "source": "usda"
+    }
+  },
+  "pizza margherita": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.256169080734253,
+    "first_result": {
+      "id": 1908310,
+      "name": "PIZZA MARGHERITA",
+      "description": "TOMATO STRIPS, CRUSHED TOMATOES, WATER, PURE OLIVE OIL, CANOLA OIL, FRESH GARLIC, FRESH ONION, FRESH BASIL, OREGANO, SPICE MIX AND CITRIC ACID (ACIDIFIER).",
+      "brand": "CASA VISCO",
+      "calories": 47.0,
+      "source": "usda"
+    }
+  },
+  "gelato": {
+    "success": true,
+    "result_count": 25,
+    "source": "usda",
+    "response_time": 1.3149151802062988,
+    "first_result": {
+      "id": 2074262,
+      "name": "GELATO",
+      "description": "FILTERED WATER, EVAPORATED CANE SYRUP, MANGO BASE (INCLUDES MANGOES, JUICE CONCENTRATES [PINEAPPLE, PASSION FRUIT], NATURAL FLAVORS, ANNATTO AND TURMERIC FOR COLOR), ALMONDS, TAPIOCA MALTODEXTRIN, EXPELLER PRESSED OIL (SUNFLOWER AND/OR SAFFLOWER AND/OR CANOLA), CONTAINS 2% OR LESS OF POTATO STARCH, GUAR GUM, CARRAGEENAN, CAROB BEAN GUM, SUNFLOWER LECITHIN, SEA SALT.",
+      "brand": "DREAM",
+      "calories": 165,
+      "source": "usda"
+    }
+  },
+  "pastiera napoletana": {
+    "success": true,
+    "result_count": 11,
+    "source": "usda",
+    "response_time": 1.0398499965667725,
+    "first_result": {
+      "id": 2619445,
+      "name": "NAPOLETANA PASTA SAUCE, NAPOLETANA",
+      "description": "ITALIAN VINE RIPENED TOMATOES (DICED, JUICE, PASTE), ITALIAN WHOLE CHERRY TOMATOES, EXTRA VIRGIN OLIVE OIL, SALT, BASIL, ONION, GARLIC, SUGAR, LEMON JUICE CONCENTRATE, DRIED OREGANO, GARLIC POWDER.",
+      "brand": "SHOPRITE",
+      "calories": 40.0,
+      "source": "usda"
+    }
+  },
+  "cantucci toscani": {
+    "success": true,
+    "result_count": 9,
+    "source": "usda",
+    "response_time": 1.0567445755004883,
+    "first_result": {
+      "id": 2438339,
+      "name": "GINGLI TOSCANI",
+      "description": "DURUM WHEAT SEMOLINA, WATER.",
+      "brand": "PASTA PANARESE",
+      "calories": 318,
+      "source": "usda"
+    }
+  },
+  "culurgiones": {
+    "success": false,
+    "result_count": 0,
+    "source": "none",
+    "response_time": 1.3656947612762451,
+    "first_result": null
+  },
+  "seadas sarde": {
+    "success": false,
+    "result_count": 0,
+    "source": "none",
+    "response_time": 1.285874843597412,
+    "first_result": null
+  },
+  "casoncelli bergamaschi": {
+    "success": false,
+    "result_count": 0,
+    "source": "none",
+    "response_time": 1.2439427375793457,
+    "first_result": null
+  }
+}

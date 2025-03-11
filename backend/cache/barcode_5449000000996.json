@@ -1,0 +1,32 @@
+{
+  "query": "barcode_5449000000996",
+  "timestamp": "2025-03-08T21:08:46.913096",
+  "results": {
+    "foods": [
+      {
+        "food_id": "5449000000996",
+        "food_name": "Coca-Cola 33cl",
+        "food_description": "Per 100g - Calories: 42kcal | Fat: 0g | Carbs: 10.6g | Protein: 0g",
+        "brand": "Coca-Cola",
+        "serving_id": "0",
+        "serving_description": "5000ml",
+        "serving_url": "",
+        "barcode": "5449000000996",
+        "nutrients": {
+          "calories": 42,
+          "fat": 0,
+          "saturated_fat": 0,
+          "carbohydrates": 10.6,
+          "sugars": 10.6,
+          "fiber": null,
+          "proteins": 0,
+          "salt": 0,
+          "sodium": 0
+        }
+      }
+    ],
+    "total_results": 1,
+    "source": "openfoodfacts",
+    "success": true
+  }
+}
