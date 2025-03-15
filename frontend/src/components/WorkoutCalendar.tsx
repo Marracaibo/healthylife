@@ -4,29 +4,30 @@ import {
   Typography, 
   Paper, 
   Grid, 
-  Button, 
-  Chip, 
-  Card, 
-  CardContent, 
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardActions,
+  List,
+  ListItem,
   IconButton,
-  Divider,
   useTheme,
-  alpha,
-  useMediaQuery
+  useMediaQuery,
+  alpha
 } from '@mui/material';
 import { 
   ChevronLeft, 
   ChevronRight, 
   FitnessCenter, 
-  CalendarToday, 
   Check 
 } from '@mui/icons-material';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { 
   format, 
   startOfMonth,
   endOfMonth,
   isSameMonth,
-  isSameDay,
   isToday,
   startOfWeek,
   endOfWeek,
@@ -111,46 +112,23 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
   const getDaysSinceStart = (date: Date): number => {
     if (!program?.startDate) return 0;
     
-    const startDate = new Date(program.startDate);
-    const diffTime = Math.abs(date.getTime() - startDate.getTime());
+    const diffTime = Math.abs(date.getTime() - new Date(program.startDate).getTime());
     return Math.floor(diffTime / (1000 * 60 * 60 * 24));
   };
 
-  // Verifica se una data è all'interno del periodo del programma
-  const isWithinProgram = (date: Date): boolean => {
-    if (!program?.startDate) return false;
+  // Calcola il numero della settimana all'interno del programma
+  const calculateWeekNumber = (date: Date, program: WorkoutProgram): number | null => {
+    if (!program?.startDate) {
+      console.log('Nessuna data di inizio nel programma:', program);
+      return null;
+    }
     
-    const startDate = new Date(program.startDate);
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + (program.duration || 0) * 7); // Durata in settimane * 7 giorni
-    
-    return date >= startDate && date < endDate;
-  };
-
-  // Verifica se una data appartiene alla fase selezionata
-  const isInSelectedPhase = (date: Date): boolean => {
-    if (!program?.startDate || !selectedPhase || !selectedPhase.weeks?.length) return false;
-    
-    // Verifica prima che la data sia all'interno del programma
-    if (!isWithinProgram(date)) return false;
-    
-    const startDate = new Date(program.startDate);
-    const daysSinceStart = getDaysSinceStart(date);
-    const weekNumber = Math.floor(daysSinceStart / 7) + 1;
-    
-    // Verifica se il numero di settimana è incluso nella fase selezionata
-    const weekInPhase = selectedPhase.weeks.find(week => week.weekNumber === weekNumber);
-    return !!weekInPhase;
-  };
-
-  // Restituisce l'allenamento previsto per un giorno specifico in base al programma
-  const getWorkoutForDay = (date: Date): WorkoutDay | null => {
-    if (!program?.startDate) return null;
-    
-    const startDate = new Date(program.startDate);
+    const startDateObj = new Date(program.startDate);
+    console.log('Data di inizio programma:', startDateObj.toISOString().split('T')[0]);
+    console.log('Data richiesta:', date.toISOString().split('T')[0]);
     
     // Se la data è precedente alla data di inizio, non ci sono allenamenti
-    if (date < startDate) return null;
+    if (date < startDateObj) return null;
     
     // Calcola il numero di giorni dall'inizio del programma
     const daysSinceStart = getDaysSinceStart(date);
@@ -161,41 +139,194 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
     // Se il numero di settimana supera la durata del programma, non ci sono allenamenti
     if (weekNumber > (program.duration || 0)) return null;
     
-    // Calcola il giorno della settimana (0-6, dove 0 è domenica)
-    const dayOfWeek = date.getDay();
-    
-    // Trova la fase e la settimana corrente
-    let currentPhase: WorkoutPhase | null = null;
-    let currentWeek: WorkoutWeek | null = null;
-    
-    if (program?.phases) {
-      for (const phase of program.phases) {
-        for (const week of phase.weeks) {
-          if (week.weekNumber === weekNumber) {
-            currentPhase = phase;
-            currentWeek = week;
-            break;
-          }
-        }
-        if (currentPhase) break;
-      }
+    return weekNumber;
+  };
+
+  // Verifica se una data è all'interno del periodo del programma
+  const isWithinProgram = (date: Date): boolean => {
+    if (!program?.startDate) {
+      console.log('isWithinProgram: Nessuna data di inizio nel programma');
+      return false;
     }
     
-    if (!currentWeek) return null;
+    const startDate = new Date(program.startDate);
+    const endDate = new Date(startDate.getTime() + (program.duration || 0) * 7 * 24 * 60 * 60 * 1000); // Durata in settimane * 7 giorni
     
-    // Troviamo il workout in base al giorno della settimana
-    // Se abbiamo abbastanza giorni di workout nella settimana, li associamo ai giorni della settimana
-    // altrimenti li distribuiamo equamente
-    const workoutDays = currentWeek.days.filter(d => d.type === 'workout');
-    const testDays = currentWeek.days.filter(d => d.type === 'test');
+    const result = date >= startDate && date < endDate;
+    console.log(`isWithinProgram: ${date.toISOString().split('T')[0]}, startDate: ${startDate.toISOString().split('T')[0]}, endDate: ${endDate.toISOString().split('T')[0]}, result: ${result}`);
     
-    // Non mostriamo allenamenti per i giorni di altri mesi (solo per la visualizzazione nel calendario)
-    if (!isSameMonth(date, currentDate)) {
+    return result;
+  };
+
+  // Verifica se una data appartiene alla fase selezionata
+  const isInSelectedPhase = (date: Date): boolean => {
+    if (!program?.startDate || !selectedPhase || !selectedPhase.weeks?.length) return false;
+    
+    // Verifica prima che la data sia all'interno del programma
+    if (!isWithinProgram(date)) return false;
+    
+    const daysSinceStart = getDaysSinceStart(date);
+    const weekNumber = Math.floor(daysSinceStart / 7) + 1;
+    
+    // Verifica se il numero di settimana è incluso nella fase selezionata
+    const weekInPhase = selectedPhase.weeks.find(week => week.weekNumber === weekNumber);
+    return !!weekInPhase;
+  };
+
+  // Funzione per determinare il workout per un giorno specifico
+  const getWorkoutForDay = (date: Date): WorkoutDay | null => {
+    if (!program || !program.phases || program.phases.length === 0) {
+      console.log('Nessun programma o fasi disponibili');
       return null;
     }
     
+    // Ottieni il giorno della settimana (0 = domenica, 1 = lunedì, ..., 6 = sabato)
+    const dayOfWeek = date.getDay();
+    // Converte da 0-based (domenica = 0) a 1-based (lunedì = 1)
+    // Domenica diventa 7 invece di 0
+    const adjustedDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
+    
+    // Determina se il programma è skill-based dal nome o dal tipo
+    const isSkillBased = program.type === 'skill-based' || 
+                       (program.name && program.name.toLowerCase().includes('progressione'));
+    
+    // Determina se il programma è di tipo body transformation dal nome
+    const isBodyTransformation = program.name && program.name.toLowerCase().includes('body transformation');
+    
+    console.log(`Giorno ${date.toISOString().split('T')[0]}, programma: ${program.name}, skill-based? ${isSkillBased}, body transformation? ${isBodyTransformation}`);
+    
+    // GESTIONE SPECIALE PER PROGRAMMI SKILL-BASED
+    if (isSkillBased) {
+      console.log(`Programma skill-based, giorno ${date.toISOString().split('T')[0]}, dayOfWeek: ${dayOfWeek}`);
+      
+      // Domenica è sempre giorno di riposo
+      if (dayOfWeek === 0) {
+        console.log(`Domenica ${date.getDate()}: RIPOSO`);
+        return {
+          id: `rest-${date.toISOString()}`,
+          name: 'Giorno di Riposo',
+          code: 'RIPOSO',
+          type: 'rest',
+          dayNumber: date.getDate(),
+          exercises: []
+        };
+      }
+      
+      // Determina quanti giorni di allenamento ci sono nella settimana
+      // Cerca la prima settimana disponibile per determinare il numero di giorni di allenamento
+      let workoutDaysCount = 3; // Default a 3 se non troviamo informazioni
+      
+      for (const phase of program.phases) {
+        if (phase.weeks && phase.weeks.length > 0) {
+          const firstWeek = phase.weeks[0];
+          if (firstWeek.days) {
+            const workoutDays = firstWeek.days.filter(d => d.type === 'workout');
+            if (workoutDays.length > 0) {
+              workoutDaysCount = workoutDays.length;
+              break;
+            }
+          }
+        }
+      }
+      
+      console.log(`Numero di giorni di allenamento nella settimana: ${workoutDaysCount}`);
+      
+      // NUOVA LOGICA: Distribuisci i giorni di allenamento in base al numero di giorni nella scheda
+      let isWorkoutDay = false;
+      
+      switch(workoutDaysCount) {
+        case 1: // 1 giorno di allenamento: lunedì
+          isWorkoutDay = adjustedDayOfWeek === 1;
+          break;
+        case 2: // 2 giorni di allenamento: lunedì e giovedì
+          isWorkoutDay = adjustedDayOfWeek === 1 || adjustedDayOfWeek === 4;
+          break;
+        case 3: // 3 giorni di allenamento: lunedì, mercoledì e venerdì
+          isWorkoutDay = adjustedDayOfWeek === 1 || adjustedDayOfWeek === 3 || adjustedDayOfWeek === 5;
+          break;
+        case 4: // 4 giorni di allenamento: lunedì, martedì, giovedì e venerdì
+          isWorkoutDay = adjustedDayOfWeek === 1 || adjustedDayOfWeek === 2 || adjustedDayOfWeek === 4 || adjustedDayOfWeek === 5;
+          break;
+        case 5: // 5 giorni di allenamento: da lunedì a venerdì
+          isWorkoutDay = adjustedDayOfWeek >= 1 && adjustedDayOfWeek <= 5;
+          break;
+        case 6: // 6 giorni di allenamento: da lunedì a sabato
+          isWorkoutDay = adjustedDayOfWeek >= 1 && adjustedDayOfWeek <= 6;
+          break;
+        default: // Default a 3 giorni: lunedì, mercoledì e venerdì
+          isWorkoutDay = adjustedDayOfWeek === 1 || adjustedDayOfWeek === 3 || adjustedDayOfWeek === 5;
+      }
+      
+      console.log(`Giorno ${date.getDate()}: ${isWorkoutDay ? 'ALLENAMENTO' : 'RIPOSO'} (schema per ${workoutDaysCount} giorni)`);
+      
+      // Restituisci il tipo di giorno appropriato
+      if (isWorkoutDay) {
+        return {
+          id: `workout-${date.toISOString()}`,
+          name: 'Giorno di Allenamento',
+          code: 'WORKOUT',
+          type: 'workout',
+          dayNumber: date.getDate(),
+          exercises: []
+        };
+      } else {
+        return {
+          id: `rest-${date.toISOString()}`,
+          name: 'Giorno di Riposo',
+          code: 'RIPOSO',
+          type: 'rest',
+          dayNumber: date.getDate(),
+          exercises: []
+        };
+      }
+    }
+    
+    // Per gli altri tipi di programma, usa la logica originale
+    // Calcola il numero della settimana all'interno del programma
+    const weekNumber = calculateWeekNumber(date, program);
+    if (weekNumber === null) {
+      console.log(`Giorno ${date.toISOString().split('T')[0]} fuori dal programma`);
+      return null;
+    }
+    
+    // Trova la settimana corrente nel programma
+    let currentWeek: WorkoutWeek | null = null;
+    for (const phase of program.phases) {
+      if (phase.weeks) {
+        const week = phase.weeks.find(w => w.weekNumber === weekNumber);
+        if (week) {
+          currentWeek = week;
+          break;
+        }
+      }
+    }
+    
+    if (!currentWeek) {
+      console.log(`Nessuna settimana trovata per il numero ${weekNumber}`);
+      return null;
+    }
+    
+    // GESTIONE ORIGINALE PER BODY TRANSFORMATION
+    // Troviamo il workout in base al giorno della settimana
+    const workoutDays = currentWeek.days?.filter(d => d.type === 'workout') || [];
+    const testDays = currentWeek.days?.filter(d => d.type === 'test') || [];
+    const restDays = currentWeek.days?.filter(d => d.type === 'rest') || [];
+    
+    console.log(`Giorni di allenamento: ${workoutDays.length}, test: ${testDays.length}, riposo: ${restDays.length}`);
+    
     // Se è domenica, è sempre giorno di riposo
     if (dayOfWeek === 0) {
+      // Cerchiamo prima se c'è un giorno di riposo specifico per la domenica
+      const specificRestDay = restDays.find(d => d.dayNumber === 7 || d.dayNumber === 0);
+      
+      if (specificRestDay) {
+        return {
+          ...specificRestDay,
+          dayNumber: date.getDate()
+        };
+      }
+      
+      // Altrimenti creiamo un giorno di riposo generico
       return {
         id: `rest-${date.toISOString()}`,
         name: 'Giorno di Riposo',
@@ -206,29 +337,16 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
       };
     }
     
-    // Se è sabato e abbiamo giorni di test, assegna un test
-    if (dayOfWeek === 6 && testDays.length > 0) {
-      // Usa il primo giorno di test disponibile
-      const testDay = testDays[0];
+    // Cerchiamo un giorno specifico per questo giorno della settimana
+    const specificDay = currentWeek.days?.find(d => d.dayNumber === dayOfWeek);
+    if (specificDay) {
       return {
-        ...testDay,
+        ...specificDay,
         dayNumber: date.getDate()
       };
     }
     
-    // Distribuisce i giorni di workout nelle giornate di lunedì, mercoledì e venerdì
-    if ((dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) && workoutDays.length > 0) {
-      // Ottieni l'indice del workout da applicare in base alla posizione nella settimana
-      const workoutIndex = Math.floor((dayOfWeek - 1) / 2) % workoutDays.length;
-      const workoutDay = workoutDays[workoutIndex];
-      
-      return {
-        ...workoutDay,
-        dayNumber: date.getDate()
-      };
-    }
-    
-    // Altrimenti è un giorno di riposo
+    // Se non troviamo un giorno specifico, restituiamo un giorno di riposo
     return {
       id: `rest-${date.toISOString()}`,
       name: 'Giorno di Riposo',
@@ -239,29 +357,6 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
     };
   };
   
-  // Funzione per verificare se un giorno ha un allenamento programmato
-  const hasWorkoutOnDate = (day: Date): boolean => {
-    if (!program?.startDate || !selectedPhase) return false;
-    
-    // Calcola la data di inizio del programma
-    const programStart = new Date(program.startDate);
-    
-    // Calcola la settimana corrente del programma
-    const daysDiff = getDaysSinceStart(day);
-    if (daysDiff < 0) return false; // La data è prima dell'inizio del programma
-    
-    const weekNumber = Math.floor(daysDiff / 7) + 1;
-    const dayOfWeek = day.getDay() || 7; // 0-6 (Domenica-Sabato) trasformato in 1-7 (Lunedì-Domenica)
-    
-    // Trova la settimana corrispondente nella fase selezionata
-    const weekInPhase = selectedPhase.weeks?.find(week => week.weekNumber === weekNumber);
-    if (!weekInPhase || !weekInPhase.workouts) return false;
-    
-    // Verifica se il giorno della settimana ha un allenamento
-    const workoutDay = weekInPhase.workouts.find(workout => workout.dayNumber === dayOfWeek);
-    return !!workoutDay;
-  };
-
   return (
     <Box sx={{ p: isMobile ? 1 : 2 }}>
       {/* Intestazione con mese corrente e bottoni di navigazione */}
@@ -286,12 +381,12 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
       
       {/* Griglia dei giorni della settimana */}
       <Grid container sx={{ mb: 1 }}>
-        {['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'].map((day, index) => (
+        {['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'].map((day) => (
           <Grid item key={day} xs>
             <Typography 
               align="center" 
               variant={isMobile ? "caption" : "body2"}
-              sx={{ 
+              sx={{
                 fontWeight: 'bold',
                 color: day === 'Dom' ? theme.palette.error.main : 'inherit'
               }}
@@ -309,19 +404,43 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
           const isSelected = isToday(date);
           const workout = getWorkoutForDay(date);
           const isCompleted = workout && completedWorkouts.has(workout.id);
-          const belongsToSelectedPhase = isInSelectedPhase(date);
-          const hasWorkout = hasWorkoutOnDate(date);
+          const inSelectedPhase = isInSelectedPhase(date);
           
           // Determina il colore di sfondo in base al tipo di allenamento
           let bgColor = 'transparent';
-          if (workout) {
-            if (workout.type === 'workout') {
-              bgColor = alpha(theme.palette.error.main, 0.1);
-            } else if (workout.type === 'test') {
-              bgColor = alpha(theme.palette.warning.main, 0.1);
-            } else if (workout.type === 'rest') {
-              bgColor = alpha(theme.palette.success.main, 0.1);
+          if (isCurrentMonth) { 
+            // Forza il 14 marzo a essere rosso (per test)
+            const isToday14March = date.getDate() === 14 && date.getMonth() === 2; // 14 marzo
+            
+            // Ottieni il workout per questo giorno
+            const workout = getWorkoutForDay(date);
+            
+            // Debug: log per verificare il tipo di workout
+            console.log(`Giorno ${date.toISOString().split('T')[0]}, workout:`, workout ? workout.type : 'nessuno');
+            
+            if (isToday14March) {
+              bgColor = alpha(theme.palette.error.main, 0.7); // Rosso per il 14 marzo
+              console.log(`Giorno ${date.getDate()}: FORZATO A ROSSO per test`);
+            } else if (workout) {
+              // Usa il tipo di workout per determinare il colore
+              if (workout.type === 'workout') {
+                bgColor = alpha(theme.palette.error.main, 0.7); // Rosso per i giorni di allenamento
+                console.log(`Giorno ${date.getDate()}: colore ROSSO (workout)`);
+              } else if (workout.type === 'test') {
+                bgColor = alpha(theme.palette.warning.main, 0.7); // Arancione per i giorni di test
+                console.log(`Giorno ${date.getDate()}: colore ARANCIONE (test)`);
+              } else if (workout.type === 'rest') {
+                bgColor = alpha(theme.palette.success.main, 0.7); // Verde per i giorni di riposo
+                console.log(`Giorno ${date.getDate()}: colore VERDE (riposo)`);
+              }
+            } else {
+              // Se non c'è un workout specifico ma è nel mese corrente,
+              // lo consideriamo come giorno di riposo
+              bgColor = alpha(theme.palette.success.main, 0.7); // Verde per i giorni di riposo
+              console.log(`Giorno ${date.getDate()}: colore VERDE (riposo default)`);
             }
+          } else {
+            console.log(`Giorno ${date.getDate()}: non nel mese corrente`);
           }
           
           return (
@@ -336,13 +455,11 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
                     ? alpha(theme.palette.background.paper, 0.5) 
                     : isSelected 
                       ? alpha(theme.palette.primary.main, 0.1)
-                      : isWithinProgram(date) 
-                        ? bgColor 
-                        : 'transparent',
+                      : bgColor, // Rimuoviamo la condizione isWithinProgram(date) per applicare sempre il colore
                   borderRadius: '8px',
                   border: isToday(date) 
                     ? `2px solid ${theme.palette.primary.main}` 
-                    : isInSelectedPhase(date)
+                    : inSelectedPhase
                       ? `3px solid ${theme.palette.secondary.main}`
                       : '1px solid #e0e0e0',
                   opacity: !isCurrentMonth ? 0.5 : 1,
@@ -359,7 +476,6 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
                   if (isCurrentMonth) {
                     // Se il workout non esiste, ne creiamo uno fittizio
                     if (!workout) {
-                      const weekDay = date.getDay();
                       const dayOfMonth = date.getDate();
                       // Tutti i giorni vuoti sono considerati giorni di riposo
                       const type: 'workout' | 'rest' | 'test' = 'rest';
@@ -458,7 +574,7 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
                         </Typography>
                       )}
                       
-                      {!workout && isCurrentMonth && isWithinProgram(date) && (
+                      {!workout && isCurrentMonth && (
                         <Typography 
                           variant="caption" 
                           sx={{ 
@@ -632,7 +748,7 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
                         <strong>Allenamenti diversificati e bilanciati:</strong> {"La Phase 1 introduce una combinazione strategica di esercizi per lo sviluppo equilibrato della forza, la mobilità e la resistenza. Gli allenamenti sono strutturati per lavorare su tutti i gruppi muscolari principali, evitando squilibri che potrebbero portare a problemi posturali o infortuni."}
                       </Typography>
                       <Typography component="li" variant="body2">
-                        <strong>Preparazione neuromuscolare avanzata:</strong> {"Oltre allo sviluppo muscolare, questa fase pone le basi per una migliore connessione mente-muscolo, essenziale per gli esercizi più complessi delle fasi successive. Questo allenamento neuromuscolare migliora la coordinazione, la stabilità e l'efficienza del movimento."}
+                        <strong>Preparazione neuromuscolare avanzata:</strong> {"Oltre allo sviluppo muscolare, questa fase pone le basi per una migliore connessione mente-muscolo, essenziale per qualsiasi atleta di calisthenics avanzato."}
                       </Typography>
                     </>
                   )}
@@ -833,6 +949,162 @@ const WorkoutCalendar: React.FC<WorkoutCalendarProps> = ({
           </Grid>
         )}
       </Box>
+      
+      {/* Visualizzazione degli esercizi della settimana selezionata */}
+      {selectedWeek && (
+        <Box sx={{ mt: 4 }}>
+          <Typography 
+            variant={isMobile ? "subtitle2" : "subtitle1"} 
+            sx={{ fontWeight: 'bold', mb: 2 }}
+          >
+            Allenamenti della Settimana {selectedWeek.weekNumber}
+          </Typography>
+          
+          {/* Raggruppa i giorni per tipo di allenamento */}
+          {selectedWeek.days && selectedWeek.days.length > 0 ? (
+            <Grid container spacing={2}>
+              {selectedWeek.days
+                .filter(day => day.type === 'workout' || day.type === 'test')
+                .map((day, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={day.id || index}>
+                    <Card 
+                      sx={{
+                        borderRadius: 2,
+                        boxShadow: 2,
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        border: `1px solid ${day.type === 'workout' 
+                          ? alpha(theme.palette.error.main, 0.3) 
+                          : alpha(theme.palette.warning.main, 0.3)}`
+                      }}
+                    >
+                      <CardHeader
+                        title={day.name || `Allenamento ${day.code || day.dayNumber}`}
+                        subheader={`Giorno ${day.dayNumber} - ${day.type === 'workout' ? 'Allenamento' : 'Test'}`}
+                        titleTypographyProps={{ variant: 'h6', fontWeight: 'bold' }}
+                        subheaderTypographyProps={{ variant: 'body2' }}
+                        sx={{
+                          backgroundColor: day.type === 'workout' 
+                            ? alpha(theme.palette.error.main, 0.1) 
+                            : alpha(theme.palette.warning.main, 0.1),
+                          borderBottom: `1px solid ${day.type === 'workout' 
+                            ? alpha(theme.palette.error.main, 0.2) 
+                            : alpha(theme.palette.warning.main, 0.2)}`
+                        }}
+                      />
+                      <CardContent sx={{ flexGrow: 1, pt: 2 }}>
+                        {day.exercises && day.exercises.length > 0 ? (
+                          <List disablePadding>
+                            {day.exercises.map((exercise, exIndex) => (
+                              <ListItem 
+                                key={exercise.id || exIndex}
+                                disablePadding
+                                sx={{ 
+                                  mb: 1.5,
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  alignItems: 'flex-start',
+                                  borderBottom: exIndex < day.exercises.length - 1 ? `1px solid ${alpha(theme.palette.divider, 0.5)}` : 'none',
+                                  pb: exIndex < day.exercises.length - 1 ? 1.5 : 0
+                                }}
+                              >
+                                <Box sx={{ width: '100%', display: 'flex', alignItems: 'flex-start', mb: 0.5 }}>
+                                  <Box 
+                                    sx={{
+                                      minWidth: '24px',
+                                      height: '24px',
+                                      borderRadius: '50%',
+                                      backgroundColor: theme.palette.primary.main,
+                                      color: 'white',
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      mr: 1.5,
+                                      fontSize: '0.8rem',
+                                      fontWeight: 'bold'
+                                    }}
+                                  >
+                                    {exIndex + 1}
+                                  </Box>
+                                  <Box sx={{ flexGrow: 1 }}>
+                                    <Typography variant="subtitle1" fontWeight="bold">
+                                      {exercise.name}
+                                    </Typography>
+                                    {exercise.description && (
+                                      <Typography variant="body2" color="textSecondary" sx={{ mt: 0.5 }}>
+                                        {exercise.description}
+                                      </Typography>
+                                    )}
+                                  </Box>
+                                </Box>
+                                
+                                <Box sx={{ pl: 5, width: '100%' }}>
+                                  <Grid container spacing={1} sx={{ mt: 0.5 }}>
+                                    <Grid item xs={6}>
+                                      <Typography variant="body2" color="textSecondary">
+                                        <strong>Serie:</strong> {exercise.sets}
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                      <Typography variant="body2" color="textSecondary">
+                                        <strong>Reps:</strong> {exercise.reps}
+                                      </Typography>
+                                    </Grid>
+                                    {exercise.rest && (
+                                      <Grid item xs={6}>
+                                        <Typography variant="body2" color="textSecondary">
+                                          <strong>Riposo:</strong> {exercise.rest}
+                                        </Typography>
+                                      </Grid>
+                                    )}
+                                    {exercise.tempo && (
+                                      <Grid item xs={6}>
+                                        <Typography variant="body2" color="textSecondary">
+                                          <strong>Tempo:</strong> {exercise.tempo}
+                                        </Typography>
+                                      </Grid>
+                                    )}
+                                  </Grid>
+                                  
+                                  {exercise.notes && (
+                                    <Typography variant="body2" sx={{ mt: 1, fontStyle: 'italic', color: alpha(theme.palette.text.primary, 0.7) }}>
+                                      {exercise.notes}
+                                    </Typography>
+                                  )}
+                                </Box>
+                              </ListItem>
+                            ))}
+                          </List>
+                        ) : (
+                          <Typography variant="body2" color="textSecondary" sx={{ fontStyle: 'italic', textAlign: 'center', py: 2 }}>
+                            Nessun esercizio disponibile per questo allenamento.
+                          </Typography>
+                        )}
+                      </CardContent>
+                      <CardActions sx={{ justifyContent: 'flex-end', p: 2, pt: 0 }}>
+                        <Button 
+                          size="small" 
+                          variant="outlined" 
+                          color={day.type === 'workout' ? "error" : "warning"}
+                          onClick={() => onDaySelect(day)}
+                          startIcon={<FitnessCenterIcon />}
+                        >
+                          Dettagli
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))
+              }
+            </Grid>
+          ) : (
+            <Typography variant="body1" color="textSecondary" sx={{ fontStyle: 'italic', textAlign: 'center', py: 4 }}>
+              Nessun allenamento disponibile per questa settimana.
+            </Typography>
+          )}
+        </Box>
+      )}
     </Box>
   );
 };

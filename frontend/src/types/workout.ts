@@ -18,6 +18,8 @@ export interface Exercise {
   type?: 'strength' | 'cardio' | 'mobility';
   rm?: number; // Ripetizioni massime
   repSpeed?: string; // Velocità di esecuzione (es. "202", "X01")
+  duration?: number; // Durata in minuti per esercizi cardio
+  distance?: number; // Distanza in km per esercizi cardio
 }
 
 export interface WorkoutDay {
@@ -69,6 +71,7 @@ export interface WorkoutProgram {
   goals?: string; // Obiettivi del programma
   startDate?: string; // Data di inizio del programma
   isAvailable: boolean;
+  type?: 'standard' | 'skill-based'; // Tipo di programma
 }
 
 // Interfaccia per la visualizzazione a calendario

@@ -1,0 +1,40 @@
+  const generateWorkoutFromSelectedSkills = () => {
+    if (selectedSkills.length === 0) {
+      setSnackbarMessage('Seleziona almeno una skill per generare la scheda');
+      setSnackbarOpen(true);
+      return;
+    }
+
+    // Genera il programma utilizzando il servizio
+    const generatedProgram = generateWorkoutFromSkills(selectedSkills, daysPerWeek);
+    
+    if (!generatedProgram) {
+      setSnackbarMessage('Errore nella generazione della scheda. Riprova.');
+      setSnackbarOpen(true);
+      return;
+    }
+
+    // Aggiorna i dettagli del programma
+    const programToSave = {
+      ...generatedProgram,
+      name: programDetails.name || generatedProgram.name,
+      description: programDetails.description || generatedProgram.description,
+      // Assicuriamoci che abbia tutti i campi necessari
+      id: generatedProgram.id || `program-${Date.now()}`,
+      type: generatedProgram.type || 'skill-based',
+      author: 'HealthyLife AI',
+      targetAreas: generatedProgram.targetAreas || []
+    };
+
+    // Salva il programma nel database
+    const savedProgramId = saveWorkoutProgram(programToSave);
+    
+    setGeneratedWorkout(programToSave);
+    setSnackbarMessage('Workout salvato con successo!');
+    setSnackbarOpen(true);
+    
+    // Reindirizza alla pagina dei programmi di allenamento
+    setTimeout(() => {
+      navigate(`/workout-programs?id=${savedProgramId}`);
+    }, 1500);
+  };

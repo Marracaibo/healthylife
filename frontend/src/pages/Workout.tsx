@@ -70,6 +70,7 @@ import {
   TimelineContent
 } from '@mui/lab';
 import { bodyTransformationProgram, workoutPrograms } from '../data/workoutPrograms';
+import { getWorkoutPrograms, getWorkoutProgramById } from '../services/workoutStorageService';
 import { WorkoutPhase, WorkoutWeek, WorkoutDay, Exercise, WorkoutProgram } from '../types/workout';
 import WorkoutCalendar from '../components/WorkoutCalendar';
 import ExerciseGif from '../components/ExerciseGif';
@@ -171,10 +172,64 @@ const Workout = () => {
 
   // Carica il programma e seleziona la fase e la settimana corrente
   useEffect(() => {
-    // Per ora utilizziamo il programma Body Transformation
-    const loadedProgram = bodyTransformationProgram;
+    // Carica l'ID del programma corrente dal localStorage
+    const currentProgramId = localStorage.getItem('currentWorkoutProgram');
+    console.log('ID programma corrente:', currentProgramId);
+    
+    if (!currentProgramId) {
+      console.log('Nessun ID programma trovato in localStorage');
+      return;
+    }
+    
+    // Carica tutti i programmi disponibili
+    const userPrograms = getWorkoutPrograms();
+    console.log('Programmi utente trovati:', userPrograms.length);
+    console.log('Dettaglio programmi utente:', userPrograms.map(p => ({ id: p.id, name: p.name })));
+    
+    // Programmi predefiniti
+    console.log('Programmi predefiniti:', workoutPrograms.map(p => ({ id: p.id, name: p.name })));
+    
+    const allPrograms = [
+      ...workoutPrograms, 
+      ...userPrograms // Programmi personalizzati
+    ];
+    
+    console.log('Tutti i programmi disponibili:', allPrograms.map(p => ({ id: p.id, name: p.name })));
+    
+    // Verifica se gli ID sono stringhe o numeri
+    console.log('Tipo dell\'ID cercato:', typeof currentProgramId);
+    allPrograms.forEach(p => {
+      console.log(`Programma ${p.name}, ID: ${p.id}, tipo: ${typeof p.id}`);
+    });
+    
+    // Trova il programma corrente in base all'ID con confronto esplicito
+    let loadedProgram = allPrograms.find(p => String(p.id) === String(currentProgramId));
+    console.log('Programma trovato con confronto di stringhe:', loadedProgram ? loadedProgram.name : 'nessuno');
+    
+    // Se non troviamo il programma, proviamo a cercarlo direttamente in localStorage
+    if (!loadedProgram) {
+      try {
+        console.log('Cerco il programma direttamente in localStorage');
+        const programsJson = localStorage.getItem('healthylife_workout_programs');
+        console.log('Contenuto di healthylife_workout_programs:', programsJson);
+        
+        if (programsJson) {
+          const programs = JSON.parse(programsJson);
+          console.log('Programmi parsati da localStorage:', programs);
+          
+          if (Array.isArray(programs)) {
+            loadedProgram = programs.find(p => String(p.id) === String(currentProgramId));
+            console.log('Programma trovato direttamente in localStorage:', loadedProgram ? loadedProgram.name : 'nessuno');
+          }
+        }
+      } catch (error) {
+        console.error('Errore nel recupero diretto da localStorage:', error);
+      }
+    }
     
     if (loadedProgram) {
+      console.log('Caricamento del programma trovato:', loadedProgram.name);
+      console.log('Struttura del programma:', JSON.stringify(loadedProgram, null, 2));
       setProgram(loadedProgram);
       
       // Calcola la settimana corrente
@@ -185,25 +240,60 @@ const Workout = () => {
       let currentPhase: WorkoutPhase | null = null;
       let currentWeek: WorkoutWeek | null = null;
       
-      for (const phase of loadedProgram.phases) {
-        for (const w of phase.weeks) {
-          if (w.weekNumber === weekNumber) {
-            currentPhase = phase;
-            currentWeek = w;
-            break;
+      // Debug della struttura del programma
+      console.log('Fasi del programma:', loadedProgram.phases ? loadedProgram.phases.length : 'nessuna fase');
+      
+      if (loadedProgram.phases && loadedProgram.phases.length > 0) {
+        for (const phase of loadedProgram.phases) {
+          console.log(`Fase ${phase.id}: ${phase.name}, settimane: ${phase.weeks ? phase.weeks.length : 0}`);
+          
+          if (phase.weeks && phase.weeks.length > 0) {
+            for (const w of phase.weeks) {
+              console.log(`  Settimana ${w.id}: ${w.name}, numero: ${w.weekNumber}, giorni: ${w.days ? w.days.length : 0}`);
+              
+              if (w.weekNumber === weekNumber) {
+                currentPhase = phase;
+                currentWeek = w;
+                break;
+              }
+            }
+          } else {
+            console.log('  Nessuna settimana trovata in questa fase');
           }
+          
+          if (currentPhase && currentWeek) break;
         }
-        if (currentPhase) break;
+      } else {
+        console.log('Nessuna fase trovata nel programma');
       }
       
       // Se non troviamo la fase/settimana corrente, usa la prima fase e settimana
-      if (!currentPhase && loadedProgram.phases.length > 0) {
+      if (!currentPhase && loadedProgram.phases && loadedProgram.phases.length > 0) {
         currentPhase = loadedProgram.phases[0];
-        currentWeek = currentPhase.weeks[0] || null;
+        console.log('Usando la prima fase:', currentPhase.name);
+        
+        if (currentPhase.weeks && currentPhase.weeks.length > 0) {
+          currentWeek = currentPhase.weeks[0];
+          console.log('Usando la prima settimana:', currentWeek.name);
+        } else {
+          console.log('Nessuna settimana trovata nella prima fase');
+        }
       }
+      
+      console.log('Fase selezionata:', currentPhase ? currentPhase.name : 'nessuna');
+      console.log('Settimana selezionata:', currentWeek ? currentWeek.name : 'nessuna');
       
       setSelectedPhase(currentPhase);
       setSelectedWeek(currentWeek);
+      
+      // Se c'è una settimana selezionata, seleziona anche il primo giorno
+      if (currentWeek && currentWeek.days && currentWeek.days.length > 0) {
+        const firstDay = currentWeek.days[0];
+        console.log('Selezionando il primo giorno:', firstDay.name);
+        handleDaySelect(firstDay);
+      } else {
+        console.log('Nessun giorno disponibile nella settimana selezionata');
+      }
       
       // Carica gli allenamenti completati dal localStorage
       const savedCompletedWorkouts = localStorage.getItem('completedWorkouts');

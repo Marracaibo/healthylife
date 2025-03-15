@@ -50,8 +50,17 @@ export const saveWorkoutProgram = (program: WorkoutProgram): string => {
 };
 
 export const getWorkoutPrograms = (): WorkoutProgram[] => {
-  const programsJson = localStorage.getItem(WORKOUT_PROGRAMS_KEY);
-  return programsJson ? JSON.parse(programsJson) : [];
+  try {
+    const programsJson = localStorage.getItem(WORKOUT_PROGRAMS_KEY);
+    if (programsJson) {
+      console.log('Programmi trovati in localStorage:', programsJson);
+      const programs = JSON.parse(programsJson);
+      return Array.isArray(programs) ? programs : [];
+    }
+  } catch (error) {
+    console.error('Errore nel recupero dei programmi di allenamento:', error);
+  }
+  return [];
 };
 
 export const getWorkoutProgramById = (id: string): WorkoutProgram | undefined => {

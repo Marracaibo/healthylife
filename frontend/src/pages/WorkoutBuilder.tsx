@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
-  Typography,
+  alpha,
   Box,
-  Paper,
-  TextField,
   Button,
-  Divider,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  IconButton,
   Card,
   CardContent,
+  Checkbox,
+  Container,
+  FormControl,
   Grid,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Paper,
+  Select,
+  TextField,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+  Divider,
+  Snackbar,
+  Alert,
   Fade,
   Slide,
-  alpha,
-  Snackbar,
-  Alert
+  Tabs,
+  Tab
 } from '@mui/material';
-import { FitnessCenter, Add, Delete, Refresh } from '@mui/icons-material';
+import { FitnessCenter, Add, Delete, Refresh, EmojiEvents, DirectionsRun, SportsGymnastics, AccessibilityNew } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { saveWorkoutProgram } from '../services/workoutStorageService';
 import { getCurrentWorkoutExercises, resetCurrentWorkout } from '../services/currentWorkoutService';
+import { generateWorkoutFromSkills } from '../services/skillBasedWorkoutGenerator';
+import { skillProgressions } from '../data/skillProgressions';
+import SkillSelectionGrid from '../components/SkillSelectionGrid';
 
 const WorkoutBuilder: React.FC = () => {
   const theme = useTheme();
@@ -34,11 +42,20 @@ const WorkoutBuilder: React.FC = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   
+  // Modalità di creazione del workout: manuale o basata su skill
+  const [creationMode, setCreationMode] = useState<'manual' | 'skill-based'>('manual');
+  
+  // Stati per la creazione basata su skill
+  const [selectedSkills, setSelectedSkills] = useState<Array<{id: string, startLevel: number}>>([]);
+  const [skillFilter, setSkillFilter] = useState<'all' | 'calisthenics' | 'cardio' | 'powerlifting' | 'mobility'>('all');
+  const [generatedWorkout, setGeneratedWorkout] = useState<any>(null);
+  const [daysPerWeek, setDaysPerWeek] = useState<number>(3);
+  
   // Imposta loaded a true dopo il caricamento iniziale
   useEffect(() => {
     setLoaded(true);
   }, []);
-  
+
   // Stato per i dettagli principali del programma
   const [programDetails, setProgramDetails] = useState({
     name: '',
@@ -173,7 +190,7 @@ const WorkoutBuilder: React.FC = () => {
   // Funzione per importare gli esercizi dalla libreria
   const importExercisesFromLibrary = () => {
     // Naviga alla pagina della libreria di esercizi
-    navigate('/skills-library');
+    navigate('/exercise-library');
   };
 
   // Funzione per salvare il programma
@@ -267,258 +284,289 @@ const WorkoutBuilder: React.FC = () => {
       setSnackbarMessage('Si è verificato un errore durante il salvataggio della scheda');
     }
   };
-  
+
+  // Funzione per gestire la selezione delle skill
+  const handleSkillSelect = (skillId: string) => {
+    setSelectedSkills(prev => {
+      // Se la skill è già selezionata, la rimuoviamo
+      if (prev.some(skill => skill.id === skillId)) {
+        return prev.filter(skill => skill.id !== skillId);
+      }
+      // Altrimenti, la aggiungiamo con il livello iniziale 1
+      return [...prev, { id: skillId, startLevel: 1 }];
+    });
+  };
+
+  // Funzione per generare un programma basato sulle skill selezionate
+  const generateWorkoutFromSelectedSkills = () => {
+    if (selectedSkills.length === 0) {
+      setSnackbarMessage('Seleziona almeno una skill per generare la scheda');
+      setSnackbarOpen(true);
+      return;
+    }
+
+    // Genera il programma utilizzando il servizio
+    const generatedProgram = generateWorkoutFromSkills(selectedSkills, daysPerWeek);
+    
+    if (!generatedProgram) {
+      setSnackbarMessage('Errore nella generazione della scheda. Riprova.');
+      setSnackbarOpen(true);
+      return;
+    }
+
+    // Prepara i dati del programma da salvare
+    const programToSave = {
+      ...generatedProgram,
+      name: programDetails.name || generatedProgram.name,
+      description: programDetails.description || generatedProgram.description,
+      // Assicuriamoci che abbia tutti i campi necessari
+      id: generatedProgram.id || `program-${Date.now()}`,
+      type: generatedProgram.type || 'skill-based',
+      author: 'HealthyLife AI',
+      targetAreas: generatedProgram.targetAreas || []
+    };
+
+    // Salva il programma nel database
+    const savedProgramId = saveWorkoutProgram(programToSave);
+    console.log('Programma salvato con ID:', savedProgramId);
+    
+    // Salva l'ID del programma in localStorage
+    localStorage.setItem('currentWorkoutProgram', savedProgramId);
+    console.log('ID programma salvato in localStorage');
+    
+    setGeneratedWorkout(programToSave);
+    setSnackbarMessage('Workout salvato con successo!');
+    setSnackbarOpen(true);
+    
+    // Reindirizza alla pagina dei programmi di allenamento
+    setTimeout(() => {
+      navigate(`/workout-programs?id=${savedProgramId}`);
+    }, 1500);
+  };
+
+  const addExerciseToDay = (dayIndex: number, exercise: any) => {
+    setWorkoutDays(prev => {
+      const newWorkout = [...prev];
+      if (!newWorkout[dayIndex]) {
+        newWorkout[dayIndex] = [];
+      }
+      newWorkout[dayIndex] = [...newWorkout[dayIndex], exercise];
+      return newWorkout;
+    });
+  };
+
+  const handleRemoveExercise = (dayIndex: number, exerciseIndex: number) => {
+    setWorkoutDays(prev => {
+      const newWorkout = [...prev];
+      newWorkout[dayIndex] = newWorkout[dayIndex].filter((_, i) => i !== exerciseIndex);
+      return newWorkout;
+    });
+  };
+
+  const handleSaveWorkout = async () => {
+    const workoutProgram = {
+      name: programDetails.name || 'Il mio workout',
+      description: programDetails.description || 'Programma di allenamento personalizzato',
+      days: workoutDays.map((day, index) => ({
+        name: `Giorno ${index + 1}`,
+        exercises: day.exercises
+      }))
+    };
+
+    await saveWorkoutProgram(workoutProgram);
+    setSnackbarOpen(true);
+    setSnackbarMessage('Scheda di allenamento salvata con successo!');
+    setTimeout(() => setSnackbarOpen(false), 3000);
+  };
+
+  const handleReset = () => {
+    setWorkoutDays([]);
+    setProgramDetails({
+      name: '',
+      description: '',
+      difficulty: 'intermediate',
+      duration: 4,
+      category: '',
+      targetAreas: []
+    });
+    resetCurrentWorkout();
+    setSelectedSkills([]);
+    setGeneratedWorkout(null);
+  };
+
+  const handleSkillLevelChange = (skillId: string, level: number) => {
+    setSelectedSkills(prev => {
+      return prev.map(skill => {
+        if (skill.id === skillId) {
+          return { ...skill, startLevel: level };
+        }
+        return skill;
+      });
+    });
+  };
+
+  const handleDaysPerWeekChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setDaysPerWeek(event.target.value as number);
+  };
+
+  const handleCreationModeChange = (event: React.MouseEvent<HTMLElement>, newMode: 'manual' | 'skill-based') => {
+    if (newMode !== null) {
+      setCreationMode(newMode);
+      
+      // Resetta il workout quando si cambia modalità
+      setWorkoutDays([]);
+      setGeneratedWorkout(null);
+    }
+  };
+
   return (
     <Container maxWidth="xl" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
       <Fade in={loaded} timeout={800}>
         <Box>
-          <Box 
-            sx={{ 
-              position: 'relative',
-              mb: 6,
-              mt: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              overflow: 'hidden',
-              borderRadius: 4,
-              p: { xs: 4, md: 6 },
-            }}
-          >
-            <Box 
-              sx={{ 
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 50%, ${alpha(theme.palette.primary.light, 0.8)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `radial-gradient(circle at 30% 40%, ${alpha('#000', 0)} 0%, ${alpha('#000', 0.3)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            
-            <Typography 
-              variant="h2" 
-              component="h1"
-              sx={{ 
-                fontWeight: 800, 
-                color: 'white',
-                letterSpacing: -1,
-                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-                mb: 2,
-                textShadow: '0 2px 10px rgba(0,0,0,0.2)'
-              }}
-            >
-              Workout Builder
-            </Typography>
-            
-            <Typography 
-              variant="h6" 
-              sx={{ 
-                fontWeight: 400, 
-                color: 'white',
-                maxWidth: '800px',
-                mb: 4,
-                opacity: 0.9,
-                textShadow: '0 1px 5px rgba(0,0,0,0.1)'
-              }}
-            >
-              Crea la tua scheda di allenamento personalizzata
-            </Typography>
-          </Box>
-
-          {/* Menu di navigazione per le tre sezioni principali */}
-          <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
-            <Paper 
-              elevation={3}
-              sx={{ 
-                display: 'flex', 
-                borderRadius: 3,
-                overflow: 'hidden',
-                flexDirection: { xs: 'column', sm: 'row' }
-              }}
-            >
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenter />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: alpha(theme.palette.primary.main, 0.9),
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => navigate('/workout-programs')}
-              >
-                Programmi Workout
-              </Button>
-              
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenter />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: alpha(theme.palette.primary.main, 0.9),
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => navigate('/skills-progression')}
-              >
-                Libreria Esercizi
-              </Button>
-              
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenter />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: 'primary.main',
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => {}} // Già nella pagina corrente
-              >
-                Workout Builder
-              </Button>
-            </Paper>
-          </Box>
-
-          <Slide direction="up" in={loaded} timeout={1000} mountOnEnter unmountOnExit>
-            <Container maxWidth="lg" sx={{ py: 4 }}>
-              <Paper 
-                elevation={0} 
-                sx={{ 
-                  p: 3, 
-                  mb: 4, 
-                  borderRadius: 2,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
-                  color: 'white',
-                  border: '1px solid',
-                  borderColor: theme.palette.primary.light
-                }}
-              >
-                <Box display="flex" alignItems="center" mb={2}>
-                  <FitnessCenter sx={{ mr: 2, fontSize: 32 }} />
-                  <Typography variant="h5" component="h1" fontWeight="500">
-                    Crea la Tua Scheda di Allenamento
-                  </Typography>
-                </Box>
-                <Typography variant="body2">
-                  Inserisci manualmente gli esercizi, serie e ripetizioni per costruire la tua scheda personalizzata.
-                </Typography>
-              </Paper>
-
-              <Paper 
-                elevation={0} 
-                sx={{ 
-                  p: 3, 
-                  borderRadius: 2, 
-                  mb: 4, 
-                  border: '1px solid',
-                  borderColor: theme.palette.divider
-                }}
-              >
-                <Typography variant="h6" gutterBottom fontWeight="500" color="primary">
-                  Dettagli della Scheda
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper sx={{ p: 3, mb: 3 }}>
+                <Typography variant="h5" component="h1" gutterBottom>
+                  Crea il tuo workout
                 </Typography>
                 
-                <Grid container spacing={2}>
+                <Box sx={{ mb: 3 }}>
+                  <ToggleButtonGroup
+                    value={creationMode}
+                    exclusive
+                    onChange={handleCreationModeChange}
+                    aria-label="modalità di creazione"
+                    sx={{ mb: 2 }}
+                  >
+                    <ToggleButton value="manual" aria-label="creazione manuale">
+                      <FitnessCenter sx={{ mr: 1 }} /> Creazione Manuale
+                    </ToggleButton>
+                    <ToggleButton value="skill-based" aria-label="creazione basata su skill">
+                      <EmojiEvents sx={{ mr: 1 }} /> Creazione Basata su Skill
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                  
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                    {creationMode === 'manual' 
+                      ? 'Crea manualmente il tuo workout aggiungendo esercizi a ciascun giorno.'
+                      : 'Seleziona le skill che vuoi ottenere e genera automaticamente un programma personalizzato.'}
+                  </Typography>
+                </Box>
+                
+                {/* Form per i dettagli del programma */}
+                <Grid container spacing={2} sx={{ mb: 3 }}>
                   <Grid item xs={12} sm={6}>
                     <TextField
                       fullWidth
-                      label="Nome della scheda"
-                      variant="outlined"
+                      label="Nome del programma"
                       value={programDetails.name}
                       onChange={(e) => setProgramDetails({...programDetails, name: e.target.value})}
-                      margin="normal"
-                      size="small"
+                      variant="outlined"
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <FormControl fullWidth margin="normal" size="small">
-                      <InputLabel>Difficoltà</InputLabel>
+                    <FormControl fullWidth>
+                      <InputLabel>Giorni di allenamento a settimana</InputLabel>
                       <Select
-                        value={programDetails.difficulty}
-                        label="Difficoltà"
-                        onChange={(e) => setProgramDetails({...programDetails, difficulty: e.target.value as 'beginner' | 'intermediate' | 'advanced'})}
+                        value={daysPerWeek}
+                        onChange={(e) => setDaysPerWeek(Number(e.target.value))}
+                        label="Giorni di allenamento a settimana"
                       >
-                        <MenuItem value="beginner">Principiante</MenuItem>
-                        <MenuItem value="intermediate">Intermedio</MenuItem>
-                        <MenuItem value="advanced">Avanzato</MenuItem>
+                        {[2, 3, 4, 5, 6].map((num) => (
+                          <MenuItem key={num} value={num}>{num} giorni</MenuItem>
+                        ))}
                       </Select>
                     </FormControl>
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
-                      label="Descrizione"
-                      variant="outlined"
+                      label="Descrizione del programma"
                       value={programDetails.description}
                       onChange={(e) => setProgramDetails({...programDetails, description: e.target.value})}
-                      margin="normal"
                       multiline
                       rows={2}
-                      size="small"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Categoria"
                       variant="outlined"
-                      value={programDetails.category}
-                      onChange={(e) => setProgramDetails({...programDetails, category: e.target.value})}
-                      margin="normal"
-                      placeholder="Es: Forza, Ipertrofia, Definizione..."
-                      size="small"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Durata (settimane)"
-                      variant="outlined"
-                      type="number"
-                      value={programDetails.duration}
-                      onChange={(e) => setProgramDetails({...programDetails, duration: parseInt(e.target.value) || 0})}
-                      margin="normal"
-                      InputProps={{ inputProps: { min: 1, max: 52 } }}
-                      size="small"
                     />
                   </Grid>
                 </Grid>
               </Paper>
-
-              {/* Sezione per aggiungere giorni di allenamento */}
+            </Grid>
+            
+            {creationMode === 'skill-based' && (
+              <Grid item xs={12}>
+                <Paper sx={{ p: 3, mb: 3 }}>
+                  <Typography variant="h6" gutterBottom>
+                    Seleziona le skill da allenare
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+                    Scegli le skill che desideri ottenere e verrà generato un programma di allenamento personalizzato.
+                  </Typography>
+                  
+                  <Box sx={{ mb: 3 }}>
+                    <Tabs 
+                      value={skillFilter} 
+                      onChange={(_, newValue) => setSkillFilter(newValue)}
+                      variant="scrollable"
+                      scrollButtons="auto"
+                      sx={{ mb: 3 }}
+                    >
+                      <Tab 
+                        icon={<FitnessCenter />} 
+                        label="Tutte" 
+                        value="all" 
+                      />
+                      <Tab 
+                        icon={<SportsGymnastics />} 
+                        label="Calisthenics" 
+                        value="calisthenics" 
+                      />
+                      <Tab 
+                        icon={<DirectionsRun />} 
+                        label="Cardio" 
+                        value="cardio" 
+                      />
+                      <Tab 
+                        icon={<FitnessCenter />} 
+                        label="Powerlifting" 
+                        value="powerlifting" 
+                      />
+                      <Tab 
+                        icon={<AccessibilityNew />} 
+                        label="Mobilità" 
+                        value="mobility" 
+                      />
+                    </Tabs>
+                    
+                    <SkillSelectionGrid 
+                      skills={skillProgressions}
+                      selectedSkills={selectedSkills}
+                      onSkillSelect={handleSkillSelect}
+                      onSkillLevelChange={handleSkillLevelChange}
+                      filter={skillFilter}
+                    />
+                  </Box>
+                  
+                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                      disabled={selectedSkills.length === 0}
+                      onClick={generateWorkoutFromSelectedSkills}
+                      startIcon={<FitnessCenter />}
+                      sx={{ minWidth: 240 }}
+                    >
+                      Genera Workout
+                    </Button>
+                  </Box>
+                </Paper>
+              </Grid>
+            )}
+            
+            {/* Qui il resto del codice esistente per la creazione manuale del workout */}
+            
+            <Grid item xs={12}>
               <Paper 
                 elevation={0} 
                 sx={{ 
@@ -757,8 +805,8 @@ const WorkoutBuilder: React.FC = () => {
                   Salva Scheda di Allenamento
                 </Button>
               </Box>
-            </Container>
-          </Slide>
+            </Grid>
+          </Grid>
         </Box>
       </Fade>
       <Snackbar

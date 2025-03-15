@@ -12,47 +12,10 @@ import {
 } from '@mui/material';
 import WorkoutProgramCards from '../components/WorkoutProgramCards';
 import { workoutPrograms } from '../data/workoutPrograms';
+import { getWorkoutPrograms, saveWorkoutProgram } from '../services/workoutStorageService';
 import { WorkoutProgram } from '../types/workout';
 import { useNavigate } from 'react-router-dom';
 import { FitnessCenter } from '@mui/icons-material';
-import { getWorkoutPrograms } from '../services/workoutStorageService';
-
-// Definizione di programmi aggiuntivi per la demo
-const additionalPrograms: WorkoutProgram[] = [
-  {
-    id: 'strength-master',
-    name: 'Strength Master',
-    description: 'Un programma focalizzato sullo sviluppo della forza massimale con esercizi composti e progressione del carico.',
-    phases: [],
-    duration: 16,
-    difficulty: 'advanced',
-    category: 'Strength Training',
-    targetAreas: ['Strength', 'Power', 'Muscle Mass'],
-    isAvailable: true
-  },
-  {
-    id: 'hiit-cardio',
-    name: 'HIIT & Cardio',
-    description: 'Allenamenti ad alta intensità intervallati con sessioni cardio per massimizzare il consumo calorico e migliorare la resistenza.',
-    phases: [],
-    duration: 12,
-    difficulty: 'intermediate',
-    category: 'Cardio & Conditioning',
-    targetAreas: ['Fat Loss', 'Endurance', 'Cardiovascular Health'],
-    isAvailable: true
-  },
-  {
-    id: 'core-power',
-    name: 'Core Power',
-    description: 'Programma specializzato per rafforzare il core e migliorare la stabilità con esercizi mirati per addominali e zona lombare.',
-    phases: [],
-    duration: 8,
-    difficulty: 'beginner',
-    category: 'Core & Stability',
-    targetAreas: ['Core Strength', 'Posture', 'Stability'],
-    isAvailable: true
-  }
-];
 
 const WorkoutPrograms: React.FC = () => {
   const theme = useTheme();
@@ -86,30 +49,39 @@ const WorkoutPrograms: React.FC = () => {
     const userPrograms = getWorkoutPrograms();
     
     // Converte tutti i programmi nel formato corretto per i cards
-    const convertedPrograms = [...workoutPrograms, ...additionalPrograms, ...userPrograms]
+    const convertedPrograms = [...workoutPrograms, ...userPrograms]
       .map(program => convertToWorkoutProgramCard(program));
     
     // Imposta i programmi convertiti nello state
     setAllPrograms(convertedPrograms);
     
-    // Controlla se l'utente ha già un programma attivo
-    const savedProgress = localStorage.getItem('workoutProgress');
-    if (savedProgress) {
-      try {
-        const progress = JSON.parse(savedProgress);
-        if (progress.programId) {
-          setCurrentProgram(progress.programId);
-        } else {
-          // Se non c'è un programId nel progresso salvato, impostiamo il default
+    // Controlla se c'è un ID nel parametro dell'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const programId = urlParams.get('id');
+    
+    if (programId) {
+      // Se c'è un ID nell'URL, imposta quello come programma corrente
+      setCurrentProgram(programId);
+    } else {
+      // Altrimenti, controlla se l'utente ha già un programma attivo
+      const savedProgress = localStorage.getItem('workoutProgress');
+      if (savedProgress) {
+        try {
+          const progress = JSON.parse(savedProgress);
+          if (progress.programId) {
+            setCurrentProgram(progress.programId);
+          } else {
+            // Se non c'è un programId nel progresso salvato, impostiamo il default
+            setCurrentProgram('body-transformation');
+          }
+        } catch (error) {
+          console.error('Error parsing workout progress:', error);
           setCurrentProgram('body-transformation');
         }
-      } catch (error) {
-        console.error('Error parsing workout progress:', error);
+      } else {
+        // Se non c'è progresso salvato, impostiamo il default
         setCurrentProgram('body-transformation');
       }
-    } else {
-      // Se non c'è progresso salvato, impostiamo il default
-      setCurrentProgram('body-transformation');
     }
     
     // Indica che i dati sono stati caricati
@@ -120,7 +92,12 @@ const WorkoutPrograms: React.FC = () => {
   const handleSelectProgram = (program: any) => {
     // Salva il programma selezionato in localStorage
     try {
+      console.log('Programma selezionato:', program);
       localStorage.setItem('currentWorkoutProgram', program.id);
+      
+      // Debug: verifica che l'ID sia stato salvato correttamente
+      const savedId = localStorage.getItem('currentWorkoutProgram');
+      console.log('ID salvato in localStorage:', savedId);
       
       // Inizializza lo stato del programma se è la prima volta
       if (!localStorage.getItem('workoutProgress')) {

@@ -174,12 +174,10 @@ const WorkoutProgramCards: React.FC<WorkoutProgramCardsProps> = ({ programs, cur
     const selectedProgram = programs.find(p => p.id === programId);
     if (selectedProgram) {
       setActiveProgram(programId);
+      // Chiama onSelectProgram che si occuperà di salvare l'ID e navigare
       onSelectProgram(selectedProgram);
-    }
-    
-    if (selectedProgram && selectedProgram.isAvailable) {
-      // Naviga alla pagina di allenamento solo se il programma è disponibile
-      navigate('/workout');
+      // Rimuoviamo la navigazione da qui perché viene già gestita in onSelectProgram
+      // che corrisponde a handleSelectProgram in WorkoutPrograms.tsx
     }
   };
 

@@ -1,0 +1,62 @@
+  // Carica il programma e seleziona la fase e la settimana corrente
+  useEffect(() => {
+    // Carica l'ID del programma corrente dal localStorage
+    const currentProgramId = localStorage.getItem('currentWorkoutProgram');
+    
+    // Carica tutti i programmi disponibili
+    const allPrograms = [
+      ...workoutPrograms, 
+      ...additionalPrograms,
+      ...getWorkoutPrograms() // Programmi personalizzati
+    ];
+    
+    // Trova il programma corrente in base all'ID
+    let loadedProgram = allPrograms.find(p => p.id === currentProgramId);
+    
+    // Se non troviamo il programma, usiamo Body Transformation come fallback
+    if (!loadedProgram) {
+      loadedProgram = bodyTransformationProgram;
+    }
+    
+    if (loadedProgram) {
+      setProgram(loadedProgram);
+      
+      // Calcola la settimana corrente
+      const weekNumber = calculateCurrentWeek(loadedProgram);
+      setCurrentWeekNumber(weekNumber);
+      
+      // Trova la fase corrente in base alla settimana
+      let currentPhase: WorkoutPhase | null = null;
+      let currentWeek: WorkoutWeek | null = null;
+      
+      for (const phase of loadedProgram.phases) {
+        for (const w of phase.weeks) {
+          if (w.weekNumber === weekNumber) {
+            currentPhase = phase;
+            currentWeek = w;
+            break;
+          }
+        }
+        if (currentPhase) break;
+      }
+      
+      // Se non troviamo la fase/settimana corrente, usa la prima fase e settimana
+      if (!currentPhase && loadedProgram.phases.length > 0) {
+        currentPhase = loadedProgram.phases[0];
+        currentWeek = currentPhase.weeks[0] || null;
+      }
+      
+      setSelectedPhase(currentPhase);
+      setSelectedWeek(currentWeek);
+      
+      // Carica gli allenamenti completati dal localStorage
+      const savedCompletedWorkouts = localStorage.getItem('completedWorkouts');
+      if (savedCompletedWorkouts) {
+        try {
+          const parsed = JSON.parse(savedCompletedWorkouts);
+          setCompletedWorkouts(new Set(parsed));
+        } catch (e) {
+          console.error('Errore nel parsing dei workout completati:', e);
+          setCompletedWorkouts(new Set());
+        }
+      }
