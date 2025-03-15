@@ -21,3 +21,5 @@ export { default as CustomWorkoutGenerator } from './CustomWorkoutGenerator';
 export { default as WorkoutBuilder } from './WorkoutBuilder';
 export { default as WorkoutCalendar } from './WorkoutCalendar';
 export { default as WorkoutProgressTracker } from './WorkoutProgressTracker';
+export { default as NutritionHub } from './NutritionHub';
+export { default as TransformationHub } from './TransformationHub';

@@ -20,16 +20,15 @@ import {
   Workout,
   WorkoutPrograms,
   SkillsProgression,
-  Transformation,
-  Shop,
-  Motivation,
   TestHybridFood,
   SimpleTestPage,
   FoodServiceDiagnosticPage,
   FoodSearchTestPage,
   NLPTestPage,
   ImageRecognitionTestPage,
-  WorkoutBuilder
+  WorkoutBuilder,
+  NutritionHub,
+  TransformationHub
 } from './pages';
 
 function App() {
@@ -46,6 +45,7 @@ function App() {
               <Routes>
                 <Route index element={<Dashboard />} />
                 <Route path="food-tracker" element={<FoodTracker />} />
+                <Route path="nutrition" element={<NutritionHub />} />
                 <Route path="meal-planner" element={<MealPlanner />} />
                 <Route path="workout-programs" element={<WorkoutPrograms />} />
                 <Route path="workout" element={<Workout />} />
@@ -53,9 +53,9 @@ function App() {
                 <Route path="diary" element={<DailyDiary />} />
                 <Route path="exercise-library" element={<SkillsProgression />} />
                 <Route path="settings" element={<Settings />} />
-                <Route path="transformation" element={<Transformation />} />
-                <Route path="shop" element={<Shop />} />
-                <Route path="motivation" element={<Motivation />} />
+                <Route path="transformation-hub" element={<TransformationHub />} />
+                <Route path="transformation" element={<TransformationHub />} />
+                <Route path="shop" element={<TransformationHub />} />
                 <Route path="food-service-test" element={<HybridFoodServiceExample />} />
                 <Route path="api-diagnostic" element={<ApiDiagnosticTool />} />
                 <Route path="/test-food-service" element={<TestHybridFood />} />

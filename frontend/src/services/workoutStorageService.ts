@@ -4,6 +4,7 @@ import { WorkoutProgram } from '../types/workout';
 const WORKOUT_PROGRAMS_KEY = 'healthylife_workout_programs';
 const WORKOUT_CALENDAR_KEY = 'healthylife_workout_calendar';
 const WORKOUT_PROGRESS_KEY = 'healthylife_workout_progress';
+const CURRENT_WORKOUT_PROGRAM_ID_KEY = 'healthylife_current_workout_program_id';
 
 // Interfacce per i dati di progresso
 export interface WorkoutProgress {
@@ -30,37 +31,100 @@ export interface WorkoutCalendarEntry {
 }
 
 // Funzioni per salvare e recuperare i programmi
-export const saveWorkoutProgram = (program: WorkoutProgram): string => {
-  // Assicuriamoci che il programma abbia un ID
-  if (!program.id) {
-    program.id = `program-${Date.now()}`;
-  }
-
-  // Recupera i programmi esistenti
+/**
+ * Salva un programma di allenamento nel localStorage
+ */
+export const saveWorkoutProgram = (program: WorkoutProgram): void => {
+  // Ottieni i programmi esistenti
   const existingPrograms = getWorkoutPrograms();
   
-  // Aggiorna o aggiungi il nuovo programma
-  const updatedPrograms = existingPrograms.filter(p => p.id !== program.id);
-  updatedPrograms.push(program);
+  // Assicurati che il programma abbia un ID
+  const programToSave = {
+    ...program,
+    isCustom: true, // Imposta isCustom a true per i programmi creati dall'utente
+  };
+  
+  // Assicurati che il programma abbia un campo type basato sulla categoria
+  if (!programToSave.type) {
+    if (programToSave.category.toLowerCase().includes('skill')) {
+      programToSave.type = 'Skill Progression';
+    } else if (programToSave.category.toLowerCase().includes('forza')) {
+      programToSave.type = 'Forza';
+    } else if (programToSave.category.toLowerCase().includes('ipertrofia')) {
+      programToSave.type = 'Ipertrofia';
+    } else if (programToSave.category.toLowerCase().includes('cardio')) {
+      programToSave.type = 'Cardio';
+    } else {
+      programToSave.type = 'Personalizzato';
+    }
+  }
+  
+  // Assicurati che il campo category sia formattato correttamente
+  if (programToSave.category.toLowerCase().includes('skill')) {
+    programToSave.category = 'Progressione Skill';
+  }
+  
+  // Verifica se il programma esiste già
+  const existingIndex = existingPrograms.findIndex(p => p.id === programToSave.id);
+  
+  // Aggiorna o aggiungi il programma
+  if (existingIndex !== -1) {
+    existingPrograms[existingIndex] = programToSave;
+  } else {
+    existingPrograms.push(programToSave);
+  }
   
   // Salva i programmi aggiornati
-  localStorage.setItem(WORKOUT_PROGRAMS_KEY, JSON.stringify(updatedPrograms));
+  localStorage.setItem(WORKOUT_PROGRAMS_KEY, JSON.stringify(existingPrograms));
+  console.log(`Programma salvato con ID: ${programToSave.id}, Categoria: ${programToSave.category}, Tipo: ${programToSave.type}`);
   
-  return program.id;
+  // Imposta il programma corrente
+  localStorage.setItem(CURRENT_WORKOUT_PROGRAM_ID_KEY, programToSave.id);
 };
 
+/**
+ * Ottiene tutti i programmi di allenamento dal localStorage
+ */
 export const getWorkoutPrograms = (): WorkoutProgram[] => {
+  const programsJson = localStorage.getItem(WORKOUT_PROGRAMS_KEY);
+  if (!programsJson) return [];
+  
   try {
-    const programsJson = localStorage.getItem(WORKOUT_PROGRAMS_KEY);
-    if (programsJson) {
-      console.log('Programmi trovati in localStorage:', programsJson);
-      const programs = JSON.parse(programsJson);
-      return Array.isArray(programs) ? programs : [];
+    const programs: WorkoutProgram[] = JSON.parse(programsJson);
+    
+    // Aggiorna i programmi esistenti per assicurarsi che abbiano tutti i campi necessari
+    const updatedPrograms = programs.map(program => {
+      const updatedProgram = { ...program, isCustom: true };
+      
+      // Aggiungi il campo type se mancante
+      if (!updatedProgram.type) {
+        if (updatedProgram.category.toLowerCase().includes('skill')) {
+          updatedProgram.type = 'Skill Progression';
+        } else if (updatedProgram.category.toLowerCase().includes('forza')) {
+          updatedProgram.type = 'Forza';
+        } else if (updatedProgram.category.toLowerCase().includes('ipertrofia')) {
+          updatedProgram.type = 'Ipertrofia';
+        } else if (updatedProgram.category.toLowerCase().includes('cardio')) {
+          updatedProgram.type = 'Cardio';
+        } else {
+          updatedProgram.type = 'Personalizzato';
+        }
+      }
+      
+      return updatedProgram;
+    });
+    
+    // Salva i programmi aggiornati
+    if (JSON.stringify(programs) !== JSON.stringify(updatedPrograms)) {
+      localStorage.setItem(WORKOUT_PROGRAMS_KEY, JSON.stringify(updatedPrograms));
+      console.log('Programmi aggiornati con campi mancanti');
     }
+    
+    return updatedPrograms;
   } catch (error) {
-    console.error('Errore nel recupero dei programmi di allenamento:', error);
+    console.error('Errore nel parsing dei programmi di allenamento:', error);
+    return [];
   }
-  return [];
 };
 
 export const getWorkoutProgramById = (id: string): WorkoutProgram | undefined => {

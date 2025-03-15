@@ -16,20 +16,46 @@ import {
   useMediaQuery,
   CardActionArea,
   Stack,
-  IconButton,
-  Collapse,
   Accordion,
   AccordionSummary,
   AccordionDetails
 } from '@mui/material';
 import { mealTemplates, MealTemplate } from '../data/mealTemplates';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CloseIcon from '@mui/icons-material/Close';
 
-interface TemplateBasedPlannerProps {
-  onApplyTemplate: (template: any) => void;
+// Definizione dell'interfaccia MealPlan
+interface MealPlan {
+  id?: number;
+  name: string;
+  description?: string;
+  goal: string;
+  calories_target: number;
+  macros: {
+    protein: number;
+    carbs: number;
+    fat: number;
+  };
+  dietary_restrictions: string[];
+  created_at?: string;
+  start_date?: string;
+  days: {
+    meals: {
+      name: string;
+      foods: string[];
+      time: string;
+    }[];
+  }[];
+  template_name?: string;
+  is_monthly_template?: boolean;
 }
 
-const TemplateBasedPlanner: React.FC<TemplateBasedPlannerProps> = ({ onApplyTemplate }) => {
+interface TemplateBasedPlannerProps {
+  onSavePlan: (plan: MealPlan) => Promise<void>;
+  onCancel: () => void;
+}
+
+const TemplateBasedPlanner: React.FC<TemplateBasedPlannerProps> = ({ onSavePlan, onCancel }) => {
   const [selectedTemplate, setSelectedTemplate] = useState<MealTemplate | null>(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -38,46 +64,34 @@ const TemplateBasedPlanner: React.FC<TemplateBasedPlannerProps> = ({ onApplyTemp
     setSelectedTemplate(template);
   };
 
-  const handleApplyTemplate = () => {
+  const handleApplyTemplate = async () => {
     if (selectedTemplate) {
       const calculatedCalories = calculateTotalCalories(selectedTemplate);
       
-      // Creiamo un oggetto che corrisponde alla struttura attesa da MealPlanner
-      const mealPlan = {
+      // Creiamo un oggetto che corrisponde alla struttura attesa da MealPlan
+      const mealPlan: MealPlan = {
         name: selectedTemplate.name,
-        dailyCalories: selectedTemplate.dailyCalories || calculatedCalories,
         description: selectedTemplate.description,
-        meals: selectedTemplate.meals.map(meal => ({
-          name: meal.name,
-          // Assicuriamoci che foods sia un array di oggetti con calories
-          foods: meal.foods.map(food => ({
-            name: food.name,
-            amount: food.amount,
-            calories: food.calories || 0
-          })),
-          macros: {
-            protein: (selectedTemplate.macros.protein / selectedTemplate.meals.length),
-            carbs: (selectedTemplate.macros.carbs / selectedTemplate.meals.length),
-            fat: (selectedTemplate.macros.fat / selectedTemplate.meals.length)
-          }
-        })),
+        goal: 'mantenimento', // Valore predefinito
+        calories_target: selectedTemplate.dailyCalories || calculatedCalories,
+        macros: {
+          protein: selectedTemplate.macros.protein,
+          carbs: selectedTemplate.macros.carbs,
+          fat: selectedTemplate.macros.fat
+        },
+        dietary_restrictions: [],
+        // Convertiamo i giorni e i pasti nel formato richiesto
         days: [{
-          date: new Date().toISOString().split('T')[0],
           meals: selectedTemplate.meals.map(meal => ({
             name: meal.name,
-            foods: meal.foods.map(food => `${food.name} (${food.amount}) - ${food.calories} kcal`),
-            time: '',
-            macros: {
-              protein: (selectedTemplate.macros.protein / selectedTemplate.meals.length),
-              carbs: (selectedTemplate.macros.carbs / selectedTemplate.meals.length),
-              fat: (selectedTemplate.macros.fat / selectedTemplate.meals.length)
-            }
+            time: meal.time || '12:00',
+            foods: meal.foods.map(food => `${food.name} - ${food.amount} (${food.calories} kcal)`)
           }))
         }],
         template_name: selectedTemplate.name
       };
       
-      onApplyTemplate(mealPlan);
+      await onSavePlan(mealPlan);
     }
   };
 
@@ -310,15 +324,23 @@ const TemplateBasedPlanner: React.FC<TemplateBasedPlannerProps> = ({ onApplyTemp
                     </List>
                   )}
                   
-                  <Button 
-                    variant="contained" 
-                    color="primary" 
-                    fullWidth 
-                    sx={{ mt: 3 }}
-                    onClick={handleApplyTemplate}
-                  >
-                    Applica Questo Template
-                  </Button>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 4 }}>
+                    <Button 
+                      variant="outlined" 
+                      color="primary" 
+                      onClick={onCancel}
+                      startIcon={<CloseIcon />}
+                    >
+                      Annulla
+                    </Button>
+                    <Button 
+                      variant="contained" 
+                      color="primary" 
+                      onClick={handleApplyTemplate}
+                    >
+                      Applica Template
+                    </Button>
+                  </Box>
                 </Paper>
               ) : (
                 <Paper sx={{ p: 3, display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 300 }}>

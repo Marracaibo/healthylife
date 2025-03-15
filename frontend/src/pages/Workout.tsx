@@ -584,6 +584,256 @@ const Workout = () => {
               Visualizza i tuoi progressi nel programma di allenamento.
             </Typography>
           </Box>
+          
+          {program && (
+            <Grid container spacing={3}>
+              {/* Panoramica del programma */}
+              <Grid item xs={12}>
+                <Paper 
+                  elevation={0} 
+                  sx={{ 
+                    p: 3, 
+                    borderRadius: 2, 
+                    border: '1px solid', 
+                    borderColor: 'divider',
+                    mb: 3
+                  }}
+                >
+                  <Box sx={{ mb: 2 }}>
+                    <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                      Panoramica del programma
+                    </Typography>
+                    <LinearProgress 
+                      variant="determinate" 
+                      value={progress} 
+                      sx={{ 
+                        height: 10, 
+                        borderRadius: 5,
+                        mb: 1,
+                        backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                      }} 
+                    />
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <Typography variant="body2" color="text.secondary">
+                        Settimana {currentWeekNumber} di {program.duration}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {Math.round(progress)}% completato
+                      </Typography>
+                    </Box>
+                  </Box>
+                  
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        p: 2, 
+                        borderRadius: 2, 
+                        backgroundColor: alpha(theme.palette.success.main, 0.1),
+                        textAlign: 'center'
+                      }}>
+                        <CheckCircle sx={{ fontSize: 40, color: theme.palette.success.main, mb: 1 }} />
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 0.5 }}>
+                          {completedWorkouts.size}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Allenamenti completati
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        p: 2, 
+                        borderRadius: 2, 
+                        backgroundColor: alpha(theme.palette.info.main, 0.1),
+                        textAlign: 'center'
+                      }}>
+                        <FitnessCenterIcon sx={{ fontSize: 40, color: theme.palette.info.main, mb: 1 }} />
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 0.5 }}>
+                          {completedExercises.size}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Esercizi completati
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        p: 2, 
+                        borderRadius: 2, 
+                        backgroundColor: alpha(theme.palette.warning.main, 0.1),
+                        textAlign: 'center'
+                      }}>
+                        <SpeedIcon sx={{ fontSize: 40, color: theme.palette.warning.main, mb: 1 }} />
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 0.5 }}>
+                          {program.phases ? program.phases.length : 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Fasi del programma
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              
+              {/* Progressi per fase */}
+              <Grid item xs={12}>
+                <Paper 
+                  elevation={0} 
+                  sx={{ 
+                    p: 3, 
+                    borderRadius: 2, 
+                    border: '1px solid', 
+                    borderColor: 'divider' 
+                  }}
+                >
+                  <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
+                    Progressi per fase
+                  </Typography>
+                  
+                  {program.phases && program.phases.length > 0 ? (
+                    <Box>
+                      {program.phases.map((phase, phaseIndex) => {
+                        // Calcola il progresso per questa fase
+                        const phaseWeeks = phase.weeks || [];
+                        let totalDays = 0;
+                        let completedDays = 0;
+                        
+                        phaseWeeks.forEach(week => {
+                          const weekDays = week.days || [];
+                          totalDays += weekDays.length;
+                          
+                          weekDays.forEach(day => {
+                            if (completedWorkouts.has(`${phase.id}-${week.id}-${day.id}`)) {
+                              completedDays++;
+                            }
+                          });
+                        });
+                        
+                        const phaseProgress = totalDays > 0 ? (completedDays / totalDays) * 100 : 0;
+                        
+                        return (
+                          <Box key={phase.id} sx={{ mb: 4 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                              <Box 
+                                sx={{ 
+                                  width: 30, 
+                                  height: 30, 
+                                  borderRadius: '50%', 
+                                  backgroundColor: phaseProgress >= 100 ? theme.palette.success.main : 
+                                                  phaseProgress > 0 ? theme.palette.warning.main : 
+                                                  phaseIndex < currentWeekNumber / (program.duration / program.phases.length) ? 
+                                                  theme.palette.primary.main : theme.palette.grey[400],
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  mr: 2
+                                }}
+                              >
+                                <Typography variant="body2" sx={{ color: 'white', fontWeight: 'bold' }}>
+                                  {phaseIndex + 1}
+                                </Typography>
+                              </Box>
+                              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                {phase.name}
+                              </Typography>
+                            </Box>
+                            
+                            <Box sx={{ pl: 6 }}>
+                              <Box sx={{ mb: 2 }}>
+                                <LinearProgress 
+                                  variant="determinate" 
+                                  value={phaseProgress} 
+                                  sx={{ 
+                                    height: 8, 
+                                    borderRadius: 4,
+                                    mb: 1,
+                                    backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                                  }} 
+                                />
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                  <Typography variant="body2" color="text.secondary">
+                                    {completedDays} di {totalDays} giorni completati
+                                  </Typography>
+                                  <Typography variant="body2" color="text.secondary">
+                                    {Math.round(phaseProgress)}% completato
+                                  </Typography>
+                                </Box>
+                              </Box>
+                              
+                              <Grid container spacing={2}>
+                                {phaseWeeks.map(week => {
+                                  // Calcola il progresso per questa settimana
+                                  const weekDays = week.days || [];
+                                  const weekCompletedDays = weekDays.filter(day => 
+                                    completedWorkouts.has(`${phase.id}-${week.id}-${day.id}`)
+                                  ).length;
+                                  const weekProgress = weekDays.length > 0 ? (weekCompletedDays / weekDays.length) * 100 : 0;
+                                  
+                                  return (
+                                    <Grid item xs={12} sm={6} md={4} key={`${phase.id}-${week.id}`}>
+                                      <Paper 
+                                        elevation={0} 
+                                        sx={{ 
+                                          p: 2, 
+                                          borderRadius: 2, 
+                                          border: '1px solid', 
+                                          borderColor: 'divider',
+                                          backgroundColor: weekProgress >= 100 ? alpha(theme.palette.success.main, 0.05) : 
+                                                          weekProgress > 0 ? alpha(theme.palette.warning.main, 0.05) : 
+                                                          week.weekNumber <= currentWeekNumber ? alpha(theme.palette.primary.main, 0.05) : 
+                                                          'transparent'
+                                        }}
+                                      >
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                                          {weekProgress >= 100 ? (
+                                            <CheckCircle sx={{ color: theme.palette.success.main, mr: 1 }} />
+                                          ) : weekProgress > 0 ? (
+                                            <RadioButtonUnchecked sx={{ color: theme.palette.warning.main, mr: 1 }} />
+                                          ) : week.weekNumber <= currentWeekNumber ? (
+                                            <RadioButtonUnchecked sx={{ color: theme.palette.primary.main, mr: 1 }} />
+                                          ) : (
+                                            <RadioButtonUnchecked sx={{ color: theme.palette.grey[400], mr: 1 }} />
+                                          )}
+                                          <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
+                                            {week.name || `Settimana ${week.weekNumber}`}
+                                          </Typography>
+                                        </Box>
+                                        
+                                        <LinearProgress 
+                                          variant="determinate" 
+                                          value={weekProgress} 
+                                          sx={{ 
+                                            height: 6, 
+                                            borderRadius: 3,
+                                            mb: 0.5,
+                                            backgroundColor: alpha(theme.palette.primary.main, 0.1)
+                                          }} 
+                                        />
+                                        <Typography variant="body2" color="text.secondary">
+                                          {weekCompletedDays} di {weekDays.length} giorni
+                                        </Typography>
+                                      </Paper>
+                                    </Grid>
+                                  );
+                                })}
+                              </Grid>
+                            </Box>
+                          </Box>
+                        );
+                      })}
+                    </Box>
+                  ) : (
+                    <Box sx={{ textAlign: 'center', py: 4 }}>
+                      <Typography variant="body1" color="text.secondary">
+                        Nessuna fase trovata in questo programma.
+                      </Typography>
+                    </Box>
+                  )}
+                </Paper>
+              </Grid>
+            </Grid>
+          )}
         </TabPanel>
       </Box>
     </Container>

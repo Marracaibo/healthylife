@@ -3,20 +3,15 @@ import {
   Container, 
   Typography, 
   Box, 
-  TextField, 
-  InputAdornment, 
-  Tabs, 
-  Tab, 
-  Paper,
-  Button,
+  TextField,
+  Tabs,
+  Tab,
+  useTheme,
   Fade,
   Slide,
-  alpha
+  InputAdornment
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import { useTheme } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
 
 // Componenti e tipi per le skill di calisthenics
 import CalisthenicSkillsList from '../components/calisthenics/CalisthenicSkillsList';
@@ -39,6 +34,7 @@ import { CardioSkill } from '../types/cardioSkill';
 import { MobilitySkill } from '../types/mobilitySkill';
 import { AgilitySkill } from '../types/agilitySkill';
 import { SkillProgression } from '../types/skillProgression';
+import WorkoutBuilder from './WorkoutBuilder';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -71,7 +67,6 @@ function a11yProps(index: number) {
 
 const SkillsProgression: React.FC = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
   const [tabValue, setTabValue] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [loaded, setLoaded] = useState(false);
@@ -82,6 +77,7 @@ const SkillsProgression: React.FC = () => {
   const [selectedCardioSkill, setSelectedCardioSkill] = useState<CardioSkill | null>(null);
   const [selectedMobilitySkill, setSelectedMobilitySkill] = useState<MobilitySkill | null>(null);
   const [selectedAgilitySkill, setSelectedAgilitySkill] = useState<AgilitySkill | null>(null);
+  const [showWorkoutBuilder, setShowWorkoutBuilder] = useState(false);
 
   // Imposta loaded a true dopo il caricamento iniziale
   useEffect(() => {
@@ -118,150 +114,14 @@ const SkillsProgression: React.FC = () => {
     setSelectedAgilitySkill(skill);
   };
 
+  const handleHideWorkoutBuilder = () => {
+    setShowWorkoutBuilder(false);
+  };
+
   return (
     <Container maxWidth="xl" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
       <Fade in={loaded} timeout={800}>
         <Box>
-          <Box 
-            sx={{ 
-              position: 'relative',
-              mb: 6,
-              mt: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              overflow: 'hidden',
-              borderRadius: 4,
-              p: { xs: 4, md: 6 },
-            }}
-          >
-            <Box 
-              sx={{ 
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 50%, ${alpha(theme.palette.primary.light, 0.8)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `radial-gradient(circle at 30% 40%, ${alpha('#000', 0)} 0%, ${alpha('#000', 0.3)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            
-            <Typography 
-              variant="h2" 
-              component="h1"
-              sx={{ 
-                fontWeight: 800, 
-                color: 'white',
-                letterSpacing: -1,
-                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-                mb: 2,
-                textShadow: '0 2px 10px rgba(0,0,0,0.2)'
-              }}
-            >
-              Skills Progression
-            </Typography>
-            
-            <Typography 
-              variant="h6" 
-              sx={{ 
-                fontWeight: 400, 
-                color: 'white',
-                maxWidth: '800px',
-                mb: 4,
-                opacity: 0.9,
-                textShadow: '0 1px 5px rgba(0,0,0,0.1)'
-              }}
-            >
-              Esplora la nostra collezione di skill con progressioni dettagliate e personalizzate
-            </Typography>
-          </Box>
-
-          {/* Menu di navigazione per le tre sezioni principali */}
-          <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
-            <Paper 
-              elevation={3}
-              sx={{ 
-                display: 'flex', 
-                borderRadius: 3,
-                overflow: 'hidden',
-                flexDirection: { xs: 'column', sm: 'row' }
-              }}
-            >
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenterIcon />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: alpha(theme.palette.primary.main, 0.9),
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => navigate('/workout-programs')}
-              >
-                Programmi Workout
-              </Button>
-              
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenterIcon />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: 'primary.main',
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => {}} // Già nella pagina corrente
-              >
-                Libreria Esercizi
-              </Button>
-              
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                startIcon={<FitnessCenterIcon />}
-                sx={{
-                  py: 2,
-                  px: 3,
-                  fontWeight: 700,
-                  bgcolor: alpha(theme.palette.primary.main, 0.9),
-                  borderRadius: 0,
-                  '&:hover': {
-                    bgcolor: 'primary.dark',
-                  }
-                }}
-                onClick={() => navigate('/workout-builder')}
-              >
-                Workout Builder
-              </Button>
-            </Paper>
-          </Box>
-
           {/* Sezione di ricerca */}
           <Box sx={{ mb: 3 }}>
             <TextField
@@ -407,6 +267,13 @@ const SkillsProgression: React.FC = () => {
                   <AgilitySkillDetail skill={selectedAgilitySkill} onBack={() => setSelectedAgilitySkill(null)} />
                 )}
               </TabPanel>
+
+              {/* Pannello del Workout Builder */}
+              {showWorkoutBuilder && (
+                <TabPanel value={tabValue} index={6}>
+                  <WorkoutBuilder onBack={handleHideWorkoutBuilder} />
+                </TabPanel>
+              )}
             </Box>
           </Slide>
         </Box>

@@ -476,7 +476,9 @@ export const bodyTransformationProgram: WorkoutProgram = {
   category: 'Strength & Hypertrophy',
   targetAreas: ['Full Body', 'Strength', 'Hypertrophy', 'Definition'],
   goals: 'Migliorare la composizione corporea, aumentare la forza e la massa muscolare, e migliorare la resistenza generale.',
-  startDate: '2025-02-27' // Data di inizio del programma (oggi)
+  startDate: '2025-02-27', // Data di inizio del programma (oggi)
+  isAvailable: true,
+  type: 'Ipertrofia'
 };
 
 // Esporta tutti i programmi

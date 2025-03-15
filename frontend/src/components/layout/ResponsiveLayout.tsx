@@ -15,12 +15,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
+import Avatar from '@mui/material/Avatar';
 
 // Icons for bottom navigation
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import InsightsIcon from '@mui/icons-material/Insights';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 interface ResponsiveLayoutProps {
   children: React.ReactNode;
@@ -56,7 +60,7 @@ export const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({
     }
   }, [location]);
 
-  const handleBottomNavChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleBottomNavChange = (_event: React.SyntheticEvent, newValue: number) => {
     setBottomNavValue(newValue);
     switch(newValue) {
       case 0: // Dashboard
@@ -110,6 +114,38 @@ export const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             {title}
           </Typography>
+          <Tooltip title="Account">
+            <IconButton 
+              color="inherit" 
+              onClick={() => navigate('profile')}
+              size={isMobile ? "medium" : "large"}
+              edge="end"
+              aria-label="account"
+              sx={{ mr: 1 }}
+            >
+              <Avatar 
+                sx={{ 
+                  width: isMobile ? 32 : 40, 
+                  height: isMobile ? 32 : 40,
+                  bgcolor: 'primary.light' 
+                }}
+                alt="User Profile"
+              >
+                <AccountCircleIcon />
+              </Avatar>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Impostazioni">
+            <IconButton 
+              color="inherit" 
+              onClick={() => navigate('settings')}
+              size={isMobile ? "medium" : "large"}
+              edge="end"
+              aria-label="impostazioni"
+            >
+              <SettingsIcon />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 

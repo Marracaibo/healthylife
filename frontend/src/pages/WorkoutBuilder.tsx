@@ -26,7 +26,7 @@ import {
   Tabs,
   Tab
 } from '@mui/material';
-import { FitnessCenter, Add, Delete, Refresh, EmojiEvents, DirectionsRun, SportsGymnastics, AccessibilityNew } from '@mui/icons-material';
+import { FitnessCenter, Add, Delete, Refresh, EmojiEvents, DirectionsRun, SportsGymnastics, AccessibilityNew, ArrowBack } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { saveWorkoutProgram } from '../services/workoutStorageService';
@@ -35,7 +35,11 @@ import { generateWorkoutFromSkills } from '../services/skillBasedWorkoutGenerato
 import { skillProgressions } from '../data/skillProgressions';
 import SkillSelectionGrid from '../components/SkillSelectionGrid';
 
-const WorkoutBuilder: React.FC = () => {
+interface WorkoutBuilderProps {
+  onBack?: () => void; // Proprietà opzionale per tornare indietro
+}
+
+const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
   const theme = useTheme();
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState(false);
@@ -420,9 +424,28 @@ const WorkoutBuilder: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="xl" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
+    <Container maxWidth="lg" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
       <Fade in={loaded} timeout={800}>
         <Box>
+          {/* Header */}
+          <Box sx={{ mb: 5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Typography variant="h4" component="h1" sx={{ fontWeight: 700 }}>
+              Crea il tuo workout
+            </Typography>
+            
+            {/* Pulsante Indietro se onBack è definito */}
+            {onBack && (
+              <Button
+                variant="outlined"
+                color="primary"
+                startIcon={<ArrowBack />}
+                onClick={onBack}
+                sx={{ mr: 2 }}
+              >
+                Indietro
+              </Button>
+            )}
+          </Box>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper sx={{ p: 3, mb: 3 }}>

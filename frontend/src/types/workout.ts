@@ -11,6 +11,10 @@ export interface Exercise {
   notes?: string;
   imageUrl?: string;
   gifUrl?: string; // URL dell'animazione GIF dell'esercizio
+  videoUrl?: string; // URL del video dimostrativo dell'esercizio
+  videoDuration?: string; // Durata del video (es. "2:30")
+  category?: string; // Categoria dell'esercizio (es. "Upper Body", "Lower Body", "Core")
+  targetMuscles?: string[]; // Muscoli target dell'esercizio
   difficulty?: number;
   benefits?: string;
   steps?: string[];
@@ -71,7 +75,8 @@ export interface WorkoutProgram {
   goals?: string; // Obiettivi del programma
   startDate?: string; // Data di inizio del programma
   isAvailable: boolean;
-  type?: 'standard' | 'skill-based'; // Tipo di programma
+  isCustom?: boolean; // Indica se il programma è personalizzato creato dall'utente
+  type?: string; // Tipo di programma (ipertrofia, skill progression, ecc.)
 }
 
 // Interfaccia per la visualizzazione a calendario

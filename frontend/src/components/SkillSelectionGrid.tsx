@@ -112,10 +112,15 @@ const SkillSelectionGrid: React.FC<SkillSelectionGridProps> = ({
               <CardMedia
                 component="img"
                 height="140"
-                image={skill.coverImage || `/images/skills/${skill.id}-cover.jpg`}
+                image="/images/workout-header-bg.jpg"
                 alt={skill.name}
                 sx={{ 
                   objectFit: 'cover',
+                  filter: skill.category === 'calisthenics' ? 'hue-rotate(-30deg) brightness(0.9)' :
+                    skill.category === 'powerlifting' ? 'hue-rotate(320deg) brightness(0.9)' :
+                    skill.category === 'cardio' ? 'hue-rotate(90deg) brightness(0.9)' :
+                    skill.category === 'mobility' ? 'hue-rotate(40deg) brightness(0.9)' :
+                    'none',
                   ...(isSelected && {
                     opacity: 0.9
                   })

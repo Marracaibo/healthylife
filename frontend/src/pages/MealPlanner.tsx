@@ -22,9 +22,30 @@ import {
   IconButton,
   Snackbar,
   Tabs,
-  Tab
+  Tab,
+  Divider,
+  Chip,
+  Avatar,
+  Stack,
+  CardHeader,
+  CardMedia,
+  CardActions,
+  Tooltip,
+  useTheme
 } from '@mui/material';
-import { Restaurant, Delete as DeleteIcon } from '@mui/icons-material';
+import { 
+  Restaurant, 
+  Delete as DeleteIcon, 
+  Edit as EditIcon, 
+  Visibility as VisibilityIcon, 
+  Dashboard as DashboardIcon,
+  FitnessCenter as FitnessCenterIcon,
+  LocalDining as LocalDiningIcon,
+  Fastfood as FastfoodIcon,
+  Add as AddIcon,
+  Save as SaveIcon,
+  Cancel as CancelIcon
+} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import TemplateBasedPlanner from '../components/TemplateBasedPlanner';
 import ManualMealPlanner from '../components/ManualMealPlanner';
@@ -864,85 +885,213 @@ const MealPlanner: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ py: 2 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom sx={{ 
+          fontWeight: 'bold', 
+          color: 'primary.main',
+          display: 'flex',
+          alignItems: 'center',
+          mb: 3
+        }}>
+          <LocalDiningIcon sx={{ mr: 1, fontSize: 36 }} />
           Pianificazione Pasti
         </Typography>
 
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Paper sx={{ p: 2 }}>
-              <Typography variant="h6" gutterBottom>
+            <Paper 
+              elevation={3} 
+              sx={{ 
+                p: 3, 
+                borderRadius: 2,
+                background: 'linear-gradient(to right, #f5f7fa, #ffffff)'
+              }}
+            >
+              <Typography 
+                variant="h6" 
+                gutterBottom 
+                sx={{ 
+                  fontWeight: 'bold',
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: 'text.primary'
+                }}
+              >
+                <FastfoodIcon sx={{ mr: 1 }} />
                 Piani Salvati
               </Typography>
               {loading ? (
-                <CircularProgress />
+                <Box sx={{ display: 'flex', justifyContent: 'center', p: 3 }}>
+                  <CircularProgress />
+                </Box>
               ) : plans.length > 0 ? (
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 2 }}>
                   {plans.map((plan) => (
-                    <Box key={`plan-${plan.id}`} sx={{ position: 'relative' }}>
-                      <Button
-                        variant={selectedPlanId === plan.id ? "contained" : "outlined"}
-                        onClick={() => handlePlanSelect(plan)}
-                        sx={{ mr: 1, mb: 1 }}
-                      >
-                        {plan.name || `Piano #${plan.id}`}
-                      </Button>
-                      <IconButton
-                        size="small"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleDeletePlan(plan.id);
-                        }}
+                    <Card 
+                      key={`plan-${plan.id}`} 
+                      sx={{ 
+                        position: 'relative',
+                        width: 200,
+                        transition: 'all 0.3s',
+                        transform: selectedPlanId === plan.id ? 'scale(1.05)' : 'scale(1)',
+                        boxShadow: selectedPlanId === plan.id ? 6 : 1,
+                        border: selectedPlanId === plan.id ? '2px solid' : 'none',
+                        borderColor: 'primary.main',
+                        '&:hover': {
+                          boxShadow: 4,
+                          transform: 'translateY(-5px)'
+                        }
+                      }}
+                      onClick={() => handlePlanSelect(plan)}
+                    >
+                      <CardMedia
+                        component="div"
                         sx={{
-                          position: 'absolute',
-                          top: -10,
-                          right: -10,
-                          padding: '2px',
-                          bgcolor: 'error.main',
-                          color: 'white',
-                          '&:hover': {
-                            bgcolor: 'error.dark',
-                          },
+                          height: 60,
+                          backgroundColor: plan.goal === 'weight_loss' ? '#4caf50' :
+                                          plan.goal === 'muscle_gain' ? '#2196f3' :
+                                          plan.goal === 'maintenance' ? '#ff9800' :
+                                          '#9c27b0',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white'
                         }}
                       >
-                        <DeleteIcon sx={{ fontSize: 16 }} />
-                      </IconButton>
-                    </Box>
+                        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
+                          {plan.goal === 'weight_loss' ? 'Perdita di Peso' :
+                           plan.goal === 'muscle_gain' ? 'Aumento Massa' :
+                           plan.goal === 'maintenance' ? 'Mantenimento' :
+                           'Salute Generale'}
+                        </Typography>
+                      </CardMedia>
+                      <CardContent sx={{ p: 2 }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                          {plan.name || `Piano #${plan.id}`}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {plan.calories_target} kcal/giorno
+                        </Typography>
+                        <Box sx={{ display: 'flex', gap: 0.5, mt: 1 }}>
+                          <Chip 
+                            label={`P: ${plan.macros?.protein || 0}%`} 
+                            size="small" 
+                            sx={{ bgcolor: '#e3f2fd', fontSize: '0.7rem' }}
+                          />
+                          <Chip 
+                            label={`C: ${plan.macros?.carbs || 0}%`} 
+                            size="small" 
+                            sx={{ bgcolor: '#e8f5e9', fontSize: '0.7rem' }}
+                          />
+                          <Chip 
+                            label={`G: ${plan.macros?.fat || 0}%`} 
+                            size="small" 
+                            sx={{ bgcolor: '#fff3e0', fontSize: '0.7rem' }}
+                          />
+                        </Box>
+                      </CardContent>
+                      <CardActions sx={{ justifyContent: 'flex-end', p: 1 }}>
+                        <Tooltip title="Elimina piano">
+                          <IconButton
+                            size="small"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeletePlan(plan.id);
+                            }}
+                            sx={{
+                              color: 'error.main',
+                              '&:hover': {
+                                bgcolor: 'error.light',
+                                color: 'white',
+                              },
+                            }}
+                          >
+                            <DeleteIcon fontSize="small" />
+                          </IconButton>
+                        </Tooltip>
+                      </CardActions>
+                    </Card>
                   ))}
                 </Box>
               ) : (
-                <Typography variant="body1">
+                <Alert severity="info" sx={{ mt: 2 }}>
                   Nessun piano salvato. Crea un nuovo piano o utilizza un template.
-                </Typography>
+                </Alert>
               )}
             </Paper>
           </Grid>
 
           <Grid item xs={12}>
-            <Paper sx={{ p: 2 }}>
+            <Paper 
+              elevation={3} 
+              sx={{ 
+                p: 3, 
+                borderRadius: 2,
+                background: 'linear-gradient(to right, #f5f7fa, #ffffff)'
+              }}
+            >
               <Tabs
                 value={mode}
                 onChange={handleModeChange}
                 indicatorColor="primary"
                 textColor="primary"
                 variant="fullWidth"
+                sx={{ 
+                  mb: 3,
+                  '& .MuiTab-root': {
+                    fontWeight: 'bold',
+                    borderRadius: '4px 4px 0 0',
+                  },
+                  '& .Mui-selected': {
+                    backgroundColor: 'rgba(25, 118, 210, 0.08)'
+                  }
+                }}
               >
-                <Tab key="ai-tab" value="ai" label="Generazione AI" />
-                <Tab key="template-tab" value="template" label="Utilizza Template" />
-                <Tab key="manual-tab" value="manual" label="Creazione Manuale" />
+                <Tab 
+                  key="ai-tab" 
+                  value="ai" 
+                  label="Generazione AI" 
+                  icon={<AddIcon />} 
+                  iconPosition="start"
+                />
+                <Tab 
+                  key="template-tab" 
+                  value="template" 
+                  label="Utilizza Template" 
+                  icon={<FitnessCenterIcon />} 
+                  iconPosition="start"
+                />
+                <Tab 
+                  key="manual-tab" 
+                  value="manual" 
+                  label="Creazione Manuale" 
+                  icon={<EditIcon />} 
+                  iconPosition="start"
+                />
               </Tabs>
 
               <Box sx={{ mt: 3 }}>
                 {mode === 'ai' ? (
                   <Box>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography 
+                      variant="h6" 
+                      gutterBottom 
+                      sx={{ 
+                        fontWeight: 'bold',
+                        display: 'flex',
+                        alignItems: 'center',
+                        color: 'text.primary',
+                        mb: 3
+                      }}
+                    >
+                      <AddIcon sx={{ mr: 1 }} />
                       Genera Nuovo Piano con AI
                     </Typography>
                     <Grid container spacing={3}>
                       <Grid item xs={12} md={6}>
-                        <FormControl fullWidth margin="normal">
-                          <InputLabel>Obiettivo</InputLabel>
+                        <FormControl fullWidth variant="outlined">
+                          <InputLabel id="goal-label">Obiettivo</InputLabel>
                           <Select
+                            labelId="goal-label"
                             value={goal}
                             onChange={(e: SelectChangeEvent<string>) => setGoal(e.target.value)}
                             label="Obiettivo"
@@ -956,57 +1105,69 @@ const MealPlanner: React.FC = () => {
                         </FormControl>
                       </Grid>
                       <Grid item xs={12} md={6}>
-                        <FormControl fullWidth margin="normal">
+                        <FormControl fullWidth variant="outlined">
                           <TextField
                             label="Target Calorico Giornaliero"
                             type="number"
                             value={caloriesTarget}
                             onChange={(e) => setCaloriesTarget(parseInt(e.target.value))}
                             InputProps={{ inputProps: { min: 500, max: 5000 } }}
+                            variant="outlined"
                           />
                         </FormControl>
                       </Grid>
+                      
+                      <Grid item xs={12}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                          Distribuzione Macronutrienti
+                        </Typography>
+                      </Grid>
+                      
                       <Grid item xs={12} md={4}>
-                        <FormControl fullWidth margin="normal">
+                        <FormControl fullWidth variant="outlined">
                           <TextField
                             label="% Proteine"
                             type="number"
                             value={macros.protein}
                             onChange={(e) => setMacros({...macros, protein: parseInt(e.target.value)})}
                             InputProps={{ inputProps: { min: 0, max: 100 } }}
+                            variant="outlined"
                           />
                         </FormControl>
                       </Grid>
                       <Grid item xs={12} md={4}>
-                        <FormControl fullWidth margin="normal">
+                        <FormControl fullWidth variant="outlined">
                           <TextField
                             label="% Carboidrati"
                             type="number"
                             value={macros.carbs}
                             onChange={(e) => setMacros({...macros, carbs: parseInt(e.target.value)})}
                             InputProps={{ inputProps: { min: 0, max: 100 } }}
+                            variant="outlined"
                           />
                         </FormControl>
                       </Grid>
                       <Grid item xs={12} md={4}>
-                        <FormControl fullWidth margin="normal">
+                        <FormControl fullWidth variant="outlined">
                           <TextField
                             label="% Grassi"
                             type="number"
                             value={macros.fat}
                             onChange={(e) => setMacros({...macros, fat: parseInt(e.target.value)})}
                             InputProps={{ inputProps: { min: 0, max: 100 } }}
+                            variant="outlined"
                           />
                         </FormControl>
                       </Grid>
                       <Grid item xs={12}>
-                        <FormControl fullWidth margin="normal">
+                        <FormControl fullWidth variant="outlined">
                           <TextField
                             label="Restrizioni Dietetiche (separate da virgola)"
                             value={dietaryRestrictions}
                             onChange={(e) => setDietaryRestrictions(e.target.value)}
                             placeholder="Es: glutine, lattosio, vegano"
                             helperText="Inserisci eventuali restrizioni dietetiche separate da virgola"
+                            variant="outlined"
                           />
                         </FormControl>
                       </Grid>
@@ -1018,6 +1179,18 @@ const MealPlanner: React.FC = () => {
                           onClick={generateMealPlan}
                           disabled={isGenerating}
                           startIcon={isGenerating ? <CircularProgress size={24} color="inherit" /> : <Restaurant />}
+                          size="large"
+                          sx={{ 
+                            py: 1.5, 
+                            mt: 1,
+                            fontWeight: 'bold',
+                            boxShadow: 3,
+                            '&:hover': {
+                              boxShadow: 6,
+                              transform: 'translateY(-2px)'
+                            },
+                            transition: 'all 0.3s'
+                          }}
                         >
                           {isGenerating ? 'Generazione in corso...' : 'Genera Piano Alimentare'}
                         </Button>
@@ -1035,162 +1208,305 @@ const MealPlanner: React.FC = () => {
 
           {selectedPlan ? (
             <Grid item xs={12}>
-              <Card>
-                <CardContent>
-                  <Paper sx={{ p: 3, mb: 3 }}>
-                    {isEditingPlanName ? (
-                      <Box sx={{ mb: 2 }}>
-                        <TextField
-                          label="Nuovo Nome Piano"
-                          value={editedPlanName}
-                          onChange={(e) => setEditedPlanName(e.target.value)}
-                          fullWidth
-                        />
-                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={handleRenamePlan}
-                            sx={{ mr: 1 }}
-                          >
-                            Salva
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            color="error"
-                            onClick={cancelEditingPlanName}
-                          >
-                            Annulla
-                          </Button>
-                        </Box>
+              <Paper 
+                elevation={3} 
+                sx={{ 
+                  p: 3, 
+                  borderRadius: 2,
+                  background: 'linear-gradient(to right, #f5f7fa, #ffffff)'
+                }}
+              >
+                <Box sx={{ mb: 3 }}>
+                  {isEditingPlanName ? (
+                    <Box sx={{ mb: 2 }}>
+                      <TextField
+                        label="Nuovo Nome Piano"
+                        value={editedPlanName}
+                        onChange={(e) => setEditedPlanName(e.target.value)}
+                        fullWidth
+                        variant="outlined"
+                        autoFocus
+                      />
+                      <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={handleRenamePlan}
+                          sx={{ mr: 1 }}
+                          startIcon={<SaveIcon />}
+                        >
+                          Salva
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          color="error"
+                          onClick={cancelEditingPlanName}
+                          startIcon={<CancelIcon />}
+                        >
+                          Annulla
+                        </Button>
                       </Box>
-                    ) : (
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                        <Typography variant="h5">
-                          {selectedPlan.name}
-                        </Typography>
+                    </Box>
+                  ) : (
+                    <Box sx={{ 
+                      display: 'flex', 
+                      justifyContent: 'space-between', 
+                      alignItems: 'center', 
+                      mb: 2,
+                      pb: 2,
+                      borderBottom: '1px solid',
+                      borderColor: 'divider'
+                    }}>
+                      <Typography 
+                        variant="h5" 
+                        sx={{ 
+                          fontWeight: 'bold',
+                          color: 'primary.main' 
+                        }}
+                      >
+                        {selectedPlan.name}
+                      </Typography>
+                      <Box>
                         <Button
                           variant="outlined"
                           color="primary"
                           onClick={startEditingPlanName}
                           size="small"
+                          startIcon={<EditIcon />}
+                          sx={{ mr: 1 }}
                         >
                           Rinomina
                         </Button>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={handleViewDashboard}
+                          size="small"
+                          startIcon={<DashboardIcon />}
+                        >
+                          Dashboard
+                        </Button>
                       </Box>
-                    )}
-                  </Paper>
+                    </Box>
+                  )}
+                </Box>
 
-                  <Box sx={{ mb: 3 }}>
-                    <Typography variant="subtitle1">
-                      Obiettivo: {selectedPlan.goal || 'Non specificato'}
-                    </Typography>
-                    <Typography variant="subtitle1">
-                      Calorie: {selectedPlan.calories_target || 0} kcal
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                      Macronutrienti: P:{selectedPlan.macros?.protein || 0}% C:{selectedPlan.macros?.carbs || 0}% G:{selectedPlan.macros?.fat || 0}%
-                    </Typography>
-                  </Box>
+                <Box sx={{ 
+                  mb: 3, 
+                  p: 2, 
+                  bgcolor: 'background.paper', 
+                  borderRadius: 1,
+                  boxShadow: 1
+                }}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        p: 1,
+                        borderRadius: 1,
+                        bgcolor: 'primary.light',
+                        color: 'primary.contrastText'
+                      }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                          Obiettivo: {selectedPlan.goal === 'weight_loss' ? 'Perdita di Peso' :
+                                     selectedPlan.goal === 'muscle_gain' ? 'Aumento Massa' :
+                                     selectedPlan.goal === 'maintenance' ? 'Mantenimento' :
+                                     'Salute Generale'}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        p: 1,
+                        borderRadius: 1,
+                        bgcolor: 'success.light',
+                        color: 'success.contrastText'
+                      }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                          Calorie: {selectedPlan.calories_target || 0} kcal
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                      <Box sx={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        p: 1,
+                        borderRadius: 1,
+                        bgcolor: 'info.light',
+                        color: 'info.contrastText'
+                      }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                          Macros: P:{selectedPlan.macros?.protein || 0}% C:{selectedPlan.macros?.carbs || 0}% G:{selectedPlan.macros?.fat || 0}%
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Box>
 
-                  <Typography variant="h6" gutterBottom>
-                    Calendario Pasti
-                  </Typography>
-                  <Box sx={{ maxHeight: 400, overflow: 'auto' }}>
-                    {selectedPlan.days?.map((day, dayIndex) => (
-                      <Card key={`day-${dayIndex}-${day.date}`} sx={{ mb: 2, bgcolor: 'background.paper' }}>
-                        <CardContent>
-                          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                            <Typography variant="h6" color="primary">
-                              {new Date(day.date).toLocaleDateString('it-IT', { weekday: 'long', month: 'long', day: 'numeric' })}
+                <Typography 
+                  variant="h6" 
+                  gutterBottom 
+                  sx={{ 
+                    fontWeight: 'bold',
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: 'text.primary',
+                    mb: 2
+                  }}
+                >
+                  <FastfoodIcon sx={{ mr: 1 }} />
+                  Calendario Pasti
+                </Typography>
+                <Box sx={{ maxHeight: 500, overflow: 'auto', pr: 1 }}>
+                  {selectedPlan.days?.map((day, dayIndex) => (
+                    <Card 
+                      key={`day-${dayIndex}-${day.date}`} 
+                      sx={{ 
+                        mb: 3, 
+                        bgcolor: 'background.paper',
+                        boxShadow: 2,
+                        borderRadius: 2,
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <CardHeader
+                        title={`Giorno ${dayIndex + 1} - ${day.date}`}
+                        sx={{ 
+                          bgcolor: 'primary.main', 
+                          color: 'white',
+                          py: 1
+                        }}
+                      />
+                      <CardContent>
+                        {day.meals?.map((meal, mealIndex) => (
+                          <Box 
+                            key={`meal-${dayIndex}-${mealIndex}`} 
+                            sx={{ 
+                              mb: 2,
+                              p: 2,
+                              borderRadius: 1,
+                              bgcolor: 'background.default',
+                              boxShadow: 1
+                            }}
+                          >
+                            <Box sx={{ 
+                              display: 'flex', 
+                              justifyContent: 'space-between', 
+                              alignItems: 'center',
+                              mb: 1,
+                              pb: 1,
+                              borderBottom: '1px solid',
+                              borderColor: 'divider'
+                            }}>
+                              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                                {meal.name} - {meal.time}
+                              </Typography>
+                              <Chip 
+                                label={`${meal.calories} kcal`} 
+                                color="primary" 
+                                size="small" 
+                                variant="outlined"
+                              />
+                            </Box>
+                            
+                            <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
+                              <Chip 
+                                label={`P: ${meal.macros?.protein || 0}g`} 
+                                size="small" 
+                                sx={{ bgcolor: '#e3f2fd' }}
+                              />
+                              <Chip 
+                                label={`C: ${meal.macros?.carbs || 0}g`} 
+                                size="small" 
+                                sx={{ bgcolor: '#e8f5e9' }}
+                              />
+                              <Chip 
+                                label={`G: ${meal.macros?.fat || 0}g`} 
+                                size="small" 
+                                sx={{ bgcolor: '#fff3e0' }}
+                              />
+                            </Box>
+                            
+                            <Typography variant="subtitle2" sx={{ fontWeight: 'bold', mt: 1 }}>
+                              Ingredienti:
                             </Typography>
+                            <List dense sx={{ bgcolor: 'background.paper', borderRadius: 1, mt: 0.5 }}>
+                              {meal.ingredients?.map((ingredient, i) => (
+                                <ListItem key={`ingredient-${i}`} sx={{ py: 0.5 }}>
+                                  <ListItemText 
+                                    primary={`${ingredient.name} - ${ingredient.amount} ${ingredient.unit}`} 
+                                    primaryTypographyProps={{ variant: 'body2' }}
+                                  />
+                                </ListItem>
+                              ))}
+                            </List>
+                            
+                            {meal.instructions && meal.instructions.length > 0 && (
+                              <>
+                                <Typography variant="subtitle2" sx={{ fontWeight: 'bold', mt: 2 }}>
+                                  Istruzioni:
+                                </Typography>
+                                <List dense sx={{ bgcolor: 'background.paper', borderRadius: 1, mt: 0.5 }}>
+                                  {meal.instructions.map((instruction, i) => (
+                                    <ListItem key={`instruction-${i}`} sx={{ py: 0.5 }}>
+                                      <ListItemText 
+                                        primary={instruction} 
+                                        primaryTypographyProps={{ variant: 'body2' }}
+                                      />
+                                    </ListItem>
+                                  ))}
+                                </List>
+                              </>
+                            )}
                           </Box>
-                          <List dense>
-                            {day.meals?.map((meal, mealIndex) => (
-                              <ListItem key={`meal-${dayIndex}-${mealIndex}`}>
-                                <div>
-                                  <div style={{ fontSize: '1rem', fontWeight: 500, marginBottom: '4px', color: '#263238' }}>
-                                    {meal.time ? `${meal.time} - ` : ''}{meal.type ? meal.type.replace('_', ' ').toUpperCase() : meal.name || 'PASTO'}
-                                  </div>
-                                  <div>
-                                    <div style={{ fontSize: '0.875rem', color: '#546E7A' }}>
-                                      Calorie totali: {meal.calories || meal.foods?.reduce((acc, food) => acc + (food?.calories || 0), 0) || 0} kcal
-                                    </div>
-                                    <div style={{ marginTop: '8px' }}>
-                                      {meal.foods?.map((food, foodIndex) => (
-                                        <div 
-                                          key={`food-${dayIndex}-${mealIndex}-${foodIndex}`}
-                                          style={{ 
-                                            fontSize: '0.875rem',
-                                            color: '#546E7A',
-                                            paddingLeft: '16px',
-                                            marginTop: '2px'
-                                          }}
-                                        >
-                                          • {food.name} ({food.quantity || food.amount || 'N/D'}) - {food.calories || 0} kcal
-                                        </div>
-                                      ))}
-                                      {meal.ingredients?.map((ingredient, ingredientIndex) => (
-                                        <div 
-                                          key={`ingredient-${dayIndex}-${mealIndex}-${ingredientIndex}`}
-                                          style={{ 
-                                            fontSize: '0.875rem',
-                                            color: '#546E7A',
-                                            paddingLeft: '16px',
-                                            marginTop: '2px'
-                                          }}
-                                        >
-                                          • {ingredient.name} ({ingredient.amount} {ingredient.unit || ''})
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </ListItem>
-                            ))}
-                          </List>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </Box>
-
+                        ))}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </Box>
+                
+                <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
                   <Button
                     variant="contained"
                     color="primary"
-                    fullWidth
                     onClick={handleApplyPlan}
-                    sx={{ mt: 2 }}
+                    size="large"
+                    startIcon={<DashboardIcon />}
+                    sx={{ 
+                      py: 1.5, 
+                      px: 4,
+                      fontWeight: 'bold',
+                      boxShadow: 3,
+                      '&:hover': {
+                        boxShadow: 6,
+                        transform: 'translateY(-2px)'
+                      },
+                      transition: 'all 0.3s'
+                    }}
                   >
                     Applica Piano e Vai alla Dashboard
                   </Button>
-                </CardContent>
-              </Card>
+                </Box>
+              </Paper>
             </Grid>
-          ) : (
-            <Grid item xs={12}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6" color="textSecondary" align="center">
-                    Seleziona un piano esistente o crea un nuovo piano per vedere i dettagli
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          )}
+          ) : null}
         </Grid>
-
-        {error && (
-          <Alert severity="error" sx={{ mt: 3 }}>
-            {error}
-          </Alert>
-        )}
       </Box>
+
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
+        onClose={() => setSnackbarOpen(false)}
       >
-        <Alert onClose={handleCloseSnackbar} severity={snackbarVariant === 'success' ? 'success' : 'error'} sx={{ width: '100%' }}>
+        <Alert
+          onClose={() => setSnackbarOpen(false)}
+          severity={snackbarVariant === 'success' ? 'success' : 'error'}
+          sx={{ width: '100%' }}
+        >
           {snackbarMessage}
         </Alert>
       </Snackbar>

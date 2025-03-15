@@ -3,27 +3,77 @@ import {
   Box, 
   Container, 
   Typography, 
-  Paper,
-  useTheme,
-  alpha,
-  Button,
+  Tab, 
+  Tabs, 
+  Button, 
   Fade,
-  Slide
+  useTheme
 } from '@mui/material';
-import WorkoutProgramCards from '../components/WorkoutProgramCards';
-import { workoutPrograms } from '../data/workoutPrograms';
-import { getWorkoutPrograms, saveWorkoutProgram } from '../services/workoutStorageService';
-import { WorkoutProgram } from '../types/workout';
 import { useNavigate } from 'react-router-dom';
-import { FitnessCenter } from '@mui/icons-material';
+
+import WorkoutProgramCards from '../components/WorkoutProgramCards';
+import QuoteCard from '../components/motivation/QuoteCard';
+import VideoCard from '../components/motivation/VideoCard';
+import PreWorkoutBoosterComponent from '../components/motivation/PreWorkoutBooster';
+import SkillsProgression from './SkillsProgression';
+import { WorkoutProgram } from '../types/workout';
+import { getWorkoutPrograms, deleteWorkoutProgram } from '../services/workoutStorageService';
+
+// Dati di esempio per la motivazione
+import { 
+  sampleQuotes, 
+  sampleVideos, 
+  sampleBoosters 
+} from '../data/motivationSampleData';
+
+// Dati di esempio per i programmi di allenamento
+import { workoutPrograms } from '../data/workoutPrograms';
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`motivation-tabpanel-${index}`}
+      aria-labelledby={`motivation-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ pt: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `motivation-tab-${index}`,
+    'aria-controls': `motivation-tabpanel-${index}`,
+  };
+}
 
 const WorkoutPrograms: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const [allPrograms, setAllPrograms] = useState<any[]>([]);
-  const [currentProgram, setCurrentProgram] = useState<string | undefined>();
   const [loaded, setLoaded] = useState(false);
-
+  
+  // Stato per le tabs principali (Workout Programs / Motivation)
+  const [mainTab, setMainTab] = useState(0);
+  
+  // Stato per le tabs della sezione Motivation
+  const [motivationTab, setMotivationTab] = useState(0);
+  
   // Funzione per convertire WorkoutProgram in WorkoutProgramCard
   const convertToWorkoutProgramCard = (program: WorkoutProgram): any => {
     return {
@@ -40,334 +90,315 @@ const WorkoutPrograms: React.FC = () => {
              '/images/custom-program.jpg',
       progress: 0, // Da calcolare se necessario
       fav: 0,
-      isAvailable: program.isAvailable
+      isAvailable: program.isAvailable,
+      isCustom: program.isCustom, // Assicurati che questa proprietà sia passata
+      type: program.type // Aggiungo il tipo di programma per visualizzare il tab bianco
     };
   };
 
-  useEffect(() => {
+  // Funzione per caricare i programmi
+  const loadPrograms = () => {
     // Ottieni i programmi personalizzati creati dall'utente
     const userPrograms = getWorkoutPrograms();
+    console.log('Programmi utente caricati:', userPrograms);
+    
+    // Assicurati che tutti i programmi predefiniti abbiano il campo type impostato
+    const updatedWorkoutPrograms = workoutPrograms.map(program => {
+      if (!program.type) {
+        if (program.id === 'body-transformation') {
+          return {...program, type: 'Ipertrofia'};
+        } else if (program.category.toLowerCase().includes('skill')) {
+          return {...program, type: 'Skill Progression'};
+        } else if (program.category.toLowerCase().includes('forza')) {
+          return {...program, type: 'Forza'};
+        } else if (program.category.toLowerCase().includes('cardio')) {
+          return {...program, type: 'Cardio'};
+        } else {
+          return {...program, type: 'Personalizzato'};
+        }
+      }
+      return program;
+    });
+    
+    // Assicurati che tutti i programmi utente abbiano il campo type impostato
+    const updatedUserPrograms = userPrograms.map(program => {
+      if (!program.type) {
+        if (program.category.toLowerCase().includes('skill')) {
+          return {...program, type: 'Skill Progression', isCustom: true};
+        } else if (program.category.toLowerCase().includes('forza')) {
+          return {...program, type: 'Forza', isCustom: true};
+        } else if (program.category.toLowerCase().includes('ipertrofia')) {
+          return {...program, type: 'Ipertrofia', isCustom: true};
+        } else if (program.category.toLowerCase().includes('cardio')) {
+          return {...program, type: 'Cardio', isCustom: true};
+        } else {
+          return {...program, type: 'Personalizzato', isCustom: true};
+        }
+      }
+      return {...program, isCustom: true};
+    });
     
     // Converte tutti i programmi nel formato corretto per i cards
-    const convertedPrograms = [...workoutPrograms, ...userPrograms]
+    const convertedPrograms = [...updatedWorkoutPrograms, ...updatedUserPrograms]
       .map(program => convertToWorkoutProgramCard(program));
     
     // Imposta i programmi convertiti nello state
     setAllPrograms(convertedPrograms);
-    
-    // Controlla se c'è un ID nel parametro dell'URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const programId = urlParams.get('id');
-    
-    if (programId) {
-      // Se c'è un ID nell'URL, imposta quello come programma corrente
-      setCurrentProgram(programId);
-    } else {
-      // Altrimenti, controlla se l'utente ha già un programma attivo
-      const savedProgress = localStorage.getItem('workoutProgress');
-      if (savedProgress) {
-        try {
-          const progress = JSON.parse(savedProgress);
-          if (progress.programId) {
-            setCurrentProgram(progress.programId);
-          } else {
-            // Se non c'è un programId nel progresso salvato, impostiamo il default
-            setCurrentProgram('body-transformation');
-          }
-        } catch (error) {
-          console.error('Error parsing workout progress:', error);
-          setCurrentProgram('body-transformation');
-        }
-      } else {
-        // Se non c'è progresso salvato, impostiamo il default
-        setCurrentProgram('body-transformation');
-      }
-    }
-    
-    // Indica che i dati sono stati caricati
+  };
+
+  useEffect(() => {
+    loadPrograms();
     setLoaded(true);
   }, []);
 
-  // Funzione per gestire la selezione di un programma
-  const handleSelectProgram = (program: any) => {
-    // Salva il programma selezionato in localStorage
-    try {
-      console.log('Programma selezionato:', program);
-      localStorage.setItem('currentWorkoutProgram', program.id);
-      
-      // Debug: verifica che l'ID sia stato salvato correttamente
-      const savedId = localStorage.getItem('currentWorkoutProgram');
-      console.log('ID salvato in localStorage:', savedId);
-      
-      // Inizializza lo stato del programma se è la prima volta
-      if (!localStorage.getItem('workoutProgress')) {
-        const initialProgress = {
-          programId: program.id,
-          currentPhase: 0,
-          currentWeek: 1,
-          currentDay: 1
-        };
-        localStorage.setItem('workoutProgress', JSON.stringify(initialProgress));
-      }
-      
-      setCurrentProgram(program.id);
-      
-      // Navigate to workout page
-      navigate('/workout');
-    } catch (error) {
-      console.error('Error saving program selection:', error);
-    }
+  // Funzione per gestire il click su un programma
+  const handleProgramClick = (program: any) => {
+    // Salva l'ID del programma corrente nel localStorage
+    localStorage.setItem('currentWorkoutProgramId', program.id);
+    console.log('Programma selezionato:', program.id);
+    
+    // Naviga alla pagina di allenamento
+    navigate('/workout');
+  };
+
+  // Funzione per gestire l'eliminazione di un programma
+  const handleDeleteProgram = (programId: string) => {
+    deleteWorkoutProgram(programId);
+    loadPrograms(); // Ricarica i programmi dopo l'eliminazione
+  };
+
+  // Gestione delle tabs principali
+  const handleMainTabChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setMainTab(newValue);
+  };
+
+  // Gestione delle tabs della sezione Motivation
+  const handleMotivationTabChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setMotivationTab(newValue);
   };
 
   return (
-    <Container maxWidth="xl" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
-      <Fade in={loaded} timeout={800}>
-        <Box>
-          <Box 
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
+      <Box sx={{ 
+        position: 'relative',
+        mb: 4,
+        borderRadius: 3,
+        overflow: 'hidden',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+        backgroundImage: 'linear-gradient(135deg, #1b5e20 0%, #388e3c 100%)',
+        color: 'white',
+        py: { xs: 4, md: 6 },
+        px: { xs: 2, md: 4 }
+      }}>
+        <Box sx={{ 
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'url(/images/workout-banner-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.2,
+          zIndex: 0
+        }} />
+        <Box sx={{ position: 'relative', zIndex: 1 }}>
+          <Typography 
+            variant="h3" 
+            component="h1" 
+            align="center"
             sx={{ 
-              position: 'relative',
-              mb: 6,
-              mt: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              overflow: 'hidden',
-              borderRadius: 4,
-              p: { xs: 4, md: 6 },
+              fontWeight: 700,
+              mb: 2,
+              textShadow: '0 2px 10px rgba(0,0,0,0.3)'
             }}
           >
-            <Box 
-              sx={{ 
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 50%, ${alpha(theme.palette.primary.light, 0.8)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `radial-gradient(circle at 30% 40%, ${alpha('#000', 0)} 0%, ${alpha('#000', 0.3)} 100%)`,
-                zIndex: -1,
-              }}
-            />
-            
-            <Typography 
-              variant="h2" 
-              component="h1"
-              sx={{ 
-                fontWeight: 800, 
-                color: 'white',
-                letterSpacing: -1,
-                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-                mb: 2,
-                textShadow: '0 2px 10px rgba(0,0,0,0.2)'
-              }}
-            >
-              Trasforma il Tuo Corpo
-            </Typography>
-            
-            <Typography 
-              variant="h6" 
-              sx={{ 
-                fontWeight: 400, 
-                color: 'white',
-                maxWidth: '800px',
-                mb: 4,
-                opacity: 0.9,
-                textShadow: '0 1px 5px rgba(0,0,0,0.1)'
-              }}
-            >
-              Scegli un programma personalizzato e inizia oggi stesso il tuo percorso verso una versione migliore di te.
-            </Typography>
-            
+            Trasforma il Tuo Corpo
+          </Typography>
+          <Typography 
+            variant="h6" 
+            component="p" 
+            align="center"
+            sx={{ 
+              maxWidth: 800,
+              mx: 'auto',
+              opacity: 0.9,
+              mb: 3
+            }}
+          >
+            Scegli un programma personalizzato e inizia oggi stesso il tuo percorso verso una versione migliore di te.
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Button 
               variant="contained" 
-              color="secondary"
+              color="warning"
               size="large"
               sx={{ 
-                py: 1.5, 
-                px: 4, 
                 borderRadius: 2,
-                fontWeight: 'bold',
-                boxShadow: theme.shadows[10],
+                px: 4,
+                py: 1.5,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                textTransform: 'none',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                 '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: theme.shadows[15],
-                },
-                transition: 'all 0.3s ease'
+                  boxShadow: '0 6px 15px rgba(0,0,0,0.3)',
+                  transform: 'translateY(-2px)'
+                }
               }}
-              onClick={() => navigate('/workout')}
+              onClick={() => navigate('/workout-builder')}
             >
               Avvia Allenamento
             </Button>
           </Box>
         </Box>
-      </Fade>
-      
-      {/* Menu di navigazione per le tre sezioni principali */}
-      <Box sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}>
-        <Paper 
-          elevation={3}
-          sx={{ 
-            display: 'flex', 
-            borderRadius: 3,
-            overflow: 'hidden',
-            flexDirection: { xs: 'column', sm: 'row' }
+      </Box>
+
+      {/* Tabs principali */}
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
+        <Tabs 
+          value={mainTab} 
+          onChange={handleMainTabChange} 
+          aria-label="main tabs"
+          centered
+          sx={{
+            '& .MuiTab-root': {
+              fontSize: '1rem',
+              fontWeight: 600,
+              textTransform: 'none',
+              minWidth: 120,
+              py: 2
+            },
+            '& .Mui-selected': {
+              color: theme.palette.primary.main,
+            },
+            '& .MuiTabs-indicator': {
+              backgroundColor: theme.palette.primary.main,
+              height: 3
+            }
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            startIcon={<FitnessCenter />}
-            sx={{
-              py: 2,
-              px: 3,
-              fontWeight: 700,
-              bgcolor: 'primary.main',
-              borderRadius: 0,
-              '&:hover': {
-                bgcolor: 'primary.dark',
-              }
-            }}
-            onClick={() => {}} // Già nella pagina corrente
-          >
-            Programmi Workout
-          </Button>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            startIcon={<FitnessCenter />}
-            sx={{
-              py: 2,
-              px: 3,
-              fontWeight: 700,
-              bgcolor: alpha(theme.palette.primary.main, 0.9),
-              borderRadius: 0,
-              '&:hover': {
-                bgcolor: 'primary.dark',
-              }
-            }}
-            onClick={() => navigate('/exercise-library')}
-          >
-            Libreria Esercizi
-          </Button>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            startIcon={<FitnessCenter />}
-            sx={{
-              py: 2,
-              px: 3,
-              fontWeight: 700,
-              bgcolor: alpha(theme.palette.primary.main, 0.9),
-              borderRadius: 0,
-              '&:hover': {
-                bgcolor: 'primary.dark',
-              }
-            }}
-            onClick={() => navigate('/workout-builder')}
-          >
-            Workout Builder
-          </Button>
-        </Paper>
+          <Tab label="Programmi di Allenamento" {...a11yProps(0)} />
+          <Tab label="Motivazione" {...a11yProps(1)} />
+          <Tab label="Libreria Esercizi" {...a11yProps(2)} />
+        </Tabs>
       </Box>
-      
-      <Box id="programs-section">
-        <Slide direction="up" in={loaded} timeout={1000} mountOnEnter unmountOnExit>
-          <Box>
-            <Box sx={{ position: 'relative', mb: 5 }}>
-              <Typography 
-                variant="h4" 
-                sx={{ 
-                  fontWeight: 700, 
-                  mb: 1.5,
-                  textAlign: 'center',
-                  position: 'relative',
-                  display: 'inline-block',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: -8,
-                    left: '25%',
-                    width: '50%',
-                    height: 4,
-                    borderRadius: 2,
-                    backgroundColor: theme.palette.primary.main,
-                  }
-                }}
-              >
-                Programmi di Allenamento
-              </Typography>
-              
-              <Typography 
-                variant="body1" 
-                color="text.secondary" 
-                sx={{ 
-                  mb: 5, 
-                  maxWidth: 800, 
-                  mx: 'auto',
-                  textAlign: 'center',
-                  fontSize: '1.1rem',
-                  lineHeight: 1.6
-                }}
-              >
-                Ogni programma è progettato scientificamente per massimizzare i risultati 
-                e adattarsi progressivamente al tuo livello di fitness.
-              </Typography>
-            </Box>
-            
-            <Box sx={{ position: 'relative' }}>
-              {/* Animated shapes for the background */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: -30,
-                  right: -20,
-                  width: 100,
-                  height: 100,
-                  borderRadius: '50%',
-                  background: alpha(theme.palette.primary.light, 0.1),
-                  zIndex: -1,
-                }}
-              />
-              <Box
-                sx={{
-                  position: 'absolute',
-                  bottom: 40,
-                  left: -40,
-                  width: 200,
-                  height: 200,
-                  borderRadius: '50%',
-                  background: alpha(theme.palette.secondary.light, 0.05),
-                  zIndex: -1,
-                }}
-              />
-              
+
+      {/* Pannello Programmi di Allenamento */}
+      <TabPanel value={mainTab} index={0}>
+        {loaded && (
+          <Fade in={loaded} timeout={800}>
+            <Box>
               <WorkoutProgramCards 
                 programs={allPrograms} 
-                currentProgram={currentProgram}
-                onSelectProgram={handleSelectProgram}
+                onSelectProgram={handleProgramClick}
+                onDeleteProgram={handleDeleteProgram}
               />
             </Box>
+          </Fade>
+        )}
+      </TabPanel>
+
+      {/* Pannello Motivazione */}
+      <TabPanel value={mainTab} index={1}>
+        <Box sx={{ mb: 4 }}>
+          <Tabs 
+            value={motivationTab} 
+            onChange={handleMotivationTabChange} 
+            aria-label="motivation tabs"
+            variant="scrollable"
+            scrollButtons="auto"
+            sx={{
+              '& .MuiTab-root': {
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                textTransform: 'none',
+                minWidth: 100,
+              },
+              '& .Mui-selected': {
+                color: theme.palette.primary.main,
+              },
+              '& .MuiTabs-indicator': {
+                backgroundColor: theme.palette.primary.main,
+              }
+            }}
+          >
+            <Tab label="Citazioni Motivazionali" {...a11yProps(0)} />
+            <Tab label="Video Motivazionali" {...a11yProps(1)} />
+            <Tab label="Pre-Workout Booster" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+
+        {/* Citazioni Motivazionali */}
+        <Box sx={{ display: motivationTab === 0 ? 'block' : 'none' }}>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+              Citazioni Motivazionali
+            </Typography>
+            <Typography variant="body1" color="text.secondary" paragraph>
+              Lasciati ispirare da queste citazioni per dare il massimo nei tuoi allenamenti.
+            </Typography>
           </Box>
-        </Slide>
-      </Box>
+
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
+            {sampleQuotes.map((quote) => (
+              <QuoteCard 
+                key={quote.id}
+                quote={quote}
+                onLike={() => console.log('Like quote:', quote.id)}
+              />
+            ))}
+          </Box>
+        </Box>
+
+        {/* Video Motivazionali */}
+        <Box sx={{ display: motivationTab === 1 ? 'block' : 'none' }}>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+              Video Motivazionali
+            </Typography>
+            <Typography variant="body1" color="text.secondary" paragraph>
+              Guarda questi video per trovare la motivazione per i tuoi allenamenti.
+            </Typography>
+          </Box>
+
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+            {sampleVideos.map((video) => (
+              <VideoCard 
+                key={video.id}
+                video={video}
+                onLike={() => console.log('Like video:', video.id)}
+              />
+            ))}
+          </Box>
+        </Box>
+
+        {/* Pre-Workout Booster */}
+        <Box sx={{ display: motivationTab === 2 ? 'block' : 'none' }}>
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h5" component="h2" gutterBottom fontWeight={600}>
+              Pre-Workout Booster
+            </Typography>
+            <Typography variant="body1" color="text.secondary" paragraph>
+              Trova la motivazione per i tuoi allenamenti con questi booster.
+            </Typography>
+          </Box>
+
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
+            {sampleBoosters.map((booster) => (
+              <PreWorkoutBoosterComponent 
+                key={booster.id}
+                booster={booster}
+              />
+            ))}
+          </Box>
+        </Box>
+      </TabPanel>
+
+      {/* Pannello Libreria Esercizi */}
+      <TabPanel value={mainTab} index={2}>
+        <SkillsProgression />
+      </TabPanel>
     </Container>
   );
 };

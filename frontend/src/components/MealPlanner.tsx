@@ -23,9 +23,6 @@ import {
   useMediaQuery,
   useTheme,
   IconButton,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Card,
   CardContent,
   CardActionArea,
@@ -36,8 +33,9 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import TemplateBasedPlanner from './TemplateBasedPlanner';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MonthlyTemplateBasedPlanner from './MonthlyTemplateBasedPlanner';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CloseIcon from '@mui/icons-material/Close';
@@ -64,18 +62,18 @@ interface MealPlan {
     }[];
   }[];
   template_name?: string;
+  is_monthly_template?: boolean;
 }
 
 const MealPlanner: React.FC = () => {
   const [savedPlans, setSavedPlans] = useState<MealPlan[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [mode, setMode] = useState<'ai' | 'manual'>('ai');
+  const [mode, setMode] = useState<'ai' | 'template' | 'monthly'>('ai');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
   const [calorieRange, setCalorieRange] = useState<[number, number]>([1500, 3000]);
   const [showRestrictions, setShowRestrictions] = useState(false);
-  const [filtersExpanded, setFiltersExpanded] = useState(false);
   const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
 
   const theme = useTheme();
@@ -89,16 +87,32 @@ const MealPlanner: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
+      // Prova prima a caricare dal backend
       const response = await fetch('http://localhost:8000/api/meal-plans');
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Failed to load meal plans: ${errorText}`);
+        throw new Error(`Errore nel caricamento dei piani: ${response.statusText}`);
       }
       const data = await response.json();
-      setSavedPlans(Array.isArray(data) ? data : []);
+      const plans = Array.isArray(data) ? data : [];
+      
+      // Salva anche in localStorage per accesso offline
+      localStorage.setItem('mealPlans', JSON.stringify(plans));
+      
+      setSavedPlans(plans);
+      console.log('Piani alimentari caricati dal server:', plans.length);
     } catch (error) {
-      console.error('Error loading meal plans:', error);
-      setError('Errore nel caricamento dei piani salvati');
+      console.error('Errore nel caricamento dei piani alimentari dal server:', error);
+      
+      // Fallback: carica da localStorage
+      const localPlans = localStorage.getItem('mealPlans');
+      if (localPlans) {
+        const parsedPlans = JSON.parse(localPlans);
+        setSavedPlans(parsedPlans);
+        console.log('Piani alimentari caricati dal localStorage:', parsedPlans.length);
+      } else {
+        setSavedPlans([]);
+        setError('Non è stato possibile caricare i piani alimentari. Verifica la connessione al server.');
+      }
     } finally {
       setLoading(false);
     }
@@ -106,35 +120,131 @@ const MealPlanner: React.FC = () => {
 
   const handleSavePlan = async (plan: MealPlan) => {
     try {
+      // Se è un template mensile, gestiamo in modo speciale
+      if (plan.is_monthly_template) {
+        const planToSave = {
+          ...plan,
+          id: plan.id || `monthly-${Date.now()}`
+        };
+        
+        const localPlans = localStorage.getItem('mealPlans');
+        let updatedPlans = [];
+        
+        if (localPlans) {
+          const parsedPlans = JSON.parse(localPlans);
+          updatedPlans = [...parsedPlans, planToSave];
+        } else {
+          updatedPlans = [planToSave];
+        }
+        
+        localStorage.setItem('mealPlans', JSON.stringify(updatedPlans));
+        
+        // Aggiorna la lista dei piani salvati
+        await loadSavedPlans();
+        setMode('ai');
+        
+        // Mostra un messaggio di successo
+        alert('Piano alimentare mensile salvato con successo!');
+        return;
+      }
+      
+      // Resto del codice per i piani normali
+      const planToSave = {
+        ...plan,
+        id: plan.id || Date.now()
+      };
+      
+      // Prova a salvare nel backend
       const response = await fetch('http://localhost:8000/api/meal-plans', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(plan),
+        body: JSON.stringify(planToSave),
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Failed to save meal plan: ${errorText}`);
+        throw new Error(`Errore nel salvataggio del piano: ${response.statusText}`);
       }
 
+      // Salva anche in localStorage come backup
+      const localPlans = localStorage.getItem('mealPlans');
+      let updatedPlans = [];
+      
+      if (localPlans) {
+        const parsedPlans = JSON.parse(localPlans);
+        // Aggiorna se esiste, altrimenti aggiungi
+        const existingIndex = parsedPlans.findIndex((p: MealPlan) => p.id === planToSave.id);
+        if (existingIndex >= 0) {
+          parsedPlans[existingIndex] = planToSave;
+          updatedPlans = parsedPlans;
+        } else {
+          updatedPlans = [...parsedPlans, planToSave];
+        }
+      } else {
+        updatedPlans = [planToSave];
+      }
+      
+      localStorage.setItem('mealPlans', JSON.stringify(updatedPlans));
+      
+      // Aggiorna la lista dei piani salvati
       await loadSavedPlans();
       setMode('ai');
+      
+      // Mostra un messaggio di successo
+      alert('Piano alimentare salvato con successo!');
+      
     } catch (error) {
-      console.error('Error saving meal plan:', error);
-      setError('Failed to save meal plan');
+      console.error('Errore nel salvataggio del piano alimentare:', error);
+      
+      // Salvataggio di fallback in localStorage
+      try {
+        const planToSave = {
+          ...plan,
+          id: plan.id || Date.now()
+        };
+        
+        const localPlans = localStorage.getItem('mealPlans');
+        let updatedPlans = [];
+        
+        if (localPlans) {
+          const parsedPlans = JSON.parse(localPlans);
+          const existingIndex = parsedPlans.findIndex((p: MealPlan) => p.id === planToSave.id);
+          if (existingIndex >= 0) {
+            parsedPlans[existingIndex] = planToSave;
+            updatedPlans = parsedPlans;
+          } else {
+            updatedPlans = [...parsedPlans, planToSave];
+          }
+        } else {
+          updatedPlans = [planToSave];
+        }
+        
+        localStorage.setItem('mealPlans', JSON.stringify(updatedPlans));
+        
+        // Aggiorna la lista dei piani salvati
+        await loadSavedPlans();
+        setMode('ai');
+        
+        alert('Piano alimentare salvato localmente (il server non è disponibile).');
+      } catch (localError) {
+        console.error('Errore nel salvataggio locale:', localError);
+        setError('Impossibile salvare il piano alimentare');
+        alert('Errore nel salvataggio del piano alimentare. Riprova più tardi.');
+      }
     }
   };
 
   const handleTemplateSelect = (template: MealPlan) => {
+    console.log('Template selezionato:', template);
     handleSavePlan({
       ...template,
       name: `${template.name} - ${new Date().toLocaleDateString()}`,
     });
   };
 
-  const handleModeChange = (event: React.SyntheticEvent, newMode: 'ai' | 'manual') => {
+  const handleModeChange = (_: React.SyntheticEvent, newMode: 'ai' | 'template' | 'monthly') => {
+    console.log('Cambio modalità a:', newMode);
     setMode(newMode);
   };
 
@@ -199,8 +309,15 @@ const MealPlanner: React.FC = () => {
                   icon={<AddIcon />}
                   iconPosition="start"
                   label={isMobile ? "Template" : "Da Template"}
-                  value="manual"
+                  value="template"
                   sx={{ minHeight: isMobile ? '48px' : '56px' }}
+                />
+                <Tab
+                  icon={<CalendarMonthIcon />}
+                  iconPosition="start"
+                  label={isMobile ? "Mensile" : "Template Mensile"}
+                  value="monthly"
+                  sx={{ minHeight: isMobile ? '48px' : '56px', color: mode === 'monthly' ? 'primary.main' : 'inherit' }}
                 />
               </Tabs>
             </Grid>
@@ -223,7 +340,7 @@ const MealPlanner: React.FC = () => {
                   borderColor: 'divider',
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: filtersExpanded ? 2 : 0 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                   <TextField
                     fullWidth
                     label="Cerca piano"
@@ -454,8 +571,16 @@ const MealPlanner: React.FC = () => {
               </Box>
             </Paper>
           </>
+        ) : mode === 'monthly' ? (
+          <MonthlyTemplateBasedPlanner 
+            onSavePlan={handleSavePlan}
+            onCancel={() => setMode('ai')}
+          />
         ) : (
-          <TemplateBasedPlanner onApplyTemplate={handleTemplateSelect} />
+          <TemplateBasedPlanner 
+            onSavePlan={handleSavePlan}
+            onCancel={() => setMode('ai')}
+          />
         )}
       </Box>
 
