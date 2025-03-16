@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {
-  alpha,
   Box,
   Button,
   Card,
   CardContent,
-  Checkbox,
   Container,
+  Divider,
+  Fade,
   FormControl,
   Grid,
   IconButton,
@@ -14,153 +14,272 @@ import {
   MenuItem,
   Paper,
   Select,
-  TextField,
-  ToggleButton,
-  ToggleButtonGroup,
-  Typography,
-  Divider,
   Snackbar,
+  TextField,
+  Typography,
+  useTheme,
   Alert,
-  Fade,
-  Slide,
-  Tabs,
-  Tab
+  useMediaQuery,
+  ToggleButtonGroup,
+  ToggleButton,
 } from '@mui/material';
-import { FitnessCenter, Add, Delete, Refresh, EmojiEvents, DirectionsRun, SportsGymnastics, AccessibilityNew, ArrowBack } from '@mui/icons-material';
-import { useTheme } from '@mui/material/styles';
+import { Add, Delete, DirectionsRun, Save, FitnessCenterOutlined, SportsGymnastics } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { saveWorkoutProgram } from '../services/workoutStorageService';
 import { getCurrentWorkoutExercises, resetCurrentWorkout } from '../services/currentWorkoutService';
-import { generateWorkoutFromSkills } from '../services/skillBasedWorkoutGenerator';
-import { skillProgressions } from '../data/skillProgressions';
-import SkillSelectionGrid from '../components/SkillSelectionGrid';
 
 interface WorkoutBuilderProps {
   onBack?: () => void; // Proprietà opzionale per tornare indietro
 }
 
+// Interfaccia per le skill disponibili
+interface Skill {
+  id: string;
+  name: string;
+  description: string;
+  exercises: Array<{
+    name: string;
+    type: string;
+    sets: number;
+    reps: string;
+    duration?: number;
+    distance?: number;
+    rest: number;
+    notes?: string;
+  }>;
+}
+
 const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
-  const theme = useTheme();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const navigate = useNavigate();
+  const [workoutDays, setWorkoutDays] = useState<Array<{
+    id: string;
+    name: string;
+    exercises: Array<{
+      id: string;
+      name: string;
+      type: string;
+      sets: number;
+      reps: string;
+      duration: number;
+      distance: number;
+      rest: number;
+      notes: string;
+    }>;
+  }>>([]);
+  const [programDetails, setProgramDetails] = useState({ name: '', description: '' });
   const [loaded, setLoaded] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  
-  // Modalità di creazione del workout: manuale o basata su skill
-  const [creationMode, setCreationMode] = useState<'manual' | 'skill-based'>('manual');
-  
-  // Stati per la creazione basata su skill
-  const [selectedSkills, setSelectedSkills] = useState<Array<{id: string, startLevel: number}>>([]);
-  const [skillFilter, setSkillFilter] = useState<'all' | 'calisthenics' | 'cardio' | 'powerlifting' | 'mobility'>('all');
-  const [generatedWorkout, setGeneratedWorkout] = useState<any>(null);
-  const [daysPerWeek, setDaysPerWeek] = useState<number>(3);
-  
+  // Stato per il metodo di creazione della scheda
+  const [creationMethod, setCreationMethod] = useState<'manual' | 'skill'>('manual');
+  // Stato per il livello di skill selezionato (principiante, intermedio, avanzato)
+  const [skillLevel, setSkillLevel] = useState('principiante');
+  // Stato per l'obiettivo dell'allenamento
+  const [workoutGoal, setWorkoutGoal] = useState('forza');
+  // Stato per le skill disponibili
+  const availableSkills: Skill[] = [
+    {
+      id: 'pushup',
+      name: 'Piegamenti',
+      description: 'Progressione di piegamenti sulle braccia',
+      exercises: [
+        {
+          name: 'Piegamenti a muro',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '10-15',
+          rest: 60,
+        },
+        {
+          name: 'Piegamenti inclinati',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '8-12',
+          rest: 90,
+        },
+        {
+          name: 'Piegamenti sulle ginocchia',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '8-12',
+          rest: 90,
+        },
+        {
+          name: 'Piegamenti completi',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '5-10',
+          rest: 120,
+        },
+      ],
+    },
+    {
+      id: 'pullup',
+      name: 'Trazioni',
+      description: 'Progressione di trazioni alla sbarra',
+      exercises: [
+        {
+          name: 'Trazioni australiane',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '8-12',
+          rest: 90,
+        },
+        {
+          name: 'Trazioni negative',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '5-8',
+          rest: 120,
+        },
+        {
+          name: 'Trazioni con elastico',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '5-8',
+          rest: 120,
+        },
+        {
+          name: 'Trazioni complete',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '3-8',
+          rest: 180,
+        },
+      ],
+    },
+    {
+      id: 'squat',
+      name: 'Squat',
+      description: 'Progressione di squat',
+      exercises: [
+        {
+          name: 'Squat assistito',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '10-15',
+          rest: 60,
+        },
+        {
+          name: 'Squat a corpo libero',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '10-15',
+          rest: 90,
+        },
+        {
+          name: 'Squat bulgaro',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '8-12 per gamba',
+          rest: 90,
+        },
+        {
+          name: 'Pistol squat',
+          type: 'bodyweight',
+          sets: 3,
+          reps: '5-8 per gamba',
+          rest: 120,
+        },
+      ],
+    },
+  ];
+  // Stato per la skill selezionata
+  const [selectedSkill, setSelectedSkill] = useState<string>('');
+
+  // Hook per rilevare dispositivi mobili
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   // Imposta loaded a true dopo il caricamento iniziale
   useEffect(() => {
     setLoaded(true);
   }, []);
 
-  // Stato per i dettagli principali del programma
-  const [programDetails, setProgramDetails] = useState({
-    name: '',
-    description: '',
-    difficulty: 'intermediate' as 'beginner' | 'intermediate' | 'advanced',
-    duration: 4,
-    category: '',
-    targetAreas: [] as string[]
-  });
+  // Funzione per generare un ID univoco
+  const generateId = () => {
+    return Math.random().toString(36).substr(2, 9);
+  };
 
-  // Stato per i giorni di allenamento
-  const [workoutDays, setWorkoutDays] = useState<{
-    id: string;
-    name: string;
-    exercises: {
-      id: string;
-      name: string;
-      type: string; // 'cardio', 'strength', 'bodyweight', etc.
-      sets: number;
-      reps: string;
-      duration: number; // per esercizi cardio (in minuti)
-      distance: number; // per esercizi cardio (in km)
-      rest: number;
-      notes: string;
-    }[];
-  }[]>([]);
-
-  // Carica gli esercizi trasferiti dalla pagina delle skill quando il componente si monta
-  useEffect(() => {
-    // Effetto per l'animazione di caricamento
-    setLoaded(true);
-    
-    // Ottieni gli esercizi del workout corrente
-    const currentExercises = getCurrentWorkoutExercises();
-    
-    // Se ci sono esercizi, crea un nuovo giorno e aggiungili
-    if (currentExercises.length > 0) {
-      const newDay = {
-        id: `day-${Date.now()}`,
-        name: `Giorno 1`,
-        exercises: currentExercises
-      };
-      
-      setWorkoutDays([newDay]);
-      
-      // Mostra un messaggio di conferma
-      setSnackbarMessage('Esercizi aggiunti al workout con successo!');
-      setSnackbarOpen(true);
-      
-      // Resetta il workout corrente dopo averlo caricato
-      resetCurrentWorkout();
-    } else if (workoutDays.length === 0) {
-      // Se non ci sono esercizi e non ci sono giorni, crea almeno un giorno vuoto
-      addWorkoutDay();
-    }
-  }, []);
-
-  // Gestisce l'aggiunta di un nuovo giorno di workout
+  // Aggiunge un nuovo giorno di allenamento
   const addWorkoutDay = () => {
     const newDay = {
-      id: `day-${Date.now()}`,
+      id: generateId(),
       name: `Giorno ${workoutDays.length + 1}`,
       exercises: []
     };
     setWorkoutDays([...workoutDays, newDay]);
   };
 
+  // Rimuove un giorno di allenamento
+  const removeWorkoutDay = (dayId: string) => {
+    setWorkoutDays(workoutDays.filter(day => day.id !== dayId));
+  };
+
+  // Carica gli esercizi dal workout corrente
+  useEffect(() => {
+    // Effetto per l'animazione di caricamento
+    setLoaded(true);
+
+    // Ottieni gli esercizi del workout corrente
+    const currentExercises = getCurrentWorkoutExercises();
+
+    // Se ci sono esercizi, crea un nuovo giorno e aggiungili
+    if (currentExercises.length > 0) {
+      const newDay = {
+        id: generateId(),
+        name: `Giorno 1`,
+        exercises: currentExercises
+      };
+
+      setWorkoutDays([newDay]);
+
+      // Mostra un messaggio di conferma
+      setSnackbarMessage('Esercizi aggiunti al workout con successo!');
+      setSnackbarOpen(true);
+
+      // Resetta il workout corrente dopo averlo caricato
+      resetCurrentWorkout();
+    } else if (workoutDays.length === 0) {
+      // Se non ci sono esercizi nel workout corrente e non ci sono giorni, aggiungi un giorno vuoto
+      addWorkoutDay();
+    }
+  }, []);
+
   // Gestisce la modifica del nome di un giorno
   const handleDayNameChange = (dayId: string, newName: string) => {
-    setWorkoutDays(workoutDays.map(day => 
-      day.id === dayId ? {...day, name: newName} : day
+    setWorkoutDays(workoutDays.map(day =>
+      day.id === dayId ? { ...day, name: newName } : day
     ));
   };
 
-  // Gestisce l'aggiunta di un nuovo esercizio a un giorno
+  // Aggiunge un nuovo esercizio a un giorno
   const addExercise = (dayId: string) => {
+    const newExercise = {
+      id: generateId(),
+      name: '',
+      type: 'strength',
+      sets: 3,
+      reps: '10',
+      duration: 0,
+      distance: 0,
+      rest: 60,
+      notes: ''
+    };
+
     setWorkoutDays(workoutDays.map(day => {
       if (day.id === dayId) {
         return {
           ...day,
-          exercises: [
-            ...day.exercises,
-            {
-              id: `exercise-${Date.now()}`,
-              name: '',
-              type: '',
-              sets: 3,
-              reps: '8-12',
-              duration: 0,
-              distance: 0,
-              rest: 60,
-              notes: ''
-            }
-          ]
+          exercises: [...day.exercises, newExercise]
         };
       }
       return day;
     }));
   };
 
-  // Gestisce la rimozione di un esercizio
+  // Rimuove un esercizio da un giorno
   const removeExercise = (dayId: string, exerciseId: string) => {
     setWorkoutDays(workoutDays.map(day => {
       if (day.id === dayId) {
@@ -173,15 +292,18 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
     }));
   };
 
-  // Gestisce la modifica di un esercizio
-  const handleExerciseChange = (dayId: string, exerciseId: string, field: string, value: string | number) => {
+  // Gestisce i cambiamenti nei campi degli esercizi
+  const handleExerciseChange = (dayId: string, exerciseId: string, field: string, value: any) => {
     setWorkoutDays(workoutDays.map(day => {
       if (day.id === dayId) {
         return {
           ...day,
           exercises: day.exercises.map(ex => {
             if (ex.id === exerciseId) {
-              return { ...ex, [field]: value };
+              return {
+                ...ex,
+                [field]: value
+              };
             }
             return ex;
           })
@@ -191,291 +313,168 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
     }));
   };
 
-  // Funzione per importare gli esercizi dalla libreria
-  const importExercisesFromLibrary = () => {
-    // Naviga alla pagina della libreria di esercizi
-    navigate('/exercise-library');
-  };
-
-  // Funzione per salvare il programma
-  const saveProgram = () => {
-    if (!programDetails.name) {
-      alert('Inserisci un nome per la scheda di allenamento');
-      return;
-    }
-
-    if (workoutDays.length === 0) {
-      alert('Aggiungi almeno un giorno di allenamento');
-      return;
-    }
-
-    // Verifica che ogni giorno abbia almeno un esercizio
-    const emptyDays = workoutDays.filter(day => day.exercises.length === 0);
-    if (emptyDays.length > 0) {
-      alert(`Aggiungi almeno un esercizio ai seguenti giorni: ${emptyDays.map(d => d.name).join(', ')}`);
-      return;
-    }
-
-    // Crea la struttura del programma conforme all'interfaccia WorkoutProgram
-    const program = {
-      id: `program-${Date.now()}`,
-      name: programDetails.name,
-      description: programDetails.description,
-      difficulty: programDetails.difficulty,
-      duration: programDetails.duration,
-      category: programDetails.category,
-      targetAreas: programDetails.targetAreas,
-      phases: [
-        {
-          id: `phase-1`,
-          number: 1,
-          name: 'Fase 1',
-          weeks: [
-            {
-              id: `week-1`,
-              phaseId: `phase-1`,
-              weekNumber: 1,
-              name: 'Settimana 1',
-              isTestWeek: false,
-              days: workoutDays.map((day, index) => ({
-                id: day.id,
-                code: `Giorno ${index + 1}`,
-                name: day.name,
-                dayNumber: index + 1,
-                type: 'workout' as 'workout' | 'rest' | 'test',
-                exercises: day.exercises.map(ex => {
-                  // Converti il tipo dell'esercizio al formato corretto
-                  let exerciseType: 'strength' | 'cardio' | 'mobility' | undefined;
-                  
-                  if (ex.type === 'strength' || ex.type === 'bodyweight') {
-                    exerciseType = 'strength';
-                  } else if (ex.type === 'cardio') {
-                    exerciseType = 'cardio';
-                  } else if (ex.type === 'stretching') {
-                    exerciseType = 'mobility';
-                  } else {
-                    exerciseType = undefined;
-                  }
-                  
-                  return {
-                    id: ex.id,
-                    name: ex.name,
-                    sets: ex.sets,
-                    reps: ex.reps,
-                    rest: `${ex.rest}s`,
-                    notes: ex.notes || '',
-                    type: exerciseType
-                  };
-                })
-              })),
-              isAvailable: true
-            }
-          ]
-        }
-      ],
-      isAvailable: true
-    };
-
-    // Salva il programma usando il servizio
-    try {
-      saveWorkoutProgram(program);
+  // Genera una progressione basata sulla skill selezionata
+  const generateSkillProgression = () => {
+    if (!selectedSkill) {
+      setSnackbarMessage('Seleziona una skill per generare una progressione');
       setSnackbarOpen(true);
-      setSnackbarMessage('Scheda di allenamento salvata con successo!');
-      navigate('/workout-programs');
-    } catch (error) {
-      console.error('Errore durante il salvataggio:', error);
-      setSnackbarOpen(true);
-      setSnackbarMessage('Si è verificato un errore durante il salvataggio della scheda');
+      return;
     }
-  };
 
-  // Funzione per gestire la selezione delle skill
-  const handleSkillSelect = (skillId: string) => {
-    setSelectedSkills(prev => {
-      // Se la skill è già selezionata, la rimuoviamo
-      if (prev.some(skill => skill.id === skillId)) {
-        return prev.filter(skill => skill.id !== skillId);
+    // Trova la skill selezionata
+    const skill = availableSkills.find(s => s.id === selectedSkill);
+    if (!skill) return;
+
+    // Determina quali esercizi includere in base al livello di abilità
+    let exercisesToInclude = [];
+    switch (skillLevel) {
+      case 'principiante':
+        // Per principianti, include solo i primi due esercizi della progressione
+        exercisesToInclude = skill.exercises.slice(0, 2);
+        break;
+      case 'intermedio':
+        // Per intermedi, include il secondo e il terzo esercizio
+        exercisesToInclude = skill.exercises.slice(1, 3);
+        break;
+      case 'avanzato':
+        // Per avanzati, include gli ultimi due esercizi
+        exercisesToInclude = skill.exercises.slice(2, 4);
+        break;
+      default:
+        exercisesToInclude = skill.exercises;
+    }
+
+    // Adatta i set e le ripetizioni in base all'obiettivo
+    const adaptedExercises = exercisesToInclude.map(ex => {
+      let adaptedEx = { ...ex, id: generateId() };
+      
+      switch (workoutGoal) {
+        case 'forza':
+          adaptedEx.sets = 5;
+          adaptedEx.reps = '5';
+          adaptedEx.rest = 180;
+          break;
+        case 'ipertrofia':
+          adaptedEx.sets = 4;
+          adaptedEx.reps = '8-12';
+          adaptedEx.rest = 90;
+          break;
+        case 'dimagrimento':
+          adaptedEx.sets = 3;
+          adaptedEx.reps = '15-20';
+          adaptedEx.rest = 60;
+          break;
       }
-      // Altrimenti, la aggiungiamo con il livello iniziale 1
-      return [...prev, { id: skillId, startLevel: 1 }];
+      
+      return adaptedEx;
     });
-  };
 
-  // Funzione per generare un programma basato sulle skill selezionate
-  const generateWorkoutFromSelectedSkills = () => {
-    if (selectedSkills.length === 0) {
-      setSnackbarMessage('Seleziona almeno una skill per generare la scheda');
-      setSnackbarOpen(true);
-      return;
-    }
-
-    // Genera il programma utilizzando il servizio
-    const generatedProgram = generateWorkoutFromSkills(selectedSkills, daysPerWeek);
-    
-    if (!generatedProgram) {
-      setSnackbarMessage('Errore nella generazione della scheda. Riprova.');
-      setSnackbarOpen(true);
-      return;
-    }
-
-    // Prepara i dati del programma da salvare
-    const programToSave = {
-      ...generatedProgram,
-      name: programDetails.name || generatedProgram.name,
-      description: programDetails.description || generatedProgram.description,
-      // Assicuriamoci che abbia tutti i campi necessari
-      id: generatedProgram.id || `program-${Date.now()}`,
-      type: generatedProgram.type || 'skill-based',
-      author: 'HealthyLife AI',
-      targetAreas: generatedProgram.targetAreas || []
-    };
-
-    // Salva il programma nel database
-    const savedProgramId = saveWorkoutProgram(programToSave);
-    console.log('Programma salvato con ID:', savedProgramId);
-    
-    // Salva l'ID del programma in localStorage
-    localStorage.setItem('currentWorkoutProgram', savedProgramId);
-    console.log('ID programma salvato in localStorage');
-    
-    setGeneratedWorkout(programToSave);
-    setSnackbarMessage('Workout salvato con successo!');
-    setSnackbarOpen(true);
-    
-    // Reindirizza alla pagina dei programmi di allenamento
-    setTimeout(() => {
-      navigate(`/workout-programs?id=${savedProgramId}`);
-    }, 1500);
-  };
-
-  const addExerciseToDay = (dayIndex: number, exercise: any) => {
-    setWorkoutDays(prev => {
-      const newWorkout = [...prev];
-      if (!newWorkout[dayIndex]) {
-        newWorkout[dayIndex] = [];
-      }
-      newWorkout[dayIndex] = [...newWorkout[dayIndex], exercise];
-      return newWorkout;
-    });
-  };
-
-  const handleRemoveExercise = (dayIndex: number, exerciseIndex: number) => {
-    setWorkoutDays(prev => {
-      const newWorkout = [...prev];
-      newWorkout[dayIndex] = newWorkout[dayIndex].filter((_, i) => i !== exerciseIndex);
-      return newWorkout;
-    });
-  };
-
-  const handleSaveWorkout = async () => {
-    const workoutProgram = {
-      name: programDetails.name || 'Il mio workout',
-      description: programDetails.description || 'Programma di allenamento personalizzato',
-      days: workoutDays.map((day, index) => ({
-        name: `Giorno ${index + 1}`,
-        exercises: day.exercises
+    // Crea un nuovo giorno con gli esercizi adattati
+    const newDay = {
+      id: generateId(),
+      name: `${skill.name} - ${skillLevel.charAt(0).toUpperCase() + skillLevel.slice(1)}`,
+      exercises: adaptedExercises.map(ex => ({
+        id: ex.id || generateId(),
+        name: ex.name,
+        type: ex.type,
+        sets: ex.sets,
+        reps: ex.reps,
+        duration: ex.duration || 0,
+        distance: ex.distance || 0,
+        rest: ex.rest,
+        notes: ex.notes || ''
       }))
     };
 
-    await saveWorkoutProgram(workoutProgram);
+    // Aggiunge il nuovo giorno alla scheda
+    setWorkoutDays([...workoutDays, newDay]);
+    
+    // Mostra un messaggio di conferma
+    setSnackbarMessage(`Progressione di ${skill.name} aggiunta con successo!`);
     setSnackbarOpen(true);
-    setSnackbarMessage('Scheda di allenamento salvata con successo!');
-    setTimeout(() => setSnackbarOpen(false), 3000);
   };
 
-  const handleReset = () => {
-    setWorkoutDays([]);
-    setProgramDetails({
-      name: '',
-      description: '',
-      difficulty: 'intermediate',
-      duration: 4,
-      category: '',
-      targetAreas: []
-    });
-    resetCurrentWorkout();
-    setSelectedSkills([]);
-    setGeneratedWorkout(null);
-  };
-
-  const handleSkillLevelChange = (skillId: string, level: number) => {
-    setSelectedSkills(prev => {
-      return prev.map(skill => {
-        if (skill.id === skillId) {
-          return { ...skill, startLevel: level };
-        }
-        return skill;
-      });
-    });
-  };
-
-  const handleDaysPerWeekChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setDaysPerWeek(event.target.value as number);
-  };
-
-  const handleCreationModeChange = (event: React.MouseEvent<HTMLElement>, newMode: 'manual' | 'skill-based') => {
-    if (newMode !== null) {
-      setCreationMode(newMode);
-      
-      // Resetta il workout quando si cambia modalità
-      setWorkoutDays([]);
-      setGeneratedWorkout(null);
+  // Salva il programma di allenamento
+  const saveProgram = () => {
+    if (programDetails.name.trim() === '') {
+      setSnackbarMessage('Inserisci un nome per il programma');
+      setSnackbarOpen(true);
+      return;
     }
+
+    if (workoutDays.length === 0 || workoutDays.every(day => day.exercises.length === 0)) {
+      setSnackbarMessage('Aggiungi almeno un esercizio al programma');
+      setSnackbarOpen(true);
+      return;
+    }
+
+    // Prepara il programma da salvare
+    const programToSave = {
+      id: generateId(),
+      name: programDetails.name,
+      description: programDetails.description,
+      days: workoutDays.map(day => ({
+        id: day.id,
+        name: day.name,
+        exercises: day.exercises.map(ex => ({
+          id: ex.id,
+          name: ex.name,
+          type: ex.type,
+          sets: ex.sets,
+          reps: ex.reps,
+          duration: ex.duration,
+          distance: ex.distance,
+          rest: ex.rest,
+          notes: ex.notes
+        }))
+      })),
+      // Aggiungi i campi mancanti richiesti dall'interfaccia WorkoutProgram
+      phases: 1,
+      duration: workoutDays.length,
+      difficulty: skillLevel === 'principiante' ? 'easy' : skillLevel === 'intermedio' ? 'medium' : 'hard',
+      category: workoutGoal,
+      author: 'user',
+      createdAt: new Date().toISOString()
+    };
+
+    // Salva il programma nel database
+    const savedProgramId = saveWorkoutProgram(programToSave as any);
+    console.log('Programma salvato con ID:', savedProgramId);
+
+    // Mostra un messaggio di conferma
+    setSnackbarMessage('Workout salvato con successo!');
+    setSnackbarOpen(true);
   };
 
   return (
     <Container maxWidth="lg" sx={{ py: 5, px: { xs: 2, sm: 3, md: 4 } }}>
       <Fade in={loaded} timeout={800}>
-        <Box>
+        <Box sx={{ width: '100%' }}>
           {/* Header */}
           <Box sx={{ mb: 5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Typography variant="h4" component="h1" sx={{ fontWeight: 700 }}>
-              Crea il tuo workout
+              Workout Builder
             </Typography>
-            
+
             {/* Pulsante Indietro se onBack è definito */}
             {onBack && (
               <Button
                 variant="outlined"
-                color="primary"
-                startIcon={<ArrowBack />}
                 onClick={onBack}
-                sx={{ mr: 2 }}
+                sx={{ borderRadius: 2 }}
               >
                 Indietro
               </Button>
             )}
           </Box>
-          <Grid container spacing={3}>
+
+          <Grid container spacing={4}>
             <Grid item xs={12}>
-              <Paper sx={{ p: 3, mb: 3 }}>
+              <Paper sx={{ p: 3, borderRadius: 2, mb: 4 }}>
                 <Typography variant="h5" component="h1" gutterBottom>
                   Crea il tuo workout
                 </Typography>
-                
-                <Box sx={{ mb: 3 }}>
-                  <ToggleButtonGroup
-                    value={creationMode}
-                    exclusive
-                    onChange={handleCreationModeChange}
-                    aria-label="modalità di creazione"
-                    sx={{ mb: 2 }}
-                  >
-                    <ToggleButton value="manual" aria-label="creazione manuale">
-                      <FitnessCenter sx={{ mr: 1 }} /> Creazione Manuale
-                    </ToggleButton>
-                    <ToggleButton value="skill-based" aria-label="creazione basata su skill">
-                      <EmojiEvents sx={{ mr: 1 }} /> Creazione Basata su Skill
-                    </ToggleButton>
-                  </ToggleButtonGroup>
-                  
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                    {creationMode === 'manual' 
-                      ? 'Crea manualmente il tuo workout aggiungendo esercizi a ciascun giorno.'
-                      : 'Seleziona le skill che vuoi ottenere e genera automaticamente un programma personalizzato.'}
-                  </Typography>
-                </Box>
-                
+
                 {/* Form per i dettagli del programma */}
                 <Grid container spacing={2} sx={{ mb: 3 }}>
                   <Grid item xs={12} sm={6}>
@@ -483,30 +482,16 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
                       fullWidth
                       label="Nome del programma"
                       value={programDetails.name}
-                      onChange={(e) => setProgramDetails({...programDetails, name: e.target.value})}
+                      onChange={(e) => setProgramDetails({ ...programDetails, name: e.target.value })}
                       variant="outlined"
                     />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <FormControl fullWidth>
-                      <InputLabel>Giorni di allenamento a settimana</InputLabel>
-                      <Select
-                        value={daysPerWeek}
-                        onChange={(e) => setDaysPerWeek(Number(e.target.value))}
-                        label="Giorni di allenamento a settimana"
-                      >
-                        {[2, 3, 4, 5, 6].map((num) => (
-                          <MenuItem key={num} value={num}>{num} giorni</MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
                       label="Descrizione del programma"
                       value={programDetails.description}
-                      onChange={(e) => setProgramDetails({...programDetails, description: e.target.value})}
+                      onChange={(e) => setProgramDetails({ ...programDetails, description: e.target.value })}
                       multiline
                       rows={2}
                       variant="outlined"
@@ -516,301 +501,488 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
               </Paper>
             </Grid>
             
-            {creationMode === 'skill-based' && (
-              <Grid item xs={12}>
-                <Paper sx={{ p: 3, mb: 3 }}>
-                  <Typography variant="h6" gutterBottom>
-                    Seleziona le skill da allenare
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                    Scegli le skill che desideri ottenere e verrà generato un programma di allenamento personalizzato.
-                  </Typography>
-                  
-                  <Box sx={{ mb: 3 }}>
-                    <Tabs 
-                      value={skillFilter} 
-                      onChange={(_, newValue) => setSkillFilter(newValue)}
-                      variant="scrollable"
-                      scrollButtons="auto"
-                      sx={{ mb: 3 }}
-                    >
-                      <Tab 
-                        icon={<FitnessCenter />} 
-                        label="Tutte" 
-                        value="all" 
-                      />
-                      <Tab 
-                        icon={<SportsGymnastics />} 
-                        label="Calisthenics" 
-                        value="calisthenics" 
-                      />
-                      <Tab 
-                        icon={<DirectionsRun />} 
-                        label="Cardio" 
-                        value="cardio" 
-                      />
-                      <Tab 
-                        icon={<FitnessCenter />} 
-                        label="Powerlifting" 
-                        value="powerlifting" 
-                      />
-                      <Tab 
-                        icon={<AccessibilityNew />} 
-                        label="Mobilità" 
-                        value="mobility" 
-                      />
-                    </Tabs>
-                    
-                    <SkillSelectionGrid 
-                      skills={skillProgressions}
-                      selectedSkills={selectedSkills}
-                      onSkillSelect={handleSkillSelect}
-                      onSkillLevelChange={handleSkillLevelChange}
-                      filter={skillFilter}
-                    />
-                  </Box>
-                  
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      disabled={selectedSkills.length === 0}
-                      onClick={generateWorkoutFromSelectedSkills}
-                      startIcon={<FitnessCenter />}
-                      sx={{ minWidth: 240 }}
-                    >
-                      Genera Workout
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-            )}
-            
-            {/* Qui il resto del codice esistente per la creazione manuale del workout */}
-            
             <Grid item xs={12}>
-              <Paper 
-                elevation={0} 
-                sx={{ 
-                  p: 3, 
-                  borderRadius: 2, 
-                  mb: 4,
-                  border: '1px solid',
-                  borderColor: theme.palette.divider
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 3,
+                  borderRadius: 3,
+                  backgroundColor: 'background.paper',
+                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.08)',
+                  mb: 4
                 }}
               >
-                <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                  <Typography variant="h6" fontWeight="500" color="primary">
+                <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+                  <Typography variant="h6" fontWeight="600" color="primary.main">
                     Giorni di Allenamento
                   </Typography>
-                  <Button 
-                    variant="outlined" 
-                    startIcon={<Add />}
-                    onClick={addWorkoutDay}
-                    size="small"
-                  >
-                    Aggiungi Giorno
-                  </Button>
-                  <Button 
-                    variant="outlined" 
-                    startIcon={<Add />}
-                    onClick={importExercisesFromLibrary}
-                    size="small"
-                  >
-                    Importa Esercizi dalla Libreria
-                  </Button>
                 </Box>
 
                 <Divider sx={{ mb: 3 }} />
                 
                 {workoutDays.length === 0 ? (
-                  <Typography color="text.secondary" textAlign="center" py={4}>
-                    Nessun giorno di allenamento aggiunto. Usa il pulsante "Aggiungi Giorno" per iniziare.
-                  </Typography>
-                ) : (
-                  workoutDays.map((day, index) => (
-                    <Card 
-                      key={day.id} 
-                      variant="outlined" 
-                      sx={{ 
-                        mb: 3, 
-                        borderColor: theme.palette.divider,
-                        '&:hover': {
-                          borderColor: theme.palette.primary.light,
-                          transition: '0.3s'
-                        }
+                  <Box sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    py: 6,
+                    textAlign: 'center'
+                  }}>
+                    <DirectionsRun sx={{ fontSize: 60, color: 'primary.light', opacity: 0.7, mb: 2 }} />
+                    <Typography color="text.secondary" sx={{ mb: 3 }}>
+                      Nessun giorno di allenamento aggiunto.
+                    </Typography>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                      onClick={addWorkoutDay}
+                      startIcon={<Add />}
+                      sx={{
+                        borderRadius: 8,
+                        px: 4,
+                        py: 1.5,
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                        textTransform: 'none',
+                        fontSize: '1.1rem',
+                        fontWeight: 500,
+                        minWidth: '200px',
                       }}
                     >
-                      <CardContent sx={{ pb: 1 }}>
-                        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                          <TextField
-                            label={`Giorno ${index + 1}`}
-                            value={day.name}
-                            onChange={(e) => handleDayNameChange(day.id, e.target.value)}
-                            variant="outlined"
-                            size="small"
-                            sx={{ width: '50%' }}
-                          />
-                          <Button
-                            variant="outlined"
-                            startIcon={<Add />}
-                            size="small"
-                            onClick={() => addExercise(day.id)}
-                          >
-                            Aggiungi Esercizio
-                          </Button>
-                        </Box>
-                        
-                        {day.exercises.length === 0 ? (
-                          <Typography color="text.secondary" textAlign="center" py={2}>
-                            Nessun esercizio aggiunto a questo giorno.
-                          </Typography>
-                        ) : (
-                          day.exercises.map((exercise) => (
-                            <Box 
-                              key={exercise.id} 
+                      Aggiungi Giorno
+                    </Button>
+                  </Box>
+                ) : (
+                  <>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="medium"
+                        onClick={addWorkoutDay}
+                        startIcon={<Add />}
+                        sx={{
+                          borderRadius: 8,
+                          px: 3,
+                          py: 1,
+                          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                          textTransform: 'none',
+                          fontSize: '1rem',
+                          fontWeight: 500,
+                          mr: 2
+                        }}
+                      >
+                        Aggiungi Giorno
+                      </Button>
+                    </Box>
+                    
+                    {workoutDays.map((day, index) => (
+                      <Card 
+                        key={day.id} 
+                        variant="outlined" 
+                        sx={{ 
+                          mb: 3, 
+                          borderRadius: 3,
+                          borderColor: 'transparent',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+                          overflow: 'visible',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
+                          }
+                        }}
+                      >
+                        <CardContent sx={{ pb: 2 }}>
+                          <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+                            <TextField
+                              label={`Giorno ${index + 1}`}
+                              value={day.name}
+                              onChange={(e) => handleDayNameChange(day.id, e.target.value)}
+                              variant="outlined"
+                              size="small"
                               sx={{ 
-                                p: 2, 
-                                mb: 2, 
-                                border: '1px solid', 
-                                borderColor: 'divider',
-                                borderRadius: 1,
-                                position: 'relative',
-                                '&:hover': {
-                                  borderColor: theme.palette.primary.light,
-                                  transition: '0.3s'
+                                width: isMobile ? '100%' : '50%',
+                                mb: isMobile ? 2 : 0,
+                                '& .MuiOutlinedInput-root': {
+                                  borderRadius: 2
                                 }
                               }}
-                            >
+                            />
+                            <Box sx={{ display: 'flex', gap: 1 }}>
+                              <Button
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                                startIcon={<Add />}
+                                onClick={() => addExercise(day.id)}
+                                sx={{
+                                  borderRadius: 6,
+                                  textTransform: 'none',
+                                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                                }}
+                              >
+                                {isMobile ? "Esercizio" : "Aggiungi Esercizio"}
+                              </Button>
                               <IconButton 
                                 size="small" 
-                                sx={{ position: 'absolute', top: 5, right: 5 }}
-                                onClick={() => removeExercise(day.id, exercise.id)}
+                                color="error"
+                                onClick={() => removeWorkoutDay(day.id)}
+                                sx={{ 
+                                  ml: 1,
+                                  bgcolor: 'error.lighter',
+                                  '&:hover': { bgcolor: 'error.light' } 
+                                }}
                               >
                                 <Delete fontSize="small" />
                               </IconButton>
-                              
-                              <Grid container spacing={2}>
-                                <Grid item xs={12}>
-                                  <Box display="flex" alignItems="center" gap={1} mb={1}>
+                            </Box>
+                          </Box>
+                          
+                          {day.exercises.length === 0 ? (
+                            <Typography color="text.secondary" textAlign="center" py={2}>
+                              Nessun esercizio aggiunto a questo giorno.
+                            </Typography>
+                          ) : (
+                            day.exercises.map((exercise) => (
+                              <Box 
+                                key={exercise.id} 
+                                sx={{ 
+                                  p: 2, 
+                                  mb: 2, 
+                                  border: '1px solid', 
+                                  borderColor: 'divider',
+                                  borderRadius: 2,
+                                  position: 'relative',
+                                  transition: 'all 0.2s ease',
+                                  '&:hover': {
+                                    borderColor: theme.palette.primary.light,
+                                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
+                                  }
+                                }}
+                              >
+                                <IconButton 
+                                  size="small" 
+                                  sx={{ 
+                                    position: 'absolute', 
+                                    top: 8, 
+                                    right: 8,
+                                    bgcolor: 'error.lighter',
+                                    '&:hover': { bgcolor: 'error.light' }
+                                  }}
+                                  onClick={() => removeExercise(day.id, exercise.id)}
+                                >
+                                  <Delete fontSize="small" />
+                                </IconButton>
+                                
+                                <Grid container spacing={2}>
+                                  <Grid item xs={12}>
+                                    <Box display="flex" alignItems="center" gap={1} mb={1}>
+                                      <TextField
+                                        fullWidth
+                                        label="Nome Esercizio"
+                                        value={exercise.name}
+                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'name', e.target.value)}
+                                        variant="outlined"
+                                        size="small"
+                                        sx={{
+                                          '& .MuiOutlinedInput-root': {
+                                            borderRadius: 2
+                                          }
+                                        }}
+                                      />
+                                      <FormControl sx={{ minWidth: 150 }} size="small">
+                                        <InputLabel>Tipo</InputLabel>
+                                        <Select
+                                          value={exercise.type}
+                                          label="Tipo"
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'type', e.target.value)}
+                                          sx={{
+                                            borderRadius: 2
+                                          }}
+                                        >
+                                          <MenuItem value="strength">Forza (Palestra)</MenuItem>
+                                          <MenuItem value="bodyweight">Corpo Libero</MenuItem>
+                                          <MenuItem value="cardio">Cardio</MenuItem>
+                                          <MenuItem value="stretching">Stretching</MenuItem>
+                                          <MenuItem value="other">Altro</MenuItem>
+                                        </Select>
+                                      </FormControl>
+                                    </Box>
+                                  </Grid>
+
+                                  {/* Campi condizionali in base al tipo di esercizio */}
+                                  {(exercise.type === 'strength' || exercise.type === 'bodyweight') && (
+                                    <>
+                                      <Grid item xs={6} sm={3}>
+                                        <TextField
+                                          fullWidth
+                                          label="Serie"
+                                          type="number"
+                                          value={exercise.sets}
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'sets', parseInt(e.target.value) || 0)}
+                                          variant="outlined"
+                                          size="small"
+                                          InputProps={{ inputProps: { min: 1 } }}
+                                          sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                              borderRadius: 2
+                                            }
+                                          }}
+                                        />
+                                      </Grid>
+                                      <Grid item xs={6} sm={3}>
+                                        <TextField
+                                          fullWidth
+                                          label="Ripetizioni"
+                                          value={exercise.reps}
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'reps', e.target.value)}
+                                          variant="outlined"
+                                          size="small"
+                                          placeholder="Es: 10 o 8-12"
+                                          sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                              borderRadius: 2
+                                            }
+                                          }}
+                                        />
+                                      </Grid>
+                                      <Grid item xs={6} sm={3}>
+                                        <TextField
+                                          fullWidth
+                                          label="Recupero (sec)"
+                                          type="number"
+                                          value={exercise.rest}
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'rest', parseInt(e.target.value) || 0)}
+                                          variant="outlined"
+                                          size="small"
+                                          InputProps={{ inputProps: { min: 0 } }}
+                                          sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                              borderRadius: 2
+                                            }
+                                          }}
+                                        />
+                                      </Grid>
+                                    </>
+                                  )}
+                                  
+                                  {exercise.type === 'cardio' && (
+                                    <>
+                                      <Grid item xs={6} sm={4}>
+                                        <TextField
+                                          fullWidth
+                                          label="Durata (min)"
+                                          type="number"
+                                          value={exercise.duration}
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'duration', parseInt(e.target.value) || 0)}
+                                          variant="outlined"
+                                          size="small"
+                                          InputProps={{ inputProps: { min: 0 } }}
+                                          sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                              borderRadius: 2
+                                            }
+                                          }}
+                                        />
+                                      </Grid>
+                                      <Grid item xs={6} sm={4}>
+                                        <TextField
+                                          fullWidth
+                                          label="Distanza (km)"
+                                          type="number"
+                                          value={exercise.distance}
+                                          onChange={(e) => handleExerciseChange(day.id, exercise.id, 'distance', parseInt(e.target.value) || 0)}
+                                          variant="outlined"
+                                          size="small"
+                                          InputProps={{ inputProps: { min: 0, step: 0.1 } }}
+                                          sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                              borderRadius: 2
+                                            }
+                                          }}
+                                        />
+                                      </Grid>
+                                    </>
+                                  )}
+
+                                  <Grid item xs={12}>
                                     <TextField
                                       fullWidth
-                                      label="Nome Esercizio"
-                                      value={exercise.name}
-                                      onChange={(e) => handleExerciseChange(day.id, exercise.id, 'name', e.target.value)}
+                                      label="Note"
+                                      multiline
+                                      rows={2}
+                                      value={exercise.notes}
+                                      onChange={(e) => handleExerciseChange(day.id, exercise.id, 'notes', e.target.value)}
                                       variant="outlined"
                                       size="small"
+                                      placeholder="Inserisci dettagli aggiuntivi..."
+                                      sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                          borderRadius: 2
+                                        }
+                                      }}
                                     />
-                                    <FormControl sx={{ minWidth: 150 }} size="small">
-                                      <InputLabel>Tipo</InputLabel>
-                                      <Select
-                                        value={exercise.type}
-                                        label="Tipo"
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'type', e.target.value)}
-                                      >
-                                        <MenuItem value="strength">Forza (Palestra)</MenuItem>
-                                        <MenuItem value="bodyweight">Corpo Libero</MenuItem>
-                                        <MenuItem value="cardio">Cardio</MenuItem>
-                                        <MenuItem value="stretching">Stretching</MenuItem>
-                                        <MenuItem value="other">Altro</MenuItem>
-                                      </Select>
-                                    </FormControl>
-                                  </Box>
+                                  </Grid>
                                 </Grid>
-
-                                {/* Campi condizionali in base al tipo di esercizio */}
-                                {(exercise.type === 'strength' || exercise.type === 'bodyweight') && (
-                                  <>
-                                    <Grid item xs={6} sm={3}>
-                                      <TextField
-                                        fullWidth
-                                        label="Serie"
-                                        type="number"
-                                        value={exercise.sets}
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'sets', parseInt(e.target.value) || 0)}
-                                        variant="outlined"
-                                        size="small"
-                                        InputProps={{ inputProps: { min: 1 } }}
-                                      />
-                                    </Grid>
-                                    <Grid item xs={6} sm={3}>
-                                      <TextField
-                                        fullWidth
-                                        label="Ripetizioni"
-                                        value={exercise.reps}
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'reps', e.target.value)}
-                                        variant="outlined"
-                                        size="small"
-                                        placeholder="Es: 10 o 8-12"
-                                      />
-                                    </Grid>
-                                    <Grid item xs={6} sm={3}>
-                                      <TextField
-                                        fullWidth
-                                        label="Recupero (sec)"
-                                        type="number"
-                                        value={exercise.rest}
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'rest', parseInt(e.target.value) || 0)}
-                                        variant="outlined"
-                                        size="small"
-                                        InputProps={{ inputProps: { min: 0 } }}
-                                      />
-                                    </Grid>
-                                  </>
-                                )}
-                                
-                                {exercise.type === 'cardio' && (
-                                  <>
-                                    <Grid item xs={6} sm={4}>
-                                      <TextField
-                                        fullWidth
-                                        label="Durata (min)"
-                                        type="number"
-                                        value={exercise.duration}
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'duration', parseInt(e.target.value) || 0)}
-                                        variant="outlined"
-                                        size="small"
-                                        InputProps={{ inputProps: { min: 0 } }}
-                                      />
-                                    </Grid>
-                                    <Grid item xs={6} sm={4}>
-                                      <TextField
-                                        fullWidth
-                                        label="Distanza (km)"
-                                        type="number"
-                                        value={exercise.distance}
-                                        onChange={(e) => handleExerciseChange(day.id, exercise.id, 'distance', parseInt(e.target.value) || 0)}
-                                        variant="outlined"
-                                        size="small"
-                                        InputProps={{ inputProps: { min: 0, step: 0.1 } }}
-                                      />
-                                    </Grid>
-                                  </>
-                                )}
-
-                                <Grid item xs={12}>
-                                  <TextField
-                                    fullWidth
-                                    label="Note"
-                                    multiline
-                                    rows={2}
-                                    value={exercise.notes}
-                                    onChange={(e) => handleExerciseChange(day.id, exercise.id, 'notes', e.target.value)}
-                                    variant="outlined"
-                                    size="small"
-                                    placeholder="Inserisci dettagli aggiuntivi..."
-                                  />
-                                </Grid>
-                              </Grid>
-                            </Box>
-                          ))
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))
+                              </Box>
+                            ))
+                          )}
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </>
                 )}
               </Paper>
+
+              {/* Selettore per il metodo di creazione della scheda */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                <ToggleButtonGroup
+                  exclusive
+                  value={creationMethod}
+                  onChange={(_, newMethod) => newMethod && setCreationMethod(newMethod)}
+                  sx={{
+                    '& .MuiToggleButtonGroup-grouped': {
+                      borderRadius: 2,
+                      border: '1px solid',
+                      borderColor: 'divider',
+                      '&.Mui-selected': {
+                        backgroundColor: theme.palette.primary.main,
+                        color: theme.palette.primary.contrastText,
+                      }
+                    }
+                  }}
+                >
+                  <ToggleButton value="manual">
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <FitnessCenterOutlined sx={{ mr: 1 }} />
+                      Manuale
+                    </Box>
+                  </ToggleButton>
+                  <ToggleButton value="skill">
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <SportsGymnastics sx={{ mr: 1 }} />
+                      Basato su Skill
+                    </Box>
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </Box>
+
+              {/* Selettore per il livello di skill */}
+              {creationMethod === 'skill' && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                  <ToggleButtonGroup
+                    exclusive
+                    value={skillLevel}
+                    onChange={(_, newLevel) => newLevel && setSkillLevel(newLevel)}
+                    sx={{
+                      '& .MuiToggleButtonGroup-grouped': {
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        '&.Mui-selected': {
+                          backgroundColor: theme.palette.primary.main,
+                          color: theme.palette.primary.contrastText,
+                        }
+                      }
+                    }}
+                  >
+                    <ToggleButton value="principiante">
+                      Principiante
+                    </ToggleButton>
+                    <ToggleButton value="intermedio">
+                      Intermedio
+                    </ToggleButton>
+                    <ToggleButton value="avanzato">
+                      Avanzato
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </Box>
+              )}
+
+              {/* Selettore per l'obiettivo dell'allenamento */}
+              {creationMethod === 'skill' && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                  <ToggleButtonGroup
+                    exclusive
+                    value={workoutGoal}
+                    onChange={(_, newGoal) => newGoal && setWorkoutGoal(newGoal)}
+                    sx={{
+                      '& .MuiToggleButtonGroup-grouped': {
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        '&.Mui-selected': {
+                          backgroundColor: theme.palette.primary.main,
+                          color: theme.palette.primary.contrastText,
+                        }
+                      }
+                    }}
+                  >
+                    <ToggleButton value="forza">
+                      Forza
+                    </ToggleButton>
+                    <ToggleButton value="ipertrofia">
+                      Ipertrofia
+                    </ToggleButton>
+                    <ToggleButton value="dimagrimento">
+                      Dimagrimento
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </Box>
+              )}
+
+              {/* Selettore per le skill */}
+              {creationMethod === 'skill' && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                  <ToggleButtonGroup
+                    exclusive
+                    value={selectedSkill}
+                    onChange={(_, newSkill) => setSelectedSkill(newSkill)}
+                    sx={{
+                      '& .MuiToggleButtonGroup-grouped': {
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        '&.Mui-selected': {
+                          backgroundColor: theme.palette.primary.main,
+                          color: theme.palette.primary.contrastText,
+                        }
+                      }
+                    }}
+                  >
+                    {availableSkills.map(skill => (
+                      <ToggleButton key={skill.id} value={skill.id}>
+                        {skill.name}
+                      </ToggleButton>
+                    ))}
+                  </ToggleButtonGroup>
+                </Box>
+              )}
+
+              {/* Pulsante per generare la progressione */}
+              {creationMethod === 'skill' && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={generateSkillProgression}
+                    size="large"
+                    startIcon={<SportsGymnastics />}
+                    sx={{
+                      borderRadius: 28,
+                      px: 4,
+                      py: 1.5,
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                      textTransform: 'none',
+                      fontSize: '1.1rem',
+                      fontWeight: 500,
+                    }}
+                  >
+                    Genera Progressione
+                  </Button>
+                </Box>
+              )}
 
               {/* Pulsante salva scheda */}
               <Box display="flex" justifyContent="center" mt={4}>
@@ -819,10 +991,15 @@ const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onBack }) => {
                   color="primary"
                   onClick={saveProgram}
                   size="large"
+                  startIcon={<Save />}
                   sx={{
                     borderRadius: 28,
                     px: 4,
-                    py: 1
+                    py: 1.5,
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                    textTransform: 'none',
+                    fontSize: '1.1rem',
+                    fontWeight: 500,
                   }}
                 >
                   Salva Scheda di Allenamento

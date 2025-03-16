@@ -18,6 +18,7 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import ScienceIcon from '@mui/icons-material/Science';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 
 interface NavigationItem {
   text: string;
@@ -55,6 +56,7 @@ export const NavigationDrawer: React.FC = () => {
 
   const secondaryNavItems: NavigationItem[] = [
     { text: 'TransformationHub', icon: <AutoGraphIcon />, path: 'transformation' },
+    { text: 'Aura & Salute', icon: <HealthAndSafetyIcon />, path: 'health-progress' },
   ];
 
   const featuresItems: NavigationItem[] = [
