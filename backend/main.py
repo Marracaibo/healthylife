@@ -10,6 +10,10 @@ from pydantic import BaseModel
 from fastapi.responses import JSONResponse, FileResponse, HTMLResponse
 import time
 import os
+from dotenv import load_dotenv
+
+# Carica le variabili d'ambiente
+load_dotenv()
 
 from database import get_db, engine, Base, SessionLocal
 from models.meal_plan import MealPlan
@@ -26,6 +30,7 @@ from routers.nlp_service import router as nlp_service_router  # Importa il route
 from routers.image_recognition_service import router as image_recognition_router  # Importa il router per l'API Image Recognition
 from ai_service import AIService
 from test_nlp_mock import router as test_nlp_mock_router
+from cors_config import configure_cors  # Importa la configurazione CORS
 
 # Configurazione del logger
 logging.basicConfig(level=logging.INFO)
@@ -234,13 +239,22 @@ app = FastAPI(
     version="0.1.0"
 )
 
-# Configurazione CORS
+# Configurazione CORS con il nostro modulo personalizzato
+# Questo permetterà richieste dal frontend deployato su Firebase
+allow_origins = [
+    "http://localhost:5173",  # Sviluppo locale
+    "https://healthylife-app.web.app",  # Dominio Firebase principale
+    "https://healthylife-app.firebaseapp.com",  # Dominio Firebase alternativo
+    "https://healthylife-backend.onrender.com",  # Backend su Render
+    "https://healthylife-b86d3.web.app"  # Nuovo dominio Firebase
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In produzione, specificare domini consentiti
+    allow_origins=allow_origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
 )
 
 # Crea la directory cache se non esiste
@@ -249,7 +263,7 @@ os.makedirs("cache", exist_ok=True)
 # Includi i router
 app.include_router(meal_plan_templates.router)
 app.include_router(fatsecret.router)
-app.include_router(hybrid_food_service.router)  # Router ottimizzato per alimenti italiani
+# app.include_router(hybrid_food_service.router)  # Router ottimizzato per alimenti italiani - DISABILITATO PER CONFLITTO DI ROUTING
 app.include_router(fatsecret_test.router)
 app.include_router(fatsecret_direct_test.router)
 app.include_router(fatsecret_oauth2_test.router)
