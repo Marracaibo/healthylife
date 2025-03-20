@@ -254,6 +254,9 @@ app = FastAPI(
 # Questo permetterà richieste dal frontend deployato su Firebase
 allow_origins = [
     "http://localhost:5173",  # Sviluppo locale
+    "http://localhost:5174",  # Sviluppo locale (porta alternativa)
+    "http://localhost:5175",  # Sviluppo locale (porta alternativa)
+    "http://localhost:5176",  # Sviluppo locale (porta alternativa)
     "https://healthylife-app.web.app",  # Dominio Firebase principale
     "https://healthylife-app.firebaseapp.com",  # Dominio Firebase alternativo
     "https://healthylife-backend.onrender.com",  # Backend su Render
