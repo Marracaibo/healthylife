@@ -8,6 +8,7 @@ import logging
 import sys
 import time
 import re
+import platform
 
 # Configura il logging
 logging.basicConfig(
@@ -27,9 +28,25 @@ class OllamaError(Exception):
 class AIService:
     def __init__(self, model: str = "mistral"):
         self.model = model
-        self.ollama_path = r"C:\Users\39351\AppData\Local\Programs\Ollama\ollama.exe"
+        # Imposta il percorso di Ollama in base al sistema operativo
+        if platform.system() == "Windows":
+            self.ollama_path = r"C:\Users\39351\AppData\Local\Programs\Ollama\ollama.exe"
+        else:
+            # Su Linux (come Render) impostiamo un percorso fittizio
+            # e disabilitiamo l'uso di Ollama
+            self.ollama_path = "/usr/local/bin/ollama"
+            self.is_render = True
+        
         logger.info(f"AIService inizializzato con modello: {model}")
-        self._check_ollama_status()
+        
+        # Aggiungiamo un flag per verificare se siamo su Render
+        self.is_render = "RENDER" in os.environ
+        
+        # Solo se non siamo su Render, verifichiamo Ollama
+        if not self.is_render:
+            self._check_ollama_status()
+        else:
+            logger.info("Esecuzione su Render: Ollama disabilitato")
 
     def _check_ollama_status(self):
         """Verifica lo stato di Ollama"""
@@ -61,6 +78,14 @@ class AIService:
 
     def _generate_response(self, prompt: str) -> str:
         """Genera una risposta utilizzando Ollama"""
+        # Se siamo su Render, restituisci una risposta predefinita
+        if hasattr(self, 'is_render') and self.is_render:
+            logger.info("Esecuzione su Render: utilizzo risposta simulata")
+            return "{\
+  \"message\": \"Funzionalità AI non disponibile nell'ambiente di deployment\",\
+  \"status\": \"unavailable\"\
+}"
+            
         try:
             logger.info("Invio richiesta a Ollama...")
             
@@ -110,6 +135,29 @@ class AIService:
         start_date: datetime
     ) -> Dict[str, Any]:
         """Genera un piano alimentare settimanale"""
+        # Se siamo su Render, restituisci un piano alimentare predefinito
+        if hasattr(self, 'is_render') and self.is_render:
+            logger.info("Esecuzione su Render: utilizzo piano alimentare predefinito")
+            return {
+                "message": "Funzionalità AI non disponibile nell'ambiente di deployment",
+                "status": "unavailable",
+                "plan": [
+                    {
+                        "day": 1,
+                        "date": start_date.strftime("%Y-%m-%d"),
+                        "meals": [
+                            {
+                                "name": "Colazione",
+                                "time": "08:00",
+                                "foods": [
+                                    {"name": "Esempio cibo", "amount": "100g", "calories": 300}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+            
         try:
             logger.info(f"Inizio generazione piano alimentare per obiettivo: {goal}")
             
