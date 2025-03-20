@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: healthylife-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: USDA_API_KEY
+        sync: false
+      - key: EDAMAM_APP_ID
+        sync: false
+      - key: EDAMAM_APP_KEY
+        sync: false
+      - key: FATSECRET_CLIENT_ID
+        sync: false
+      - key: FATSECRET_CLIENT_SECRET
+        sync: false
+      - key: USE_MOCK_FATSECRET
+        value: "true"
+      - key: USE_EDAMAM_ONLY
+        value: "true"
+      - key: USE_EDAMAM_AGGREGATED
+        value: "true"
+      - key: USE_ENHANCED_EDAMAM
+        value: "true"
