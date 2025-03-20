@@ -15,22 +15,22 @@ from dotenv import load_dotenv
 # Carica le variabili d'ambiente
 load_dotenv()
 
-from backend.database import get_db, engine, Base, SessionLocal
-from backend.models.meal_plan import MealPlan
-from backend.crud import meal_plan as meal_plan_crud
-from backend.routers import meal_plan_templates
-from backend.routers import fatsecret
-from backend.routers import hybrid_food_service  # Router ottimizzato per alimenti italiani
-from backend.routers import fatsecret_test  # Router per test FatSecret
-from backend.routers import fatsecret_direct_test  # Router per test diretto FatSecret
-from backend.routers import fatsecret_oauth2_test  # Router per test OAuth 2.0 FatSecret
-from backend.routers import test_nlp_service  # Router per test dell'API NLP di FatSecret
-from backend.routers.food_search_v2 import router as food_search_v2_router  # Importa il nuovo router di ricerca alimenti v2
-from backend.routers.nlp_service import router as nlp_service_router  # Importa il router per l'API NLP
-from backend.routers.image_recognition_service import router as image_recognition_router  # Importa il router per l'API Image Recognition
-from backend.ai_service import AIService
-from backend.test_nlp_mock import router as test_nlp_mock_router
-from backend.cors_config import configure_cors  # Importa la configurazione CORS
+from database import get_db, engine, Base, SessionLocal
+from models.meal_plan import MealPlan
+from crud import meal_plan as meal_plan_crud
+from routers import meal_plan_templates
+from routers import fatsecret
+from routers import hybrid_food_service  # Router ottimizzato per alimenti italiani
+from routers import fatsecret_test  # Router per test FatSecret
+from routers import fatsecret_direct_test  # Router per test diretto FatSecret
+from routers import fatsecret_oauth2_test  # Router per test OAuth2 FatSecret
+from routers import test_nlp_service  # Router per test dell'API NLP di FatSecret
+from routers.food_search_v2 import router as food_search_v2_router  # Importa il nuovo router di ricerca alimenti v2
+from routers.nlp_service import router as nlp_service_router  # Importa il router per l'API NLP
+from routers.image_recognition_service import router as image_recognition_router  # Importa il router per l'API Image Recognition
+from ai_service import AIService
+from test_nlp_mock import router as test_nlp_mock_router
+from cors_config import configure_cors  # Importa la configurazione CORS
 
 # Configurazione del logger
 logging.basicConfig(level=logging.INFO)

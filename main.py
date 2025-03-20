@@ -7,6 +7,9 @@ import sys
 # Aggiungi la directory corrente al path per permettere l'import di moduli relativi
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# Aggiungi anche la directory backend al path
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'backend'))
+
 # Importa l'app dal modulo backend.main
 from backend.main import app
 
