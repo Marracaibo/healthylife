@@ -10,6 +10,7 @@ from pydantic import BaseModel
 from fastapi.responses import JSONResponse, FileResponse, HTMLResponse
 import time
 import os
+import json
 from dotenv import load_dotenv
 
 # Carica le variabili d'ambiente
@@ -219,6 +220,16 @@ def create_default_templates():
             ]
             
             for template_data in templates:
+                # Convertiamo i campi JSON in stringhe prima di passarli al modello
+                if isinstance(template_data.get("macros"), dict):
+                    template_data["macros"] = json.dumps(template_data["macros"])
+                
+                if isinstance(template_data.get("dietary_restrictions"), list):
+                    template_data["dietary_restrictions"] = json.dumps(template_data["dietary_restrictions"])
+                
+                if isinstance(template_data.get("days"), list):
+                    template_data["days"] = json.dumps(template_data["days"])
+                
                 template = MealPlan(**template_data)
                 db.add(template)
             
@@ -460,8 +471,22 @@ def image_recognition_test_page():
     return FileResponse("static/image_recognition_test.html")
 
 # Monta i file statici
-app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/templates", StaticFiles(directory="templates"), name="templates")
+import os
+
+# Verifica se le directory statiche esistono, altrimenti le crea
+static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+if not os.path.exists(static_dir):
+    os.makedirs(static_dir)
+    print(f"Creata directory statica: {static_dir}")
+
+templates_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
+if not os.path.exists(templates_dir):
+    os.makedirs(templates_dir)
+    print(f"Creata directory templates: {templates_dir}")
+
+# Monta i file statici
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+app.mount("/templates", StaticFiles(directory=templates_dir), name="templates")
 
 if __name__ == "__main__":
     import uvicorn
