@@ -51,6 +51,11 @@ import TemplateBasedPlanner from '../components/TemplateBasedPlanner';
 import ManualMealPlanner from '../components/ManualMealPlanner';
 import { MealTemplate } from '../data/mealTemplates';
 import { sampleMealPlans } from '../data/sampleMealPlans';
+import { mealTemplates } from '../data/mealTemplates';
+import { monthlyMealTemplates } from '../data/monthlyMealTemplates';
+
+import { useMediaQuery } from '@mui/material';
+import { Theme } from '@mui/material/styles';
 
 interface Ingredient {
   name: string;
@@ -89,7 +94,8 @@ interface MealPlan {
   days: DayPlan[];
 }
 
-const API_BASE_URL = 'http://localhost:8000/api';
+// Utilizziamo la variabile d'ambiente per l'URL dell'API
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
 const MealPlanner: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -445,7 +451,7 @@ const MealPlanner: React.FC = () => {
       
       console.log('Nuovo piano generato:', newPlan);
       
-      // Assicurati che l'ID sia definito
+      // Assicuriamoci che l'ID sia definito
       if (!newPlan.id) {
         newPlan.id = Date.now();
       }
@@ -467,8 +473,9 @@ const MealPlanner: React.FC = () => {
                 
                 // Crea foods dagli alimenti menzionati nel pasto
                 meal.foods = (meal.foods || []).map(food => ({
-                  name: food.name || 'Cibo sconosciuto',
-                  calories: food.calories || 0,
+                  name: food.name,
+                  quantity: food.amount,
+                  calories: food.calories,
                   protein: food.protein || 0,
                   carbs: food.carbs || 0,
                   fat: food.fat || 0
@@ -552,9 +559,105 @@ const MealPlanner: React.FC = () => {
 
   const handleApplyTemplate = (template: any) => {
     try {
-      console.log('MealPlanner: Inizio applicazione template', template.name);
+      console.log('MealPlanner: Inizio applicazione template', template.name || 'Senza nome');
+      
+      // Verifica che il template sia un oggetto valido
+      if (!template || typeof template !== 'object') {
+        console.error('Template non valido:', template);
+        throw new Error('Il template fornito non è valido');
+      }
+
+      // Standardizziamo le proprietà del template per garantire compatibilità
+      // Gestiamo sia dailyCalories che calories_target
+      if (template.calories_target && !template.dailyCalories) {
+        template.dailyCalories = template.calories_target;
+        console.log('Standardizzazione: calories_target -> dailyCalories', template.dailyCalories);
+      } else if (!template.dailyCalories && !template.calories_target) {
+        // Se mancano entrambi, impostiamo un valore predefinito
+        template.dailyCalories = 2000;
+        console.log('Impostato valore predefinito per dailyCalories:', template.dailyCalories);
+      }
+
+      // Verifichiamo e correggiamo i macros se necessario
+      if (!template.macros || typeof template.macros !== 'object') {
+        template.macros = { protein: 20, carbs: 50, fat: 30 };
+        console.log('Impostati macros predefiniti:', template.macros);
+      }
+
+      // Assicuriamoci che i pasti siano validi
+      if (!template.meals || !Array.isArray(template.meals) || template.meals.length === 0) {
+        console.log('Creazione pasti predefiniti per il template');
+        // Creiamo pasti predefiniti
+        template.meals = [
+          {
+            name: 'Colazione',
+            time: '08:00',
+            foods: [
+              { name: 'Yogurt greco', amount: '150g', calories: 150 },
+              { name: 'Miele', amount: '1 cucchiaino', calories: 30 },
+              { name: 'Frutta fresca', amount: '1 porzione', calories: 60 }
+            ]
+          },
+          {
+            name: 'Pranzo',
+            time: '13:00',
+            foods: [
+              { name: 'Pasta integrale', amount: '80g', calories: 280 },
+              { name: 'Pomodorini', amount: '100g', calories: 20 },
+              { name: 'Olio extravergine', amount: '1 cucchiaio', calories: 120 }
+            ]
+          },
+          {
+            name: 'Cena',
+            time: '20:00',
+            foods: [
+              { name: 'Pesce azzurro', amount: '150g', calories: 200 },
+              { name: 'Verdure grigliate', amount: '200g', calories: 70 },
+              { name: 'Pane integrale', amount: '1 fetta', calories: 80 }
+            ]
+          }
+        ];
+      } else {
+        // Verifichiamo e correggiamo ogni pasto
+        template.meals = template.meals.map(meal => {
+          // Assicuriamoci che il pasto abbia un nome
+          if (!meal.name) {
+            meal.name = 'Pasto';
+          }
+          
+          // Assicuriamoci che il pasto abbia un orario
+          if (!meal.time) {
+            meal.time = '12:00';
+          }
+          
+          // Assicuriamoci che il pasto abbia cibi validi
+          if (!meal.foods || !Array.isArray(meal.foods) || meal.foods.length === 0) {
+            meal.foods = [
+              { name: 'Alimento predefinito', amount: '100g', calories: 100 }
+            ];
+          } else {
+            // Verifichiamo e correggiamo ogni cibo
+            meal.foods = meal.foods.map(food => {
+              return {
+                name: food.name || 'Alimento sconosciuto',
+                amount: food.amount || food.quantity || '100g',
+                calories: food.calories || 100
+              };
+            });
+          }
+          
+          return meal;
+        });
+      }
+
       // Convertiamo il template nel formato di un piano pasto
       const today = new Date();
+
+      // Verifichiamo che template.meals esista e sia un array
+      if (!template.meals || !Array.isArray(template.meals)) {
+        console.error('Template senza pasti validi:', template);
+        template.meals = [];
+      }
 
       // Calculate total calories from foods for verification
       let totalCaloriesFromFoods = 0;
@@ -563,14 +666,12 @@ const MealPlanner: React.FC = () => {
       if (template.meals && Array.isArray(template.meals)) {
         totalCaloriesFromFoods = template.meals.reduce((total, meal) => {
           // Verifichiamo che meal.foods esista e sia un array
-          if (meal.foods && Array.isArray(meal.foods)) {
-            return total + meal.foods.reduce((sum, food) => {
-              // Verifichiamo che food.calories sia un numero
-              const calories = typeof food.calories === 'number' ? food.calories : 0;
-              return sum + calories;
-            }, 0);
-          }
-          return total;
+          const mealFoods = meal.foods && Array.isArray(meal.foods) ? meal.foods : [];
+          return total + mealFoods.reduce((sum, food) => {
+            // Verifichiamo che food.calories sia un numero
+            const calories = typeof food.calories === 'number' ? food.calories : 0;
+            return sum + calories;
+          }, 0);
         }, 0);
       }
       
@@ -579,7 +680,11 @@ const MealPlanner: React.FC = () => {
       
       // Verify we have valid calorie data
       if ((template.dailyCalories <= 0 || isNaN(template.dailyCalories)) && totalCaloriesFromFoods <= 0) {
-        throw new Error('Il template non contiene dati calorici validi');
+        console.error('Dati calorici mancanti:', { templateCalories: template.dailyCalories, calculatedCalories: totalCaloriesFromFoods });
+        // Invece di lanciare un errore, impostiamo un valore predefinito
+        const defaultCalories = 2000; // Valore calorico predefinito
+        console.log(`Utilizzo valore calorico predefinito: ${defaultCalories} kcal`);
+        template.dailyCalories = defaultCalories;
       }
       
       // Use the most reliable source of calories
@@ -594,7 +699,8 @@ const MealPlanner: React.FC = () => {
         date: today.toISOString().split('T')[0] + "T00:00:00.000Z", // Formato coerente per la data
         meals: template.meals.map(meal => {
           // Calculate actual calories for this meal from its foods
-          const mealCalories = meal.foods.reduce((sum, food) => sum + (food.calories || 0), 0);
+          const mealFoods = meal.foods && Array.isArray(meal.foods) ? meal.foods : [];
+          const mealCalories = mealFoods.reduce((sum, food) => sum + (food.calories || 0), 0);
           
           // Calculate the proportion this meal represents of the total calories
           const mealProportion = totalCaloriesFromFoods > 0 ? 
@@ -618,7 +724,7 @@ const MealPlanner: React.FC = () => {
           const finalCalories = mealCalories > 0 ? mealCalories : Math.round(calculatedCalories);
           
           // Costruisci il campo "foods" per compatibilità con i piani AI
-          const foodsForDashboard = meal.foods.map(food => ({
+          const foodsForDashboard = mealFoods.map(food => ({
             name: food.name,
             quantity: food.amount,
             calories: food.calories,
@@ -638,7 +744,7 @@ const MealPlanner: React.FC = () => {
               fat: Math.round(fatGrams * 10) / 10
             },
             // Mantieni sia ingredients che foods per compatibilità
-            ingredients: meal.foods.map(food => ({
+            ingredients: mealFoods.map(food => ({
               name: food.name,
               amount: food.amount,
               unit: "g" // Unità predefinita
@@ -761,60 +867,37 @@ const MealPlanner: React.FC = () => {
   };
 
   const handleDeletePlan = async (planId: number) => {
+    // Prima rimuovi il piano dalla lista locale
+    const updatedPlans = plans.filter(plan => plan.id !== planId);
+    setPlans(updatedPlans);
+    
+    // Aggiorna il localStorage
+    localStorage.setItem('mealPlans', JSON.stringify(updatedPlans));
+
+    // Poi tenta di rimuoverlo dal backend (se disponibile)
     try {
-      // Se il piano è quello attualmente selezionato, deselezionalo
-      if (selectedPlan?.id === planId) {
-        setSelectedPlan(null);
-        localStorage.removeItem('selectedPlan');
-        localStorage.removeItem('selectedPlanId');
-      }
-
-      // Prima rimuovi il piano dalla lista locale
-      const updatedPlans = plans.filter(plan => plan.id !== planId);
-      setPlans(updatedPlans);
-      
-      // Aggiorna il localStorage
-      localStorage.setItem('mealPlans', JSON.stringify(updatedPlans));
-
-      // Poi tenta di rimuoverlo dal backend (se disponibile)
-      try {
-        if (planId) {
-          // Verifica se il piano esiste nel backend prima di tentare di eliminarlo
-          // I piani creati localmente potrebbero non esistere nel backend
-          const checkResponse = await fetch(`${API_BASE_URL}/meal-plans/${planId}`, {
-            method: 'GET',
-          }).catch(() => null);
-          
-          // Se il piano esiste nel backend, procedi con l'eliminazione
-          if (checkResponse && checkResponse.ok) {
-            const response = await fetch(`${API_BASE_URL}/meal-plans/${planId}`, {
-              method: 'DELETE',
-            });
-            
-            if (response.ok) {
-              console.log('Piano rimosso con successo dal backend.');
-            } else {
-              console.log('Errore nella rimozione dal backend, ma rimosso localmente.');
-            }
-          } else {
-            console.log('Piano non trovato nel backend, rimosso solo localmente.');
-          }
+      if (planId) {
+        // Tenta direttamente l'eliminazione senza verificare prima l'esistenza
+        // Questo evita una chiamata API aggiuntiva e potenziali errori 500
+        const response = await fetch(`${API_BASE_URL}/meal-plans/${planId}`, {
+          method: 'DELETE',
+        });
+        
+        if (response.ok) {
+          console.log('Piano rimosso con successo dal backend.');
+        } else {
+          // Se il backend restituisce un errore, lo gestiamo senza interrompere il flusso
+          console.log(`Piano rimosso localmente. Stato backend: ${response.status}`);
         }
-      } catch (apiError) {
-        // Se c'è un errore nella chiamata API, lo logghiamo ma non interrompiamo il flusso
-        // poiché il piano è già stato rimosso localmente
-        console.log('Piano rimosso localmente. Errore o piano non esistente nel backend.');
       }
-      
-      setSnackbarMessage('Piano eliminato con successo');
-      setSnackbarVariant('success');
-      setSnackbarOpen(true);
     } catch (error) {
-      console.error('Error deleting meal plan:', error);
-      setSnackbarMessage('Errore durante l\'eliminazione del piano');
-      setSnackbarVariant('error');
-      setSnackbarOpen(true);
+      // Cattura qualsiasi errore di rete o altro
+      console.log('Errore durante la comunicazione con il backend, piano rimosso solo localmente:', error);
     }
+    
+    setSnackbarMessage('Piano eliminato con successo');
+    setSnackbarVariant('success');
+    setSnackbarOpen(true);
   };
 
   const handleRenamePlan = () => {
@@ -873,6 +956,10 @@ const MealPlanner: React.FC = () => {
     setIsEditingPlanName(false);
     setEditedPlanName('');
   };
+
+  // Hook per rilevare dispositivi mobili
+  const theme = useTheme<Theme>();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   if (loading) {
     return (
@@ -1040,30 +1127,37 @@ const MealPlanner: React.FC = () => {
                   '& .MuiTab-root': {
                     fontWeight: 'bold',
                     borderRadius: '4px 4px 0 0',
+                    fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                    padding: { xs: '6px 8px', sm: '12px 16px' },
+                    minHeight: { xs: '48px', sm: '48px' },
                   },
                   '& .Mui-selected': {
                     backgroundColor: 'rgba(25, 118, 210, 0.08)'
+                  },
+                  '& .MuiTab-iconWrapper': {
+                    marginRight: { xs: '4px', sm: '8px' },
+                    fontSize: { xs: '1.1rem', sm: '1.25rem' }
                   }
                 }}
               >
                 <Tab 
                   key="ai-tab" 
                   value="ai" 
-                  label="Generazione AI" 
+                  label={isMobile ? "Crea con AI" : "Generazione AI"} 
                   icon={<AddIcon />} 
                   iconPosition="start"
                 />
                 <Tab 
                   key="template-tab" 
                   value="template" 
-                  label="Utilizza Template" 
+                  label={isMobile ? "Template" : "Utilizza Template"} 
                   icon={<FitnessCenterIcon />} 
                   iconPosition="start"
                 />
                 <Tab 
                   key="manual-tab" 
                   value="manual" 
-                  label="Creazione Manuale" 
+                  label={isMobile ? "Manuale" : "Creazione Manuale"} 
                   icon={<EditIcon />} 
                   iconPosition="start"
                 />
@@ -1198,7 +1292,9 @@ const MealPlanner: React.FC = () => {
                     </Grid>
                   </Box>
                 ) : mode === 'template' ? (
-                  <TemplateBasedPlanner onApplyTemplate={handleApplyTemplate} />
+                  <TemplateBasedPlanner 
+                    onApplyTemplate={(plan) => Promise.resolve(handleApplyTemplate(plan))} 
+                  />
                 ) : (
                   <ManualMealPlanner onCreatePlan={handleApplyTemplate} />
                 )}

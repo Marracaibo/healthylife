@@ -12,6 +12,9 @@ def configure_cors(app: FastAPI):
     # In produzione, sostituire con il dominio effettivo di Firebase
     allowed_origins = [
         "http://localhost:5173",  # Sviluppo locale
+        "http://localhost:5174",  # Sviluppo locale (porta alternativa)
+        "http://localhost:5175",  # Sviluppo locale (porta alternativa)
+        "http://localhost:5176",  # Sviluppo locale (porta alternativa)
         "https://healthylife-app.web.app",  # Dominio Firebase principale
         "https://healthylife-app.firebaseapp.com",  # Dominio Firebase alternativo
         "https://healthylife-frontend.web.app",  # Dominio Firebase del frontend
